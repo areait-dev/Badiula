@@ -79,13 +79,12 @@ export default function HorizontalScroll() {
             <a href="/" className={`btn btn-outline ${styles.cta}`}>{t('p1.cta')}</a>
           </div>
           <div className={styles.imgHalf}>
-            <video
-              src="/videos/DSC_7756_from8s.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
+            <Image
+              src="/images/DSC_7619.jpg"
+              alt="Quattro generazioni, una terra — Badiula"
+              fill
               className={styles.greenImg}
+              style={{ objectFit: 'cover' }}
             />
           </div>
         </section>
