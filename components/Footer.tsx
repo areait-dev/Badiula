@@ -22,11 +22,13 @@ export default function Footer() {
           </p>
           <div className={styles.logo}><Logo size={44} light /></div>
           <p className={`body-2 ${styles.info}`}>
-            {t('company')}
+            Agriturismi Badiula Soc. Cons. A.r.l
             <br />
-            {t('address')}
+            Partita IVA: 01796500898
             <br />
-            info@badiula.it · +39 095 000 0000
+            C.da Badiula San Leonardo
+            <br />
+            96013 Carlentini (SR)
           </p>
           <div className={styles.social}>
             <a href="https://facebook.com/badiula" aria-label="Seguici su Facebook" target="_blank" rel="noopener noreferrer">
