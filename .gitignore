@@ -5,7 +5,12 @@ out
 *.log
 .env*.local
 
-# Media pesanti — gestiti separatamente
+# Media pesanti — gestiti separatamente (solo i file originali non ottimizzati)
 *.mov
 *.avi
 *.mkv
+public/videos/DJI_0003.MP4
+public/videos/DJI_0021.MP4
+public/videos/DJI_0992.MP4
+public/videos/DSC_7756_from8s.mp4
+public/videos/DJI_0985_15s.mp4

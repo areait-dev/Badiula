@@ -6,7 +6,7 @@ export default function AziendaHeroVideo() {
   return (
     <div className={styles.videoWrap}>
       <video
-        src="/videos/DJI_0003.mp4"
+        src="/videos/dji_0003_web.mp4"
         autoPlay
         muted
         loop
