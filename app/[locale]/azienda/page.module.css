@@ -1,0 +1,280 @@
+/* ── Wrapper principale ── */
+.main {
+  padding-top: 80px;
+}
+
+/* ── Hero minimale ── */
+.hero {
+  height: 50vh;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  background: var(--white);
+}
+
+.heroLabel {
+  font-family: var(--font-body);
+  font-size: 110px;
+  line-height: 122px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+/* ── Griglia 2 colonne asimmetrica ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+}
+
+.gridReverse .imgWrap   { order: 2; }
+.gridReverse .textBlock { order: 1; }
+
+.gridLast {
+  min-height: 60vh;
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+
+/* ── Box immagine ── */
+.imgWrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--khaki);
+  min-height: 420px;
+}
+
+.imgTall {
+  min-height: 560px;
+  position: relative;
+  z-index: 1;
+  clip-path: inset(0 0 0 115px); /* ritaglia da sinistra */
+}
+
+.imgDark {
+  background: var(--eigengrau);
+}
+
+/* ── Blocco testo ── */
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 5rem 5rem 8rem;
+  gap: 1.6rem;
+}
+
+/* ── Titoli ── */
+.heroTitle {
+  font-family: var(--font-body);
+  font-size: 80px;
+  line-height: 89px;
+  font-weight: 700;
+  color: var(--bordeaux);
+}
+
+.h2 {
+  font-family: var(--font-body);
+  font-size: 80px;
+  line-height: 89px;
+  font-weight: 700;
+  color: var(--bordeaux);
+}
+
+.h3 {
+  font-family: var(--font-body);
+  font-size: 60px;
+  line-height: 66px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0;
+  color: var(--bordeaux);
+}
+
+/* ── Corpo testo ── */
+.body {
+  font-family: var(--font-body);
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  color: var(--eigengrau);
+  max-width: 520px;
+  text-align: left;
+}
+
+.bodyHero {
+  max-width: 600px;
+}
+
+/* ── Citazione sovrapposta alla foto dell'olio ── */
+.quoteSection {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  margin-top: -240px;
+  padding-bottom: 9rem;
+  pointer-events: none;
+}
+
+/* Blocco testo: spinto verso destra affinché TERRA
+   entri nel bordo sinistro della foto dell'olio */
+.quoteText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* Singola riga — Headline 3 del Design System */
+.quoteLine {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 200px;
+  line-height: 0.92;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+}
+
+/* ── Manifesto ── */
+.manifestoSection {
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--white);
+}
+
+.manifesto {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-align: center;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* ── Immagine full-width ── */
+.fullImg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 50vh;
+  min-height: 300px;
+}
+
+.fullImgHero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ── Vision & Mission ── */
+.vmSection {
+  display: flex;
+  align-items: stretch;
+  padding: 6rem 6rem;
+  gap: 0;
+  background: var(--white);
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
+
+.vmBlock {
+  flex: 1;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.vmBlock:first-child { padding-left: 0; }
+.vmBlock:last-child  { padding-right: 0; }
+
+.vmDivider {
+  position: relative;
+  z-index: 10;
+  width: 4px;
+  background: var(--bordeaux);
+  align-self: stretch;
+  flex-shrink: 0;
+  margin-top: -6rem;
+  margin-bottom: -6rem;
+}
+
+.vmLabel {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+}
+
+.vmSection .body {
+  color: var(--eigengrau);
+  max-width: 100%;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero {
+    padding: 0 1.5rem 2rem;
+    height: 30vh;
+    min-height: 200px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .gridReverse .imgWrap,
+  .gridReverse .textBlock {
+    order: unset;
+  }
+
+  .imgWrap  { min-height: 320px; }
+  .imgTall  { min-height: 380px; }
+
+  .textBlock { padding: 3rem 1.5rem; }
+
+  .vmSection {
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+    gap: 3rem;
+  }
+
+  .vmBlock { padding: 0; }
+
+  .vmDivider {
+    width: 100%;
+    height: 1.5px;
+    align-self: auto;
+  }
+
+  .quoteSection   { margin-top: -60px; padding-bottom: 5rem; }
+  .quoteText      { padding-left: 1.5rem; }
+  .quoteLine      { font-size: clamp(2.8rem, 13vw, 5rem); line-height: 0.92; }
+  .manifestoSection { padding: 4rem 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .quoteSection  { margin-top: -40px; padding-bottom: 4rem; }
+  .quoteText     { padding-left: 1.2rem; }
+  .quoteLine     { font-size: clamp(2.8rem, 13vw, 5rem); line-height: 0.92; }
+
+}

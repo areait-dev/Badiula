@@ -1,0 +1,71 @@
+.bannerPNRR {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--space-md);
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+.loghi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-sm);
+}
+
+.logoBox {
+  background: var(--white);
+  border-radius: 6px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loghi img {
+  height: 24px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+.testo {
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 17px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--space-sm);
+}
+
+.testoUpper {
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--space-sm);
+}
+
+.testoProponente {
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 17px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 768px) {
+  .loghi {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  .loghi img { height: 32px; }
+}

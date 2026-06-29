@@ -1,0 +1,391 @@
+.main { background: #fff; }
+
+.container { padding: 0 var(--page-margin); }
+
+/* ── INTRO ── */
+.intro { padding: 100px var(--page-margin) 80px; }
+
+.introHero {
+  padding-top: 10rem;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h1 {
+  font-family: var(--font-body);
+  font-size: clamp(48px, 7vw, 110px);
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* BERGAMOTTO e SICILIANO: bordo sinistro */
+.h1Row {
+  display: block;
+  white-space: nowrap;
+  padding-left: 0;
+}
+
+/* BIOLOGICO: parte dalla "B" di "BE" ≈ 1 carattere di rientro */
+.h1RowMid {
+  display: block;
+  white-space: nowrap;
+  padding-left: 0.9em;
+}
+
+.h2 {
+  font-family: var(--font-body);
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--bordeaux);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 700px;
+}
+
+.introBody p {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #333333;
+}
+
+/* ── SEZIONI A DUE COLONNE ── */
+.blockA,
+.blockB {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 4rem var(--page-margin-mobile, 1.5rem);
+}
+
+@media (min-width: 768px) {
+  .blockA,
+  .blockB {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    padding: 6rem var(--page-margin);
+  }
+
+  .blockAContent,
+  .blockBContent {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .blockAVisual,
+  .blockBVisual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .blockAVisual { justify-content: flex-end; }
+  .blockBVisual { justify-content: flex-start; }
+}
+
+.blockTitle {
+  font-family: var(--font-body);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+}
+
+.blockLead {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.blockList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+
+.blockList li {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #333333;
+}
+
+.blockList strong { color: var(--bordeaux); }
+
+.blockListDesc li { padding-left: 0; }
+.blockListDesc li::before { content: none; }
+
+/* ── FOTO CIRCOLARI / RETTANGOLARI ── */
+.imgWrapCircle {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.imgWrapRect {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ── CALENDARIO ── */
+.calendar {
+  background: #F5EFE0;
+  padding: 80px 0;
+}
+
+.calendarTitle {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  margin-bottom: 40px;
+  letter-spacing: 0.04em;
+}
+
+.calendarBar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 6px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 20px;
+  margin-bottom: 20px;
+}
+
+.calCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.calLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+}
+
+.calDot {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bordeaux);
+  flex-shrink: 0;
+}
+
+.calDotOff { background: #D5C9B8; }
+
+.calLegend {
+  display: flex;
+  gap: 24px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+}
+
+.calLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── PRODUZIONE DI NICCHIA ── */
+.nicchia {
+  padding: 100px 0;
+}
+
+.nicchiaTitle {
+  font-family: var(--font-body);
+  font-size: clamp(18px, 2.4vw, 30px);
+  font-weight: 700;
+  color: var(--bordeaux);
+  margin-bottom: 32px;
+}
+
+.nicchiaBody {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.nicchiaBody:last-child { margin-bottom: 0; }
+
+/* ── BANNER SHOP ── */
+.banner { display: flex; flex-direction: column; }
+
+.bannerYellow {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: #F2C14E;
+  overflow: hidden;
+}
+
+.bannerImgWrap { position: absolute; inset: 0; }
+
+.bannerGreen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem var(--page-margin);
+  background: #5E7058;
+}
+
+.bannerText { flex: 1; }
+
+.bannerHeading {
+  font-family: var(--font-body);
+  font-size: 36px;
+  font-weight: 700;
+  color: #EEE6B8;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+  white-space: pre-line;
+}
+
+.bannerSub {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(255, 255, 255, .65);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.bannerShopBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 3rem;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255, 255, 255, .75);
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .25s ease, color .25s ease;
+}
+.bannerShopBtn:hover { background: #fff; color: #5E7058; }
+
+/* ── FAQ ── */
+.faq { padding: 80px 0 100px; }
+
+.faqHeading {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 100px);
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 56px;
+}
+
+.faqList { display: flex; flex-direction: column; }
+
+.faqItem { border-top: 1px solid var(--bordeaux); }
+.faqItem:last-child { border-bottom: 1px solid var(--bordeaux); }
+
+.faqQuestion { display: block; }
+
+.faqBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+  padding: 28px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-align: left;
+}
+
+.faqIcon {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.faqAnswer {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.7;
+  padding-bottom: 28px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .intro { padding: 64px var(--page-margin-mobile) 48px; }
+  .introHero { padding-top: 6rem; margin-bottom: 40px; align-items: center; }
+  .h2 { text-align: center; }
+
+  .imgWrapCircle,
+  .imgWrapRect {
+    width: clamp(160px, 55vw, 240px);
+    height: clamp(160px, 55vw, 240px);
+  }
+
+  .calendar { padding: 48px 0; }
+  .calendarTitle { font-size: 28px; }
+  .calendarBar { grid-template-columns: repeat(6, 1fr); padding: 16px 10px; }
+  .calDot { width: 10px; height: 10px; }
+  .calLabel { font-size: 9px; }
+
+  .nicchia { padding: 64px 0; }
+
+  .faq { padding: 64px 0; }
+  .faqHeading { margin-bottom: 32px; }
+
+  .container { padding: 0 var(--page-margin-mobile); }
+
+  .bannerYellow { height: 300px; }
+  .bannerGreen { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .bannerShopBtn { width: 100%; justify-content: center; }
+}

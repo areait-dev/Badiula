@@ -1,0 +1,144 @@
+/* ════════════════════════════════════════════
+   ProductCardBadiula
+   CSS identico a Productions.module.css (homepage)
+   ════════════════════════════════════════════ */
+
+.card {
+  flex: 0 0 400px;
+  width: 400px;
+  height: 680px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Colori tema: §5.6 CLAUDE.md ── */
+.bordeaux {
+  background: var(--teal);
+  --card-text: var(--vanilla);
+}
+.green {
+  background: var(--vanilla);
+  --card-text: var(--bordeaux);
+}
+
+.card h2,
+.card p {
+  color: var(--card-text);
+}
+
+/* ── Immagine ── */
+.imgWrap {
+  position: relative;
+  flex: 0 0 330px;
+  width: 400px;
+  height: 330px;
+  overflow: hidden;
+}
+
+.img {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.card:hover .img {
+  transform: scale(1.04) !important;
+}
+
+/* ── Titolo ── */
+.titleBox {
+  flex: 0 0 auto;
+  margin-top: 24px;
+  padding: 0 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* ── Descrizione ── */
+.descBox {
+  flex: 0 0 auto;
+  margin-top: 12px;
+  padding: 0 20px;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+/* ── Prezzo (opzionale) ── */
+.price {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 700;
+  color: var(--card-text);
+  opacity: 0.7;
+  letter-spacing: 0;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+/* ── CTA — identico a Productions ── */
+.cta {
+  height: 36px;
+  margin: 16px 0 16px 20px;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 18px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  color: var(--card-text);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background-color 200ms ease,
+              color 200ms ease,
+              border-color 200ms ease;
+}
+
+.ctaArrow {
+  display: inline-block;
+  font-size: 0.65rem;
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta:hover .ctaArrow { transform: translateX(3px); }
+.cta:active .ctaArrow { transform: translateX(5px); transition-duration: 100ms; }
+
+/* Hover / active — specchia Productions per ciascun tema */
+.bordeaux .cta:hover  { background-color: var(--vanilla); border-color: var(--vanilla); color: var(--eigengrau); }
+.bordeaux .cta:active { background-color: var(--eigengrau); border-color: var(--eigengrau); color: var(--white); }
+
+.green .cta:hover  { background-color: var(--khaki); border-color: var(--khaki); }
+.green .cta:active { background-color: var(--bordeaux); border-color: var(--bordeaux); color: var(--white); }
+
+.cta:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .cta,
+  .ctaArrow { transition: none !important; }
+}

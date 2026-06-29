@@ -1,0 +1,63 @@
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+}
+.calendar th,
+.calendar td {
+  text-align: center;
+  padding: 0.6rem 0.2rem;
+  font-size: 20px;
+}
+.calendar thead th {
+  color: var(--bordeaux);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--khaki);
+}
+.rowLabel {
+  text-align: left !important;
+  font-size: 30px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding-right: 1rem !important;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+}
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--khaki);
+  opacity: 0.45;
+}
+.dot.active {
+  background: var(--bordeaux);
+  opacity: 1;
+}
+.legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--eigengrau);
+}
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .calendar th,
+  .calendar td {
+    padding: 0.4rem 0.05rem;
+    font-size: 0.65rem;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}

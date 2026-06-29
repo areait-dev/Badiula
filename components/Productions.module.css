@@ -1,0 +1,188 @@
+/* ── Wrapper: pinnato da GSAP, contiene header + track ── */
+.wrapper {
+  background: var(--white);
+  margin-top: var(--space-2xl);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header: fisso dentro il pin, il titolo rimane visibile durante lo scroll orizzontale ── */
+.header {
+  padding: var(--space-lg) var(--page-margin) var(--space-md);
+}
+.title {
+  font-family: var(--font-body);
+  font-size: 80px;
+  line-height: 89px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 400;
+  color: var(--eigengrau);
+  margin: 0;
+}
+
+/* ── Track wrapper: nasconde lo sforamento orizzontale ── */
+.trackWrap {
+  overflow-x: clip;
+  overflow-y: visible;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  padding-bottom: 20px;
+}
+
+/* ── Track: flex orizzontale mosso da GSAP ── */
+.track {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: max-content;
+  padding: 1rem var(--page-margin) 1rem;
+  will-change: transform;
+}
+
+/* ── Card ── */
+.card {
+  flex: 0 0 560px;
+  width: 560px;
+  height: 620px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  position: relative;
+  flex: 0 0 280px;
+  width: 560px;
+  overflow: hidden;
+}
+.img img {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+.card:hover .img img {
+  transform: scale(1.04) !important;
+}
+
+.titleBox {
+  flex: 0 0 135px;
+  margin-top: 28px;
+  padding: 0 24px;
+  overflow: hidden;
+}
+.card h3 {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.card h3 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.descBox {
+  flex: 0 0 auto;
+  margin-top: 8px;
+  padding: 0 24px;
+}
+.card p {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cta {
+  height: 36px;
+  margin-top: auto;
+  margin-bottom: 32px;
+  margin-left: 24px;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 18px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+.ctaArrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  line-height: 1;
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cta:hover .ctaArrow { transform: translateX(3px); }
+.cta:active .ctaArrow { transform: translateX(5px); transition-duration: 100ms; }
+
+/* ── Alternanza colori ── */
+.card:nth-child(odd)             { background: var(--vanilla); }
+.card:nth-child(odd) h3,
+.card:nth-child(odd) p           { color: var(--bordeaux); }
+.card:nth-child(odd) .cta        { color: var(--bordeaux); border-color: var(--bordeaux); }
+.card:nth-child(odd) .cta:hover  { background-color: var(--khaki); border-color: var(--khaki); }
+.card:nth-child(odd) .cta:active { background-color: var(--bordeaux); border-color: var(--bordeaux); color: var(--white); }
+
+.card:nth-child(even)             { background: var(--teal); }
+.card:nth-child(even) h3,
+.card:nth-child(even) p           { color: var(--vanilla); }
+.card:nth-child(even) .cta        { color: var(--vanilla); border-color: var(--vanilla); }
+.card:nth-child(even) .cta:hover  { background-color: var(--vanilla); border-color: var(--vanilla); color: var(--eigengrau); }
+.card:nth-child(even) .cta:active { background-color: var(--eigengrau); border-color: var(--eigengrau); color: var(--white); }
+
+
+/* ── Mobile: stack verticale ── */
+@media (max-width: 768px) {
+  .wrapper { margin-top: var(--space-xl); }
+  .header  { padding: 2rem 1.5rem 1rem; }
+  .title   { font-size: 40px; line-height: 46px; }
+  .subtitle { font-size: 20px; line-height: 32px; }
+  .trackWrap { overflow: visible; }
+  .track {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 1.5rem 3rem;
+    gap: 1.5rem;
+    will-change: auto;
+    transform: none !important;
+  }
+  .card {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: auto;
+  }
+  .img {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+  .cta { margin: 1.5rem 0 1.5rem 24px; }
+  .progressBar { display: none; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .cta, .ctaArrow { transition: none !important; }
+}

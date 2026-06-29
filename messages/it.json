@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "azienda": "AZIENDA",
+    "coltivazioni": "COLTIVAZIONI",
+    "luceDiTerra": "LUCE DI TERRA",
+    "olioEvo": "Olio Extravergine di Oliva",
+    "marmellata": "Marmellate di Agrumi",
+    "filiera": "FILIERA E LAVORAZIONE",
+    "aranciRosse": "Arance rosse di Sicilia IGP",
+    "aranceBionde": "Arance bionde",
+    "limone": "Limone Femminello Siracusano",
+    "bergamotto": "Bergamotto Biologico Siciliano",
+    "pompelmo": "Pompelmo Biologico",
+    "tutteLeColtivazioni": "Tutte le coltivazioni",
+    "back": "Indietro",
+    "promo": "Agrumi siciliani direttamente dal produttore",
+    "promoSub": "Spedizione fresca in tutta Italia, dal nostro campo alla tua tavola.",
+    "shop": "Shop"
+  },
+  "hero": {
+    "scroll": "Scorri",
+    "title": "QUATTRO GENERAZIONI, UNA TERRA",
+    "subtitle": "Coltiviamo agrumi biologici nel cuore della Sicilia orientale, tra il mare Ionio e i Monti Iblei, custodendo da quattro generazioni un modo autentico di vivere la terra.",
+    "cta": "Scopri Badiula"
+  },
+  "about": {
+    "p1": {
+      "eyebrow": "Chi siamo",
+      "heading": "QUATTRO GENERAZIONI, UNA TERRA",
+      "cta": "Scopri l’azienda",
+      "body": "Badiula è un’azienda agricola biologica situata a Carlentini, in provincia di Siracusa, e si estende su oltre 120 ettari nel cuore della Sicilia orientale."
+    },
+    "p2": {
+      "eyebrow": "Il territorio",
+      "heading": "TRA IL MARE E LA TERRA",
+      "body": "Le nostre coltivazioni nascono in un territorio unico, dove il clima mediterraneo, la fertilità dei terreni e l’influenza dell’Etna creano le condizioni ideali per produrre agrumi di alta qualità.",
+      "body2": "Su oltre 120 ettari coltiviamo arance rosse, arance bionde, limoni, bergamotto e pompelmo, seguendo la naturale stagionalità del prodotto per preservarne freschezza, aroma e caratteristiche organolettiche."
+    },
+    "p3": {
+      "eyebrow": "Il processo",
+      "heading": "FILIERA E LAVORAZIONE",
+      "body": "Gestiamo internamente ogni fase della filiera, certificata blockchain. Un centro di lavorazione di 2000 mq a emissioni zero, alimentato da un impianto fotovoltaico da 200 kW e un sistema di accumulo da 400 kW. Due laghetti aziendali e irrigazione a goccia per una gestione idrica responsabile."
+    },
+    "cta": "Scopri di più"
+  },
+  "stats": {
+    "hectares": "Ettari coltivati",
+    "generations": "Generazioni",
+    "organic": "Biologico certificato"
+  },
+  "productions": {
+    "eyebrow": "I nostri frutti",
+    "title": "LE NOSTRE PRODUZIONI",
+    "subtitle": "Arance rosse di Sicilia IGP, arance bionde, limoni Femminello Siracusano, bergamotto e pompelmo biologici: ogni varietà segue la sua stagione di raccolta per preservare freschezza, aroma e caratteristiche organolettiche.",
+    "more": "Scopri di più"
+  },
+  "luce": {
+    "title": "LUCE DI TERRA",
+    "subtitle": "La firma Badiula dedicata all’olio e ai sapori della terra",
+    "body": "Accanto agli agrumi nasce Luce di Terra, la collezione dedicata all'olio extravergine di oliva biologico e alle marmellate di agrumi siciliane. Una filosofia semplice: valorizzare la materia prima attraverso gesti lenti e lavorazioni attente.",
+    "cta": "Scopri di più"
+  },
+  "shop": {
+    "title": "Agrumi siciliani\ndirettamente dal produttore",
+    "subtitle": "Box stagionali di agrumi biologici, olio extravergine Luce di Terra,\nmarmellate di agrumi. Spedizioni in Italia e in Unione Europea",
+    "cta": "Shop"
+  },
+  "footer": {
+    "quote": "Non produciamo semplicemente agrumi, coltiviamo un modo diverso di vivere la terra",
+    "company": "Azienda Agricola Badiula",
+    "address": "Contrada Badiula, Carlentini (SR), Sicilia",
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Telefono",
+    "message": "Messaggio",
+    "privacy": "Accetto il trattamento dei dati personali (Privacy Policy)",
+    "send": "Invia",
+    "sent": "Inviato ✓"
+  },
+  "coltivazioni": {
+    "heroTitle": "LE NOSTRE COLTIVAZIONI",
+    "heroText": "Agrumi biologici coltivati tra Carlentini e Siracusa, raccolti al giusto grado di maturazione lungo tutto l’anno.",
+    "calendarTitle": "Calendario di raccolta",
+    "calendarLead": "I mesi in cui ogni agrume è disponibile fresco dal nostro campo.",
+    "more": "Scopri di più ▶"
+  },
+  "product": {
+    "calendarTitle": "Calendario di raccolta",
+    "faqTitle": "Domande frequenti",
+    "back": "◀ Tutte le coltivazioni"
+  },
+  "calendar": {
+    "product": "Prodotto",
+    "inHarvest": "In raccolta",
+    "rest": "Riposo",
+    "months": ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"]
+  }
+}

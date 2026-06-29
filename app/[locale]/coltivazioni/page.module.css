@@ -1,0 +1,376 @@
+/* ────────────────────────────────────────────
+   LAYOUT
+──────────────────────────────────────────── */
+.main {
+  background: #ffffff;
+}
+
+/* ────────────────────────────────────────────
+   SEZIONE 1 – TITOLO HERO
+──────────────────────────────────────────── */
+.heroTitle {
+  padding: 16rem 20px 0;
+  background: var(--white);
+  text-align: center;
+}
+
+.introTitle {
+  font-family: var(--font-body);
+  font-size: 110px;
+  line-height: 122px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+/* ────────────────────────────────────────────
+   SEZIONE 2 – INTRODUZIONE
+──────────────────────────────────────────── */
+.sezioneIntroduzione {
+  padding-top: 100px;
+  padding-bottom: 120px;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.sottotitoloItalic {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--bordeaux);
+  text-align: center;
+  margin-bottom: 70px;
+  letter-spacing: 0;
+}
+
+.paragrafoDescrizione {
+  font-family: var(--font-body);
+  font-size: 20px !important;
+  line-height: 32px !important;
+  font-weight: 400;
+  color: #333333;
+  text-align: left;
+  margin-bottom: 40px;
+  letter-spacing: 0px;
+  padding-left: 180px;
+  padding-right: 180px;
+  box-sizing: border-box;
+}
+.paragrafoDescrizione:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ────────────────────────────────────────────
+   SEZIONE 2 – GRIGLIA PRODUZIONI
+──────────────────────────────────────────── */
+.gridSection {
+  background: var(--white);
+}
+
+.gridHeader {
+  padding: 5rem 180px 2.5rem;
+}
+
+.gridTitle {
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-align: left;
+}
+
+/* ── Wrapper centrato allineato al testo sopra ── */
+.wrapperGriglia {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 4rem;
+}
+
+/* ── Griglia: contenitore che clippa il track ── */
+.griglia {
+  position: relative;
+  height: 900px;
+  overflow: visible;
+  padding: 0;
+}
+
+/* ── Track: flex orizzontale mosso via translateX ── */
+.track {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: max-content;
+  padding: 0 180px;
+  will-change: transform;
+}
+
+/* Progress bar */
+.progress {
+  display: none;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
+/* ── Card carousel — 560×900px come da §5.10 CLAUDE.md ── */
+.card {
+  flex: 0 0 560px;
+  width: 560px;
+  height: 900px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  position: relative;
+  flex: 0 0 463px;
+  width: 560px;
+  height: 463px;
+  overflow: hidden;
+}
+
+.titleBox {
+  height: 150px;
+  margin-top: 45px;
+  padding: 0 24px;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.card h3 {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+.card h3 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.descBox {
+  height: 90px;
+  margin-top: 25px;
+  padding: 0 24px;
+  overflow: hidden;
+}
+.card p {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.cta {
+  height: 36px;
+  margin: 49px 0 25px 24px;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 18px;
+  border: 1.5px solid;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+/* Alternanza colori identica all'homepage */
+.card:nth-child(odd)          { background: var(--vanilla); }
+.card:nth-child(odd) h3,
+.card:nth-child(odd) p        { color: var(--bordeaux); }
+.card:nth-child(odd) .cta     { color: var(--bordeaux); border-color: var(--bordeaux); }
+
+.card:nth-child(even)         { background: var(--teal); }
+.card:nth-child(even) h3,
+.card:nth-child(even) p       { color: var(--vanilla); }
+.card:nth-child(even) .cta    { color: var(--vanilla); border-color: var(--vanilla); }
+
+/* ────────────────────────────────────────────
+   SEZIONE 3a – CALENDARIO DI RACCOLTA
+──────────────────────────────────────────── */
+.calendarSection {
+  padding: 5rem var(--page-margin) 6rem;
+  background: #FAF7F2;
+}
+
+.calendarTitle {
+  font-family: var(--font-body);
+  font-size: 60px;
+  line-height: 66px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-bottom: 2.5rem;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 0;
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ────────────────────────────────────────────
+   SEZIONE 3b – BANNER SHOP
+──────────────────────────────────────────── */
+.banner {
+  display: flex;
+  flex-direction: column;
+}
+
+.bannerYellow {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: #F2C14E;
+  overflow: hidden;
+}
+
+.bannerImgWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.bannerGreen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem var(--page-margin);
+  background: #5E7058;
+}
+
+.bannerText { flex: 1; }
+
+.bannerHeading {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  color: #EEE6B8;
+  margin-bottom: 0.4rem;
+  white-space: pre-line;
+}
+
+.bannerSub {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.bannerShopBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 3rem;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.bannerShopBtn:hover {
+  background: var(--white);
+  color: #5E7058;
+}
+
+/* ────────────────────────────────────────────
+   RESPONSIVE – mobile (≤ 768px)
+──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .heroTitle {
+    padding-top: 7rem;
+  }
+
+  .paragrafoDescrizione { padding-left: 20px; padding-right: 20px; }
+  .gridHeader    { padding: 3rem 20px 1.5rem; }
+  .griglia       { padding: 0; }
+  .calendarSection { padding: 3rem 20px 4rem; }
+
+  .introTitle {
+    font-size: clamp(3rem, 14vw, 72px);
+    line-height: 1.1;
+  }
+
+  .sezioneIntroduzione {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
+  .sottotitoloItalic {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 40px;
+  }
+
+  .paragrafoDescrizione {
+    font-size: 20px !important;
+    line-height: 32px !important;
+  }
+
+  .griglia {
+    height: auto;
+    min-height: 60vh;
+  }
+
+  .track {
+    padding: 0.5rem 1.5rem 4rem;
+  }
+
+  .card {
+    flex: 0 0 85vw;
+    height: 70vh;
+  }
+
+  .bannerYellow { height: 340px; }
+
+  .bannerGreen {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .bannerShopBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    flex: 0 0 90vw;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .introTitle {
+    font-size: clamp(2.5rem, 13vw, 54px);
+  }
+  .sottotitoloItalic {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}

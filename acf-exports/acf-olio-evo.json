@@ -1,0 +1,215 @@
+[
+  {
+    "key": "group_badiula_olio_evo",
+    "title": "Olio EVO — Pagina prodotto",
+    "fields": [
+      {
+        "key": "field_badiula_olio_tab_it",
+        "label": "🇮🇹 Italiano",
+        "name": "tab_olio_it",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_olio_titolo_it",
+        "label": "Titolo H1 (IT)",
+        "name": "titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "OLIO EXTRAVERGINE DI OLIVA"
+      },
+      {
+        "key": "field_badiula_olio_sottotitolo_it",
+        "label": "Sottotitolo (IT)",
+        "name": "sottotitolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Olio extravergine di oliva biologico, estratto a freddo"
+      },
+      {
+        "key": "field_badiula_olio_intro_it",
+        "label": "Testo introduttivo (IT)",
+        "name": "intro_it",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_olio_profilo_profumo_it",
+        "label": "Profilo — Profumo (IT)",
+        "name": "profilo_profumo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Erbaceo, fruttato verde"
+      },
+      {
+        "key": "field_badiula_olio_profilo_sapore_it",
+        "label": "Profilo — Sapore (IT)",
+        "name": "profilo_sapore_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Amaro e piccante equilibrati"
+      },
+      {
+        "key": "field_badiula_olio_profilo_raccolta_it",
+        "label": "Profilo — Raccolta (IT)",
+        "name": "profilo_raccolta_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Ottobre – Novembre"
+      },
+      {
+        "key": "field_badiula_olio_sezioni",
+        "label": "Sezioni alternanti",
+        "name": "sezioni",
+        "type": "repeater",
+        "show_in_graphql": 1,
+        "min": 0,
+        "max": 6,
+        "layout": "block",
+        "button_label": "Aggiungi sezione",
+        "sub_fields": [
+          {
+            "key": "field_badiula_olio_sez_titolo",
+            "label": "Titolo sezione",
+            "name": "titolo_sezione",
+            "type": "text",
+            "show_in_graphql": 1
+          },
+          {
+            "key": "field_badiula_olio_sez_testo",
+            "label": "Testo sezione",
+            "name": "testo_sezione",
+            "type": "textarea",
+            "show_in_graphql": 1,
+            "rows": 4
+          },
+          {
+            "key": "field_badiula_olio_sez_img_sx",
+            "label": "Immagine a sinistra?",
+            "name": "immagine_sinistra",
+            "type": "true_false",
+            "show_in_graphql": 1,
+            "ui": 1,
+            "default_value": 0
+          },
+          {
+            "key": "field_badiula_olio_sez_immagine",
+            "label": "Immagine sezione",
+            "name": "immagine_sezione",
+            "type": "image",
+            "show_in_graphql": 1,
+            "return_format": "url",
+            "preview_size": "medium"
+          }
+        ]
+      },
+      {
+        "key": "field_badiula_olio_immagine_principale",
+        "label": "Immagine principale",
+        "name": "immagine_principale",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_olio_faq",
+        "label": "FAQ",
+        "name": "faq",
+        "type": "repeater",
+        "show_in_graphql": 1,
+        "min": 0,
+        "max": 10,
+        "layout": "block",
+        "button_label": "Aggiungi domanda",
+        "sub_fields": [
+          {
+            "key": "field_badiula_olio_faq_domanda",
+            "label": "Domanda",
+            "name": "domanda",
+            "type": "text",
+            "show_in_graphql": 1
+          },
+          {
+            "key": "field_badiula_olio_faq_risposta",
+            "label": "Risposta",
+            "name": "risposta",
+            "type": "textarea",
+            "show_in_graphql": 1,
+            "rows": 4
+          }
+        ]
+      },
+      {
+        "key": "field_badiula_olio_tab_en",
+        "label": "🇬🇧 English",
+        "name": "tab_olio_en",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_olio_titolo_en",
+        "label": "Titolo H1 (EN)",
+        "name": "titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_olio_sottotitolo_en",
+        "label": "Sottotitolo (EN)",
+        "name": "sottotitolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_olio_intro_en",
+        "label": "Testo introduttivo (EN)",
+        "name": "intro_en",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_olio_profilo_profumo_en",
+        "label": "Profilo — Profumo (EN)",
+        "name": "profilo_profumo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_olio_profilo_sapore_en",
+        "label": "Profilo — Sapore (EN)",
+        "name": "profilo_sapore_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_olio_profilo_raccolta_en",
+        "label": "Profilo — Raccolta (EN)",
+        "name": "profilo_raccolta_en",
+        "type": "text",
+        "show_in_graphql": 1
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "olio-evo"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "acf"
+  }
+]

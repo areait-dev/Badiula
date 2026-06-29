@@ -1,0 +1,82 @@
+[
+  {
+    "key": "group_badiula_shop",
+    "title": "Pagina Shop — Contenuti",
+    "fields": [
+      {
+        "key": "field_badiula_shop_tab_it",
+        "label": "🇮🇹 Italiano",
+        "name": "tab_shop_it",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_shop_hero_titolo_it",
+        "label": "Hero — Titolo (IT)",
+        "name": "hero_titolo_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2,
+        "placeholder": "Agrumi siciliani\ndirettamente dal produttore"
+      },
+      {
+        "key": "field_badiula_shop_hero_sottotitolo_it",
+        "label": "Hero — Sottotitolo (IT)",
+        "name": "hero_sottotitolo_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2,
+        "placeholder": "Box stagionali di agrumi biologici, olio extravergine Luce di Terra, marmellate di agrumi."
+      },
+      {
+        "key": "field_badiula_shop_hero_immagine",
+        "label": "Hero — Immagine di sfondo",
+        "name": "hero_immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_shop_tab_en",
+        "label": "🇬🇧 English",
+        "name": "tab_shop_en",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_shop_hero_titolo_en",
+        "label": "Hero — Titolo (EN)",
+        "name": "hero_titolo_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2
+      },
+      {
+        "key": "field_badiula_shop_hero_sottotitolo_en",
+        "label": "Hero — Sottotitolo (EN)",
+        "name": "hero_sottotitolo_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "shop"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "acf"
+  }
+]

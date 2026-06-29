@@ -1,0 +1,196 @@
+.main { background: #fff; }
+
+.container { padding: 0 var(--page-margin); }
+
+/* ── INTRO ── */
+.intro { padding: 100px var(--page-margin) 80px; }
+
+.introHero {
+  padding-top: 10rem;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.h1 {
+  font-family: var(--font-body);
+  font-size: 110px;
+  line-height: 122px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-bottom: 1.5rem;
+}
+
+.h2 {
+  font-family: var(--font-body);
+  font-size: 60px;
+  line-height: 66px;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--bordeaux);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.introBody p {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #333333;
+}
+
+/* ── LE DUE LINEE ── */
+.linee {
+  padding: 5rem 0;
+}
+
+.lineeContainer {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--page-margin);
+}
+
+.lineeTitle {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Griglia card prodotto (ProductCardBadiula) ── */
+.cardGrid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+}
+
+@media (max-width: 1220px) {
+  .cardGrid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+/* ── UNA FILIERA ── */
+.filiera {
+  background: #F5EFE0;
+  padding: 80px 0;
+}
+
+.filieraTitle {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  margin-bottom: 2rem;
+}
+
+.filieraBody {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 1.25rem;
+}
+.filieraBody:last-child { margin-bottom: 0; }
+
+/* ── BANNER FINALE ── */
+.banner {
+  display: flex;
+  flex-direction: column;
+}
+
+.bannerImgWrap {
+  position: relative;
+  width: 100%;
+  height: 480px;
+}
+
+.bannerStrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem var(--page-margin);
+  background: #EDE5D0;
+}
+
+.bannerText { flex: 1; }
+
+.bannerHeading {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  color: #4A5C43;
+  margin-bottom: .5rem;
+}
+
+.bannerSub {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: #5A4A36;
+  line-height: 26px;
+}
+
+.bannerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .85rem 3rem;
+  border-radius: 100px;
+  border: 1.5px solid #4A5C43;
+  background: #4A5C43;
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .25s ease, color .25s ease;
+}
+.bannerBtn:hover {
+  background: transparent;
+  color: #4A5C43;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .intro { padding: 64px var(--page-margin-mobile) 48px; }
+  .introHero { padding-top: 6rem; margin-bottom: 40px; }
+
+  .linee { padding: 3.5rem 0; }
+  .lineeContainer { padding: 0 var(--page-margin-mobile); }
+
+  .filiera { padding: 48px 0; }
+  .container { padding: 0 var(--page-margin-mobile); }
+
+  .bannerImgWrap { height: 260px; }
+  .bannerStrip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem var(--page-margin-mobile);
+  }
+  .bannerBtn { width: 100%; justify-content: center; }
+}

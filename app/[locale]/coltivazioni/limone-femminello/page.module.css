@@ -1,0 +1,385 @@
+.main { background: #fff; }
+
+.container { padding: 0 var(--page-margin); }
+
+/* ── INTRO ── */
+.intro { padding: 100px var(--page-margin) 80px; }
+
+.introHero {
+  padding-top: 10rem;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h1 {
+  font-family: var(--font-body);
+  font-size: clamp(56px, 7vw, 110px);
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* LIMONE e SIRACUSANO: bordo sinistro */
+.h1Row {
+  display: block;
+  white-space: nowrap;
+  padding-left: 0;
+}
+
+/* FEMMINELLO: parte dalla "I" di LIMONE/SIRACUSANO ≈ 1 carattere */
+.h1RowMid {
+  display: block;
+  white-space: nowrap;
+  padding-left: 0.85em;
+}
+
+.h2 {
+  font-family: var(--font-body);
+  font-size: clamp(18px, 2vw, 30px);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--bordeaux);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.introBody p {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #333333;
+}
+
+/* ══════════════════════════════════════
+   SEZIONI A DUE COLONNE — geometria asimmetrica
+══════════════════════════════════════ */
+
+/* base mobile: colonna singola */
+.blockA,
+.blockB {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 4rem var(--page-margin-mobile, 1.5rem);
+}
+
+/* desktop: due colonne distanziate */
+@media (min-width: 768px) {
+  .blockA,
+  .blockB {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    padding: 6rem var(--page-margin);
+  }
+
+  /* BLOCCO B: grafica a sinistra, testo a destra */
+  .blockB {
+    flex-direction: row;
+  }
+
+  .blockAContent,
+  .blockBContent {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .blockAVisual,
+  .blockBVisual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  /* cerchio: spinto verso il bordo destro */
+  .blockAVisual {
+    justify-content: flex-end;
+  }
+
+  /* riquadro grigio: ancorato al bordo sinistro */
+  .blockBVisual {
+    justify-content: flex-start;
+  }
+}
+
+.blockTitle {
+  font-family: var(--font-body);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+}
+
+.blockLead {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.blockList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+
+.blockList li {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #333333;
+}
+
+.blockList li::before {
+  content: none;
+}
+
+.blockList strong { color: var(--bordeaux); }
+.blockList em { font-style: italic; color: #555; }
+
+.blockListDesc li { padding-left: 0; }
+.blockListDesc li::before { content: none; }
+
+.blockVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #81C7C5;
+  flex-shrink: 0;
+}
+
+.placeholder,
+.placeholderTall {
+  width: 180px;
+  height: 180px;
+  background: #C8C8C8;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.imgWrapCircle {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.imgWrapRect {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .circle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .placeholder,
+  .placeholderTall {
+    width: 280px;
+    height: 280px;
+  }
+
+  .imgWrapCircle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .imgWrapRect {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* ── CALENDARIO ── */
+.calendar {
+  background: #F5EFE0;
+  padding: 80px 0;
+}
+
+.calendarTitle {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  margin-bottom: 40px;
+  letter-spacing: 0.04em;
+}
+
+.calendarBar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 6px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 20px;
+  margin-bottom: 20px;
+}
+
+.calCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.calLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+}
+
+.calDot {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bordeaux);
+  flex-shrink: 0;
+}
+
+.calDotOff { background: #D5C9B8; }
+
+.calLegend {
+  display: flex;
+  gap: 24px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+}
+
+.calLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── BANNER SHOP ── */
+.banner { display: flex; flex-direction: column; }
+
+.bannerYellow {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: #F2C14E;
+  overflow: hidden;
+}
+
+.bannerImgWrap { position: absolute; inset: 0; }
+
+.bannerGreen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.5rem var(--page-margin);
+  background: #5E7058;
+}
+
+.bannerText { flex: 1; }
+
+.bannerHeading {
+  font-family: var(--font-body);
+  font-size: 36px;
+  font-weight: 700;
+  color: #EEE6B8;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+  white-space: pre-line;
+}
+
+.bannerSub {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.bannerShopBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 3rem;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255,255,255,.75);
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .25s ease, color .25s ease;
+}
+.bannerShopBtn:hover { background: #fff; color: #5E7058; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .intro { padding: 64px var(--page-margin-mobile) 48px; }
+  .introHero { padding-top: 6rem; margin-bottom: 40px; align-items: center; }
+
+  .block {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem var(--page-margin-mobile);
+  }
+  .block .blockVisual { order: -1; }
+  .blockReverse .blockVisual { order: -1; }
+  .blockContent { max-width: 100%; }
+
+  .circle, .placeholder {
+    width: clamp(160px, 60vw, 300px);
+    height: clamp(160px, 60vw, 300px);
+  }
+  .placeholderTall { height: clamp(180px, 60vw, 300px); }
+
+  .calendar { padding: 48px 0; }
+  .calendarTitle { font-size: 28px; }
+  .calendarBar { grid-template-columns: repeat(6, 1fr); padding: 16px 10px; }
+  .calDot { width: 10px; height: 10px; }
+  .calLabel { font-size: 9px; }
+  .container { padding: 0 var(--page-margin-mobile); }
+
+  .bannerYellow { height: 300px; }
+  .bannerGreen { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .bannerShopBtn { width: 100%; justify-content: center; }
+}

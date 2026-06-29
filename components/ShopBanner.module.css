@@ -1,0 +1,51 @@
+.banner {
+  width: 100%;
+  background: var(--vanilla);
+  display: flex;
+  flex-direction: column;
+}
+
+.yellowArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.promoImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: var(--teal);
+  padding: 2.5rem var(--page-margin);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.text h2 {
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.text p {
+  font-family: var(--font-body);
+  color: var(--vanilla);
+  font-size: 20px;
+  line-height: 32px;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

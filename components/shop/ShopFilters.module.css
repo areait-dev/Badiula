@@ -1,0 +1,60 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--bordeaux);
+  padding: var(--space-sm) var(--page-margin-mobile);
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 24px;
+  border-radius: var(--radius-btn);
+  border: 1.5px solid var(--bordeaux);
+  background: transparent;
+  color: var(--bordeaux);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+  letter-spacing: 0;
+}
+
+.pill:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 2px;
+}
+
+.pillActive {
+  background: var(--bordeaux);
+  color: var(--white);
+  border-color: var(--bordeaux);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pill:not(.pillActive):hover {
+    background: var(--khaki);
+    border-color: var(--khaki);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bar {
+    padding-left: var(--page-margin);
+    padding-right: var(--page-margin);
+  }
+}

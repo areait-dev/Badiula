@@ -1,0 +1,556 @@
+/* ────────────────────────────────────────────
+   VARIABILI LOCALI
+──────────────────────────────────────────── */
+.navbar {
+  --overlay-gold:  #F2C14E;
+  --overlay-green: #5E7058;
+}
+
+/* ────────────────────────────────────────────
+   NAVBAR – barra superiore
+──────────────────────────────────────────── */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px;
+  padding: 0 var(--page-margin);
+  background: transparent;
+}
+
+.side {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  transform: translateY(-14px);
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.center {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 2px solid var(--bordeaux);
+  border-radius: 50%;
+  transition: background 0.25s ease;
+}
+.hamburger:hover {
+  background: var(--bordeaux);
+}
+.hamburger:hover span {
+  background: var(--white);
+}
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--bordeaux);
+  transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1),
+              opacity 0.25s ease,
+              background 0.25s ease;
+}
+.hamburger.open span:nth-child(1) {
+  transform: translateY(4.5px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+/* ── Ricerca ── */
+.search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bordeaux);
+  padding: 0.25rem;
+  transition: opacity 0.2s ease;
+}
+.search:hover {
+  opacity: 0.55;
+}
+
+/* ── Selettore lingua (navbar) ── */
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--bordeaux);
+}
+.lang span {
+  opacity: 0.25;
+}
+.lang button {
+  color: var(--bordeaux);
+  opacity: 0.45;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding-bottom: 1px;
+  border-bottom: 1.5px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.lang button:hover {
+  opacity: 0.75;
+}
+.lang button.active {
+  opacity: 1;
+  border-bottom-color: var(--bordeaux);
+}
+
+/* ────────────────────────────────────────────
+   OVERLAY – contenitore principale
+──────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+
+  /* Animazione slide-down */
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1),
+              opacity 0.4s ease;
+  pointer-events: none;
+}
+.overlay.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Header dell'overlay ── */
+.overlayHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 3rem;
+  border-bottom: 1px solid rgba(108, 18, 36, 0.08);
+  flex-shrink: 0;
+}
+
+/* Pulsante chiusura X */
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--bordeaux);
+  border: 1.5px solid rgba(108, 18, 36, 0.25);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  flex-shrink: 0;
+}
+.close:hover {
+  background: var(--bordeaux);
+  color: var(--white);
+  border-color: var(--bordeaux);
+}
+
+/* Logo centrato nell'header overlay */
+.overlayLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Selettore lingua nell'overlay */
+.overlayLang {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--bordeaux);
+  flex-shrink: 0;
+  width: 44px; /* bilancia il close button a sinistra */
+  justify-content: flex-end;
+}
+.overlayLang span {
+  opacity: 0.25;
+}
+.overlayLang button {
+  color: var(--bordeaux);
+  opacity: 0.45;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding-bottom: 1px;
+  border-bottom: 1.5px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.overlayLang button:hover {
+  opacity: 0.75;
+}
+.overlayLang button.active {
+  opacity: 1;
+  border-bottom-color: var(--bordeaux);
+}
+
+/* ── Corpo 2 colonne ── */
+.overlayBody {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ────────────────────────────────────────────
+   COLONNA SINISTRA – navigazione
+──────────────────────────────────────────── */
+.overlayLeft {
+  width: 52%;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden; /* nasconde il pannello fuori campo */
+  position: relative;
+}
+
+/*
+  Il wrapper .panels contiene due pannelli affiancati (200% larghezza).
+  Scorrendo con translateX(-50%) si passa dal pannello 0 al pannello 1.
+*/
+.panels {
+  display: flex;
+  width: 200%;
+  flex: 1;
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.panelsShifted {
+  transform: translateX(-50%);
+}
+
+.panel {
+  width: 50%;           /* ognuno occupa metà del wrapper = 100% colonna */
+  padding: 3.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+/* ── Pulsante indietro ── */
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  opacity: 0.55;
+  margin-bottom: 2rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.backBtn:hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+.backArrow {
+  flex-shrink: 0;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tutti i navLink (sia <Link> che <button>) */
+.navLink {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.9rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.navLinkInner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
+.navLink:hover .navLinkInner {
+  transform: translateX(12px);
+  opacity: 0.75;
+}
+
+/* Le voci del sottomenu NON sono tutte maiuscole */
+.navLinkSub .navLinkInner {
+  text-transform: none;
+  font-size: 26px;
+  line-height: 38px;
+  letter-spacing: 0;
+}
+
+/* Prima voce del sottomenu — link panoramica */
+.navLinkOverview .navLinkInner {
+  font-size: 20px;
+  line-height: 32px;
+  font-style: italic;
+  opacity: 0.7;
+  letter-spacing: 0;
+}
+
+.navArrow {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+.navLink:hover .navArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Linea separatrice sotto ogni voce */
+.navLinkLine {
+  display: block;
+  height: 1px;
+  background: rgba(108, 18, 36, 0.12);
+  margin-top: 0.9rem;
+  transition: background 0.3s ease;
+}
+.navLink:hover .navLinkLine {
+  background: rgba(108, 18, 36, 0.28);
+}
+
+/* ────────────────────────────────────────────
+   COLONNA DESTRA – box promozionale
+──────────────────────────────────────────── */
+.overlayRight {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Sezione superiore – sfondo oro + immagine */
+.promoTop {
+  flex: 1;
+  background: #F2C14E;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.promoImgWrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Placeholder figura umana – sostituire con <Image src="…"> */
+/* Sezione inferiore – sfondo verde + testo + CTA */
+.promoBottom {
+  background: #5E7058;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.promoContent {
+  flex: 1;
+}
+
+.promoTitle {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.promoSub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.shopBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.6rem;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+.shopBtn:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: #5E7058;
+}
+
+/* ────────────────────────────────────────────
+   BACKDROP (click-fuori su mobile)
+──────────────────────────────────────────── */
+.backdrop {
+  display: none;
+}
+
+/* ────────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .navbar {
+    height: 80px;
+    padding: 0 1.25rem;
+  }
+  .side {
+    transform: none;
+  }
+
+  /* Header overlay */
+  .overlayHeader {
+    padding: 1.25rem 1.5rem;
+  }
+  .overlayLang {
+    width: auto;
+  }
+
+  /* Colonne: stack verticale */
+  .overlayBody {
+    flex-direction: column;
+  }
+  .overlayLeft {
+    width: 100%;
+    flex: 1;
+    justify-content: flex-start;
+  }
+  .panel {
+    padding: 2rem 1.75rem;
+    justify-content: flex-start;
+  }
+  .overlayRight {
+    width: 100%;
+    display: none; /* nascosta su mobile, puoi riabilitarla se vuoi */
+  }
+}
+
+@media (max-width: 600px) {
+  .navLinkInner {
+    font-size: 1.5rem;
+  }
+  .overlayHeader {
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* ── Search overlay ── */
+.searchOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchClose {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--bordeaux);
+  padding: 0.5rem;
+}
+
+.searchInner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 760px;
+  padding: 0 2rem;
+  border-bottom: 2px solid var(--bordeaux);
+}
+
+.searchIcon {
+  color: var(--bordeaux);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  color: var(--eigengrau);
+  padding: 1rem 0;
+}
+
+.searchInput::placeholder {
+  color: rgba(22, 22, 29, 0.35);
+}

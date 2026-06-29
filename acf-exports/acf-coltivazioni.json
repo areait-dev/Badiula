@@ -1,0 +1,150 @@
+[
+  {
+    "key": "group_badiula_coltivazioni",
+    "title": "Pagina Coltivazioni — Contenuti",
+    "fields": [
+      {
+        "key": "field_badiula_colt_tab_it",
+        "label": "🇮🇹 Italiano",
+        "name": "tab_colt_it",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_colt_titolo_it",
+        "label": "Titolo pagina (IT)",
+        "name": "titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "COLTIVAZIONI"
+      },
+      {
+        "key": "field_badiula_colt_sottotitolo_it",
+        "label": "Sottotitolo intro (IT)",
+        "name": "sottotitolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Cinque produzioni biologiche, una stagionalità naturale"
+      },
+      {
+        "key": "field_badiula_colt_intro_p1_it",
+        "label": "Intro — Paragrafo 1 (IT)",
+        "name": "intro_p1_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_colt_intro_p2_it",
+        "label": "Intro — Paragrafo 2 (IT)",
+        "name": "intro_p2_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_colt_grid_titolo_it",
+        "label": "Titolo griglia produzioni (IT)",
+        "name": "grid_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "LE NOSTRE PRODUZIONI"
+      },
+      {
+        "key": "field_badiula_colt_calendario_titolo_it",
+        "label": "Titolo calendario raccolta (IT)",
+        "name": "calendario_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "CALENDARIO DI RACCOLTA"
+      },
+      {
+        "key": "field_badiula_colt_banner_heading_it",
+        "label": "Banner shop — Heading (IT)",
+        "name": "banner_heading_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2,
+        "placeholder": "Agrumi siciliani\ndirettamente dal produttore"
+      },
+      {
+        "key": "field_badiula_colt_banner_sub_it",
+        "label": "Banner shop — Sottotesto (IT)",
+        "name": "banner_sub_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2
+      },
+      {
+        "key": "field_badiula_colt_tab_en",
+        "label": "🇬🇧 English",
+        "name": "tab_colt_en",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_colt_titolo_en",
+        "label": "Titolo pagina (EN)",
+        "name": "titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_colt_sottotitolo_en",
+        "label": "Sottotitolo intro (EN)",
+        "name": "sottotitolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_colt_intro_p1_en",
+        "label": "Intro — Paragrafo 1 (EN)",
+        "name": "intro_p1_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_colt_intro_p2_en",
+        "label": "Intro — Paragrafo 2 (EN)",
+        "name": "intro_p2_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_colt_banner_heading_en",
+        "label": "Banner shop — Heading (EN)",
+        "name": "banner_heading_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2
+      },
+      {
+        "key": "field_badiula_colt_banner_sub_en",
+        "label": "Banner shop — Sottotesto (EN)",
+        "name": "banner_sub_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "coltivazioni"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "acf"
+  }
+]

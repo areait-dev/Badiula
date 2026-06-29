@@ -1,0 +1,30 @@
+.section {
+  background: var(--vanilla);
+  padding: 5rem 2rem;
+}
+.grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  text-align: center;
+}
+.item {
+  flex: 1 1 200px;
+}
+.value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 7vw, 5rem);
+  color: var(--bordeaux);
+  line-height: 1;
+}
+.label {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  margin-top: 0.6rem;
+  color: var(--eigengrau);
+}

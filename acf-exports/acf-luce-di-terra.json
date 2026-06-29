@@ -1,0 +1,236 @@
+[
+  {
+    "key": "group_badiula_luce_di_terra",
+    "title": "Pagina Luce di Terra — Contenuti",
+    "fields": [
+      {
+        "key": "field_badiula_ldt_tab_it",
+        "label": "🇮🇹 Italiano",
+        "name": "tab_ldt_it",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_ldt_titolo_it",
+        "label": "Titolo H1 (IT)",
+        "name": "titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "LUCE DI TERRA"
+      },
+      {
+        "key": "field_badiula_ldt_sottotitolo_it",
+        "label": "Sottotitolo H2 (IT)",
+        "name": "sottotitolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "La firma Badiula dedicata all'olio e ai sapori della terra"
+      },
+      {
+        "key": "field_badiula_ldt_intro_p1_it",
+        "label": "Intro — Paragrafo 1 (IT)",
+        "name": "intro_p1_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_ldt_intro_p2_it",
+        "label": "Intro — Paragrafo 2 (IT)",
+        "name": "intro_p2_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_ldt_linee_titolo_it",
+        "label": "Titolo sezione 'Le due linee' (IT)",
+        "name": "linee_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "LE DUE LINEE"
+      },
+      {
+        "key": "field_badiula_ldt_olio_titolo_it",
+        "label": "Card Olio EVO — Titolo (IT)",
+        "name": "olio_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Olio Extravergine di Oliva"
+      },
+      {
+        "key": "field_badiula_ldt_olio_desc_it",
+        "label": "Card Olio EVO — Descrizione (IT)",
+        "name": "olio_desc_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_ldt_olio_prezzo",
+        "label": "Card Olio EVO — Prezzo (es. Da €12,00)",
+        "name": "olio_prezzo",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_ldt_olio_immagine",
+        "label": "Card Olio EVO — Immagine",
+        "name": "olio_immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_ldt_marmellata_titolo_it",
+        "label": "Card Marmellate — Titolo (IT)",
+        "name": "marmellata_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Marmellate di Agrumi"
+      },
+      {
+        "key": "field_badiula_ldt_marmellata_desc_it",
+        "label": "Card Marmellate — Descrizione (IT)",
+        "name": "marmellata_desc_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_ldt_marmellata_prezzo",
+        "label": "Card Marmellate — Prezzo",
+        "name": "marmellata_prezzo",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_ldt_marmellata_immagine",
+        "label": "Card Marmellate — Immagine",
+        "name": "marmellata_immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_ldt_filiera_titolo_it",
+        "label": "Sezione Filiera — Titolo (IT)",
+        "name": "filiera_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Una filiera che parte dal campo"
+      },
+      {
+        "key": "field_badiula_ldt_filiera_body_it",
+        "label": "Sezione Filiera — Testo (IT)",
+        "name": "filiera_body_it",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_ldt_tab_en",
+        "label": "🇬🇧 English",
+        "name": "tab_ldt_en",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_ldt_titolo_en",
+        "label": "Titolo H1 (EN)",
+        "name": "titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_ldt_sottotitolo_en",
+        "label": "Sottotitolo H2 (EN)",
+        "name": "sottotitolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_ldt_intro_p1_en",
+        "label": "Intro — Paragrafo 1 (EN)",
+        "name": "intro_p1_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_ldt_intro_p2_en",
+        "label": "Intro — Paragrafo 2 (EN)",
+        "name": "intro_p2_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_ldt_olio_titolo_en",
+        "label": "Card Olio EVO — Titolo (EN)",
+        "name": "olio_titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_ldt_olio_desc_en",
+        "label": "Card Olio EVO — Descrizione (EN)",
+        "name": "olio_desc_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_ldt_marmellata_titolo_en",
+        "label": "Card Marmellate — Titolo (EN)",
+        "name": "marmellata_titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_ldt_marmellata_desc_en",
+        "label": "Card Marmellate — Descrizione (EN)",
+        "name": "marmellata_desc_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_ldt_filiera_titolo_en",
+        "label": "Sezione Filiera — Titolo (EN)",
+        "name": "filiera_titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_ldt_filiera_body_en",
+        "label": "Sezione Filiera — Testo (EN)",
+        "name": "filiera_body_en",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "luce-di-terra"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "acf"
+  }
+]

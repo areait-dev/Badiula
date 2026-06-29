@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "menu": "Menu",
+    "azienda": "COMPANY",
+    "coltivazioni": "GROVES",
+    "luceDiTerra": "LUCE DI TERRA",
+    "olioEvo": "Extra Virgin Olive Oil",
+    "marmellata": "Citrus Marmalades",
+    "filiera": "SUPPLY & PROCESSING",
+    "aranciRosse": "Sicilian Blood Oranges PGI",
+    "aranceBionde": "Blonde Oranges",
+    "limone": "Femminello Siracusano Lemon",
+    "bergamotto": "Organic Sicilian Bergamot",
+    "pompelmo": "Organic Grapefruit",
+    "tutteLeColtivazioni": "All cultivations",
+    "back": "Back",
+    "promo": "Sicilian citrus straight from the grower",
+    "promoSub": "Fresh shipping across Italy, from our field to your table.",
+    "shop": "Shop"
+  },
+  "hero": {
+    "scroll": "Scroll",
+    "title": "FOUR GENERATIONS, ONE LAND",
+    "subtitle": "We grow organic citrus in the heart of eastern Sicily, between the Ionian Sea and the Iblei Mountains, preserving an authentic way of living the land for four generations.",
+    "cta": "Discover Badiula"
+  },
+  "about": {
+    "p1": {
+      "eyebrow": "Who we are",
+      "heading": "FOUR GENERATIONS, ONE LAND",
+      "cta": "Discover the company",
+      "body": "Badiula is an organic farm located in Carlentini, in the province of Syracuse, extending over more than 120 hectares in the heart of eastern Sicily."
+    },
+    "p2": {
+      "eyebrow": "The land",
+      "heading": "BETWEEN SEA AND LAND",
+      "body": "Between the breeze of the Ionian Sea and the fertility of volcanic soils, our groves find a perfect balance.",
+      "body2": "A unique microclimate that gives citrus fragrance, sweetness and character, in harmony with the natural cycles of the land."
+    },
+    "p3": {
+      "eyebrow": "The process",
+      "heading": "SUPPLY & PROCESSING",
+      "body": "Every fruit is tracked on the blockchain to guarantee transparency and authenticity across the whole supply chain. Our processing centre is powered by a photovoltaic plant, for sustainable production from field to table."
+    },
+    "cta": "Learn more"
+  },
+  "stats": {
+    "hectares": "Hectares cultivated",
+    "generations": "Generations",
+    "organic": "Certified organic"
+  },
+  "productions": {
+    "eyebrow": "Our fruits",
+    "title": "OUR PRODUCTIONS",
+    "subtitle": "Sicilian blood oranges IGP, blonde oranges, Femminello Siracusano lemons, bergamot and organic grapefruit: each variety follows its own harvest season to preserve freshness, aroma and organoleptic qualities.",
+    "more": "Learn more"
+  },
+  "luce": {
+    "title": "LUCE DI TERRA",
+    "subtitle": "The Badiula signature line dedicated to oil and the flavours of the land",
+    "body": "Luce di Terra gathers our artisanal transformations: citrus-infused oils, jams and preserves born from the fruits of our groves. Authentic flavours that hold the light of the Sicilian sun.",
+    "cta": "Learn more ▶"
+  },
+  "shop": {
+    "title": "Sicilian citrus straight from the grower",
+    "subtitle": "Fresh shipping across Italy, from our field to your table.",
+    "cta": "Shop"
+  },
+  "footer": {
+    "quote": "We don’t simply produce citrus, we cultivate a different way of living the land",
+    "company": "Badiula Farm",
+    "address": "Contrada Badiula, Carlentini (SR), Sicily",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "privacy": "I accept the processing of personal data (Privacy Policy)",
+    "send": "Send",
+    "sent": "Sent ✓"
+  },
+  "coltivazioni": {
+    "heroTitle": "OUR GROVES",
+    "heroText": "Organic citrus grown between Carlentini and Siracusa, harvested at the right ripeness all year round.",
+    "calendarTitle": "Harvest calendar",
+    "calendarLead": "The months when each citrus is available fresh from our field.",
+    "more": "Learn more"
+  },
+  "product": {
+    "calendarTitle": "Harvest calendar",
+    "faqTitle": "Frequently asked questions",
+    "back": "◀ All groves"
+  },
+  "calendar": {
+    "product": "Product",
+    "inHarvest": "In harvest",
+    "rest": "Resting",
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  }
+}

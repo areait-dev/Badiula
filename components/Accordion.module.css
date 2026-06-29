@@ -1,0 +1,42 @@
+.list {
+  border-top: 1px solid var(--khaki);
+}
+.item {
+  border-bottom: 1px solid var(--khaki);
+}
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.4rem 0;
+  text-align: left;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--bordeaux);
+}
+.icon {
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.item.open .icon {
+  transform: rotate(45deg);
+}
+.panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+.item.open .panel {
+  max-height: 320px;
+}
+.panel p {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 0 0 1.4rem;
+  color: var(--eigengrau);
+}

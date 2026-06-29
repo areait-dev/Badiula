@@ -1,0 +1,338 @@
+[
+  {
+    "key": "group_badiula_azienda",
+    "title": "Pagina Azienda — Contenuti",
+    "fields": [
+      {
+        "key": "field_badiula_az_tab_intro",
+        "label": "Intro (video + testo)",
+        "name": "tab_intro",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_az_hero_label_it",
+        "label": "Hero label (IT)",
+        "name": "hero_label_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Azienda"
+      },
+      {
+        "key": "field_badiula_az_hero_titolo_it",
+        "label": "Titolo hero (IT)",
+        "name": "hero_titolo_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2,
+        "placeholder": "Quattro generazioni,\nuna terra"
+      },
+      {
+        "key": "field_badiula_az_hero_body_it",
+        "label": "Testo intro (IT)",
+        "name": "hero_body_it",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_az_video_url",
+        "label": "URL video intro",
+        "name": "video_url",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "/videos/DJI_0003.MP4",
+        "instructions": "Percorso relativo al sito Next.js oppure URL CDN esterno"
+      },
+      {
+        "key": "field_badiula_az_tab_filosofia",
+        "label": "Filosofia",
+        "name": "tab_filosofia",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_az_filosofia_body_it",
+        "label": "Testo filosofia (IT)",
+        "name": "filosofia_body_it",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_az_filosofia_immagine",
+        "label": "Immagine filosofia",
+        "name": "filosofia_immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_az_quote_it",
+        "label": "Citazione centrale (IT)",
+        "name": "quote_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3,
+        "placeholder": "LA TERRA\nCI INSEGNA\nTEMPO"
+      },
+      {
+        "key": "field_badiula_az_tab_cultura",
+        "label": "Cultura & Identità",
+        "name": "tab_cultura",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_az_cultura_titolo_it",
+        "label": "Cultura — Titolo (IT)",
+        "name": "cultura_titolo_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4,
+        "placeholder": "Esistono luoghi in cui\nl'agricoltura non è\nsoltanto produzione,\nma cultura, memoria e\nidentità."
+      },
+      {
+        "key": "field_badiula_az_cultura_body_it",
+        "label": "Cultura — Testo (IT)",
+        "name": "cultura_body_it",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_az_cultura_immagine",
+        "label": "Cultura — Immagine",
+        "name": "cultura_immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_az_manifesto_it",
+        "label": "Manifesto (IT)",
+        "name": "manifesto_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4,
+        "placeholder": "Non inseguiamo l'eccesso. Cerchiamo l'equilibrio.\nNon produciamo semplicemente agrumi.\nColtiviamo un modo diverso di vivere la terra."
+      },
+      {
+        "key": "field_badiula_az_tab_vision_mission",
+        "label": "Vision & Mission",
+        "name": "tab_vision_mission",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_az_vision_label_it",
+        "label": "Vision — Label (IT)",
+        "name": "vision_label_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Vision"
+      },
+      {
+        "key": "field_badiula_az_vision_body_it",
+        "label": "Vision — Testo (IT)",
+        "name": "vision_body_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_az_mission_label_it",
+        "label": "Mission — Label (IT)",
+        "name": "mission_label_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Mission"
+      },
+      {
+        "key": "field_badiula_az_mission_body_it",
+        "label": "Mission — Testo (IT)",
+        "name": "mission_body_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_az_tab_territorio",
+        "label": "Territorio",
+        "name": "tab_territorio",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_az_territorio_titolo_it",
+        "label": "Territorio — Titolo (IT)",
+        "name": "territorio_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Tra il mare e l'Etna"
+      },
+      {
+        "key": "field_badiula_az_territorio_body_it",
+        "label": "Territorio — Testo (IT)",
+        "name": "territorio_body_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_az_territorio_immagine",
+        "label": "Territorio — Immagine",
+        "name": "territorio_immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_az_tab_en",
+        "label": "🇬🇧 Versione inglese",
+        "name": "tab_azienda_en",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_az_hero_label_en",
+        "label": "Hero label (EN)",
+        "name": "hero_label_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_az_hero_titolo_en",
+        "label": "Titolo hero (EN)",
+        "name": "hero_titolo_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2
+      },
+      {
+        "key": "field_badiula_az_hero_body_en",
+        "label": "Testo intro (EN)",
+        "name": "hero_body_en",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_az_filosofia_body_en",
+        "label": "Testo filosofia (EN)",
+        "name": "filosofia_body_en",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_az_quote_en",
+        "label": "Citazione centrale (EN)",
+        "name": "quote_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_az_cultura_titolo_en",
+        "label": "Cultura — Titolo (EN)",
+        "name": "cultura_titolo_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_az_cultura_body_en",
+        "label": "Cultura — Testo (EN)",
+        "name": "cultura_body_en",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_az_manifesto_en",
+        "label": "Manifesto (EN)",
+        "name": "manifesto_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_az_vision_label_en",
+        "label": "Vision — Label (EN)",
+        "name": "vision_label_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_az_vision_body_en",
+        "label": "Vision — Testo (EN)",
+        "name": "vision_body_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_az_mission_label_en",
+        "label": "Mission — Label (EN)",
+        "name": "mission_label_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_az_mission_body_en",
+        "label": "Mission — Testo (EN)",
+        "name": "mission_body_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_az_territorio_titolo_en",
+        "label": "Territorio — Titolo (EN)",
+        "name": "territorio_titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_az_territorio_body_en",
+        "label": "Territorio — Testo (EN)",
+        "name": "territorio_body_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page_template",
+          "operator": "==",
+          "value": "default"
+        },
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "azienda"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "acf"
+  }
+]

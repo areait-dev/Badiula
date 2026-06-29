@@ -1,0 +1,220 @@
+[
+  {
+    "key": "group_badiula_prodotto",
+    "title": "Prodotto — Dati",
+    "fields": [
+      {
+        "key": "field_badiula_prod_nome",
+        "label": "Nome prodotto",
+        "name": "nome",
+        "type": "text",
+        "show_in_graphql": 1,
+        "required": 1,
+        "placeholder": "es. Arance Rosse di Sicilia IGP"
+      },
+      {
+        "key": "field_badiula_prod_descrizione",
+        "label": "Descrizione breve (card)",
+        "name": "descrizione",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3,
+        "placeholder": "Breve descrizione usata nelle card e nell'excerpt"
+      },
+      {
+        "key": "field_badiula_prod_sottotitolo",
+        "label": "Sottotitolo (corsivo)",
+        "name": "sottotitolo",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "es. Il frutto simbolo della nostra terra"
+      },
+      {
+        "key": "field_badiula_prod_corpo",
+        "label": "Corpo testo (pagina prodotto)",
+        "name": "corpo",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_prod_colore_sfondo",
+        "label": "Colore sfondo card",
+        "name": "colore_sfondo",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "es. var(--vanilla) oppure #EEE6B8"
+      },
+      {
+        "key": "field_badiula_prod_immagine",
+        "label": "Immagine principale",
+        "name": "immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_badiula_prod_mesi_raccolta",
+        "label": "Mesi di raccolta",
+        "name": "mesi_raccolta",
+        "type": "checkbox",
+        "show_in_graphql": 1,
+        "choices": {
+          "1": "Gennaio",
+          "2": "Febbraio",
+          "3": "Marzo",
+          "4": "Aprile",
+          "5": "Maggio",
+          "6": "Giugno",
+          "7": "Luglio",
+          "8": "Agosto",
+          "9": "Settembre",
+          "10": "Ottobre",
+          "11": "Novembre",
+          "12": "Dicembre"
+        },
+        "layout": "horizontal",
+        "return_format": "value"
+      },
+      {
+        "key": "field_badiula_prod_sezioni",
+        "label": "Sezioni alternanti",
+        "name": "sezioni",
+        "type": "repeater",
+        "show_in_graphql": 1,
+        "min": 0,
+        "max": 6,
+        "layout": "block",
+        "button_label": "Aggiungi sezione",
+        "sub_fields": [
+          {
+            "key": "field_badiula_sez_titolo",
+            "label": "Titolo sezione",
+            "name": "titolo_sezione",
+            "type": "text",
+            "show_in_graphql": 1,
+            "required": 1
+          },
+          {
+            "key": "field_badiula_sez_testo",
+            "label": "Testo sezione",
+            "name": "testo_sezione",
+            "type": "textarea",
+            "show_in_graphql": 1,
+            "rows": 4
+          },
+          {
+            "key": "field_badiula_sez_img_sx",
+            "label": "Immagine a sinistra?",
+            "name": "immagine_sinistra",
+            "type": "true_false",
+            "show_in_graphql": 1,
+            "message": "Spunta per posizionare l'immagine a sinistra (testo a destra)",
+            "default_value": 0,
+            "ui": 1
+          },
+          {
+            "key": "field_badiula_sez_immagine",
+            "label": "Immagine sezione",
+            "name": "immagine_sezione",
+            "type": "image",
+            "show_in_graphql": 1,
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all"
+          }
+        ]
+      },
+      {
+        "key": "field_badiula_prod_faq",
+        "label": "FAQ",
+        "name": "faq",
+        "type": "repeater",
+        "show_in_graphql": 1,
+        "min": 0,
+        "max": 10,
+        "layout": "block",
+        "button_label": "Aggiungi domanda",
+        "sub_fields": [
+          {
+            "key": "field_badiula_faq_domanda",
+            "label": "Domanda",
+            "name": "domanda",
+            "type": "text",
+            "show_in_graphql": 1,
+            "required": 1
+          },
+          {
+            "key": "field_badiula_faq_risposta",
+            "label": "Risposta",
+            "name": "risposta",
+            "type": "textarea",
+            "show_in_graphql": 1,
+            "rows": 4,
+            "required": 1
+          }
+        ]
+      },
+      {
+        "key": "field_badiula_prod_tab_en",
+        "label": "🇬🇧 Versione inglese",
+        "name": "tab_en",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_prod_nome_en",
+        "label": "Nome (EN)",
+        "name": "nome_en",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "e.g. Sicilian Blood Oranges PGI"
+      },
+      {
+        "key": "field_badiula_prod_descrizione_en",
+        "label": "Descrizione breve (EN)",
+        "name": "descrizione_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_prod_sottotitolo_en",
+        "label": "Sottotitolo (EN)",
+        "name": "sottotitolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_prod_corpo_en",
+        "label": "Corpo testo (EN)",
+        "name": "corpo_en",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "prodotto"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "acf"
+  }
+]

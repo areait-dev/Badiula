@@ -1,0 +1,215 @@
+[
+  {
+    "key": "group_badiula_marmellate",
+    "title": "Marmellate — Pagina prodotto",
+    "fields": [
+      {
+        "key": "field_badiula_marm_tab_it",
+        "label": "🇮🇹 Italiano",
+        "name": "tab_marm_it",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_marm_titolo_it",
+        "label": "Titolo H1 (IT)",
+        "name": "titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "MARMELLATE DI AGRUMI"
+      },
+      {
+        "key": "field_badiula_marm_sottotitolo_it",
+        "label": "Sottotitolo (IT)",
+        "name": "sottotitolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Confetture biologiche preparate con le nostre arance rosse IGP"
+      },
+      {
+        "key": "field_badiula_marm_intro_it",
+        "label": "Testo introduttivo (IT)",
+        "name": "intro_it",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      },
+      {
+        "key": "field_badiula_marm_varieta",
+        "label": "Varietà disponibili",
+        "name": "varieta",
+        "type": "repeater",
+        "show_in_graphql": 1,
+        "min": 1,
+        "max": 8,
+        "layout": "block",
+        "button_label": "Aggiungi varietà",
+        "sub_fields": [
+          {
+            "key": "field_badiula_marm_var_nome_it",
+            "label": "Nome varietà (IT)",
+            "name": "nome_it",
+            "type": "text",
+            "show_in_graphql": 1,
+            "required": 1,
+            "placeholder": "Marmellata di Arance Rosse IGP"
+          },
+          {
+            "key": "field_badiula_marm_var_nome_en",
+            "label": "Nome varietà (EN)",
+            "name": "nome_en",
+            "type": "text",
+            "show_in_graphql": 1
+          },
+          {
+            "key": "field_badiula_marm_var_desc_it",
+            "label": "Descrizione (IT)",
+            "name": "desc_it",
+            "type": "textarea",
+            "show_in_graphql": 1,
+            "rows": 3
+          },
+          {
+            "key": "field_badiula_marm_var_desc_en",
+            "label": "Descrizione (EN)",
+            "name": "desc_en",
+            "type": "textarea",
+            "show_in_graphql": 1,
+            "rows": 3
+          },
+          {
+            "key": "field_badiula_marm_var_immagine",
+            "label": "Immagine",
+            "name": "immagine",
+            "type": "image",
+            "show_in_graphql": 1,
+            "return_format": "url",
+            "preview_size": "medium"
+          }
+        ]
+      },
+      {
+        "key": "field_badiula_marm_sezioni",
+        "label": "Sezioni alternanti",
+        "name": "sezioni",
+        "type": "repeater",
+        "show_in_graphql": 1,
+        "min": 0,
+        "max": 4,
+        "layout": "block",
+        "button_label": "Aggiungi sezione",
+        "sub_fields": [
+          {
+            "key": "field_badiula_marm_sez_titolo",
+            "label": "Titolo sezione",
+            "name": "titolo_sezione",
+            "type": "text",
+            "show_in_graphql": 1
+          },
+          {
+            "key": "field_badiula_marm_sez_testo",
+            "label": "Testo sezione",
+            "name": "testo_sezione",
+            "type": "textarea",
+            "show_in_graphql": 1,
+            "rows": 4
+          },
+          {
+            "key": "field_badiula_marm_sez_img_sx",
+            "label": "Immagine a sinistra?",
+            "name": "immagine_sinistra",
+            "type": "true_false",
+            "show_in_graphql": 1,
+            "ui": 1,
+            "default_value": 0
+          },
+          {
+            "key": "field_badiula_marm_sez_immagine",
+            "label": "Immagine sezione",
+            "name": "immagine_sezione",
+            "type": "image",
+            "show_in_graphql": 1,
+            "return_format": "url",
+            "preview_size": "medium"
+          }
+        ]
+      },
+      {
+        "key": "field_badiula_marm_faq",
+        "label": "FAQ",
+        "name": "faq",
+        "type": "repeater",
+        "show_in_graphql": 1,
+        "min": 0,
+        "max": 10,
+        "layout": "block",
+        "button_label": "Aggiungi domanda",
+        "sub_fields": [
+          {
+            "key": "field_badiula_marm_faq_domanda",
+            "label": "Domanda",
+            "name": "domanda",
+            "type": "text",
+            "show_in_graphql": 1
+          },
+          {
+            "key": "field_badiula_marm_faq_risposta",
+            "label": "Risposta",
+            "name": "risposta",
+            "type": "textarea",
+            "show_in_graphql": 1,
+            "rows": 4
+          }
+        ]
+      },
+      {
+        "key": "field_badiula_marm_tab_en",
+        "label": "🇬🇧 English",
+        "name": "tab_marm_en",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_marm_titolo_en",
+        "label": "Titolo H1 (EN)",
+        "name": "titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_marm_sottotitolo_en",
+        "label": "Sottotitolo (EN)",
+        "name": "sottotitolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_marm_intro_en",
+        "label": "Testo introduttivo (EN)",
+        "name": "intro_en",
+        "type": "wysiwyg",
+        "show_in_graphql": 1,
+        "toolbar": "basic",
+        "media_upload": 0
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "marmellata-agrumi"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "acf"
+  }
+]

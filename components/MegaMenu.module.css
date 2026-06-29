@@ -1,0 +1,191 @@
+/* ── Layout a due colonne (specchia .overlayBody del Navbar) ── */
+.body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── Colonna sinistra ── */
+.left {
+  flex: 0 0 52%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centra verticalmente come .panel in Navbar */
+  padding: 3.5rem 5rem;      /* identico a .panel in Navbar */
+  overflow-y: auto;
+  background: var(--color-white);
+}
+
+/* Pulsante indietro — specchia .backBtn del Navbar */
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  opacity: 0.55;
+  margin-bottom: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.backBtn:hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+.backBtn:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 2px;
+}
+
+/* Lista voci */
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ogni voce ha bordo inferiore */
+.navList li {
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Solo la prima voce ha anche il bordo superiore */
+.navList li.firstItem {
+  border-top: 1px solid #eaeaea;
+}
+
+/* Wrapper link — gestisce padding e transizione (senza text-transform) */
+.navLink {
+  display: block;
+  padding: 0.9rem 0;
+  text-decoration: none;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 300ms ease;
+}
+.navLink:hover {
+  transform: translateX(12px);
+  opacity: 0.75;
+}
+.navLink:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 2px;
+}
+
+/* Span interno — text-transform applicato qui come navLinkInner del Navbar */
+.inner {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--bordeaux);
+  letter-spacing: 0;
+}
+
+/* ── Colonna destra — specchia .overlayRight del Navbar ── */
+.right {
+  flex: 0 0 48%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Sezione immagine — specchia .promoTop */
+.imgArea {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  background: #F2C14E; /* --overlay-gold, identico a promoTop */
+  overflow: hidden;
+}
+
+/* Banner verde inferiore — specchia .promoBottom */
+.banner {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem 2.5rem;
+  background: #5E7058; /* --overlay-green, identico a promoBottom */
+  flex-wrap: wrap;
+}
+
+.bannerText { flex: 1; }
+
+/* specchia .promoTitle */
+.bannerTitle {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0;
+  margin-bottom: 0.4rem;
+}
+
+/* specchia .promoSub */
+.bannerSub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.02em;
+}
+
+/* specchia .shopBtn */
+.shopBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.6rem;
+  border-radius: var(--radius-btn);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: background 250ms ease, border-color 250ms ease, color 250ms ease;
+}
+.shopBtn:hover {
+  background: var(--color-white);
+  border-color: var(--color-white);
+  color: #5E7058;
+}
+.shopBtn:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .body { flex-direction: column; }
+
+  .left {
+    flex: none;
+    padding: 2rem 1.75rem;
+    justify-content: flex-start;
+  }
+
+  .right { display: none; }
+
+  .navLink {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+}

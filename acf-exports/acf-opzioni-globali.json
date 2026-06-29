@@ -1,0 +1,161 @@
+[
+  {
+    "key": "group_badiula_opzioni_globali",
+    "title": "Opzioni Globali Badiula",
+    "fields": [
+      {
+        "key": "field_badiula_og_tab_contatti",
+        "label": "Contatti",
+        "name": "tab_contatti",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_og_telefono",
+        "label": "Telefono",
+        "name": "telefono",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "+39 095 000 0000"
+      },
+      {
+        "key": "field_badiula_og_email",
+        "label": "Email",
+        "name": "email",
+        "type": "email",
+        "show_in_graphql": 1,
+        "placeholder": "info@agribadiula.it"
+      },
+      {
+        "key": "field_badiula_og_whatsapp",
+        "label": "Numero WhatsApp (internazionale)",
+        "name": "whatsapp",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "390950000000",
+        "instructions": "Solo cifre, senza + e senza spazi. Usato in href wa.me/..."
+      },
+      {
+        "key": "field_badiula_og_indirizzo",
+        "label": "Indirizzo",
+        "name": "indirizzo",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Contrada Badiula, Carlentini (SR), Sicilia"
+      },
+      {
+        "key": "field_badiula_og_p_iva",
+        "label": "Partita IVA",
+        "name": "p_iva",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "IT00000000000"
+      },
+      {
+        "key": "field_badiula_og_tab_social",
+        "label": "Social",
+        "name": "tab_social",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_og_instagram",
+        "label": "URL Instagram",
+        "name": "instagram",
+        "type": "url",
+        "show_in_graphql": 1,
+        "placeholder": "https://instagram.com/badiula"
+      },
+      {
+        "key": "field_badiula_og_facebook",
+        "label": "URL Facebook",
+        "name": "facebook",
+        "type": "url",
+        "show_in_graphql": 1,
+        "placeholder": "https://facebook.com/badiula"
+      },
+      {
+        "key": "field_badiula_og_linkedin",
+        "label": "URL LinkedIn",
+        "name": "linkedin",
+        "type": "url",
+        "show_in_graphql": 1,
+        "placeholder": "https://linkedin.com/company/badiula"
+      },
+      {
+        "key": "field_badiula_og_tab_footer",
+        "label": "Footer",
+        "name": "tab_footer",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_og_footer_quote_it",
+        "label": "Citazione footer (IT)",
+        "name": "footer_quote_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4,
+        "placeholder": "Non produciamo semplicemente agrumi,\ncoltiviamo un modo diverso di vivere la terra"
+      },
+      {
+        "key": "field_badiula_og_footer_quote_en",
+        "label": "Citazione footer (EN)",
+        "name": "footer_quote_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_og_footer_form_title_it",
+        "label": "Titolo form contatto (IT)",
+        "name": "footer_form_title_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Inviaci un messaggio"
+      },
+      {
+        "key": "field_badiula_og_footer_form_title_en",
+        "label": "Titolo form contatto (EN)",
+        "name": "footer_form_title_en",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Send us a message"
+      },
+      {
+        "key": "field_badiula_og_tab_seo",
+        "label": "SEO globale",
+        "name": "tab_seo",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_og_og_image",
+        "label": "Immagine Open Graph globale",
+        "name": "og_image",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium",
+        "instructions": "1200×630px — usata come fallback OG su tutte le pagine senza immagine specifica"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "badiula-options"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "opzioniGlobali"
+  }
+]

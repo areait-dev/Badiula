@@ -1,0 +1,91 @@
+[
+  {
+    "key": "group_badiula_sezione_azienda",
+    "title": "Sezione Azienda — Dati",
+    "fields": [
+      {
+        "key": "field_badiula_saz_tab_it",
+        "label": "🇮🇹 Italiano",
+        "name": "tab_it",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_saz_eyebrow",
+        "label": "Eyebrow",
+        "name": "eyebrow",
+        "type": "text",
+        "show_in_graphql": 1,
+        "required": 1,
+        "placeholder": "es. Chi siamo"
+      },
+      {
+        "key": "field_badiula_saz_titolo",
+        "label": "Titolo",
+        "name": "titolo",
+        "type": "text",
+        "show_in_graphql": 1,
+        "required": 1,
+        "placeholder": "es. QUATTRO GENERAZIONI, UNA TERRA"
+      },
+      {
+        "key": "field_badiula_saz_corpo",
+        "label": "Corpo testo",
+        "name": "corpo",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5,
+        "required": 1
+      },
+      {
+        "key": "field_badiula_saz_tab_en",
+        "label": "🇬🇧 English",
+        "name": "tab_en",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_saz_eyebrow_en",
+        "label": "Eyebrow (EN)",
+        "name": "eyebrow_en",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "e.g. Who we are"
+      },
+      {
+        "key": "field_badiula_saz_titolo_en",
+        "label": "Titolo (EN)",
+        "name": "titolo_en",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "e.g. FOUR GENERATIONS, ONE LAND"
+      },
+      {
+        "key": "field_badiula_saz_corpo_en",
+        "label": "Corpo testo (EN)",
+        "name": "corpo_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 5
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "sezione_azienda"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "acf"
+  }
+]

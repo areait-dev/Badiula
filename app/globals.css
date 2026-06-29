@@ -1,0 +1,271 @@
+
+@font-face {
+  font-family: 'Gravesend Sans';
+  src: url('/font/fonnts.com-Gravesend_Sans_Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gravesend Sans';
+  src: url('/font/fonnts.com-Gravesend_Sans_Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gravesend Sans';
+  src: url('/font/fonnts.com-Gravesend_Sans_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ── Colori primari ── */
+  --color-bordeaux:    #6C1224;
+  --color-dark:        #16161D;
+  --color-white:       #FFFFFF;
+
+  /* ── Colori secondari ── */
+  --color-khaki:       #C4B59B;
+  --color-vanilla:     #EEE6B8;
+  --color-teal:        #889C82;
+
+  /* ── Alias semantici ── */
+  --color-primary:      var(--color-bordeaux);
+  --color-surface:      var(--color-white);
+  --color-surface-alt:  var(--color-vanilla);
+  --color-text:         var(--color-dark);
+  --color-text-inverse: var(--color-white);
+  --color-accent:       var(--color-khaki);
+  --color-muted:        var(--color-teal);
+
+  /* ── Alias legacy (compatibilità componenti esistenti) ── */
+  --bordeaux:  var(--color-bordeaux);
+  --khaki:     var(--color-khaki);
+  --vanilla:   var(--color-vanilla);
+  --teal:      var(--color-teal);
+  --eigengrau: var(--color-dark);
+  --white:     var(--color-white);
+
+  /* ── Tipografia ── */
+  --font-display: 'Gravesend Sans', sans-serif;
+  --font-primary: 'mr-eaves-modern', sans-serif;
+  --font-body:    var(--font-primary);
+
+  /* ── Spaziatura ── */
+  --space-xs:   8px;
+  --space-sm:   16px;
+  --space-md:   24px;
+  --space-lg:   48px;
+  --space-xl:   80px;
+  --space-2xl:  120px;
+
+  /* ── Border radius ── */
+  --radius-btn:      999px;
+  --radius-card:       0px;
+  --radius-card-soft: 12px;
+  --radius-field:    999px;
+  --radius-modal:     16px;
+  --radius-banner:    16px;
+  --radius-calendar:  12px;
+  --radius-badge:    999px;
+  --radius-dot:       50%;
+
+  /* ── Layout ── */
+  --page-margin:        100px;
+  --page-margin-mobile: 1.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--eigengrau);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip; /* clip non crea un nuovo scroll container, permette scroll interni */
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+/* ── Tipografia corpo testo ── */
+p {
+  font-family: var(--font-primary);
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+/* Body 2 — testo secondario/ridotto */
+.body-2 {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---- Button system ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 2px;
+}
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Outline (default) */
+.btn-outline {
+  border: 1.5px solid var(--bordeaux);
+  color: var(--bordeaux);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--khaki);
+  border-color: var(--khaki);
+  color: var(--bordeaux);
+}
+.btn-outline:active {
+  background: var(--bordeaux);
+  border-color: var(--bordeaux);
+  color: var(--white);
+  transition-duration: 150ms;
+}
+
+/* Filled primary */
+.btn-solid {
+  border: 1.5px solid var(--bordeaux);
+  background: var(--bordeaux);
+  color: var(--white);
+}
+.btn-solid:hover {
+  background: var(--khaki);
+  border-color: var(--khaki);
+  color: var(--bordeaux);
+}
+.btn-solid:active {
+  background: var(--eigengrau);
+  border-color: var(--eigengrau);
+  color: var(--white);
+  transition-duration: 150ms;
+}
+
+/* Outline white (su sfondo scuro) */
+.btn-outline-white {
+  border: 1.5px solid var(--white);
+  color: var(--white);
+  background: transparent;
+}
+.btn-outline-white:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--bordeaux);
+}
+.btn-outline-white:active {
+  background: var(--bordeaux);
+  border-color: var(--bordeaux);
+  color: var(--white);
+  transition-duration: 150ms;
+}
+.btn-outline-white:focus-visible {
+  outline-color: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  gap: 2rem; /* Scegli il tuo gap preferito */
+  width: max-content;
+  padding-left: 4rem; /* Margine iniziale allineato con l'header */
+  padding-right: 4rem;
+}
+
+.card {
+  /* Calcola la larghezza esatta per vederne 3 precise sullo schermo */
+  /* Sottrae i gap e i padding laterali dal totale del viewport */
+  width: calc((100vw - 8rem - 4rem) / 3); 
+  flex-shrink: 0;
+}
+
+/* ── Scrollbar bordeaux ── */
+html {
+  scrollbar-color: #6C1224 #f0ece4;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0ece4;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6C1224;
+  border-radius: 999px;
+}

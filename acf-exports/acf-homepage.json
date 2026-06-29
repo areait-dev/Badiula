@@ -1,0 +1,444 @@
+[
+  {
+    "key": "group_badiula_homepage",
+    "title": "Homepage — Contenuti",
+    "fields": [
+      {
+        "key": "field_badiula_hp_tab_hero",
+        "label": "Hero",
+        "name": "tab_hero",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_hp_hero_video",
+        "label": "Video hero (URL relativo o assoluto)",
+        "name": "hero_video",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "/videos/hero.mp4",
+        "instructions": "Percorso del video nel sito Next.js (es. /videos/hero.mp4) oppure URL CDN esterno"
+      },
+      {
+        "key": "field_badiula_hp_hero_titolo_it",
+        "label": "Titolo hero (IT)",
+        "name": "hero_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "QUATTRO GENERAZIONI, UNA TERRA"
+      },
+      {
+        "key": "field_badiula_hp_hero_titolo_en",
+        "label": "Titolo hero (EN)",
+        "name": "hero_titolo_en",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "FOUR GENERATIONS, ONE LAND"
+      },
+      {
+        "key": "field_badiula_hp_hero_sottotitolo_it",
+        "label": "Sottotitolo hero (IT)",
+        "name": "hero_sottotitolo_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_hp_hero_sottotitolo_en",
+        "label": "Sottotitolo hero (EN)",
+        "name": "hero_sottotitolo_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_hp_hero_cta_it",
+        "label": "Testo CTA hero (IT)",
+        "name": "hero_cta_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Scopri Badiula"
+      },
+      {
+        "key": "field_badiula_hp_hero_cta_en",
+        "label": "Testo CTA hero (EN)",
+        "name": "hero_cta_en",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Discover Badiula"
+      },
+      {
+        "key": "field_badiula_hp_tab_about",
+        "label": "Sezione About (scroll orizzontale)",
+        "name": "tab_about",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_hp_about_p1_eyebrow_it",
+        "label": "Panel 1 — Eyebrow (IT)",
+        "name": "about_p1_eyebrow_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Chi siamo"
+      },
+      {
+        "key": "field_badiula_hp_about_p1_heading_it",
+        "label": "Panel 1 — Titolo (IT)",
+        "name": "about_p1_heading_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "QUATTRO GENERAZIONI, UNA TERRA"
+      },
+      {
+        "key": "field_badiula_hp_about_p1_body_it",
+        "label": "Panel 1 — Testo (IT)",
+        "name": "about_p1_body_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_hp_about_p1_cta_it",
+        "label": "Panel 1 — CTA (IT)",
+        "name": "about_p1_cta_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Scopri l'azienda"
+      },
+      {
+        "key": "field_badiula_hp_about_p1_immagine",
+        "label": "Panel 1 — Immagine (Chi siamo)",
+        "name": "about_p1_immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_hp_about_p2_eyebrow_it",
+        "label": "Panel 2 — Eyebrow (IT)",
+        "name": "about_p2_eyebrow_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Il territorio"
+      },
+      {
+        "key": "field_badiula_hp_about_p2_heading_it",
+        "label": "Panel 2 — Titolo (IT)",
+        "name": "about_p2_heading_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "TRA IL MARE E LA TERRA"
+      },
+      {
+        "key": "field_badiula_hp_about_p2_body_it",
+        "label": "Panel 2 — Testo (IT)",
+        "name": "about_p2_body_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_hp_about_p2_body2_it",
+        "label": "Panel 2 — Testo secondario (IT)",
+        "name": "about_p2_body2_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_hp_about_p3_eyebrow_it",
+        "label": "Panel 3 — Eyebrow (IT)",
+        "name": "about_p3_eyebrow_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "Il processo"
+      },
+      {
+        "key": "field_badiula_hp_about_p3_heading_it",
+        "label": "Panel 3 — Titolo (IT)",
+        "name": "about_p3_heading_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "FILIERA E LAVORAZIONE"
+      },
+      {
+        "key": "field_badiula_hp_about_p3_body_it",
+        "label": "Panel 3 — Testo (IT)",
+        "name": "about_p3_body_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_hp_about_en",
+        "label": "🇬🇧 About — versione inglese",
+        "name": "about_en_tab",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_hp_about_p1_eyebrow_en",
+        "label": "Panel 1 — Eyebrow (EN)",
+        "name": "about_p1_eyebrow_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_about_p1_heading_en",
+        "label": "Panel 1 — Titolo (EN)",
+        "name": "about_p1_heading_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_about_p1_body_en",
+        "label": "Panel 1 — Testo (EN)",
+        "name": "about_p1_body_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_hp_about_p1_cta_en",
+        "label": "Panel 1 — CTA (EN)",
+        "name": "about_p1_cta_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_about_p2_eyebrow_en",
+        "label": "Panel 2 — Eyebrow (EN)",
+        "name": "about_p2_eyebrow_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_about_p2_heading_en",
+        "label": "Panel 2 — Titolo (EN)",
+        "name": "about_p2_heading_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_about_p2_body_en",
+        "label": "Panel 2 — Testo (EN)",
+        "name": "about_p2_body_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_hp_about_p2_body2_en",
+        "label": "Panel 2 — Testo secondario (EN)",
+        "name": "about_p2_body2_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_hp_about_p3_eyebrow_en",
+        "label": "Panel 3 — Eyebrow (EN)",
+        "name": "about_p3_eyebrow_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_about_p3_heading_en",
+        "label": "Panel 3 — Titolo (EN)",
+        "name": "about_p3_heading_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_about_p3_body_en",
+        "label": "Panel 3 — Testo (EN)",
+        "name": "about_p3_body_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_hp_tab_produzioni",
+        "label": "Sezione Produzioni (carousel)",
+        "name": "tab_produzioni",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_hp_prod_eyebrow_it",
+        "label": "Produzioni — Eyebrow (IT)",
+        "name": "produzioni_eyebrow_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "I nostri frutti"
+      },
+      {
+        "key": "field_badiula_hp_prod_titolo_it",
+        "label": "Produzioni — Titolo (IT)",
+        "name": "produzioni_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "LE NOSTRE PRODUZIONI"
+      },
+      {
+        "key": "field_badiula_hp_prod_sottotitolo_it",
+        "label": "Produzioni — Sottotitolo (IT)",
+        "name": "produzioni_sottotitolo_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_hp_prod_eyebrow_en",
+        "label": "Produzioni — Eyebrow (EN)",
+        "name": "produzioni_eyebrow_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_prod_titolo_en",
+        "label": "Produzioni — Titolo (EN)",
+        "name": "produzioni_titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_prod_sottotitolo_en",
+        "label": "Produzioni — Sottotitolo (EN)",
+        "name": "produzioni_sottotitolo_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_hp_tab_luce",
+        "label": "Sezione Luce di Terra",
+        "name": "tab_luce",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_hp_luce_titolo_it",
+        "label": "Luce di Terra — Titolo (IT)",
+        "name": "luce_titolo_it",
+        "type": "text",
+        "show_in_graphql": 1,
+        "placeholder": "LUCE DI TERRA"
+      },
+      {
+        "key": "field_badiula_hp_luce_sottotitolo_it",
+        "label": "Luce di Terra — Sottotitolo (IT)",
+        "name": "luce_sottotitolo_it",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_luce_body_it",
+        "label": "Luce di Terra — Testo (IT)",
+        "name": "luce_body_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_hp_luce_immagine",
+        "label": "Luce di Terra — Immagine",
+        "name": "luce_immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_hp_luce_titolo_en",
+        "label": "Luce di Terra — Titolo (EN)",
+        "name": "luce_titolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_luce_sottotitolo_en",
+        "label": "Luce di Terra — Sottotitolo (EN)",
+        "name": "luce_sottotitolo_en",
+        "type": "text",
+        "show_in_graphql": 1
+      },
+      {
+        "key": "field_badiula_hp_luce_body_en",
+        "label": "Luce di Terra — Testo (EN)",
+        "name": "luce_body_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_hp_tab_shop_banner",
+        "label": "Banner Shop (fondo homepage)",
+        "name": "tab_shop_banner",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_hp_shop_titolo_it",
+        "label": "Shop banner — Titolo (IT)",
+        "name": "shop_banner_titolo_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2,
+        "placeholder": "Agrumi siciliani\ndirettamente dal produttore"
+      },
+      {
+        "key": "field_badiula_hp_shop_sottotitolo_it",
+        "label": "Shop banner — Sottotitolo (IT)",
+        "name": "shop_banner_sottotitolo_it",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2
+      },
+      {
+        "key": "field_badiula_hp_shop_immagine",
+        "label": "Shop banner — Immagine di sfondo",
+        "name": "shop_banner_immagine",
+        "type": "image",
+        "show_in_graphql": 1,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_hp_shop_titolo_en",
+        "label": "Shop banner — Titolo (EN)",
+        "name": "shop_banner_titolo_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2
+      },
+      {
+        "key": "field_badiula_hp_shop_sottotitolo_en",
+        "label": "Shop banner — Sottotitolo (EN)",
+        "name": "shop_banner_sottotitolo_en",
+        "type": "textarea",
+        "show_in_graphql": 1,
+        "rows": 2
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "badiula-sezioni-homepage"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_graphql": 1,
+    "graphql_field_name": "sezioniHomepage"
+  }
+]
