@@ -6,8 +6,6 @@ out
 .env*.local
 
 # Media pesanti — gestiti separatamente
-public/videos/
-*.mp4
 *.mov
 *.avi
 *.mkv
