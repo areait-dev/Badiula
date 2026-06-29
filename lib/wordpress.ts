@@ -31,7 +31,6 @@ import {
 // ─── Client GraphQL ───────────────────────────────────────────────────────────
 
 const GQL_ENDPOINT = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL as string;
-const REVALIDATE = 3600;
 
 interface GQLResponse<T> {
   data?: T;
@@ -41,13 +40,12 @@ interface GQLResponse<T> {
 export async function fetchGraphQL<T>(
   query: string,
   variables: Record<string, unknown> = {},
-  revalidate = REVALIDATE,
 ): Promise<T> {
   const res = await fetch(GQL_ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query, variables }),
-    next: { revalidate },
+    next: { revalidate: 60, tags: ['wordpress'] },
   });
 
   if (!res.ok) {

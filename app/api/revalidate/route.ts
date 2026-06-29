@@ -1,4 +1,4 @@
-import { revalidatePath } from 'next/cache';
+import { revalidateTag } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
@@ -8,10 +8,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid token' }, { status: 401 });
   }
 
-  const body = await req.json().catch(() => ({}));
-  const path: string = body.path ?? '/';
+  revalidateTag('wordpress');
 
-  revalidatePath(path);
-
-  return NextResponse.json({ revalidated: true, path });
+  return NextResponse.json({ revalidated: true, tag: 'wordpress' });
 }
