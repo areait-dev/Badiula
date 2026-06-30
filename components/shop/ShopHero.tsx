@@ -2,18 +2,20 @@ import styles from './ShopHero.module.css';
 
 interface ShopHeroProps {
   total: number;
+  heroTitolo?: string;
+  heroSottotitolo?: string;
 }
 
-export default function ShopHero({ total }: ShopHeroProps) {
+export default function ShopHero({ total, heroTitolo, heroSottotitolo }: ShopHeroProps) {
   return (
     <section className={styles.hero}>
       <div className={styles.grid}>
         {/* Left column */}
         <div className={styles.col}>
           <h1 className={styles.h1}>
-            IL GUSTO AUTENTICO<br />DELLA SICILIA
+            {heroTitolo || 'IL GUSTO AUTENTICO\nDELLA SICILIA'}
           </h1>
-          <h3 className={styles.h3}>Direttamente dal produttore</h3>
+          <h3 className={styles.h3}>{heroSottotitolo || 'Direttamente dal produttore'}</h3>
           <p className={styles.body}>
             Lo shop online Badiula nasce dalla volontà di creare un rapporto diretto tra
             azienda agricola e consumatore finale.

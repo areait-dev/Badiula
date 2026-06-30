@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
@@ -7,52 +6,60 @@ import { PRODUCTS } from '@/lib/data';
 import HarvestCalendar from '@/components/HarvestCalendar';
 import Footer from '@/components/Footer';
 import ProductionsTrack from './ProductionsTrack';
+import { getPaginaColtivazioni } from '@/lib/wordpress';
 import styles from './page.module.css';
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale: params.locale, namespace: 'coltivazioni' });
   return {
-    title: `COLTIVAZIONI — Badiula`,
+    title: 'COLTIVAZIONI — Badiula',
     description: t('heroText'),
   };
 }
 
-export default function ColtivazioniPage({ params }: { params: { locale: string } }) {
+export default async function ColtivazioniPage({ params }: { params: { locale: string } }) {
   setRequestLocale(params.locale);
-  const t = useTranslations('coltivazioni');
+  const it = params.locale === 'it';
+  const [t, d] = await Promise.all([
+    getTranslations('coltivazioni'),
+    getPaginaColtivazioni(),
+  ]);
+
+  const titolo = (it ? d.titoloIt : d.titoloEn) || 'COLTIVAZIONI';
+  const sottotitolo = (it ? d.sottotitoloIt : d.sottotitoloEn) || 'Cinque produzioni biologiche, una stagionalità naturale';
+  const introP1 = it ? d.introP1It : d.introP1En;
+  const introP2 = it ? d.introP2It : d.introP2En;
+  const gridTitolo = d.gridTitoloIt || 'LE NOSTRE PRODUZIONI';
+  const calendarioTitolo = d.calendarioTitoloIt || 'CALENDARIO DI RACCOLTA';
+  const bannerHeading = (it ? d.bannerHeadingIt : d.bannerHeadingEn) || 'Agrumi siciliani\ndirettamente dal produttore';
+  const bannerSub = (it ? d.bannerSubIt : d.bannerSubEn) || 'Box stagionali di agrumi biologici, olio extravergine Luce di Terra,\nmarmellate di agrumi. Spedizioni in Italia e in Unione Europea';
 
   return (
     <main className={styles.main}>
 
       {/* ── SEZIONE 1: TITOLO ── */}
       <section className={styles.heroTitle}>
-        <h1 className={styles.introTitle}>COLTIVAZIONI</h1>
+        <h1 className={styles.introTitle}>{titolo}</h1>
       </section>
 
       {/* ── SEZIONE 2: INTRODUZIONE ── */}
       <section className={styles.sezioneIntroduzione}>
-        <h2 className={styles.sottotitoloItalic}>
-          Cinque produzioni biologiche, una stagionalità naturale
-        </h2>
-        <p className={styles.paragrafoDescrizione}>
-          Le nostre coltivazioni si sviluppano su oltre 120 ettari tra Carlentini e Lentini, in provincia di Siracusa, in un territorio unico per la produzione agrumicola siciliana. Il clima mediterraneo, la fertilità dei terreni e l&apos;influenza dell&apos;Etna creano le condizioni ideali per produrre agrumi biologici di alta qualità.
-        </p>
-        <p className={styles.paragrafoDescrizione}>
-          Coltiviamo cinque produzioni principali: arance rosse di Sicilia IGP, arance bionde, limoni, bergamotto e pompelmo. Ogni raccolta segue la naturale stagionalità del prodotto per preservarne freschezza, aroma e caratteristiche organolettiche.
-        </p>
+        <h2 className={styles.sottotitoloItalic}>{sottotitolo}</h2>
+        {introP1 && <p className={styles.paragrafoDescrizione}>{introP1}</p>}
+        {introP2 && <p className={styles.paragrafoDescrizione}>{introP2}</p>}
       </section>
 
       {/* ── SEZIONE 2: GRIGLIA PRODUZIONI ── */}
       <section className={styles.gridSection}>
         <div className={styles.gridHeader}>
-          <h2 className={styles.gridTitle}>LE NOSTRE PRODUZIONI</h2>
+          <h2 className={styles.gridTitle}>{gridTitolo}</h2>
         </div>
         <ProductionsTrack moreLabel={t('more')} />
       </section>
 
       {/* ── SEZIONE 3a: CALENDARIO DI RACCOLTA ── */}
       <section className={styles.calendarSection}>
-        <h2 className={styles.calendarTitle}>CALENDARIO DI RACCOLTA</h2>
+        <h2 className={styles.calendarTitle}>{calendarioTitolo}</h2>
         <div className={styles.tableWrap}>
           <HarvestCalendar
             rows={PRODUCTS.map((p) => ({ label: p.name, harvest: p.harvest }))}
@@ -75,8 +82,8 @@ export default function ColtivazioniPage({ params }: { params: { locale: string 
         </div>
         <div className={styles.bannerGreen}>
           <div className={styles.bannerText}>
-            <p className={styles.bannerHeading}>Agrumi siciliani{'\n'}direttamente dal produttore</p>
-            <p className={styles.bannerSub}>Box stagionali di agrumi biologici, olio extravergine Luce di Terra,{'\n'}marmellate di agrumi. Spedizioni in Italia e in Unione Europea</p>
+            <p className={styles.bannerHeading} style={{ whiteSpace: 'pre-line' }}>{bannerHeading}</p>
+            <p className={styles.bannerSub} style={{ whiteSpace: 'pre-line' }}>{bannerSub}</p>
           </div>
           <Link href="/" className={styles.bannerShopBtn}>Shop</Link>
         </div>
