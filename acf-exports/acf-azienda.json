@@ -15,7 +15,7 @@
         "label": "Hero label (IT)",
         "name": "hero_label_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Azienda"
       },
       {
@@ -23,7 +23,7 @@
         "label": "Titolo hero (IT)",
         "name": "hero_titolo_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2,
         "placeholder": "Quattro generazioni,\nuna terra"
       },
@@ -32,7 +32,7 @@
         "label": "Testo intro (IT)",
         "name": "hero_body_it",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -41,7 +41,7 @@
         "label": "URL video intro",
         "name": "video_url",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "/videos/DJI_0003.MP4",
         "instructions": "Percorso relativo al sito Next.js oppure URL CDN esterno"
       },
@@ -57,7 +57,7 @@
         "label": "Testo filosofia (IT)",
         "name": "filosofia_body_it",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -66,7 +66,7 @@
         "label": "Immagine filosofia",
         "name": "filosofia_immagine",
         "type": "image",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "return_format": "url",
         "preview_size": "medium"
       },
@@ -75,7 +75,7 @@
         "label": "Citazione centrale (IT)",
         "name": "quote_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 3,
         "placeholder": "LA TERRA\nCI INSEGNA\nTEMPO"
       },
@@ -91,7 +91,7 @@
         "label": "Cultura — Titolo (IT)",
         "name": "cultura_titolo_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4,
         "placeholder": "Esistono luoghi in cui\nl'agricoltura non è\nsoltanto produzione,\nma cultura, memoria e\nidentità."
       },
@@ -100,7 +100,7 @@
         "label": "Cultura — Testo (IT)",
         "name": "cultura_body_it",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -109,7 +109,7 @@
         "label": "Cultura — Immagine",
         "name": "cultura_immagine",
         "type": "image",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "return_format": "url",
         "preview_size": "medium"
       },
@@ -118,7 +118,7 @@
         "label": "Manifesto (IT)",
         "name": "manifesto_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4,
         "placeholder": "Non inseguiamo l'eccesso. Cerchiamo l'equilibrio.\nNon produciamo semplicemente agrumi.\nColtiviamo un modo diverso di vivere la terra."
       },
@@ -134,7 +134,7 @@
         "label": "Vision — Label (IT)",
         "name": "vision_label_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Vision"
       },
       {
@@ -142,7 +142,7 @@
         "label": "Vision — Testo (IT)",
         "name": "vision_body_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 5
       },
       {
@@ -150,7 +150,7 @@
         "label": "Mission — Label (IT)",
         "name": "mission_label_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Mission"
       },
       {
@@ -158,7 +158,7 @@
         "label": "Mission — Testo (IT)",
         "name": "mission_body_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 5
       },
       {
@@ -173,7 +173,7 @@
         "label": "Territorio — Titolo (IT)",
         "name": "territorio_titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Tra il mare e l'Etna"
       },
       {
@@ -181,7 +181,7 @@
         "label": "Territorio — Testo (IT)",
         "name": "territorio_body_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4
       },
       {
@@ -189,7 +189,7 @@
         "label": "Territorio — Immagine",
         "name": "territorio_immagine",
         "type": "image",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "return_format": "url",
         "preview_size": "medium"
       },
@@ -205,14 +205,14 @@
         "label": "Hero label (EN)",
         "name": "hero_label_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_az_hero_titolo_en",
         "label": "Titolo hero (EN)",
         "name": "hero_titolo_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2
       },
       {
@@ -220,7 +220,7 @@
         "label": "Testo intro (EN)",
         "name": "hero_body_en",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -229,7 +229,7 @@
         "label": "Testo filosofia (EN)",
         "name": "filosofia_body_en",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -238,7 +238,7 @@
         "label": "Citazione centrale (EN)",
         "name": "quote_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 3
       },
       {
@@ -246,7 +246,7 @@
         "label": "Cultura — Titolo (EN)",
         "name": "cultura_titolo_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4
       },
       {
@@ -254,7 +254,7 @@
         "label": "Cultura — Testo (EN)",
         "name": "cultura_body_en",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -263,7 +263,7 @@
         "label": "Manifesto (EN)",
         "name": "manifesto_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4
       },
       {
@@ -271,14 +271,14 @@
         "label": "Vision — Label (EN)",
         "name": "vision_label_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_az_vision_body_en",
         "label": "Vision — Testo (EN)",
         "name": "vision_body_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 5
       },
       {
@@ -286,14 +286,14 @@
         "label": "Mission — Label (EN)",
         "name": "mission_label_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_az_mission_body_en",
         "label": "Mission — Testo (EN)",
         "name": "mission_body_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 5
       },
       {
@@ -301,24 +301,19 @@
         "label": "Territorio — Titolo (EN)",
         "name": "territorio_titolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_az_territorio_body_en",
         "label": "Territorio — Testo (EN)",
         "name": "territorio_body_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4
       }
     ],
     "location": [
       [
-        {
-          "param": "page_template",
-          "operator": "==",
-          "value": "default"
-        },
         {
           "param": "page",
           "operator": "==",
@@ -332,7 +327,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "active": true,
-    "show_in_graphql": 1,
+    "show_in_graphql": 0,
     "graphql_field_name": "acf"
   }
 ]

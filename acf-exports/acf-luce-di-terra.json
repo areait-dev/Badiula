@@ -15,7 +15,7 @@
         "label": "Titolo H1 (IT)",
         "name": "titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "LUCE DI TERRA"
       },
       {
@@ -23,7 +23,7 @@
         "label": "Sottotitolo H2 (IT)",
         "name": "sottotitolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "La firma Badiula dedicata all'olio e ai sapori della terra"
       },
       {
@@ -31,7 +31,7 @@
         "label": "Intro — Paragrafo 1 (IT)",
         "name": "intro_p1_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 5
       },
       {
@@ -39,7 +39,7 @@
         "label": "Intro — Paragrafo 2 (IT)",
         "name": "intro_p2_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 5
       },
       {
@@ -47,7 +47,7 @@
         "label": "Titolo sezione 'Le due linee' (IT)",
         "name": "linee_titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "LE DUE LINEE"
       },
       {
@@ -55,7 +55,7 @@
         "label": "Card Olio EVO — Titolo (IT)",
         "name": "olio_titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Olio Extravergine di Oliva"
       },
       {
@@ -63,7 +63,7 @@
         "label": "Card Olio EVO — Descrizione (IT)",
         "name": "olio_desc_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 3
       },
       {
@@ -71,14 +71,14 @@
         "label": "Card Olio EVO — Prezzo (es. Da €12,00)",
         "name": "olio_prezzo",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_olio_immagine",
         "label": "Card Olio EVO — Immagine",
         "name": "olio_immagine",
         "type": "image",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "return_format": "url",
         "preview_size": "medium"
       },
@@ -87,7 +87,7 @@
         "label": "Card Marmellate — Titolo (IT)",
         "name": "marmellata_titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Marmellate di Agrumi"
       },
       {
@@ -95,7 +95,7 @@
         "label": "Card Marmellate — Descrizione (IT)",
         "name": "marmellata_desc_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 3
       },
       {
@@ -103,14 +103,14 @@
         "label": "Card Marmellate — Prezzo",
         "name": "marmellata_prezzo",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_marmellata_immagine",
         "label": "Card Marmellate — Immagine",
         "name": "marmellata_immagine",
         "type": "image",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "return_format": "url",
         "preview_size": "medium"
       },
@@ -119,7 +119,7 @@
         "label": "Sezione Filiera — Titolo (IT)",
         "name": "filiera_titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Una filiera che parte dal campo"
       },
       {
@@ -127,7 +127,7 @@
         "label": "Sezione Filiera — Testo (IT)",
         "name": "filiera_body_it",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -143,21 +143,21 @@
         "label": "Titolo H1 (EN)",
         "name": "titolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_sottotitolo_en",
         "label": "Sottotitolo H2 (EN)",
         "name": "sottotitolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_intro_p1_en",
         "label": "Intro — Paragrafo 1 (EN)",
         "name": "intro_p1_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 5
       },
       {
@@ -165,7 +165,7 @@
         "label": "Intro — Paragrafo 2 (EN)",
         "name": "intro_p2_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 5
       },
       {
@@ -173,14 +173,14 @@
         "label": "Card Olio EVO — Titolo (EN)",
         "name": "olio_titolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_olio_desc_en",
         "label": "Card Olio EVO — Descrizione (EN)",
         "name": "olio_desc_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 3
       },
       {
@@ -188,14 +188,14 @@
         "label": "Card Marmellate — Titolo (EN)",
         "name": "marmellata_titolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_marmellata_desc_en",
         "label": "Card Marmellate — Descrizione (EN)",
         "name": "marmellata_desc_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 3
       },
       {
@@ -203,14 +203,14 @@
         "label": "Sezione Filiera — Titolo (EN)",
         "name": "filiera_titolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_filiera_body_en",
         "label": "Sezione Filiera — Testo (EN)",
         "name": "filiera_body_en",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       }
@@ -230,7 +230,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "active": true,
-    "show_in_graphql": 1,
+    "show_in_graphql": 0,
     "graphql_field_name": "acf"
   }
 ]

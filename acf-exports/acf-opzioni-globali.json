@@ -15,7 +15,7 @@
         "label": "Telefono",
         "name": "telefono",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "+39 095 000 0000"
       },
       {
@@ -23,7 +23,7 @@
         "label": "Email",
         "name": "email",
         "type": "email",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "info@agribadiula.it"
       },
       {
@@ -31,7 +31,7 @@
         "label": "Numero WhatsApp (internazionale)",
         "name": "whatsapp",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "390950000000",
         "instructions": "Solo cifre, senza + e senza spazi. Usato in href wa.me/..."
       },
@@ -40,7 +40,7 @@
         "label": "Indirizzo",
         "name": "indirizzo",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Contrada Badiula, Carlentini (SR), Sicilia"
       },
       {
@@ -48,7 +48,7 @@
         "label": "Partita IVA",
         "name": "p_iva",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "IT00000000000"
       },
       {
@@ -63,7 +63,7 @@
         "label": "URL Instagram",
         "name": "instagram",
         "type": "url",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "https://instagram.com/badiula"
       },
       {
@@ -71,7 +71,7 @@
         "label": "URL Facebook",
         "name": "facebook",
         "type": "url",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "https://facebook.com/badiula"
       },
       {
@@ -79,7 +79,7 @@
         "label": "URL LinkedIn",
         "name": "linkedin",
         "type": "url",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "https://linkedin.com/company/badiula"
       },
       {
@@ -94,7 +94,7 @@
         "label": "Citazione footer (IT)",
         "name": "footer_quote_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4,
         "placeholder": "Non produciamo semplicemente agrumi,\ncoltiviamo un modo diverso di vivere la terra"
       },
@@ -103,7 +103,7 @@
         "label": "Citazione footer (EN)",
         "name": "footer_quote_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4
       },
       {
@@ -111,7 +111,7 @@
         "label": "Titolo form contatto (IT)",
         "name": "footer_form_title_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Inviaci un messaggio"
       },
       {
@@ -119,7 +119,7 @@
         "label": "Titolo form contatto (EN)",
         "name": "footer_form_title_en",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Send us a message"
       },
       {
@@ -134,7 +134,7 @@
         "label": "Immagine Open Graph globale",
         "name": "og_image",
         "type": "image",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "return_format": "url",
         "preview_size": "medium",
         "instructions": "1200×630px — usata come fallback OG su tutte le pagine senza immagine specifica"
@@ -143,9 +143,9 @@
     "location": [
       [
         {
-          "param": "options_page",
+          "param": "page",
           "operator": "==",
-          "value": "badiula-options"
+          "value": "opzioni-globali"
         }
       ]
     ],
@@ -155,7 +155,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "active": true,
-    "show_in_graphql": 1,
+    "show_in_graphql": 0,
     "graphql_field_name": "opzioniGlobali"
   }
 ]

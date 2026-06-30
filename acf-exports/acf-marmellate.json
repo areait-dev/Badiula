@@ -15,7 +15,7 @@
         "label": "Titolo H1 (IT)",
         "name": "titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "MARMELLATE DI AGRUMI"
       },
       {
@@ -23,7 +23,7 @@
         "label": "Sottotitolo (IT)",
         "name": "sottotitolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Confetture biologiche preparate con le nostre arance rosse IGP"
       },
       {
@@ -31,7 +31,7 @@
         "label": "Testo introduttivo (IT)",
         "name": "intro_it",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -40,7 +40,7 @@
         "label": "Varietà disponibili",
         "name": "varieta",
         "type": "repeater",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "min": 1,
         "max": 8,
         "layout": "block",
@@ -51,7 +51,7 @@
             "label": "Nome varietà (IT)",
             "name": "nome_it",
             "type": "text",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "required": 1,
             "placeholder": "Marmellata di Arance Rosse IGP"
           },
@@ -60,14 +60,14 @@
             "label": "Nome varietà (EN)",
             "name": "nome_en",
             "type": "text",
-            "show_in_graphql": 1
+            "show_in_graphql": 0
           },
           {
             "key": "field_badiula_marm_var_desc_it",
             "label": "Descrizione (IT)",
             "name": "desc_it",
             "type": "textarea",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "rows": 3
           },
           {
@@ -75,7 +75,7 @@
             "label": "Descrizione (EN)",
             "name": "desc_en",
             "type": "textarea",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "rows": 3
           },
           {
@@ -83,7 +83,7 @@
             "label": "Immagine",
             "name": "immagine",
             "type": "image",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "return_format": "url",
             "preview_size": "medium"
           }
@@ -94,7 +94,7 @@
         "label": "Sezioni alternanti",
         "name": "sezioni",
         "type": "repeater",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "min": 0,
         "max": 4,
         "layout": "block",
@@ -105,14 +105,14 @@
             "label": "Titolo sezione",
             "name": "titolo_sezione",
             "type": "text",
-            "show_in_graphql": 1
+            "show_in_graphql": 0
           },
           {
             "key": "field_badiula_marm_sez_testo",
             "label": "Testo sezione",
             "name": "testo_sezione",
             "type": "textarea",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "rows": 4
           },
           {
@@ -120,7 +120,7 @@
             "label": "Immagine a sinistra?",
             "name": "immagine_sinistra",
             "type": "true_false",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "ui": 1,
             "default_value": 0
           },
@@ -129,7 +129,7 @@
             "label": "Immagine sezione",
             "name": "immagine_sezione",
             "type": "image",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "return_format": "url",
             "preview_size": "medium"
           }
@@ -140,7 +140,7 @@
         "label": "FAQ",
         "name": "faq",
         "type": "repeater",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "min": 0,
         "max": 10,
         "layout": "block",
@@ -151,14 +151,14 @@
             "label": "Domanda",
             "name": "domanda",
             "type": "text",
-            "show_in_graphql": 1
+            "show_in_graphql": 0
           },
           {
             "key": "field_badiula_marm_faq_risposta",
             "label": "Risposta",
             "name": "risposta",
             "type": "textarea",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "rows": 4
           }
         ]
@@ -175,21 +175,21 @@
         "label": "Titolo H1 (EN)",
         "name": "titolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_marm_sottotitolo_en",
         "label": "Sottotitolo (EN)",
         "name": "sottotitolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_marm_intro_en",
         "label": "Testo introduttivo (EN)",
         "name": "intro_en",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       }
@@ -209,7 +209,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "active": true,
-    "show_in_graphql": 1,
+    "show_in_graphql": 0,
     "graphql_field_name": "acf"
   }
 ]

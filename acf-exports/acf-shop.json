@@ -15,7 +15,7 @@
         "label": "Hero — Titolo (IT)",
         "name": "hero_titolo_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2,
         "placeholder": "Agrumi siciliani\ndirettamente dal produttore"
       },
@@ -24,7 +24,7 @@
         "label": "Hero — Sottotitolo (IT)",
         "name": "hero_sottotitolo_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2,
         "placeholder": "Box stagionali di agrumi biologici, olio extravergine Luce di Terra, marmellate di agrumi."
       },
@@ -33,7 +33,7 @@
         "label": "Hero — Immagine di sfondo",
         "name": "hero_immagine",
         "type": "image",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "return_format": "url",
         "preview_size": "medium"
       },
@@ -49,7 +49,7 @@
         "label": "Hero — Titolo (EN)",
         "name": "hero_titolo_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2
       },
       {
@@ -57,7 +57,7 @@
         "label": "Hero — Sottotitolo (EN)",
         "name": "hero_sottotitolo_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2
       }
     ],
@@ -76,7 +76,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "active": true,
-    "show_in_graphql": 1,
+    "show_in_graphql": 0,
     "graphql_field_name": "acf"
   }
 ]

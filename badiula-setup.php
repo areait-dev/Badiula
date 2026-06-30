@@ -199,16 +199,14 @@ add_action( 'init', function () {
  * @param string $path Percorso da revalidare, es. '/coltivazioni'
  */
 function badiula_revalidate( string $path ): void {
-	$secret = defined( 'REVALIDATE_SECRET' ) ? REVALIDATE_SECRET : '';
-	if ( ! $secret ) {
+	$secret   = defined( 'REVALIDATE_SECRET' ) ? REVALIDATE_SECRET : '';
+	$site_url = defined( 'NEXT_SITE_URL' ) ? rtrim( NEXT_SITE_URL, '/' ) : '';
+
+	if ( ! $secret || ! $site_url ) {
 		return;
 	}
 
-	$endpoint = add_query_arg(
-		'secret',
-		$secret,
-		'https://agribadiula.it/api/revalidate'
-	);
+	$endpoint = add_query_arg( 'secret', $secret, $site_url . '/api/revalidate' );
 
 	wp_remote_post( $endpoint, [
 		'body'      => wp_json_encode( [ 'path' => $path ] ),
@@ -219,50 +217,44 @@ function badiula_revalidate( string $path ): void {
 	] );
 }
 
-// CPT: prodotto → revalida homepage e listing coltivazioni
-// CPT: sezione_azienda → revalida homepage
 add_action( 'save_post', function ( int $post_id ) {
 	if ( wp_is_post_revision( $post_id ) || wp_is_post_autosave( $post_id ) ) {
 		return;
 	}
 
-	$cpt_paths = [
+	$post_type = get_post_type( $post_id );
+
+	$cpt_path_map = [
 		'prodotto'        => [ '/', '/coltivazioni' ],
 		'sezione_azienda' => [ '/' ],
 	];
 
-	$cpt = get_post_type( $post_id );
-
-	if ( ! isset( $cpt_paths[ $cpt ] ) ) {
+	if ( isset( $cpt_path_map[ $post_type ] ) ) {
+		foreach ( $cpt_path_map[ $post_type ] as $path ) {
+			badiula_revalidate( $path );
+		}
 		return;
 	}
 
-	foreach ( $cpt_paths[ $cpt ] as $path ) {
-		badiula_revalidate( $path );
+	if ( $post_type === 'page' ) {
+		$slug = get_post_field( 'post_name', $post_id );
+
+		$page_path_map = [
+			'home'              => '/',
+			'azienda'           => '/azienda',
+			'coltivazioni'      => '/coltivazioni',
+			'luce-di-terra'     => '/luce-di-terra',
+			'olio-evo'          => '/luce-di-terra/olio-evo',
+			'marmellata-agrumi' => '/luce-di-terra/marmellata-agrumi',
+			'shop'              => '/shop',
+			'opzioni-globali'   => '/',
+		];
+
+		if ( isset( $page_path_map[ $slug ] ) ) {
+			badiula_revalidate( $page_path_map[ $slug ] );
+		}
 	}
 }, 10, 1 );
-
-// Options Pages ACF → revalida la pagina corrispondente
-add_action( 'acf/save_post', function ( $post_id ) {
-	$options_page_paths = [
-		'badiula-options'           => [ '/' ],
-		'badiula-sezioni-homepage'  => [ '/' ],
-		'badiula-azienda'           => [ '/azienda' ],
-		'badiula-coltivazioni'      => [ '/coltivazioni' ],
-		'badiula-luce-di-terra'     => [ '/luce-di-terra' ],
-		'badiula-olio-evo'          => [ '/luce-di-terra/olio-evo' ],
-		'badiula-marmellate'        => [ '/luce-di-terra/marmellata-agrumi' ],
-		'badiula-shop'              => [ '/shop' ],
-	];
-
-	if ( ! is_string( $post_id ) || ! isset( $options_page_paths[ $post_id ] ) ) {
-		return;
-	}
-
-	foreach ( $options_page_paths[ $post_id ] as $path ) {
-		badiula_revalidate( $path );
-	}
-}, 20 );
 
 // ─── 5. Redirect frontend → sito principale ──────────────────────────────────
 

@@ -15,7 +15,7 @@
         "label": "Titolo H1 (IT)",
         "name": "titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "OLIO EXTRAVERGINE DI OLIVA"
       },
       {
@@ -23,7 +23,7 @@
         "label": "Sottotitolo (IT)",
         "name": "sottotitolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Olio extravergine di oliva biologico, estratto a freddo"
       },
       {
@@ -31,7 +31,7 @@
         "label": "Testo introduttivo (IT)",
         "name": "intro_it",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -40,7 +40,7 @@
         "label": "Profilo — Profumo (IT)",
         "name": "profilo_profumo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Erbaceo, fruttato verde"
       },
       {
@@ -48,7 +48,7 @@
         "label": "Profilo — Sapore (IT)",
         "name": "profilo_sapore_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Amaro e piccante equilibrati"
       },
       {
@@ -56,7 +56,7 @@
         "label": "Profilo — Raccolta (IT)",
         "name": "profilo_raccolta_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Ottobre – Novembre"
       },
       {
@@ -64,7 +64,7 @@
         "label": "Sezioni alternanti",
         "name": "sezioni",
         "type": "repeater",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "min": 0,
         "max": 6,
         "layout": "block",
@@ -75,14 +75,14 @@
             "label": "Titolo sezione",
             "name": "titolo_sezione",
             "type": "text",
-            "show_in_graphql": 1
+            "show_in_graphql": 0
           },
           {
             "key": "field_badiula_olio_sez_testo",
             "label": "Testo sezione",
             "name": "testo_sezione",
             "type": "textarea",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "rows": 4
           },
           {
@@ -90,7 +90,7 @@
             "label": "Immagine a sinistra?",
             "name": "immagine_sinistra",
             "type": "true_false",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "ui": 1,
             "default_value": 0
           },
@@ -99,7 +99,7 @@
             "label": "Immagine sezione",
             "name": "immagine_sezione",
             "type": "image",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "return_format": "url",
             "preview_size": "medium"
           }
@@ -110,7 +110,7 @@
         "label": "Immagine principale",
         "name": "immagine_principale",
         "type": "image",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "return_format": "url",
         "preview_size": "medium"
       },
@@ -119,7 +119,7 @@
         "label": "FAQ",
         "name": "faq",
         "type": "repeater",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "min": 0,
         "max": 10,
         "layout": "block",
@@ -130,14 +130,14 @@
             "label": "Domanda",
             "name": "domanda",
             "type": "text",
-            "show_in_graphql": 1
+            "show_in_graphql": 0
           },
           {
             "key": "field_badiula_olio_faq_risposta",
             "label": "Risposta",
             "name": "risposta",
             "type": "textarea",
-            "show_in_graphql": 1,
+            "show_in_graphql": 0,
             "rows": 4
           }
         ]
@@ -154,21 +154,21 @@
         "label": "Titolo H1 (EN)",
         "name": "titolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_olio_sottotitolo_en",
         "label": "Sottotitolo (EN)",
         "name": "sottotitolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_olio_intro_en",
         "label": "Testo introduttivo (EN)",
         "name": "intro_en",
         "type": "wysiwyg",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "toolbar": "basic",
         "media_upload": 0
       },
@@ -177,21 +177,21 @@
         "label": "Profilo — Profumo (EN)",
         "name": "profilo_profumo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_olio_profilo_sapore_en",
         "label": "Profilo — Sapore (EN)",
         "name": "profilo_sapore_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_olio_profilo_raccolta_en",
         "label": "Profilo — Raccolta (EN)",
         "name": "profilo_raccolta_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       }
     ],
     "location": [
@@ -209,7 +209,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "active": true,
-    "show_in_graphql": 1,
+    "show_in_graphql": 0,
     "graphql_field_name": "acf"
   }
 ]

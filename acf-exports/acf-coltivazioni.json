@@ -15,7 +15,7 @@
         "label": "Titolo pagina (IT)",
         "name": "titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "COLTIVAZIONI"
       },
       {
@@ -23,7 +23,7 @@
         "label": "Sottotitolo intro (IT)",
         "name": "sottotitolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "Cinque produzioni biologiche, una stagionalità naturale"
       },
       {
@@ -31,7 +31,7 @@
         "label": "Intro — Paragrafo 1 (IT)",
         "name": "intro_p1_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4
       },
       {
@@ -39,7 +39,7 @@
         "label": "Intro — Paragrafo 2 (IT)",
         "name": "intro_p2_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4
       },
       {
@@ -47,7 +47,7 @@
         "label": "Titolo griglia produzioni (IT)",
         "name": "grid_titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "LE NOSTRE PRODUZIONI"
       },
       {
@@ -55,7 +55,7 @@
         "label": "Titolo calendario raccolta (IT)",
         "name": "calendario_titolo_it",
         "type": "text",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "placeholder": "CALENDARIO DI RACCOLTA"
       },
       {
@@ -63,7 +63,7 @@
         "label": "Banner shop — Heading (IT)",
         "name": "banner_heading_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2,
         "placeholder": "Agrumi siciliani\ndirettamente dal produttore"
       },
@@ -72,7 +72,7 @@
         "label": "Banner shop — Sottotesto (IT)",
         "name": "banner_sub_it",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2
       },
       {
@@ -87,21 +87,21 @@
         "label": "Titolo pagina (EN)",
         "name": "titolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_colt_sottotitolo_en",
         "label": "Sottotitolo intro (EN)",
         "name": "sottotitolo_en",
         "type": "text",
-        "show_in_graphql": 1
+        "show_in_graphql": 0
       },
       {
         "key": "field_badiula_colt_intro_p1_en",
         "label": "Intro — Paragrafo 1 (EN)",
         "name": "intro_p1_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4
       },
       {
@@ -109,7 +109,7 @@
         "label": "Intro — Paragrafo 2 (EN)",
         "name": "intro_p2_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 4
       },
       {
@@ -117,7 +117,7 @@
         "label": "Banner shop — Heading (EN)",
         "name": "banner_heading_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2
       },
       {
@@ -125,7 +125,7 @@
         "label": "Banner shop — Sottotesto (EN)",
         "name": "banner_sub_en",
         "type": "textarea",
-        "show_in_graphql": 1,
+        "show_in_graphql": 0,
         "rows": 2
       }
     ],
@@ -144,7 +144,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "active": true,
-    "show_in_graphql": 1,
+    "show_in_graphql": 0,
     "graphql_field_name": "acf"
   }
 ]
