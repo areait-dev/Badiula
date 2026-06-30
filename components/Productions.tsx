@@ -45,9 +45,26 @@ export default function Productions({ title = '', subtitle = '' }: ProductionsPr
   const trackRef   = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const isNarrow = window.matchMedia('(max-width: 1023px)').matches;
     const reduce   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (isMobile || reduce) return;
+
+    if (isNarrow) {
+      if (reduce) return;
+      const cards = wrapperRef.current?.querySelectorAll<HTMLElement>(`.${styles.card}`);
+      if (!cards) return;
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => { if (e.isIntersecting) { (e.target as HTMLElement).classList.add(styles.fadeIn); io.unobserve(e.target); } }),
+        { threshold: 0.1 },
+      );
+      cards.forEach((c, i) => {
+        c.classList.add(styles.fadeReady);
+        (c as HTMLElement).style.transitionDelay = `${i * 0.07}s`;
+        io.observe(c);
+      });
+      return () => io.disconnect();
+    }
+
+    if (reduce) return;
 
     const wrapper = wrapperRef.current;
     const track   = trackRef.current;

@@ -63,14 +63,15 @@
   width: clamp(300px, 34vw, 480px);
 }
 
-/* Mobile: single column */
-@media (max-width: 900px) {
+/* Mobile/tablet: single column (< 1024px) */
+@media (max-width: 768px) {
   .panelInner {
-    padding: 100px 1.5rem 3rem;
+    padding: 2.5rem 1rem 3rem;
+    background: transparent;
   }
   .grid {
     grid-template-columns: 1fr;
-    row-gap: 3rem;
+    row-gap: 2.5rem;
   }
   .col,
   .col:last-child {
@@ -80,9 +81,14 @@
   .body {
     max-width: none;
   }
-  /* Show the map between the two text blocks */
+  /* Mappa: quasi tutta larghezza, nessun padding laterale aggiuntivo */
   .mapCol {
     order: 2;
+    width: 100%;
+  }
+  .map {
+    width: 95%;
+    max-width: none;
   }
   .col:first-child {
     order: 1;

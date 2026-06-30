@@ -297,73 +297,77 @@
 }
 
 /* ────────────────────────────────────────────
-   RESPONSIVE – mobile (≤ 768px)
+   RESPONSIVE – mobile/tablet (< 1024px)
 ──────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .heroTitle {
-    padding-top: 7rem;
-  }
-
+@media (max-width: 1023px) {
+  .heroTitle        { padding-top: 7rem; }
   .paragrafoDescrizione { padding-left: 20px; padding-right: 20px; }
-  .gridHeader    { padding: 3rem 20px 1.5rem; }
-  .griglia       { padding: 0; }
-  .calendarSection { padding: 3rem 20px 4rem; }
+  .gridHeader       { padding: 3rem 20px 1.5rem; }
+  .calendarSection  { padding: 3rem 20px 4rem; }
 
   .introTitle {
     font-size: clamp(3rem, 14vw, 72px);
     line-height: 1.1;
   }
-
   .sezioneIntroduzione {
     padding-top: 50px;
     padding-bottom: 60px;
   }
-
   .sottotitoloItalic {
     font-size: 28px;
     line-height: 34px;
     margin-bottom: 40px;
   }
 
-  .paragrafoDescrizione {
-    font-size: 20px !important;
-    line-height: 32px !important;
-  }
-
+  /* Track: griglia 2 colonne su tablet, colonna su mobile */
   .griglia {
     height: auto;
-    min-height: 60vh;
+    overflow: visible;
   }
-
   .track {
-    padding: 0.5rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding: 1rem 1.5rem 4rem;
+    gap: 1.5rem;
+    will-change: auto;
+    transform: none !important;
   }
-
   .card {
-    flex: 0 0 85vw;
-    height: 70vh;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
   }
+  .img {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+  .progress { display: none; }
 
   .bannerYellow { height: 340px; }
-
   .bannerGreen {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
   }
-
   .bannerShopBtn {
     width: 100%;
     justify-content: center;
   }
 }
 
-@media (max-width: 640px) {
-  .card {
-    flex: 0 0 90vw;
-  }
+/* ── Tablet padding più ampio ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .track       { padding: 1rem 2.5rem 4rem; gap: 2rem; }
+  .gridHeader  { padding: 3rem 2.5rem 1.5rem; }
 }
 
+/* ── Mobile < 600px: colonna singola ── */
+@media (max-width: 599px) {
+  .track { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 480px) {
   .introTitle {
@@ -373,4 +377,18 @@
     font-size: 24px;
     line-height: 30px;
   }
+}
+
+/* ── Fade-in mobile/tablet via IntersectionObserver ── */
+.fadeReady {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fadeReady { opacity: 1; transform: none; transition: none; }
 }

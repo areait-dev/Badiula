@@ -16,8 +16,8 @@
 
 .heroLabel {
   font-family: var(--font-body);
-  font-size: 110px;
-  line-height: 122px;
+  font-size: clamp(2.8rem, 16vw, 110px);
+  line-height: 1.1;
   font-weight: 700;
   color: var(--bordeaux);
   letter-spacing: 0;
@@ -255,15 +255,22 @@
   .vmSection {
     flex-direction: column;
     padding: 4rem 1.5rem;
-    gap: 3rem;
+    gap: 0;
   }
 
-  .vmBlock { padding: 0; }
+  .vmBlock {
+    padding: 2rem 0;
+    height: auto;
+    flex: none;
+  }
 
   .vmDivider {
     width: 100%;
-    height: 1.5px;
+    height: 2px;
     align-self: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-shrink: 0;
   }
 
   .quoteSection   { margin-top: -60px; padding-bottom: 5rem; }

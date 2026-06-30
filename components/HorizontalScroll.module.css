@@ -144,6 +144,14 @@
   width: 0%;
 }
 
+/* Mobile/tablet < 1024px: rimuove il background verde/grigio del pannello Territorio */
+@media (max-width: 768px) {
+  .territoryPanel {
+    background: transparent;
+    padding: 0;
+  }
+}
+
 /* Mobile: stack verticale */
 @media (max-width: 768px) {
   .wrapper {
@@ -166,9 +174,10 @@
     width: 100%;
     padding: 3rem 1.5rem;
   }
-  .imgHalf {
-    height: 50vh;
-  }
+.imgHalf {
+  height: 50vh;
+  background: transparent;
+}
   .greenPanel {
     width: 100%;
     min-width: 100%;
