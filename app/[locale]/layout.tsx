@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
+import Script from 'next/script';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -53,6 +54,18 @@ export default async function LocaleLayout({
           </SitoInCostruzioneGate>
           <ScrollToTop />
         </NextIntlClientProvider>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VPN683YKJG"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VPN683YKJG');
+          `}
+        </Script>
       </body>
     </html>
   );
