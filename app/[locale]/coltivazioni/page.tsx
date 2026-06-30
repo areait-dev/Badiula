@@ -6,14 +6,26 @@ import { PRODUCTS } from '@/lib/data';
 import HarvestCalendar from '@/components/HarvestCalendar';
 import Footer from '@/components/Footer';
 import ProductionsTrack from './ProductionsTrack';
-import { getPaginaColtivazioni } from '@/lib/wordpress';
+import { getPaginaColtivazioni, getPageSeo } from '@/lib/wordpress';
 import styles from './page.module.css';
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations({ locale: params.locale, namespace: 'coltivazioni' });
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getPageSeo('coltivazioni');
+  if (!seo) {
+    return {
+      title: 'Coltivazioni — Badiula',
+      description: 'Cinque produzioni biologiche: arance rosse IGP, arance bionde, limone, bergamotto e pompelmo coltivati tra Carlentini e Lentini.',
+    };
+  }
   return {
-    title: 'COLTIVAZIONI — Badiula',
-    description: t('heroText'),
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: seo.canonical },
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      images: seo.ogImage ? [seo.ogImage] : [],
+    },
   };
 }
 

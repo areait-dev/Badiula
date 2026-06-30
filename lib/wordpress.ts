@@ -56,6 +56,45 @@ export async function fetchGraphQL<T>(
   return json.data as T;
 }
 
+// ─── SEO da Yoast (yoast_head_json) ──────────────────────────────────────────
+
+export interface SeoData {
+  title: string;
+  description: string;
+  ogImage: string | null;
+  canonical: string;
+}
+
+export async function getPageSeo(slug: string): Promise<SeoData | null> {
+  try {
+    const wpUrl     = process.env.NEXT_PUBLIC_WORDPRESS_URL;
+    const publicUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://agribadiula.it';
+    const res = await fetch(
+      `${wpUrl}/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}`,
+      { next: { revalidate: 60, tags: ['wordpress'] } },
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    const yoast = data[0]?.yoast_head_json;
+    if (!yoast) return null;
+
+    let canonical = yoast.canonical ?? '';
+    if (wpUrl && canonical.startsWith(wpUrl)) {
+      canonical = canonical.replace(wpUrl, publicUrl);
+    }
+
+    return {
+      title:       yoast.title       ?? '',
+      description: yoast.description ?? yoast.og_description ?? '',
+      ogImage:     yoast.og_image?.[0]?.url ?? null,
+      canonical,
+    };
+  } catch (err) {
+    console.error(`[getPageSeo] slug=${slug}`, err);
+    return null;
+  }
+}
+
 // ─── Client REST (per pagine native WP + ACF free) ───────────────────────────
 
 const WP_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL as string;

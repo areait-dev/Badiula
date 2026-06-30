@@ -3,14 +3,26 @@ import { setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
 import AziendaHeroVideo from '@/components/azienda/AziendaHeroVideo';
-import { getPaginaAzienda } from '@/lib/wordpress';
+import { getPaginaAzienda, getPageSeo } from '@/lib/wordpress';
 import styles from './page.module.css';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getPageSeo('azienda');
+  if (!seo) {
+    return {
+      title: 'Azienda — Badiula',
+      description: "Badiula è un'azienda agricola biologica situata a Carlentini, in provincia di Siracusa.",
+    };
+  }
   return {
-    title: 'Azienda — Badiula',
-    description:
-      "Badiula è un'azienda agricola biologica situata a Carlentini, in provincia di Siracusa.",
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: seo.canonical },
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      images: seo.ogImage ? [seo.ogImage] : [],
+    },
   };
 }
 

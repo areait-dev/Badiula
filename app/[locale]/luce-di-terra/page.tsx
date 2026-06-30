@@ -1,10 +1,31 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import Footer from '@/components/Footer';
 import ProductCardBadiula from '@/components/ProductCardBadiula';
-import { getPaginaLuceDiTerra } from '@/lib/wordpress';
+import { getPaginaLuceDiTerra, getPageSeo } from '@/lib/wordpress';
 import styles from './page.module.css';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getPageSeo('luce-di-terra');
+  if (!seo) {
+    return {
+      title: 'Luce di Terra — Badiula',
+      description: "La linea Badiula dedicata all'olio extravergine di oliva biologico e alle marmellate di agrumi siciliani.",
+    };
+  }
+  return {
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: seo.canonical },
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      images: seo.ogImage ? [seo.ogImage] : [],
+    },
+  };
+}
 
 export default async function LuceDiTerraPage({ params }: { params: { locale: string } }) {
   setRequestLocale(params.locale);

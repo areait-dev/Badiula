@@ -1,5 +1,6 @@
+import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import { getHomepage } from '@/lib/wordpress';
+import { getHomepage, getPageSeo } from '@/lib/wordpress';
 import Hero from '@/components/Hero';
 import HorizontalScroll from '@/components/HorizontalScroll';
 import Productions from '@/components/Productions';
@@ -7,6 +8,26 @@ import LuceDiTerra from '@/components/LuceDiTerra';
 import ShopBanner from '@/components/ShopBanner';
 import Footer from '@/components/Footer';
 import Reveal from '@/components/Reveal';
+
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const seo = await getPageSeo('home');
+  if (!seo) {
+    return {
+      title: 'Badiula — Agrumi Biologici di Sicilia',
+      description: 'Azienda agricola biologica Badiula: quattro generazioni dedicate alla coltivazione di agrumi siciliani tra Carlentini e Siracusa.',
+    };
+  }
+  return {
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: seo.canonical },
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      images: seo.ogImage ? [seo.ogImage] : [],
+    },
+  };
+}
 
 export default async function Home({ params }: { params: { locale: string } }) {
   setRequestLocale(params.locale);
