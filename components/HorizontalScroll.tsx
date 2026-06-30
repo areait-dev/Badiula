@@ -4,14 +4,40 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useTranslations } from 'next-intl';
 import Territorio from '@/components/Territorio';
 import styles from './HorizontalScroll.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function HorizontalScroll() {
-  const t           = useTranslations('about');
+interface HorizontalScrollProps {
+  p1Eyebrow?: string;
+  p1Heading?: string;
+  p1Body?: string;
+  p1Cta?: string;
+  p1Image?: string | null;
+  p2Eyebrow?: string;
+  p2Heading?: string;
+  p2Body?: string;
+  p2Body2?: string;
+  p3Eyebrow?: string;
+  p3Heading?: string;
+  p3Body?: string;
+}
+
+export default function HorizontalScroll({
+  p1Eyebrow = '',
+  p1Heading = '',
+  p1Body = '',
+  p1Cta = '',
+  p1Image = null,
+  p2Eyebrow = '',
+  p2Heading = '',
+  p2Body = '',
+  p2Body2 = '',
+  p3Eyebrow = '',
+  p3Heading = '',
+  p3Body = '',
+}: HorizontalScrollProps) {
   const wrapperRef  = useRef<HTMLDivElement>(null);
   const trackRef    = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
@@ -71,28 +97,43 @@ export default function HorizontalScroll() {
         {/* Panel 1 — Chi siamo */}
         <section className={`${styles.panel} ${styles.p1}`}>
           <div className={styles.half}>
-            <p className={styles.eyebrow}>{t('p1.eyebrow')}</p>
-            <h2 className={styles.heading}>{t('p1.heading')}</h2>
-            <p className={styles.body}>
-              Badiula è un&apos;azienda agricola biologica situata a Carlentini, in provincia di Siracusa, e si estende su oltre 120 ettari nel cuore della Sicilia orientale.
-            </p>
-            <a href="/" className={`btn btn-outline ${styles.cta}`}>{t('p1.cta')}</a>
+            <p className={styles.eyebrow}>{p1Eyebrow}</p>
+            <h2 className={styles.heading}>{p1Heading}</h2>
+            <p className={styles.body}>{p1Body}</p>
+            <a href="/" className={`btn btn-outline ${styles.cta}`}>{p1Cta}</a>
           </div>
           <div className={styles.imgHalf}>
-            <video
-              src="/videos/dsc_7756_web.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className={styles.greenImg}
-            />
+            {p1Image ? (
+              <Image
+                src={p1Image}
+                alt={p1Heading}
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            ) : (
+              <video
+                src="/videos/dsc_7756_web.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className={styles.greenImg}
+              />
+            )}
           </div>
         </section>
 
         {/* Panel 2 — Territorio + Filiera */}
         <section className={`${styles.panel} ${styles.territoryPanel}`}>
-          <Territorio />
+          <Territorio
+            p2Eyebrow={p2Eyebrow}
+            p2Heading={p2Heading}
+            p2Body={p2Body}
+            p2Body2={p2Body2}
+            p3Eyebrow={p3Eyebrow}
+            p3Heading={p3Heading}
+            p3Body={p3Body}
+          />
         </section>
 
         {/* Panel 3 — Immagine aerea capannone */}

@@ -34,7 +34,12 @@ function splitTitle(name: string): string[] {
   return parts;
 }
 
-export default function Productions() {
+interface ProductionsProps {
+  title?: string;
+  subtitle?: string;
+}
+
+export default function Productions({ title = '', subtitle = '' }: ProductionsProps) {
   const t          = useTranslations('productions');
   const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef   = useRef<HTMLDivElement>(null);
@@ -84,8 +89,8 @@ export default function Productions() {
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
       <div className={styles.header}>
-        <h2 className={styles.title}>{t('title')}</h2>
-        <p className={styles.subtitle}>{t('subtitle')}</p>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.subtitle}>{subtitle}</p>
       </div>
       <div className={styles.trackWrap}>
         <div ref={trackRef} className={styles.track}>

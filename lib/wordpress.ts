@@ -12,23 +12,16 @@ import type {
   PaginaShop,
   Sezione,
   Faq,
+  VarietaMarmellata,
 } from './types';
 
 import {
   GET_ALL_PRODUCTS,
   GET_PRODUCT_BY_SLUG,
   GET_ALL_SEZIONI_AZIENDA,
-  GET_HOMEPAGE,
-  GET_GLOBAL_OPTIONS,
-  GET_PAGINA_AZIENDA,
-  GET_PAGINA_COLTIVAZIONI,
-  GET_PAGINA_LUCE_DI_TERRA,
-  GET_PAGINA_OLIO_EVO,
-  GET_PAGINA_MARMELLATE,
-  GET_PAGINA_SHOP,
 } from './queries';
 
-// ─── Client GraphQL ───────────────────────────────────────────────────────────
+// ─── Client GraphQL (solo per CPT) ───────────────────────────────────────────
 
 const GQL_ENDPOINT = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL as string;
 
@@ -63,18 +56,47 @@ export async function fetchGraphQL<T>(
   return json.data as T;
 }
 
+// ─── Client REST (per pagine native WP + ACF free) ───────────────────────────
+
+const WP_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL as string;
+
+async function getPageAcfBySlug(slug: string): Promise<Record<string, unknown>> {
+  try {
+    const res = await fetch(`${WP_URL}/wp-json/wp/v2/pages?slug=${encodeURIComponent(slug)}`, {
+      next: { revalidate: 60, tags: ['wordpress'] },
+    });
+    if (!res.ok) throw new Error(`WP REST ${res.status}`);
+    const data = await res.json();
+    return (data[0]?.acf as Record<string, unknown>) ?? {};
+  } catch (err) {
+    console.error(`[getPageAcfBySlug] slug=${slug}`, err);
+    return {};
+  }
+}
+
 // ─── Helper: valori di fallback ───────────────────────────────────────────────
 
 const str = (v: unknown): string => (typeof v === 'string' ? v : '');
 const url = (v: unknown): string | null => (typeof v === 'string' && v ? v : null);
 const arr = <T>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
 
+// Mapper per GraphQL (camelCase — usato dai CPT)
 function mapSezione(s: Record<string, unknown>): Sezione {
   return {
     titoloSezione: str(s.titoloSezione),
     testoSezione: str(s.testoSezione),
     immagineSinistra: Boolean(s.immagineSinistra),
     immagineSezione: url(s.immagineSezione),
+  };
+}
+
+// Mapper per REST API (snake_case — usato dalle pagine native)
+function mapSezioneRest(s: Record<string, unknown>): Sezione {
+  return {
+    titoloSezione: str(s.titolo_sezione),
+    testoSezione: str(s.testo_sezione),
+    immagineSinistra: Boolean(s.immagine_sinistra),
+    immagineSezione: url(s.immagine_sezione),
   };
 }
 
@@ -103,7 +125,7 @@ function mapProductAcf(raw: Record<string, unknown>): ProductAcf {
   };
 }
 
-// ─── 1. Prodotti ──────────────────────────────────────────────────────────────
+// ─── 1. Prodotti (CPT — GraphQL) ──────────────────────────────────────────────
 
 interface RawProductNode {
   id: string;
@@ -147,7 +169,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   }
 }
 
-// ─── 2. Sezioni Azienda ───────────────────────────────────────────────────────
+// ─── 2. Sezioni Azienda (CPT — GraphQL) ──────────────────────────────────────
 
 interface RawSezioneNode {
   id: string;
@@ -182,102 +204,86 @@ export async function getSezioniAzienda(): Promise<SezioneAzienda[]> {
   }
 }
 
-// ─── 3. Homepage ──────────────────────────────────────────────────────────────
-
-interface HomepageRaw {
-  sezioniHomepage: Record<string, unknown>;
-}
+// ─── 3. Homepage (pagina slug: home — REST) ───────────────────────────────────
 
 const HOMEPAGE_FALLBACK: HomepageData = {
   heroVideo: '/videos/hero.mp4',
-  heroTitoloIt: '',
-  heroTitoloEn: '',
-  heroSottotitoloIt: '',
-  heroSottotitoloEn: '',
-  heroCtaIt: '',
-  heroCtaEn: '',
+  heroTitoloIt: '', heroTitoloEn: '',
+  heroSottotitoloIt: '', heroSottotitoloEn: '',
+  heroCtaIt: '', heroCtaEn: '',
   aboutP1: { eyebrowIt: '', eyebrowEn: '', headingIt: '', headingEn: '', bodyIt: '', bodyEn: '', ctaIt: '', ctaEn: '', immagine: null },
   aboutP2: { eyebrowIt: '', eyebrowEn: '', headingIt: '', headingEn: '', bodyIt: '', bodyEn: '', body2It: '', body2En: '' },
   aboutP3: { eyebrowIt: '', eyebrowEn: '', headingIt: '', headingEn: '', bodyIt: '', bodyEn: '' },
-  produzioniEyebrowIt: '',
-  produzioniEyebrowEn: '',
-  produzioniTitoloIt: '',
-  produzioniTitoloEn: '',
-  produzioniSottotitoloIt: '',
-  produzioniSottotitoloEn: '',
-  luceTitoloIt: '',
-  luceTitoloEn: '',
-  luceSottotitoloIt: '',
-  luceSottotitoloEn: '',
-  luceBodyIt: '',
-  luceBodyEn: '',
+  produzioniEyebrowIt: '', produzioniEyebrowEn: '',
+  produzioniTitoloIt: '', produzioniTitoloEn: '',
+  produzioniSottotitoloIt: '', produzioniSottotitoloEn: '',
+  luceTitoloIt: '', luceTitoloEn: '',
+  luceSottotitoloIt: '', luceSottotitoloEn: '',
+  luceBodyIt: '', luceBodyEn: '',
   luceImmagine: null,
-  shopBannerTitoloIt: '',
-  shopBannerTitoloEn: '',
-  shopBannerSottotitoloIt: '',
-  shopBannerSottotitoloEn: '',
+  shopBannerTitoloIt: '', shopBannerTitoloEn: '',
+  shopBannerSottotitoloIt: '', shopBannerSottotitoloEn: '',
   shopBannerImmagine: null,
 };
 
 export async function getHomepage(): Promise<HomepageData> {
   try {
-    const data = await fetchGraphQL<HomepageRaw>(GET_HOMEPAGE);
-    const r = data.sezioniHomepage ?? {};
+    const r = await getPageAcfBySlug('home');
     return {
-      heroVideo: str(r.heroVideo) || '/videos/hero.mp4',
-      heroTitoloIt: str(r.heroTitoloIt),
-      heroTitoloEn: str(r.heroTitoloEn),
-      heroSottotitoloIt: str(r.heroSottotitoloIt),
-      heroSottotitoloEn: str(r.heroSottotitoloEn),
-      heroCtaIt: str(r.heroCtaIt),
-      heroCtaEn: str(r.heroCtaEn),
+      heroVideo: str(r.hero_video) || '/videos/hero.mp4',
+      heroTitoloIt: str(r.hero_titolo_it),
+      heroTitoloEn: str(r.hero_titolo_en),
+      heroSottotitoloIt: str(r.hero_sottotitolo_it),
+      heroSottotitoloEn: str(r.hero_sottotitolo_en),
+      heroCtaIt: str(r.hero_cta_it),
+      heroCtaEn: str(r.hero_cta_en),
       aboutP1: {
-        eyebrowIt: str(r.aboutP1EyebrowIt),
-        eyebrowEn: str(r.aboutP1EyebrowEn),
-        headingIt: str(r.aboutP1HeadingIt),
-        headingEn: str(r.aboutP1HeadingEn),
-        bodyIt: str(r.aboutP1BodyIt),
-        bodyEn: str(r.aboutP1BodyEn),
-        ctaIt: str(r.aboutP1CtaIt),
-        ctaEn: str(r.aboutP1CtaEn),
-        immagine: url(r.aboutP1Immagine),
+        eyebrowIt: str(r.about_p1_eyebrow_it),
+        eyebrowEn: str(r.about_p1_eyebrow_en),
+        headingIt: str(r.about_p1_heading_it),
+        headingEn: str(r.about_p1_heading_en),
+        bodyIt: str(r.about_p1_body_it),
+        bodyEn: str(r.about_p1_body_en),
+        ctaIt: str(r.about_p1_cta_it),
+        ctaEn: str(r.about_p1_cta_en),
+        immagine: url(r.about_p1_immagine),
       },
       aboutP2: {
-        eyebrowIt: str(r.aboutP2EyebrowIt),
-        eyebrowEn: str(r.aboutP2EyebrowEn),
-        headingIt: str(r.aboutP2HeadingIt),
-        headingEn: str(r.aboutP2HeadingEn),
-        bodyIt: str(r.aboutP2BodyIt),
-        bodyEn: str(r.aboutP2BodyEn),
-        body2It: str(r.aboutP2Body2It),
-        body2En: str(r.aboutP2Body2En),
+        eyebrowIt: str(r.about_p2_eyebrow_it),
+        eyebrowEn: str(r.about_p2_eyebrow_en),
+        headingIt: str(r.about_p2_heading_it),
+        headingEn: str(r.about_p2_heading_en),
+        bodyIt: str(r.about_p2_body_it),
+        bodyEn: str(r.about_p2_body_en),
+        body2It: str(r.about_p2_body2_it),
+        body2En: str(r.about_p2_body2_en),
       },
       aboutP3: {
-        eyebrowIt: str(r.aboutP3EyebrowIt),
-        eyebrowEn: str(r.aboutP3EyebrowEn),
-        headingIt: str(r.aboutP3HeadingIt),
-        headingEn: str(r.aboutP3HeadingEn),
-        bodyIt: str(r.aboutP3BodyIt),
-        bodyEn: str(r.aboutP3BodyEn),
+        eyebrowIt: str(r.about_p3_eyebrow_it),
+        eyebrowEn: str(r.about_p3_eyebrow_en),
+        headingIt: str(r.about_p3_heading_it),
+        headingEn: str(r.about_p3_heading_en),
+        bodyIt: str(r.about_p3_body_it),
+        bodyEn: str(r.about_p3_body_en),
       },
-      produzioniEyebrowIt: str(r.produzioniEyebrowIt),
-      produzioniEyebrowEn: str(r.produzioniEyebrowEn),
-      produzioniTitoloIt: str(r.produzioniTitoloIt),
-      produzioniTitoloEn: str(r.produzioniTitoloEn),
-      produzioniSottotitoloIt: str(r.produzioniSottotitoloIt),
-      produzioniSottotitoloEn: str(r.produzioniSottotitoloEn),
-      luceTitoloIt: str(r.luceTitoloIt),
-      luceTitoloEn: str(r.luceTitoloEn),
-      luceSottotitoloIt: str(r.luceSottotitoloIt),
-      luceSottotitoloEn: str(r.luceSottotitoloEn),
-      luceBodyIt: str(r.luceBodyIt),
-      luceBodyEn: str(r.luceBodyEn),
-      luceImmagine: url(r.luceImmagine),
-      shopBannerTitoloIt: str(r.shopBannerTitoloIt),
-      shopBannerTitoloEn: str(r.shopBannerTitoloEn),
-      shopBannerSottotitoloIt: str(r.shopBannerSottotitoloIt),
-      shopBannerSottotitoloEn: str(r.shopBannerSottotitoloEn),
-      shopBannerImmagine: url(r.shopBannerImmagine),
+      produzioniEyebrowIt: str(r.produzioni_eyebrow_it),
+      produzioniEyebrowEn: str(r.produzioni_eyebrow_en),
+      produzioniTitoloIt: str(r.produzioni_titolo_it),
+      produzioniTitoloEn: str(r.produzioni_titolo_en),
+      produzioniSottotitoloIt: str(r.produzioni_sottotitolo_it),
+      produzioniSottotitoloEn: str(r.produzioni_sottotitolo_en),
+      luceTitoloIt: str(r.luce_titolo_it),
+      luceTitoloEn: str(r.luce_titolo_en),
+      luceSottotitoloIt: str(r.luce_sottotitolo_it),
+      luceSottotitoloEn: str(r.luce_sottotitolo_en),
+      luceBodyIt: str(r.luce_body_it),
+      luceBodyEn: str(r.luce_body_en),
+      luceImmagine: url(r.luce_immagine),
+      shopBannerTitoloIt: str(r.shop_banner_titolo_it),
+      shopBannerTitoloEn: str(r.shop_banner_titolo_en),
+      shopBannerSottotitoloIt: str(r.shop_banner_sottotitolo_it),
+      shopBannerSottotitoloEn: str(r.shop_banner_sottotitolo_en),
+      shopBannerImmagine: url(r.shop_banner_immagine),
     };
   } catch (err) {
     console.error('[getHomepage]', err);
@@ -285,11 +291,7 @@ export async function getHomepage(): Promise<HomepageData> {
   }
 }
 
-// ─── 4. Opzioni Globali ───────────────────────────────────────────────────────
-
-interface GlobalOptionsRaw {
-  opzioniGlobali: Record<string, unknown>;
-}
+// ─── 4. Opzioni Globali (pagina slug: opzioni-globali — REST) ─────────────────
 
 const GLOBAL_OPTIONS_FALLBACK: GlobalOptions = {
   telefono: '', email: '', whatsapp: '', indirizzo: '', pIva: '',
@@ -301,22 +303,21 @@ const GLOBAL_OPTIONS_FALLBACK: GlobalOptions = {
 
 export async function getGlobalOptions(): Promise<GlobalOptions> {
   try {
-    const data = await fetchGraphQL<GlobalOptionsRaw>(GET_GLOBAL_OPTIONS);
-    const r = data.opzioniGlobali ?? {};
+    const r = await getPageAcfBySlug('opzioni-globali');
     return {
       telefono: str(r.telefono),
       email: str(r.email),
       whatsapp: str(r.whatsapp),
       indirizzo: str(r.indirizzo),
-      pIva: str(r.pIva),
+      pIva: str(r.p_iva),
       instagram: str(r.instagram),
       facebook: str(r.facebook),
       linkedin: str(r.linkedin),
-      footerQuoteIt: str(r.footerQuoteIt),
-      footerQuoteEn: str(r.footerQuoteEn),
-      footerFormTitleIt: str(r.footerFormTitleIt),
-      footerFormTitleEn: str(r.footerFormTitleEn),
-      ogImage: url(r.ogImage),
+      footerQuoteIt: str(r.footer_quote_it),
+      footerQuoteEn: str(r.footer_quote_en),
+      footerFormTitleIt: str(r.footer_form_title_it),
+      footerFormTitleEn: str(r.footer_form_title_en),
+      ogImage: url(r.og_image),
     };
   } catch (err) {
     console.error('[getGlobalOptions]', err);
@@ -324,11 +325,7 @@ export async function getGlobalOptions(): Promise<GlobalOptions> {
   }
 }
 
-// ─── 5. Pagina Azienda ────────────────────────────────────────────────────────
-
-interface PaginaAziendaRaw {
-  paginaAzienda: Record<string, unknown>;
-}
+// ─── 5. Pagina Azienda (pagina slug: azienda — REST) ─────────────────────────
 
 const PAGINA_AZIENDA_FALLBACK: PaginaAzienda = {
   heroLabelIt: '', heroTitoloIt: '', heroBodyIt: '', videoUrl: '',
@@ -345,41 +342,40 @@ const PAGINA_AZIENDA_FALLBACK: PaginaAzienda = {
 
 export async function getPaginaAzienda(): Promise<PaginaAzienda> {
   try {
-    const data = await fetchGraphQL<PaginaAziendaRaw>(GET_PAGINA_AZIENDA);
-    const r = data.paginaAzienda ?? {};
+    const r = await getPageAcfBySlug('azienda');
     return {
-      heroLabelIt: str(r.heroLabelIt),
-      heroTitoloIt: str(r.heroTitoloIt),
-      heroBodyIt: str(r.heroBodyIt),
-      videoUrl: str(r.videoUrl),
-      filosofiaBodyIt: str(r.filosofiaBodyIt),
-      filosofiaImmagine: url(r.filosofiaImmagine),
-      quoteIt: str(r.quoteIt),
-      culturaTitoloIt: str(r.culturaTitoloIt),
-      culturaBodyIt: str(r.culturaBodyIt),
-      culturaImmagine: url(r.culturaImmagine),
-      manifestoIt: str(r.manifestoIt),
-      visionLabelIt: str(r.visionLabelIt),
-      visionBodyIt: str(r.visionBodyIt),
-      missionLabelIt: str(r.missionLabelIt),
-      missionBodyIt: str(r.missionBodyIt),
-      territorioTitoloIt: str(r.territorioTitoloIt),
-      territorioBodyIt: str(r.territorioBodyIt),
-      territorioImmagine: url(r.territorioImmagine),
-      heroLabelEn: str(r.heroLabelEn),
-      heroTitoloEn: str(r.heroTitoloEn),
-      heroBodyEn: str(r.heroBodyEn),
-      filosofiaBodyEn: str(r.filosofiaBodyEn),
-      quoteEn: str(r.quoteEn),
-      culturaTitoloEn: str(r.culturaTitoloEn),
-      culturaBodyEn: str(r.culturaBodyEn),
-      manifestoEn: str(r.manifestoEn),
-      visionLabelEn: str(r.visionLabelEn),
-      visionBodyEn: str(r.visionBodyEn),
-      missionLabelEn: str(r.missionLabelEn),
-      missionBodyEn: str(r.missionBodyEn),
-      territorioTitoloEn: str(r.territorioTitoloEn),
-      territorioBodyEn: str(r.territorioBodyEn),
+      heroLabelIt: str(r.hero_label_it),
+      heroTitoloIt: str(r.hero_titolo_it),
+      heroBodyIt: str(r.hero_body_it),
+      videoUrl: str(r.video_url),
+      filosofiaBodyIt: str(r.filosofia_body_it),
+      filosofiaImmagine: url(r.filosofia_immagine),
+      quoteIt: str(r.quote_it),
+      culturaTitoloIt: str(r.cultura_titolo_it),
+      culturaBodyIt: str(r.cultura_body_it),
+      culturaImmagine: url(r.cultura_immagine),
+      manifestoIt: str(r.manifesto_it),
+      visionLabelIt: str(r.vision_label_it),
+      visionBodyIt: str(r.vision_body_it),
+      missionLabelIt: str(r.mission_label_it),
+      missionBodyIt: str(r.mission_body_it),
+      territorioTitoloIt: str(r.territorio_titolo_it),
+      territorioBodyIt: str(r.territorio_body_it),
+      territorioImmagine: url(r.territorio_immagine),
+      heroLabelEn: str(r.hero_label_en),
+      heroTitoloEn: str(r.hero_titolo_en),
+      heroBodyEn: str(r.hero_body_en),
+      filosofiaBodyEn: str(r.filosofia_body_en),
+      quoteEn: str(r.quote_en),
+      culturaTitoloEn: str(r.cultura_titolo_en),
+      culturaBodyEn: str(r.cultura_body_en),
+      manifestoEn: str(r.manifesto_en),
+      visionLabelEn: str(r.vision_label_en),
+      visionBodyEn: str(r.vision_body_en),
+      missionLabelEn: str(r.mission_label_en),
+      missionBodyEn: str(r.mission_body_en),
+      territorioTitoloEn: str(r.territorio_titolo_en),
+      territorioBodyEn: str(r.territorio_body_en),
     };
   } catch (err) {
     console.error('[getPaginaAzienda]', err);
@@ -387,11 +383,7 @@ export async function getPaginaAzienda(): Promise<PaginaAzienda> {
   }
 }
 
-// ─── 6. Pagina Coltivazioni ───────────────────────────────────────────────────
-
-interface PaginaColtivazioniRaw {
-  paginaColtivazioni: Record<string, unknown>;
-}
+// ─── 6. Pagina Coltivazioni (pagina slug: coltivazioni — REST) ────────────────
 
 const PAGINA_COLTIVAZIONI_FALLBACK: PaginaColtivazioni = {
   titoloIt: '', titoloEn: '', sottotitoloIt: '', sottotitoloEn: '',
@@ -402,23 +394,22 @@ const PAGINA_COLTIVAZIONI_FALLBACK: PaginaColtivazioni = {
 
 export async function getPaginaColtivazioni(): Promise<PaginaColtivazioni> {
   try {
-    const data = await fetchGraphQL<PaginaColtivazioniRaw>(GET_PAGINA_COLTIVAZIONI);
-    const r = data.paginaColtivazioni ?? {};
+    const r = await getPageAcfBySlug('coltivazioni');
     return {
-      titoloIt: str(r.titoloIt),
-      titoloEn: str(r.titoloEn),
-      sottotitoloIt: str(r.sottotitoloIt),
-      sottotitoloEn: str(r.sottotitoloEn),
-      introP1It: str(r.introP1It),
-      introP1En: str(r.introP1En),
-      introP2It: str(r.introP2It),
-      introP2En: str(r.introP2En),
-      gridTitoloIt: str(r.gridTitoloIt),
-      calendarioTitoloIt: str(r.calendarioTitoloIt),
-      bannerHeadingIt: str(r.bannerHeadingIt),
-      bannerHeadingEn: str(r.bannerHeadingEn),
-      bannerSubIt: str(r.bannerSubIt),
-      bannerSubEn: str(r.bannerSubEn),
+      titoloIt: str(r.titolo_it),
+      titoloEn: str(r.titolo_en),
+      sottotitoloIt: str(r.sottotitolo_it),
+      sottotitoloEn: str(r.sottotitolo_en),
+      introP1It: str(r.intro_p1_it),
+      introP1En: str(r.intro_p1_en),
+      introP2It: str(r.intro_p2_it),
+      introP2En: str(r.intro_p2_en),
+      gridTitoloIt: str(r.grid_titolo_it),
+      calendarioTitoloIt: str(r.calendario_titolo_it),
+      bannerHeadingIt: str(r.banner_heading_it),
+      bannerHeadingEn: str(r.banner_heading_en),
+      bannerSubIt: str(r.banner_sub_it),
+      bannerSubEn: str(r.banner_sub_en),
     };
   } catch (err) {
     console.error('[getPaginaColtivazioni]', err);
@@ -426,11 +417,7 @@ export async function getPaginaColtivazioni(): Promise<PaginaColtivazioni> {
   }
 }
 
-// ─── 7. Pagina Luce di Terra ──────────────────────────────────────────────────
-
-interface PaginaLuceDiTerraRaw {
-  paginaLuceDiTerra: Record<string, unknown>;
-}
+// ─── 7. Pagina Luce di Terra (pagina slug: luce-di-terra — REST) ──────────────
 
 const PAGINA_LUCE_FALLBACK: PaginaLuceDiTerra = {
   titoloIt: '', sottotitoloIt: '', introP1It: '', introP2It: '', lineeTitoloIt: '',
@@ -444,34 +431,33 @@ const PAGINA_LUCE_FALLBACK: PaginaLuceDiTerra = {
 
 export async function getPaginaLuceDiTerra(): Promise<PaginaLuceDiTerra> {
   try {
-    const data = await fetchGraphQL<PaginaLuceDiTerraRaw>(GET_PAGINA_LUCE_DI_TERRA);
-    const r = data.paginaLuceDiTerra ?? {};
+    const r = await getPageAcfBySlug('luce-di-terra');
     return {
-      titoloIt: str(r.titoloIt),
-      sottotitoloIt: str(r.sottotitoloIt),
-      introP1It: str(r.introP1It),
-      introP2It: str(r.introP2It),
-      lineeTitoloIt: str(r.lineeTitoloIt),
-      olioTitoloIt: str(r.olioTitoloIt),
-      olioDescIt: str(r.olioDescIt),
-      olioPrezzo: str(r.olioPrezzo),
-      olioImmagine: url(r.olioImmagine),
-      marmellaTitoloIt: str(r.marmellaTitoloIt),
-      marmellaDescIt: str(r.marmellaDescIt),
-      marmellaPrezzo: str(r.marmellaPrezzo),
-      marmellaImmagine: url(r.marmellaImmagine),
-      filieraTitoloIt: str(r.filieraTitoloIt),
-      filieraBodyIt: str(r.filieraBodyIt),
-      titoloEn: str(r.titoloEn),
-      sottotitoloEn: str(r.sottotitoloEn),
-      introP1En: str(r.introP1En),
-      introP2En: str(r.introP2En),
-      olioTitoloEn: str(r.olioTitoloEn),
-      olioDescEn: str(r.olioDescEn),
-      marmellaTitoloEn: str(r.marmellaTitoloEn),
-      marmellaDescEn: str(r.marmellaDescEn),
-      filieraTitoloEn: str(r.filieraTitoloEn),
-      filieraBodyEn: str(r.filieraBodyEn),
+      titoloIt: str(r.titolo_it),
+      sottotitoloIt: str(r.sottotitolo_it),
+      introP1It: str(r.intro_p1_it),
+      introP2It: str(r.intro_p2_it),
+      lineeTitoloIt: str(r.linee_titolo_it),
+      olioTitoloIt: str(r.olio_titolo_it),
+      olioDescIt: str(r.olio_desc_it),
+      olioPrezzo: str(r.olio_prezzo),
+      olioImmagine: url(r.olio_immagine),
+      marmellaTitoloIt: str(r.marmellata_titolo_it),
+      marmellaDescIt: str(r.marmellata_desc_it),
+      marmellaPrezzo: str(r.marmellata_prezzo),
+      marmellaImmagine: url(r.marmellata_immagine),
+      filieraTitoloIt: str(r.filiera_titolo_it),
+      filieraBodyIt: str(r.filiera_body_it),
+      titoloEn: str(r.titolo_en),
+      sottotitoloEn: str(r.sottotitolo_en),
+      introP1En: str(r.intro_p1_en),
+      introP2En: str(r.intro_p2_en),
+      olioTitoloEn: str(r.olio_titolo_en),
+      olioDescEn: str(r.olio_desc_en),
+      marmellaTitoloEn: str(r.marmellata_titolo_en),
+      marmellaDescEn: str(r.marmellata_desc_en),
+      filieraTitoloEn: str(r.filiera_titolo_en),
+      filieraBodyEn: str(r.filiera_body_en),
     };
   } catch (err) {
     console.error('[getPaginaLuceDiTerra]', err);
@@ -479,11 +465,7 @@ export async function getPaginaLuceDiTerra(): Promise<PaginaLuceDiTerra> {
   }
 }
 
-// ─── 8. Pagina Olio EVO ───────────────────────────────────────────────────────
-
-interface PaginaOlioEvoRaw {
-  paginaOlioEvo: Record<string, unknown>;
-}
+// ─── 8. Pagina Olio EVO (pagina slug: olio-evo — REST) ───────────────────────
 
 const PAGINA_OLIO_FALLBACK: PaginaOlioEvo = {
   titoloIt: '', sottotitoloIt: '', introIt: '', immaginePrincipale: null,
@@ -495,24 +477,23 @@ const PAGINA_OLIO_FALLBACK: PaginaOlioEvo = {
 
 export async function getPaginaOlioEvo(): Promise<PaginaOlioEvo> {
   try {
-    const data = await fetchGraphQL<PaginaOlioEvoRaw>(GET_PAGINA_OLIO_EVO);
-    const r = data.paginaOlioEvo ?? {};
+    const r = await getPageAcfBySlug('olio-evo');
     return {
-      titoloIt: str(r.titoloIt),
-      sottotitoloIt: str(r.sottotitoloIt),
-      introIt: str(r.introIt),
-      immaginePrincipale: url(r.immaginePrincipale),
-      profiloProfumoIt: str(r.profiloProfumoIt),
-      profiloSaporeIt: str(r.profiloSaporeIt),
-      profiloRaccoltaIt: str(r.profiloRaccoltaIt),
-      sezioni: arr<Record<string, unknown>>(r.sezioni).map(mapSezione),
+      titoloIt: str(r.titolo_it),
+      sottotitoloIt: str(r.sottotitolo_it),
+      introIt: str(r.intro_it),
+      immaginePrincipale: url(r.immagine_principale),
+      profiloProfumoIt: str(r.profilo_profumo_it),
+      profiloSaporeIt: str(r.profilo_sapore_it),
+      profiloRaccoltaIt: str(r.profilo_raccolta_it),
+      sezioni: arr<Record<string, unknown>>(r.sezioni).map(mapSezioneRest),
       faq: arr<Record<string, unknown>>(r.faq).map(mapFaq),
-      titoloEn: str(r.titoloEn),
-      sottotitoloEn: str(r.sottotitoloEn),
-      introEn: str(r.introEn),
-      profiloProfumoEn: str(r.profiloProfumoEn),
-      profiloSaporeEn: str(r.profiloSaporeEn),
-      profiloRaccoltaEn: str(r.profiloRaccoltaEn),
+      titoloEn: str(r.titolo_en),
+      sottotitoloEn: str(r.sottotitolo_en),
+      introEn: str(r.intro_en),
+      profiloProfumoEn: str(r.profilo_profumo_en),
+      profiloSaporeEn: str(r.profilo_sapore_en),
+      profiloRaccoltaEn: str(r.profilo_raccolta_en),
     };
   } catch (err) {
     console.error('[getPaginaOlioEvo]', err);
@@ -520,11 +501,7 @@ export async function getPaginaOlioEvo(): Promise<PaginaOlioEvo> {
   }
 }
 
-// ─── 9. Pagina Marmellate ─────────────────────────────────────────────────────
-
-interface PaginaMarmellateRaw {
-  paginaMarmellate: Record<string, unknown>;
-}
+// ─── 9. Pagina Marmellate (pagina slug: marmellata-agrumi — REST) ─────────────
 
 const PAGINA_MARMELLATE_FALLBACK: PaginaMarmellate = {
   titoloIt: '', sottotitoloIt: '', introIt: '',
@@ -534,24 +511,23 @@ const PAGINA_MARMELLATE_FALLBACK: PaginaMarmellate = {
 
 export async function getPaginaMarmellate(): Promise<PaginaMarmellate> {
   try {
-    const data = await fetchGraphQL<PaginaMarmellateRaw>(GET_PAGINA_MARMELLATE);
-    const r = data.paginaMarmellate ?? {};
+    const r = await getPageAcfBySlug('marmellata-agrumi');
     return {
-      titoloIt: str(r.titoloIt),
-      sottotitoloIt: str(r.sottotitoloIt),
-      introIt: str(r.introIt),
-      varieta: arr<Record<string, unknown>>(r.varieta).map((v) => ({
-        nomeIt: str(v.nomeIt),
-        nomeEn: str(v.nomeEn),
-        descIt: str(v.descIt),
-        descEn: str(v.descEn),
+      titoloIt: str(r.titolo_it),
+      sottotitoloIt: str(r.sottotitolo_it),
+      introIt: str(r.intro_it),
+      varieta: arr<Record<string, unknown>>(r.varieta).map((v): VarietaMarmellata => ({
+        nomeIt: str(v.nome_it),
+        nomeEn: str(v.nome_en),
+        descIt: str(v.desc_it),
+        descEn: str(v.desc_en),
         immagine: url(v.immagine),
       })),
-      sezioni: arr<Record<string, unknown>>(r.sezioni).map(mapSezione),
+      sezioni: arr<Record<string, unknown>>(r.sezioni).map(mapSezioneRest),
       faq: arr<Record<string, unknown>>(r.faq).map(mapFaq),
-      titoloEn: str(r.titoloEn),
-      sottotitoloEn: str(r.sottotitoloEn),
-      introEn: str(r.introEn),
+      titoloEn: str(r.titolo_en),
+      sottotitoloEn: str(r.sottotitolo_en),
+      introEn: str(r.intro_en),
     };
   } catch (err) {
     console.error('[getPaginaMarmellate]', err);
@@ -559,11 +535,7 @@ export async function getPaginaMarmellate(): Promise<PaginaMarmellate> {
   }
 }
 
-// ─── 10. Pagina Shop ──────────────────────────────────────────────────────────
-
-interface PaginaShopRaw {
-  paginaShop: Record<string, unknown>;
-}
+// ─── 10. Pagina Shop (pagina slug: shop — REST) ───────────────────────────────
 
 const PAGINA_SHOP_FALLBACK: PaginaShop = {
   heroTitoloIt: '', heroSottotitoloIt: '', heroImmagine: null,
@@ -572,14 +544,13 @@ const PAGINA_SHOP_FALLBACK: PaginaShop = {
 
 export async function getPaginaShop(): Promise<PaginaShop> {
   try {
-    const data = await fetchGraphQL<PaginaShopRaw>(GET_PAGINA_SHOP);
-    const r = data.paginaShop ?? {};
+    const r = await getPageAcfBySlug('shop');
     return {
-      heroTitoloIt: str(r.heroTitoloIt),
-      heroSottotitoloIt: str(r.heroSottotitoloIt),
-      heroImmagine: url(r.heroImmagine),
-      heroTitoloEn: str(r.heroTitoloEn),
-      heroSottotitoloEn: str(r.heroSottotitoloEn),
+      heroTitoloIt: str(r.hero_titolo_it),
+      heroSottotitoloIt: str(r.hero_sottotitolo_it),
+      heroImmagine: url(r.hero_immagine),
+      heroTitoloEn: str(r.hero_titolo_en),
+      heroSottotitoloEn: str(r.hero_sottotitolo_en),
     };
   } catch (err) {
     console.error('[getPaginaShop]', err);

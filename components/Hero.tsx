@@ -4,7 +4,19 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import styles from './Hero.module.css';
 
-export default function Hero() {
+interface HeroProps {
+  titolo?: string;
+  sottotitolo?: string;
+  cta?: string;
+  video?: string;
+}
+
+export default function Hero({
+  titolo = '',
+  sottotitolo = '',
+  cta = '',
+  video = '/videos/hero.mp4',
+}: HeroProps) {
   const t = useTranslations('hero');
   const bgRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
@@ -34,7 +46,7 @@ export default function Hero() {
         {mounted && (
           <video
             className={styles.video}
-            src="/videos/hero.mp4"
+            src={video}
             autoPlay
             muted
             loop
@@ -42,6 +54,7 @@ export default function Hero() {
           />
         )}
       </div>
+
       <div className={styles.scrollHint}>
         <span className={styles.mouse}>
           <span className={styles.wheel} />
