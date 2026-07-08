@@ -23,7 +23,7 @@ export default function ImageBanner({ src, alt, position = 'center', pullUp, vid
   }, []);
 
   return (
-    <div className={styles.banner} style={pullUp ? { marginTop: -pullUp } : undefined}>
+    <div className={styles.banner} style={pullUp ? ({ '--pull-up': `${pullUp}px` } as React.CSSProperties) : undefined}>
       {video ? (
         <video
           ref={videoRef}

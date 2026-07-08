@@ -4,6 +4,7 @@
   height: 50vh;
   min-height: 320px;
   overflow: hidden;
+  margin-top: calc(-1 * min(var(--pull-up, 0px), 200px));
 }
 
 .video {
@@ -13,9 +14,14 @@
   display: block;
 }
 
+@media (max-width: 1024px) {
+  .banner { margin-top: calc(-1 * min(var(--pull-up, 0px), 80px)); }
+}
+
 @media (max-width: 768px) {
   .banner {
     height: 40vh;
     min-height: 240px;
+    margin-top: calc(-1 * min(var(--pull-up, 0px), 32px));
   }
 }

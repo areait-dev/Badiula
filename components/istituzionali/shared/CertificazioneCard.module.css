@@ -65,6 +65,10 @@
 }
 
 @media (max-width: 1023px) {
-  .row { padding: 0 var(--page-margin-mobile) 64px; gap: var(--space-md); }
+  .row { padding: 0 var(--page-margin-mobile) 64px; gap: var(--space-md); margin-top: -32px; }
   .card { flex: 1 1 100%; max-width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .row { margin-top: -16px; }
 }

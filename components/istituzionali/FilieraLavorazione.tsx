@@ -4,6 +4,7 @@ import ShopBannerProdotto from '@/components/prodotti/shared/ShopBannerProdotto'
 import FaqProdotto, { type FaqItem } from '@/components/prodotti/shared/FaqProdotto';
 import SectionZigzag from './shared/SectionZigzag';
 import CentralTitle from './shared/CentralTitle';
+import styles from './shared/CentralTitle.module.css';
 import type { PaginaFilieraLavorazione } from '@/lib/types';
 
 const FAQS: FaqItem[] = [
@@ -75,8 +76,8 @@ export default function FilieraLavorazione({ data: d }: FilieraLavorazioneProps)
       </SectionZigzag>
 
       <CentralTitle pullUp={170} displayFont>
-        <span style={{ display: 'block', whiteSpace: 'nowrap', textAlign: 'center' }}>{d.centralTitle1 || "Dall'albero al"}</span>
-        <span style={{ display: 'block', whiteSpace: 'nowrap', textAlign: 'center' }}>{d.centralTitle2 || 'confezionamento'}</span>
+        <span className={styles.centralTitleRow}>{d.centralTitle1 || "Dall'albero al"}</span>
+        <span className={styles.centralTitleRow}>{d.centralTitle2 || 'confezionamento'}</span>
       </CentralTitle>
 
       <SectionZigzag
