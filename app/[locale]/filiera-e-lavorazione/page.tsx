@@ -3,6 +3,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { FilieraLavorazione } from '@/components/istituzionali';
 import { getPageSeo, getPaginaFilieraLavorazione } from '@/lib/wordpress';
 
+export const revalidate = 60;
+
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('filiera-e-lavorazione');
   if (!seo) {

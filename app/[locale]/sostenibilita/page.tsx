@@ -3,6 +3,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { Sostenibilita } from '@/components/istituzionali';
 import { getPageSeo, getPaginaSostenibilita } from '@/lib/wordpress';
 
+export const revalidate = 60;
+
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('sostenibilita');
   if (!seo) {
