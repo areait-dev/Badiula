@@ -10,6 +10,10 @@ import type {
   PaginaOlioEvo,
   PaginaMarmellate,
   PaginaShop,
+  PaginaCertificazioni,
+  PaginaSostenibilita,
+  PaginaInnovazione,
+  PaginaFilieraLavorazione,
   Sezione,
   Faq,
   VarietaMarmellata,
@@ -594,5 +598,142 @@ export async function getPaginaShop(): Promise<PaginaShop> {
   } catch (err) {
     console.error('[getPaginaShop]', err);
     return PAGINA_SHOP_FALLBACK;
+  }
+}
+
+// ─── 11. Pagina Certificazioni (pagina slug: certificazioni - REST) ───────────
+
+const PAGINA_CERTIFICAZIONI_FALLBACK: PaginaCertificazioni = {
+  heroTitolo: '', heroSottotitolo: '', heroTesto: '',
+  biologicheTitolo: '', biologicheCard1Titolo: '', biologicheCard1Testo: '',
+  biologicheCard2Titolo: '', biologicheCard2Testo: '',
+  qualitaSicurezzaTitolo: '', qualitaSicurezzaTesto: '',
+  tutelaOrigineTitolo: '', tutelaOrigineCard1Titolo: '', tutelaOrigineCard1Testo: '',
+  tutelaOrigineCard2Titolo: '', tutelaOrigineCard2Testo: '',
+  riconoscimentiTitolo: '', riconoscimentiImmagine: null, riconoscimentiTesto: '',
+};
+
+export async function getPaginaCertificazioni(): Promise<PaginaCertificazioni> {
+  try {
+    const r = await getPageAcfBySlug('certificazioni');
+    return {
+      heroTitolo: str(r.hero_titolo),
+      heroSottotitolo: str(r.hero_sottotitolo),
+      heroTesto: str(r.hero_testo),
+      biologicheTitolo: str(r.biologiche_titolo),
+      biologicheCard1Titolo: str(r.biologiche_card1_titolo),
+      biologicheCard1Testo: str(r.biologiche_card1_testo),
+      biologicheCard2Titolo: str(r.biologiche_card2_titolo),
+      biologicheCard2Testo: str(r.biologiche_card2_testo),
+      qualitaSicurezzaTitolo: str(r.qualita_sicurezza_titolo),
+      qualitaSicurezzaTesto: str(r.qualita_sicurezza_testo),
+      tutelaOrigineTitolo: str(r.tutela_origine_titolo),
+      tutelaOrigineCard1Titolo: str(r.tutela_origine_card1_titolo),
+      tutelaOrigineCard1Testo: str(r.tutela_origine_card1_testo),
+      tutelaOrigineCard2Titolo: str(r.tutela_origine_card2_titolo),
+      tutelaOrigineCard2Testo: str(r.tutela_origine_card2_testo),
+      riconoscimentiTitolo: str(r.riconoscimenti_titolo),
+      riconoscimentiImmagine: url(r.riconoscimenti_immagine),
+      riconoscimentiTesto: str(r.riconoscimenti_testo),
+    };
+  } catch (err) {
+    console.error('[getPaginaCertificazioni]', err);
+    return PAGINA_CERTIFICAZIONI_FALLBACK;
+  }
+}
+
+// ─── 12. Pagina Sostenibilita (pagina slug: sostenibilita - REST) ─────────────
+
+const PAGINA_SOSTENIBILITA_FALLBACK: PaginaSostenibilita = {
+  heroTitolo: '', heroSottotitolo: '', heroTesto: '',
+  sezione1Titolo: '', sezione1Immagine: null, sezione1Testo: '',
+  sezione2Titolo: '', sezione2Immagine: null, sezione2Testo: '',
+};
+
+export async function getPaginaSostenibilita(): Promise<PaginaSostenibilita> {
+  try {
+    const r = await getPageAcfBySlug('sostenibilita');
+    return {
+      heroTitolo: str(r.hero_titolo),
+      heroSottotitolo: str(r.hero_sottotitolo),
+      heroTesto: str(r.hero_testo),
+      sezione1Titolo: str(r.sezione_1_titolo),
+      sezione1Immagine: url(r.sezione_1_immagine),
+      sezione1Testo: str(r.sezione_1_testo),
+      sezione2Titolo: str(r.sezione_2_titolo),
+      sezione2Immagine: url(r.sezione_2_immagine),
+      sezione2Testo: str(r.sezione_2_testo),
+    };
+  } catch (err) {
+    console.error('[getPaginaSostenibilita]', err);
+    return PAGINA_SOSTENIBILITA_FALLBACK;
+  }
+}
+
+// ─── 13. Pagina Innovazione (pagina slug: innovazione - REST) ─────────────────
+
+const PAGINA_INNOVAZIONE_FALLBACK: PaginaInnovazione = {
+  heroTitolo: '', heroSottotitolo: '', heroTesto: '',
+  sezione1Titolo: '', sezione1Immagine: null, sezione1Testo: '',
+  sezione2Titolo: '', sezione2Immagine: null, sezione2Testo: '',
+  sezione3Titolo: '', sezione3Immagine: null, sezione3Testo: '',
+};
+
+export async function getPaginaInnovazione(): Promise<PaginaInnovazione> {
+  try {
+    const r = await getPageAcfBySlug('innovazione');
+    return {
+      heroTitolo: str(r.hero_titolo),
+      heroSottotitolo: str(r.hero_sottotitolo),
+      heroTesto: str(r.hero_testo),
+      sezione1Titolo: str(r.sezione_1_titolo),
+      sezione1Immagine: url(r.sezione_1_immagine),
+      sezione1Testo: str(r.sezione_1_testo),
+      sezione2Titolo: str(r.sezione_2_titolo),
+      sezione2Immagine: url(r.sezione_2_immagine),
+      sezione2Testo: str(r.sezione_2_testo),
+      sezione3Titolo: str(r.sezione_3_titolo),
+      sezione3Immagine: url(r.sezione_3_immagine),
+      sezione3Testo: str(r.sezione_3_testo),
+    };
+  } catch (err) {
+    console.error('[getPaginaInnovazione]', err);
+    return PAGINA_INNOVAZIONE_FALLBACK;
+  }
+}
+
+// ─── 14. Pagina Filiera e Lavorazione (pagina slug: filiera-e-lavorazione) ────
+
+const PAGINA_FILIERA_LAVORAZIONE_FALLBACK: PaginaFilieraLavorazione = {
+  heroTitolo1: '', heroTitolo2: '', heroSottotitolo: '', heroTesto: '',
+  sezione1Titolo: '', sezione1Immagine: null, sezione1Testo: '',
+  centralTitle1: '', centralTitle2: '',
+  sezione2Titolo: '', sezione2Immagine: null, sezione2Testo: '',
+  sezione3Titolo: '', sezione3Immagine: null, sezione3Testo: '',
+};
+
+export async function getPaginaFilieraLavorazione(): Promise<PaginaFilieraLavorazione> {
+  try {
+    const r = await getPageAcfBySlug('filiera-e-lavorazione');
+    return {
+      heroTitolo1: str(r.hero_titolo_1),
+      heroTitolo2: str(r.hero_titolo_2),
+      heroSottotitolo: str(r.hero_sottotitolo),
+      heroTesto: str(r.hero_testo),
+      sezione1Titolo: str(r.sezione_1_titolo),
+      sezione1Immagine: url(r.sezione_1_immagine),
+      sezione1Testo: str(r.sezione_1_testo),
+      centralTitle1: str(r.central_title_1),
+      centralTitle2: str(r.central_title_2),
+      sezione2Titolo: str(r.sezione_2_titolo),
+      sezione2Immagine: url(r.sezione_2_immagine),
+      sezione2Testo: str(r.sezione_2_testo),
+      sezione3Titolo: str(r.sezione_3_titolo),
+      sezione3Immagine: url(r.sezione_3_immagine),
+      sezione3Testo: str(r.sezione_3_testo),
+    };
+  } catch (err) {
+    console.error('[getPaginaFilieraLavorazione]', err);
+    return PAGINA_FILIERA_LAVORAZIONE_FALLBACK;
   }
 }

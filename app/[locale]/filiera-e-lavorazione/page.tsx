@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { FilieraLavorazione } from '@/components/istituzionali';
-import { getPageSeo } from '@/lib/wordpress';
+import { getPageSeo, getPaginaFilieraLavorazione } from '@/lib/wordpress';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('filiera-e-lavorazione');
@@ -23,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function FilieraLavorazionePage({ params }: { params: { locale: string } }) {
+export default async function FilieraLavorazionePage({ params }: { params: { locale: string } }) {
   setRequestLocale(params.locale);
-  return <FilieraLavorazione />;
+  const data = await getPaginaFilieraLavorazione();
+  return <FilieraLavorazione data={data} />;
 }

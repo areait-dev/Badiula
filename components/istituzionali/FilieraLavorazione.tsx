@@ -4,6 +4,7 @@ import ShopBannerProdotto from '@/components/prodotti/shared/ShopBannerProdotto'
 import FaqProdotto, { type FaqItem } from '@/components/prodotti/shared/FaqProdotto';
 import SectionZigzag from './shared/SectionZigzag';
 import CentralTitle from './shared/CentralTitle';
+import type { PaginaFilieraLavorazione } from '@/lib/types';
 
 const FAQS: FaqItem[] = [
   {
@@ -24,61 +25,78 @@ const FAQS: FaqItem[] = [
   },
 ];
 
-export default function FilieraLavorazione() {
+const FALLBACK_SEZIONE_1_TESTO =
+  '<p>Il nuovo centro di lavorazione Badiula, di circa 2000 metri quadrati, è situato all\'interno della nostra azienda agricola di Carlentini, a poche centinaia di metri dagli agrumeti. La vicinanza tra campo e magazzino permette una lavorazione immediata, preservando freschezza e caratteristiche organolettiche degli agrumi.</p>' +
+  '<p>Il centro è dedicato a quattro attività principali:</p>' +
+  '<ul>' +
+  '<li><strong>Selezione:</strong> controllo qualità manuale e ottico dei frutti raccolti</li>' +
+  '<li><strong>Calibratura:</strong> classificazione per dimensione e formato commerciale</li>' +
+  '<li><strong>Confezionamento:</strong> imballaggio in formati standard o personalizzati su richiesta del cliente</li>' +
+  '<li><strong>Stoccaggio:</strong> conservazione in condizioni controllate, nel rispetto delle normative vigenti</li>' +
+  '</ul>';
+
+const FALLBACK_SEZIONE_2_TESTO =
+  '<p>La nostra filiera è certificata tramite tecnologia blockchain: ogni fase del processo produttivo è documentata in modo immutabile e verificabile, dalla raccolta del singolo lotto in campo fino al pack finale.</p>' +
+  '<p>Per il buyer e il consumatore finale significa avere prove digitali dell\'origine del prodotto, della varietà coltivata, della data di raccolta e del percorso di lavorazione. La blockchain di filiera è uno standard che si sta affermando nell\'agroalimentare di qualità come strumento di garanzia per export, retail specializzato e canali premium.</p>';
+
+const FALLBACK_SEZIONE_3_TESTO =
+  '<p>Il centro di lavorazione è progettato per accogliere e gestire volumi significativi di prodotto, assicurando efficienza operativa, continuità nella fornitura e controllo diretto su ogni passaggio della filiera.</p>' +
+  '<p>Questo è particolarmente rilevante per i nostri partner B2B (retail specializzato, GDO, horeca, importatori), che possono contare su un calendario di disponibilità annua coerente con le finestre stagionali delle varietà coltivate.</p>';
+
+interface FilieraLavorazioneProps {
+  data: PaginaFilieraLavorazione;
+}
+
+export default function FilieraLavorazione({ data: d }: FilieraLavorazioneProps) {
   return (
     <main>
       <ProdottoIntro
-        rows={[{ text: 'FILIERA E' }, { text: 'LAVORAZIONE', indent: '1.5em' }]}
+        rows={[
+          { text: d.heroTitolo1 || 'FILIERA E' },
+          { text: d.heroTitolo2 || 'LAVORAZIONE', indent: '1.5em' },
+        ]}
         align="left"
-        subtitle="Una filiera corta, gestita internamente, certificata blockchain"
+        subtitle={d.heroSottotitolo || 'Una filiera corta, gestita internamente, certificata blockchain'}
         subtitleNoWrap
         body={[
-          'Gestiamo internamente ogni fase del processo produttivo Badiula, dalla raccolta in campo alla spedizione al cliente finale. Questa scelta ci permette di garantire la piena tracciabilità del prodotto lungo tutto il percorso, certificata attraverso tecnologia blockchain, e di mantenere standard qualitativi controllati in ogni passaggio.',
+          d.heroTesto ||
+            'Gestiamo internamente ogni fase del processo produttivo Badiula, dalla raccolta in campo alla spedizione al cliente finale. Questa scelta ci permette di garantire la piena tracciabilità del prodotto lungo tutto il percorso, certificata attraverso tecnologia blockchain, e di mantenere standard qualitativi controllati in ogni passaggio.',
         ]}
       />
 
       <SectionZigzag
-        title="Il centro di lavorazione di Carlentini"
+        title={d.sezione1Titolo || 'Il centro di lavorazione di Carlentini'}
         reverse
         tallImage
-        image={{ src: '/images/capannone-aerial.png' }}
+        image={{ src: d.sezione1Immagine || '/images/capannone-aerial.png' }}
         imageAlt="Centro di lavorazione Badiula a Carlentini"
       >
-        <p>Il nuovo centro di lavorazione Badiula, di circa 2000 metri quadrati, è situato all&apos;interno della nostra azienda agricola di Carlentini, a poche centinaia di metri dagli agrumeti. La vicinanza tra campo e magazzino permette una lavorazione immediata, preservando freschezza e caratteristiche organolettiche degli agrumi.</p>
-        <p>Il centro è dedicato a quattro attività principali:</p>
-        <ul>
-          <li><strong>Selezione:</strong> controllo qualità manuale e ottico dei frutti raccolti</li>
-          <li><strong>Calibratura:</strong> classificazione per dimensione e formato commerciale</li>
-          <li><strong>Confezionamento:</strong> imballaggio in formati standard o personalizzati su richiesta del cliente</li>
-          <li><strong>Stoccaggio:</strong> conservazione in condizioni controllate, nel rispetto delle normative vigenti</li>
-        </ul>
+        <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
       </SectionZigzag>
 
       <CentralTitle pullUp={170} displayFont>
-        <span style={{ display: 'block', whiteSpace: 'nowrap', textAlign: 'center' }}>Dall&apos;albero al</span>
-        <span style={{ display: 'block', whiteSpace: 'nowrap', textAlign: 'center' }}>confezionamento</span>
+        <span style={{ display: 'block', whiteSpace: 'nowrap', textAlign: 'center' }}>{d.centralTitle1 || "Dall'albero al"}</span>
+        <span style={{ display: 'block', whiteSpace: 'nowrap', textAlign: 'center' }}>{d.centralTitle2 || 'confezionamento'}</span>
       </CentralTitle>
 
       <SectionZigzag
-        title="Tracciabilità blockchain"
+        title={d.sezione2Titolo || 'Tracciabilità blockchain'}
         pullUp={160}
-        image={{ src: '/images/DSC_7769.jpg' }}
+        image={{ src: d.sezione2Immagine || '/images/DSC_7769.jpg' }}
         imageAlt="Raccolta manuale degli agrumi Badiula, tracciata dal campo al confezionamento"
       >
-        <p>La nostra filiera è certificata tramite tecnologia blockchain: ogni fase del processo produttivo è documentata in modo immutabile e verificabile, dalla raccolta del singolo lotto in campo fino al pack finale.</p>
-        <p>Per il buyer e il consumatore finale significa avere prove digitali dell&apos;origine del prodotto, della varietà coltivata, della data di raccolta e del percorso di lavorazione. La blockchain di filiera è uno standard che si sta affermando nell&apos;agroalimentare di qualità come strumento di garanzia per export, retail specializzato e canali premium.</p>
+        <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
       </SectionZigzag>
 
       <SectionZigzag
-        title="Continuità di fornitura e capacità operativa"
+        title={d.sezione3Titolo || 'Continuità di fornitura e capacità operativa'}
         italicTitle
         reverse
         pullUp={160}
-        image={{ src: '/images/DSC_7568.jpg', position: 'left' }}
+        image={{ src: d.sezione3Immagine || '/images/DSC_7568.jpg', position: 'left' }}
         imageAlt="Logistica e capacità operativa del centro di lavorazione Badiula"
       >
-        <p>Il centro di lavorazione è progettato per accogliere e gestire volumi significativi di prodotto, assicurando efficienza operativa, continuità nella fornitura e controllo diretto su ogni passaggio della filiera.</p>
-        <p>Questo è particolarmente rilevante per i nostri partner B2B (retail specializzato, GDO, horeca, importatori), che possono contare su un calendario di disponibilità annua coerente con le finestre stagionali delle varietà coltivate.</p>
+        <div dangerouslySetInnerHTML={{ __html: d.sezione3Testo || FALLBACK_SEZIONE_3_TESTO }} />
       </SectionZigzag>
 
       <FaqProdotto items={FAQS} />

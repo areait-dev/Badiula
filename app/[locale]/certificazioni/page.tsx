@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Certificazioni } from '@/components/istituzionali';
-import { getPageSeo } from '@/lib/wordpress';
+import { getPageSeo, getPaginaCertificazioni } from '@/lib/wordpress';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('certificazioni');
@@ -23,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function CertificazioniPage({ params }: { params: { locale: string } }) {
+export default async function CertificazioniPage({ params }: { params: { locale: string } }) {
   setRequestLocale(params.locale);
-  return <Certificazioni />;
+  const data = await getPaginaCertificazioni();
+  return <Certificazioni data={data} />;
 }

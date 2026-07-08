@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Innovazione } from '@/components/istituzionali';
-import { getPageSeo } from '@/lib/wordpress';
+import { getPageSeo, getPaginaInnovazione } from '@/lib/wordpress';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('innovazione');
@@ -23,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function InnovazionePage({ params }: { params: { locale: string } }) {
+export default async function InnovazionePage({ params }: { params: { locale: string } }) {
   setRequestLocale(params.locale);
-  return <Innovazione />;
+  const data = await getPaginaInnovazione();
+  return <Innovazione data={data} />;
 }

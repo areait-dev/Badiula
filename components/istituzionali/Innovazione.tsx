@@ -3,6 +3,7 @@ import ProdottoIntro from '@/components/prodotti/shared/ProdottoIntro';
 import ShopBannerProdotto from '@/components/prodotti/shared/ShopBannerProdotto';
 import FaqProdotto, { type FaqItem } from '@/components/prodotti/shared/FaqProdotto';
 import SectionZigzag from './shared/SectionZigzag';
+import type { PaginaInnovazione } from '@/lib/types';
 
 const FAQS: FaqItem[] = [
   {
@@ -19,54 +20,68 @@ const FAQS: FaqItem[] = [
   },
 ];
 
-export default function Innovazione() {
+const FALLBACK_SEZIONE_1_TESTO =
+  '<p>I nostri agrumeti sono dotati di un sistema integrato di:</p>' +
+  '<ul>' +
+  '<li>Sensori IoT per il monitoraggio di umidità del suolo, temperatura e radiazione solare</li>' +
+  '<li>Stazioni meteo aziendali che rilevano in continuo dati climatici locali</li>' +
+  '<li>Piattaforme digitali di raccolta dati che incrociano informazioni ambientali e agronomiche</li>' +
+  '<li>Sistemi predittivi per anticipare stress idrico, eventi climatici e necessità di intervento agronomico</li>' +
+  '</ul>' +
+  '<p>Questi strumenti ci permettono di prendere decisioni basate sui dati, riducendo l\'uso di acqua, energia e interventi inutili sul campo.</p>';
+
+const FALLBACK_SEZIONE_2_TESTO =
+  '<p>La tecnologia blockchain applicata alla filiera garantisce tracciabilità completa e trasparenza lungo tutto il percorso produttivo, dalla coltivazione al confezionamento. Per il cliente finale e il buyer significa avere prove digitali immutabili dell\'origine e del percorso del prodotto.</p>' +
+  '<p>L\'agricoltura 4.0, per noi, non è opposta alla tradizione: è il modo per proteggere e prolungare un sapere agricolo costruito in quattro generazioni. I sensori in campo permettono ai nostri agronomi di lavorare meglio, non di lavorare meno. La blockchain garantisce trasparenza al consumatore finale di un prodotto che resta artigianale nelle scelte agronomiche e nella raccolta.</p>';
+
+const FALLBACK_SEZIONE_3_TESTO =
+  '<p>L\'innovazione agricola Badiula non avviene in isolamento: collaboriamo attivamente con il mondo della ricerca attraverso partnership consolidate.</p>' +
+  '<p><strong>Università degli Studi di Catania</strong></p>' +
+  '<p>Collaborazione di ricerca su progetti dedicati alla gestione climatica e idrica delle coltivazioni agrumicole siciliane. Tra i progetti più recenti: Progetto Clima e Progetto Acqua, che hanno portato all\'introduzione di droni, WebGIS e sistemi predittivi nell\'azienda.</p>' +
+  '<p><strong>Distretto Produttivo Agrumi di Sicilia</strong></p>' +
+  '<p>Membro attivo del Distretto, partecipiamo a iniziative di ricerca e sviluppo per il comparto agrumicolo regionale.</p>';
+
+interface InnovazioneProps {
+  data: PaginaInnovazione;
+}
+
+export default function Innovazione({ data: d }: InnovazioneProps) {
   return (
     <main>
       <ProdottoIntro
-        rows={[{ text: 'INNOVAZIONE 4.0' }]}
+        rows={[{ text: d.heroTitolo || 'INNOVAZIONE 4.0' }]}
         align="left"
-        subtitle={'Sensori, blockchain, agricoltura di precisione:\ntecnologia al servizio della terra'}
+        subtitle={d.heroSottotitolo || 'Sensori, blockchain, agricoltura di precisione:\ntecnologia al servizio della terra'}
         body={[
-          "L'agricoltura di precisione è uno dei pilastri del modello produttivo Badiula. Non concepiamo la tecnologia come sostituzione del lavoro agricolo tradizionale, ma come strumento per renderlo più efficiente, più rispettoso delle risorse e più tracciabile. Per noi la tecnologia non sostituisce la terra: la accompagna.",
+          d.heroTesto ||
+            "L'agricoltura di precisione è uno dei pilastri del modello produttivo Badiula. Non concepiamo la tecnologia come sostituzione del lavoro agricolo tradizionale, ma come strumento per renderlo più efficiente, più rispettoso delle risorse e più tracciabile. Per noi la tecnologia non sostituisce la terra: la accompagna.",
         ]}
       />
 
       <SectionZigzag
-        title="Monitoraggio in campo"
+        title={d.sezione1Titolo || 'Monitoraggio in campo'}
         reverse
-        image={{ src: '/images/azienda-campi.png' }}
+        image={{ src: d.sezione1Immagine || '/images/azienda-campi.png' }}
         imageAlt="Monitoraggio in campo degli agrumeti Badiula"
       >
-        <p>I nostri agrumeti sono dotati di un sistema integrato di:</p>
-        <ul>
-          <li>Sensori IoT per il monitoraggio di umidità del suolo, temperatura e radiazione solare</li>
-          <li>Stazioni meteo aziendali che rilevano in continuo dati climatici locali</li>
-          <li>Piattaforme digitali di raccolta dati che incrociano informazioni ambientali e agronomiche</li>
-          <li>Sistemi predittivi per anticipare stress idrico, eventi climatici e necessità di intervento agronomico</li>
-        </ul>
-        <p>Questi strumenti ci permettono di prendere decisioni basate sui dati, riducendo l&apos;uso di acqua, energia e interventi inutili sul campo.</p>
+        <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
       </SectionZigzag>
 
       <SectionZigzag
-        title="Blockchain di filiera"
-        image={{ src: '/images/DSC_7739.jpg' }}
+        title={d.sezione2Titolo || 'Blockchain di filiera'}
+        image={{ src: d.sezione2Immagine || '/images/DSC_7739.jpg' }}
         imageAlt="Tracciabilità blockchain del prodotto Badiula, dal frutto al confezionamento"
       >
-        <p>La tecnologia blockchain applicata alla filiera garantisce tracciabilità completa e trasparenza lungo tutto il percorso produttivo, dalla coltivazione al confezionamento. Per il cliente finale e il buyer significa avere prove digitali immutabili dell&apos;origine e del percorso del prodotto.</p>
-        <p>L&apos;agricoltura 4.0, per noi, non è opposta alla tradizione: è il modo per proteggere e prolungare un sapere agricolo costruito in quattro generazioni. I sensori in campo permettono ai nostri agronomi di lavorare meglio, non di lavorare meno. La blockchain garantisce trasparenza al consumatore finale di un prodotto che resta artigianale nelle scelte agronomiche e nella raccolta.</p>
+        <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
       </SectionZigzag>
 
       <SectionZigzag
-        title="Ricerca e collaborazioni"
+        title={d.sezione3Titolo || 'Ricerca e collaborazioni'}
         reverse
-        image={{ src: '/images/DSC_7619.jpg' }}
+        image={{ src: d.sezione3Immagine || '/images/DSC_7619.jpg' }}
         imageAlt="Ricerca agronomica e raccolta manuale nelle coltivazioni Badiula"
       >
-        <p>L&apos;innovazione agricola Badiula non avviene in isolamento: collaboriamo attivamente con il mondo della ricerca attraverso partnership consolidate.</p>
-        <p><strong>Università degli Studi di Catania</strong></p>
-        <p>Collaborazione di ricerca su progetti dedicati alla gestione climatica e idrica delle coltivazioni agrumicole siciliane. Tra i progetti più recenti: Progetto Clima e Progetto Acqua, che hanno portato all&apos;introduzione di droni, WebGIS e sistemi predittivi nell&apos;azienda.</p>
-        <p><strong>Distretto Produttivo Agrumi di Sicilia</strong></p>
-        <p>Membro attivo del Distretto, partecipiamo a iniziative di ricerca e sviluppo per il comparto agrumicolo regionale.</p>
+        <div dangerouslySetInnerHTML={{ __html: d.sezione3Testo || FALLBACK_SEZIONE_3_TESTO }} />
       </SectionZigzag>
 
       <FaqProdotto items={FAQS} />

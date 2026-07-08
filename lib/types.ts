@@ -280,3 +280,81 @@ export interface PaginaShop {
   heroTitoloEn: string;
   heroSottotitoloEn: string;
 }
+
+// ─── Pagina Certificazioni (pagina slug: certificazioni) ──────────────────────
+
+export interface PaginaCertificazioni {
+  heroTitolo: string;
+  heroSottotitolo: string;
+  heroTesto: string;
+
+  biologicheTitolo: string;
+  biologicheCard1Titolo: string;
+  biologicheCard1Testo: string;
+  biologicheCard2Titolo: string;
+  biologicheCard2Testo: string;
+
+  qualitaSicurezzaTitolo: string;
+  qualitaSicurezzaTesto: string;
+
+  tutelaOrigineTitolo: string;
+  tutelaOrigineCard1Titolo: string;
+  tutelaOrigineCard1Testo: string;
+  tutelaOrigineCard2Titolo: string;
+  tutelaOrigineCard2Testo: string;
+
+  riconoscimentiTitolo: string;
+  riconoscimentiImmagine: string | null;
+  riconoscimentiTesto: string;
+}
+
+// ─── Pagina Sostenibilita (pagina slug: sostenibilita) ────────────────────────
+
+export interface PaginaSostenibilita {
+  heroTitolo: string;
+  heroSottotitolo: string;
+  heroTesto: string;
+  sezione1Titolo: string;
+  sezione1Immagine: string | null;
+  sezione1Testo: string;
+  sezione2Titolo: string;
+  sezione2Immagine: string | null;
+  sezione2Testo: string;
+}
+
+// ─── Pagina Innovazione (pagina slug: innovazione) ────────────────────────────
+
+export interface PaginaInnovazione {
+  heroTitolo: string;
+  heroSottotitolo: string;
+  heroTesto: string;
+  sezione1Titolo: string;
+  sezione1Immagine: string | null;
+  sezione1Testo: string;
+  sezione2Titolo: string;
+  sezione2Immagine: string | null;
+  sezione2Testo: string;
+  sezione3Titolo: string;
+  sezione3Immagine: string | null;
+  sezione3Testo: string;
+}
+
+// ─── Pagina Filiera e Lavorazione (pagina slug: filiera-e-lavorazione) ────────
+
+export interface PaginaFilieraLavorazione {
+  heroTitolo1: string;
+  heroTitolo2: string;
+  heroSottotitolo: string;
+  heroTesto: string;
+  sezione1Titolo: string;
+  sezione1Immagine: string | null;
+  sezione1Testo: string;
+  centralTitle1: string;
+  centralTitle2: string;
+  sezione2Titolo: string;
+  sezione2Immagine: string | null;
+  sezione2Testo: string;
+  sezione3Titolo: string;
+  sezione3Immagine: string | null;
+  sezione3Testo: string;
+}

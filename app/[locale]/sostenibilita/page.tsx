@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Sostenibilita } from '@/components/istituzionali';
-import { getPageSeo } from '@/lib/wordpress';
+import { getPageSeo, getPaginaSostenibilita } from '@/lib/wordpress';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('sostenibilita');
@@ -23,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function SostenibilitaPage({ params }: { params: { locale: string } }) {
+export default async function SostenibilitaPage({ params }: { params: { locale: string } }) {
   setRequestLocale(params.locale);
-  return <Sostenibilita />;
+  const data = await getPaginaSostenibilita();
+  return <Sostenibilita data={data} />;
 }
