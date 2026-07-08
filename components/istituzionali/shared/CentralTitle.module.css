@@ -3,6 +3,7 @@
   z-index: 2;
   padding: 100px var(--page-margin);
   text-align: center;
+  margin-top: calc(-1 * min(var(--pull-up, 0px), 200px));
 }
 
 .title {
@@ -46,10 +47,11 @@
 @media (max-width: 1024px) {
   .title { font-size: clamp(48px, 9vw, 90px); line-height: 1.1; }
   .titleH3 { font-size: 80px; line-height: 89px; }
+  .section { margin-top: calc(-1 * min(var(--pull-up, 0px), 80px)); }
 }
 
 @media (max-width: 768px) {
-  .section  { padding: 64px var(--page-margin-mobile); }
+  .section  { padding: 64px var(--page-margin-mobile); margin-top: calc(-1 * min(var(--pull-up, 0px), 32px)); }
   .title      { font-size: clamp(28px, 8vw, 56px); }
   .titleH3    { font-size: clamp(28px, 8vw, 44px); line-height: 1.1; white-space: normal; }
   .titleH3Sm  { font-size: clamp(26px, 7vw, 36px); line-height: 1.1; white-space: normal; }

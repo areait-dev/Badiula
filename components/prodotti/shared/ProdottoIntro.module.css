@@ -75,6 +75,7 @@
   .intro { padding: 0 var(--page-margin-mobile) 48px; }
   .hero  { padding-top: 100px; margin-bottom: 40px; }
   .h1    { font-size: clamp(40px, 12vw, 72px); }
+  .h1Row { white-space: normal; }
   .h2    { font-size: 22px; max-width: 100%; }
   .h2 span { white-space: normal; }
   .h2NoWrap { white-space: normal; max-width: 100%; font-size: 22px; }

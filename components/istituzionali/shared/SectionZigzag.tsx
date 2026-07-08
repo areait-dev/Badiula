@@ -36,7 +36,7 @@ export default function SectionZigzag({
   return (
     <section
       className={`${styles.section} ${reverse ? styles.reverse : ''} ${noImage ? styles.noVisual : ''}`}
-      style={pullUp ? { marginTop: -pullUp } : undefined}
+      style={pullUp ? ({ '--pull-up': `${pullUp}px` } as React.CSSProperties) : undefined}
     >
       <div className={styles.content}>
         {!hideTitle && (
@@ -48,7 +48,7 @@ export default function SectionZigzag({
         <div className={styles.visual}>
           <div
             className={`${styles.imgWrap} ${tallImage ? styles.imgWrapTall : ''}`}
-            style={imageHeight ? { height: imageHeight } : undefined}
+            style={imageHeight ? ({ '--img-height': imageHeight } as React.CSSProperties) : undefined}
           >
             {visualContent ? (
               visualContent

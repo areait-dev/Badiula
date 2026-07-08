@@ -15,7 +15,7 @@ export default function CentralTitle({ children, pullUp, size = 'h1', align = 'c
   return (
     <section
       className={`${styles.section} ${align === 'left' ? styles.sectionLeft : ''}`}
-      style={pullUp ? { marginTop: -pullUp } : undefined}
+      style={pullUp ? ({ '--pull-up': `${pullUp}px` } as React.CSSProperties) : undefined}
     >
       <Tag className={`${styles.title} ${sizeClass} ${displayFont ? styles.titleDisplay : ''}`}>{children}</Tag>
     </section>
