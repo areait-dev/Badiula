@@ -1,4 +1,4 @@
-/* ── Wrapper — gives scroll height for ScrollTrigger pin ── */
+/* ── Wrapper - gives scroll height for ScrollTrigger pin ── */
 .sliderWrapper {
   position: relative;
 }
@@ -51,7 +51,7 @@
   user-select: none;
 }
 
-/* Cutout transparent PNG — absolute sibling of panels, parallax via GSAP */
+/* Cutout transparent PNG - absolute sibling of panels, parallax via GSAP */
 .cutoutWrap {
   position: absolute;
   left: 15%;
@@ -98,8 +98,8 @@
 /* Counter */
 .counter {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--bordeaux);
   letter-spacing: 0.2em;
@@ -111,8 +111,8 @@
   display: inline-block;
   align-self: flex-start;
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 600;
   color: var(--bordeaux);
   border: 1px solid var(--bordeaux);
@@ -122,7 +122,7 @@
   letter-spacing: 0;
 }
 
-/* Title — H3 scale (60px) */
+/* Title - H3 scale (60px) */
 .prodTitle {
   font-family: var(--font-body);
   font-size: 60px;
@@ -134,11 +134,11 @@
   margin: 0 0 var(--space-sm);
 }
 
-/* Subtitle — body-1 italic */
+/* Subtitle - body-1 italic */
 .prodSubtitle {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 400;
   font-style: italic;
   color: var(--bordeaux);
@@ -146,11 +146,11 @@
   margin: 0 0 var(--space-sm);
 }
 
-/* Description — body-2 */
+/* Description - body-2 */
 .prodDesc {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--eigengrau);
   margin: 0 0 var(--space-md);
@@ -178,8 +178,8 @@
 
 .detailLabel {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 700;
   color: var(--bordeaux);
   text-transform: uppercase;
@@ -188,18 +188,18 @@
 
 .detailValue {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--eigengrau);
   letter-spacing: 0;
 }
 
-/* Variant select — pill */
+/* Variant select - pill */
 .variantSelect {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--bordeaux);
   background: transparent;
@@ -227,7 +227,7 @@
   margin-bottom: var(--space-sm);
 }
 
-/* Price — H3 scale (60px) */
+/* Price - H3 scale (60px) */
 .price {
   font-family: var(--font-body);
   font-size: 60px;
@@ -250,10 +250,11 @@
   padding: 0 var(--space-md);
   border-radius: var(--radius-btn);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 600;
   letter-spacing: 0;
+  text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
@@ -327,8 +328,8 @@
 .navArrow {
   background: none;
   border: none;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   color: var(--bordeaux);
   cursor: pointer;
   min-width: 44px;
@@ -371,8 +372,8 @@
 
 .nextLabel {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--bordeaux);
   text-transform: uppercase;

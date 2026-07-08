@@ -12,14 +12,14 @@
   padding-top: 40px;
 }
 
-/* Layout standard: immagine a destra — sconfina fino al bordo destro */
+/* Layout standard: immagine a destra - sconfina fino al bordo destro */
 .section:not(.reverse) .visual  { justify-content: flex-end; overflow: visible; }
 .section:not(.reverse) .imgWrap {
   width: calc(100% + var(--page-margin));
   margin-right: calc(-1 * var(--page-margin));
 }
 
-/* Layout inverso: immagine a sinistra — sconfina fino al bordo sinistro */
+/* Layout inverso: immagine a sinistra - sconfina fino al bordo sinistro */
 .reverse .visual  { order: 1; justify-content: flex-start; overflow: visible; }
 .reverse .content { order: 2; padding-right: 0; padding-left: 80px; }
 .reverse .imgWrap {
@@ -55,8 +55,8 @@
 
 .slogan {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 700;
   font-style: italic;
   color: var(--bordeaux);
@@ -68,8 +68,8 @@
 /* Stili per i children (paragrafi, liste, testo forte) */
 .body p {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 400;
   color: var(--eigengrau);
   letter-spacing: 0;
@@ -85,8 +85,8 @@
 }
 .body li {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   color: var(--eigengrau);
   padding-left: 1.2em;
   position: relative;
@@ -116,8 +116,8 @@
 .body dt,
 .body dd {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   letter-spacing: 0;
   padding: 10px 0;
   border-bottom: 1px solid rgba(108, 18, 36, 0.12);
@@ -142,8 +142,8 @@
 /* Lead text (frase prima della lista) */
 .body .lead {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 700;
   color: var(--bordeaux);
   margin-bottom: 8px;

@@ -73,10 +73,15 @@ export default function Productions({ title = '', subtitle = '' }: ProductionsPr
     const ctx = gsap.context(() => {
       const distance = () => Math.max(0, track.scrollWidth - window.innerWidth);
 
-      const tween = gsap.to(track, {
-        x: () => -distance(),
-        ease: 'none',
-      });
+      // Pausa di lettura a inizio/fine: il primo e l'ultimo 12% dello scroll
+      // verticale non muovono il track, solo la fascia centrale interpola.
+      const PAUSE_START = 0.12;
+      const PAUSE_END   = 0.88;
+      const remapProgress = (p: number) => {
+        if (p <= PAUSE_START) return 0;
+        if (p >= PAUSE_END) return 1;
+        return (p - PAUSE_START) / (PAUSE_END - PAUSE_START);
+      };
 
       ScrollTrigger.create({
         trigger: wrapper,
@@ -84,8 +89,10 @@ export default function Productions({ title = '', subtitle = '' }: ProductionsPr
         end: () => `+=${distance()}`,
         pin: true,
         scrub: 1,
-        animation: tween,
         invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          gsap.set(track, { x: -distance() * remapProgress(self.progress) });
+        },
       });
     }, wrapper);
 

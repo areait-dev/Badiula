@@ -9,6 +9,7 @@ interface ProdottoIntroProps {
   rows: TitleRow[];
   align?: 'left' | 'center' | 'right';
   subtitle: string;
+  subtitleNoWrap?: boolean;
   body: string[];
 }
 
@@ -22,12 +23,13 @@ export default function ProdottoIntro({
   rows,
   align = 'left',
   subtitle,
+  subtitleNoWrap = false,
   body,
 }: ProdottoIntroProps) {
   return (
     <section className={styles.intro}>
       <div className={styles.hero}>
-        <h1 className={styles.h1} style={{ alignItems: alignMap[align] }}>
+        <h2 className={styles.h1} style={{ alignItems: alignMap[align] }}>
           {rows.map((row, i) => (
             <span
               key={i}
@@ -37,8 +39,15 @@ export default function ProdottoIntro({
               {row.text}
             </span>
           ))}
-        </h1>
-        <h2 className={styles.h2}>{subtitle}</h2>
+        </h2>
+        <h3 className={`${styles.h2} ${subtitleNoWrap ? styles.h2NoWrap : ''}`}>
+          {subtitle.split('\n').map((line, i, arr) => (
+            <span key={i}>
+              {line}
+              {i < arr.length - 1 && <br />}
+            </span>
+          ))}
+        </h3>
       </div>
       <div className={styles.body}>
         {body.map((p, i) => (

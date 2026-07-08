@@ -38,8 +38,8 @@
 .text p {
   font-family: var(--font-body);
   color: var(--vanilla);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
 }
 
 @media (max-width: 768px) {

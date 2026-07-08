@@ -1,9 +1,7 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Footer';
+import FaqAccordion from './FaqAccordion';
 import styles from './page.module.css';
 
 const MONTHS = ['GEN','FEB','MAR','APR','MAG','GIU','LUG','AGO','SET','OTT','NOV','DIC'];
@@ -29,8 +27,6 @@ const FAQS = [
 ];
 
 export default function AranceBiondePage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <main className={styles.main}>
 
@@ -80,7 +76,7 @@ export default function AranceBiondePage() {
           <div className={styles.varietyImgWrap}>
             <Image
               src="https://images.unsplash.com/photo-1661882002589-d93b357a2ffc?w=600&q=80&fit=crop"
-              alt="Arance Newhall — navel siciliane"
+              alt="Arance Newhall - navel siciliane"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
               style={{ objectFit: 'cover' }}
@@ -95,7 +91,7 @@ export default function AranceBiondePage() {
           <div className={styles.varietyImgWrap}>
             <Image
               src="https://images.unsplash.com/photo-1697250273200-df893313eb72?w=600&q=80&fit=crop"
-              alt="Arance Lane Late — navel tardive"
+              alt="Arance Lane Late - navel tardive"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
               style={{ objectFit: 'cover' }}
@@ -180,25 +176,7 @@ export default function AranceBiondePage() {
       <section className={styles.faq}>
         <div className={styles.container}>
           <h2 className={styles.faqHeading}>FAQ</h2>
-          <div className={styles.faqList}>
-            {FAQS.map((item, i) => (
-              <div key={i} className={styles.faqItem}>
-                <button
-                  className={styles.faqBtn}
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  aria-expanded={openFaq === i}
-                >
-                  <span className={styles.faqQ}>{item.q}</span>
-                  <span className={styles.faqIcon} aria-hidden="true">
-                    {openFaq === i ? '−' : '+'}
-                  </span>
-                </button>
-                {openFaq === i && (
-                  <p className={styles.faqAnswer}>{item.a}</p>
-                )}
-              </div>
-            ))}
-          </div>
+          <FaqAccordion items={FAQS} />
         </div>
       </section>
 

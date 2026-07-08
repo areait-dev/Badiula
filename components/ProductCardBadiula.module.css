@@ -74,8 +74,8 @@
 
 .description {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   letter-spacing: 0;
   margin: 0;
@@ -84,8 +84,8 @@
 /* ── Prezzo (opzionale) ── */
 .price {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 700;
   color: var(--card-text);
   opacity: 0.7;
@@ -94,7 +94,7 @@
   margin-top: 10px;
 }
 
-/* ── CTA — identico a Productions ── */
+/* ── CTA - identico a Productions ── */
 .cta {
   height: 36px;
   margin: 16px 0 16px 20px;
@@ -110,6 +110,7 @@
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-decoration: none;
   transition: background-color 200ms ease,
               color 200ms ease,
@@ -125,7 +126,7 @@
 .cta:hover .ctaArrow { transform: translateX(3px); }
 .cta:active .ctaArrow { transform: translateX(5px); transition-duration: 100ms; }
 
-/* Hover / active — specchia Productions per ciascun tema */
+/* Hover / active - specchia Productions per ciascun tema */
 .bordeaux .cta:hover  { background-color: var(--vanilla); border-color: var(--vanilla); color: var(--eigengrau); }
 .bordeaux .cta:active { background-color: var(--eigengrau); border-color: var(--eigengrau); color: var(--white); }
 

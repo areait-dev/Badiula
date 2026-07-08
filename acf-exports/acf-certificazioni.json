@@ -1,0 +1,213 @@
+[
+  {
+    "key": "group_badiula_certificazioni",
+    "title": "Certificazioni - Contenuti",
+    "fields": [
+      {
+        "key": "field_badiula_cert_tab_hero",
+        "label": "Hero",
+        "name": "tab_hero",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_cert_hero_titolo",
+        "label": "Titolo hero",
+        "name": "hero_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "CERTIFICAZIONI"
+      },
+      {
+        "key": "field_badiula_cert_hero_sottotitolo",
+        "label": "Sottotitolo hero",
+        "name": "hero_sottotitolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Qualita certificata, filiera trasparente"
+      },
+      {
+        "key": "field_badiula_cert_hero_testo",
+        "label": "Testo introduttivo",
+        "name": "hero_testo",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_cert_tab_biologiche",
+        "label": "Biologiche",
+        "name": "tab_biologiche",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_cert_biologiche_titolo",
+        "label": "Titolo sezione",
+        "name": "biologiche_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Biologiche"
+      },
+      {
+        "key": "field_badiula_cert_bio_card1_titolo",
+        "label": "Card 1 - Titolo",
+        "name": "biologiche_card1_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Biologico UE"
+      },
+      {
+        "key": "field_badiula_cert_bio_card1_testo",
+        "label": "Card 1 - Testo",
+        "name": "biologiche_card1_testo",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3,
+        "instructions": "Logo gestito da codice (public/certificazioni/Biologico UE.jpg), non editabile da qui."
+      },
+      {
+        "key": "field_badiula_cert_bio_card2_titolo",
+        "label": "Card 2 - Titolo",
+        "name": "biologiche_card2_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Bio Suisse"
+      },
+      {
+        "key": "field_badiula_cert_bio_card2_testo",
+        "label": "Card 2 - Testo",
+        "name": "biologiche_card2_testo",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3,
+        "instructions": "Logo gestito da codice (public/certificazioni/logo_bio_suisse_organic_pos.jpg), non editabile da qui."
+      },
+      {
+        "key": "field_badiula_cert_tab_qualita",
+        "label": "Qualita e sicurezza",
+        "name": "tab_qualita_sicurezza",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_cert_qualita_titolo",
+        "label": "Titolo sezione",
+        "name": "qualita_sicurezza_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "QUALITA E SICUREZZA ALIMENTARE"
+      },
+      {
+        "key": "field_badiula_cert_qualita_testo",
+        "label": "Testo sezione (GlobalG.A.P. / ISO 22000)",
+        "name": "qualita_sicurezza_testo",
+        "type": "wysiwyg",
+        "show_in_graphql": 0,
+        "media_upload": 0,
+        "toolbar": "basic"
+      },
+      {
+        "key": "field_badiula_cert_tab_tutela",
+        "label": "Tutela di origine",
+        "name": "tab_tutela_origine",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_cert_tutela_titolo",
+        "label": "Titolo sezione",
+        "name": "tutela_origine_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Tutela di origine"
+      },
+      {
+        "key": "field_badiula_cert_tutela_card1_titolo",
+        "label": "Card 1 - Titolo",
+        "name": "tutela_origine_card1_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Arancia Rossa di Sicilia IGP"
+      },
+      {
+        "key": "field_badiula_cert_tutela_card1_testo",
+        "label": "Card 1 - Testo",
+        "name": "tutela_origine_card1_testo",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3,
+        "instructions": "Logo gestito da codice (public/certificazioni/logo_ConsorzioTutela_AranciaRossaDiSIciliai.png), non editabile da qui."
+      },
+      {
+        "key": "field_badiula_cert_tutela_card2_titolo",
+        "label": "Card 2 - Titolo",
+        "name": "tutela_origine_card2_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Distretto Agrumi di Sicilia"
+      },
+      {
+        "key": "field_badiula_cert_tutela_card2_testo",
+        "label": "Card 2 - Testo",
+        "name": "tutela_origine_card2_testo",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3,
+        "instructions": "Logo gestito da codice (public/certificazioni/logo-DistrettoAgrumiSicilia.png), non editabile da qui."
+      },
+      {
+        "key": "field_badiula_cert_tab_riconoscimenti",
+        "label": "Riconoscimenti aggiuntivi",
+        "name": "tab_riconoscimenti",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_cert_riconoscimenti_titolo",
+        "label": "Titolo sezione",
+        "name": "riconoscimenti_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Riconoscimenti aggiuntivi"
+      },
+      {
+        "key": "field_badiula_cert_riconoscimenti_immagine",
+        "label": "Immagine",
+        "name": "riconoscimenti_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "url",
+        "preview_size": "medium",
+        "instructions": "Default in codice: /images/DSC_7723.jpg (bovino nell'Azienda Didattica accreditata)."
+      },
+      {
+        "key": "field_badiula_cert_riconoscimenti_testo",
+        "label": "Testo sezione (Azienda Didattica)",
+        "name": "riconoscimenti_testo",
+        "type": "wysiwyg",
+        "show_in_graphql": 0,
+        "media_upload": 0,
+        "toolbar": "basic"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "certificazioni"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 1,
+    "show_in_graphql": 0,
+    "graphql_field_name": "certificazioni"
+  }
+]

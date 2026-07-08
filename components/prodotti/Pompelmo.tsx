@@ -72,7 +72,7 @@ export default function Pompelmo() {
           <li>Succo fresco da bere o da usare in cocktail (Paloma, Greyhound)</li>
           <li>Polpa in insalate con rucola, finocchio, avocado o gamberi</li>
           <li>Scorza in salse agrodolci per pesce e carni bianche</li>
-          <li>Marmellata di pompelmo — intensa e leggermente amara</li>
+          <li>Marmellata di pompelmo - intensa e leggermente amara</li>
         </ul>
       </ProdottoVarieta>
 

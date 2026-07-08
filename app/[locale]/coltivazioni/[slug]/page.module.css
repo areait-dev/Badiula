@@ -4,12 +4,13 @@
   background: var(--vanilla);
 }
 .hero h1 {
+  font-family: var(--font-display);
   font-size: clamp(2.6rem, 6vw, 5rem);
   color: var(--bordeaux);
   margin-bottom: 1rem;
 }
 .hero .sub {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-style: italic;
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   color: var(--bordeaux);

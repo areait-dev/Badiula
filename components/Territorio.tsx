@@ -28,7 +28,7 @@ export default function Territorio({
   return (
     <div className={styles.panelInner}>
       <div className={styles.grid}>
-        {/* Left column — Tra il mare e la terra */}
+        {/* Left column - Tra il mare e la terra */}
         <div className={styles.col}>
           <p className={`body-2 ${styles.eyebrow}`}>{p2Eyebrow}</p>
           <h2 className={styles.heading}>{p2Heading}</h2>
@@ -36,7 +36,7 @@ export default function Territorio({
           <p className={styles.body}>{p2Body2}</p>
         </div>
 
-        {/* Center column — Sicily map */}
+        {/* Center column - Sicily map */}
         <div className={styles.mapCol}>
           <Image
             src="/images/sicilia.png"
@@ -48,7 +48,7 @@ export default function Territorio({
           />
         </div>
 
-        {/* Right column — Filiera e lavorazione */}
+        {/* Right column - Filiera e lavorazione */}
         <div className={styles.col}>
           <p className={`body-2 ${styles.eyebrow}`}>{p3Eyebrow}</p>
           <h2 className={styles.heading}>{p3Heading}</h2>

@@ -7,12 +7,12 @@
   max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 2.5fr auto 1fr;
   align-items: start;
   column-gap: 4rem;
 }
 
-/* Side text columns — both left aligned */
+/* Side text columns - both left aligned */
 .col {
   display: flex;
   flex-direction: column;

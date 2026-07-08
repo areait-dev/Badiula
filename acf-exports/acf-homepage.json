@@ -1,7 +1,7 @@
 [
   {
     "key": "group_badiula_homepage",
-    "title": "Homepage — Contenuti",
+    "title": "Homepage - Contenuti",
     "fields": [
       {
         "key": "field_badiula_hp_tab_hero",
@@ -76,7 +76,7 @@
       },
       {
         "key": "field_badiula_hp_about_p1_eyebrow_it",
-        "label": "Panel 1 — Eyebrow (IT)",
+        "label": "Panel 1 - Eyebrow (IT)",
         "name": "about_p1_eyebrow_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -84,7 +84,7 @@
       },
       {
         "key": "field_badiula_hp_about_p1_heading_it",
-        "label": "Panel 1 — Titolo (IT)",
+        "label": "Panel 1 - Titolo (IT)",
         "name": "about_p1_heading_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -92,7 +92,7 @@
       },
       {
         "key": "field_badiula_hp_about_p1_body_it",
-        "label": "Panel 1 — Testo (IT)",
+        "label": "Panel 1 - Testo (IT)",
         "name": "about_p1_body_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -100,7 +100,7 @@
       },
       {
         "key": "field_badiula_hp_about_p1_cta_it",
-        "label": "Panel 1 — CTA (IT)",
+        "label": "Panel 1 - CTA (IT)",
         "name": "about_p1_cta_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -108,7 +108,7 @@
       },
       {
         "key": "field_badiula_hp_about_p1_immagine",
-        "label": "Panel 1 — Immagine (Chi siamo)",
+        "label": "Panel 1 - Immagine (Chi siamo)",
         "name": "about_p1_immagine",
         "type": "image",
         "show_in_graphql": 0,
@@ -117,7 +117,7 @@
       },
       {
         "key": "field_badiula_hp_about_p2_eyebrow_it",
-        "label": "Panel 2 — Eyebrow (IT)",
+        "label": "Panel 2 - Eyebrow (IT)",
         "name": "about_p2_eyebrow_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -125,7 +125,7 @@
       },
       {
         "key": "field_badiula_hp_about_p2_heading_it",
-        "label": "Panel 2 — Titolo (IT)",
+        "label": "Panel 2 - Titolo (IT)",
         "name": "about_p2_heading_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -133,7 +133,7 @@
       },
       {
         "key": "field_badiula_hp_about_p2_body_it",
-        "label": "Panel 2 — Testo (IT)",
+        "label": "Panel 2 - Testo (IT)",
         "name": "about_p2_body_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -141,7 +141,7 @@
       },
       {
         "key": "field_badiula_hp_about_p2_body2_it",
-        "label": "Panel 2 — Testo secondario (IT)",
+        "label": "Panel 2 - Testo secondario (IT)",
         "name": "about_p2_body2_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -149,7 +149,7 @@
       },
       {
         "key": "field_badiula_hp_about_p3_eyebrow_it",
-        "label": "Panel 3 — Eyebrow (IT)",
+        "label": "Panel 3 - Eyebrow (IT)",
         "name": "about_p3_eyebrow_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -157,7 +157,7 @@
       },
       {
         "key": "field_badiula_hp_about_p3_heading_it",
-        "label": "Panel 3 — Titolo (IT)",
+        "label": "Panel 3 - Titolo (IT)",
         "name": "about_p3_heading_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -165,7 +165,7 @@
       },
       {
         "key": "field_badiula_hp_about_p3_body_it",
-        "label": "Panel 3 — Testo (IT)",
+        "label": "Panel 3 - Testo (IT)",
         "name": "about_p3_body_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -173,28 +173,28 @@
       },
       {
         "key": "field_badiula_hp_about_en",
-        "label": "🇬🇧 About — versione inglese",
+        "label": "🇬🇧 About - versione inglese",
         "name": "about_en_tab",
         "type": "tab",
         "placement": "top"
       },
       {
         "key": "field_badiula_hp_about_p1_eyebrow_en",
-        "label": "Panel 1 — Eyebrow (EN)",
+        "label": "Panel 1 - Eyebrow (EN)",
         "name": "about_p1_eyebrow_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_about_p1_heading_en",
-        "label": "Panel 1 — Titolo (EN)",
+        "label": "Panel 1 - Titolo (EN)",
         "name": "about_p1_heading_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_about_p1_body_en",
-        "label": "Panel 1 — Testo (EN)",
+        "label": "Panel 1 - Testo (EN)",
         "name": "about_p1_body_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -202,28 +202,28 @@
       },
       {
         "key": "field_badiula_hp_about_p1_cta_en",
-        "label": "Panel 1 — CTA (EN)",
+        "label": "Panel 1 - CTA (EN)",
         "name": "about_p1_cta_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_about_p2_eyebrow_en",
-        "label": "Panel 2 — Eyebrow (EN)",
+        "label": "Panel 2 - Eyebrow (EN)",
         "name": "about_p2_eyebrow_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_about_p2_heading_en",
-        "label": "Panel 2 — Titolo (EN)",
+        "label": "Panel 2 - Titolo (EN)",
         "name": "about_p2_heading_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_about_p2_body_en",
-        "label": "Panel 2 — Testo (EN)",
+        "label": "Panel 2 - Testo (EN)",
         "name": "about_p2_body_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -231,7 +231,7 @@
       },
       {
         "key": "field_badiula_hp_about_p2_body2_en",
-        "label": "Panel 2 — Testo secondario (EN)",
+        "label": "Panel 2 - Testo secondario (EN)",
         "name": "about_p2_body2_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -239,21 +239,21 @@
       },
       {
         "key": "field_badiula_hp_about_p3_eyebrow_en",
-        "label": "Panel 3 — Eyebrow (EN)",
+        "label": "Panel 3 - Eyebrow (EN)",
         "name": "about_p3_eyebrow_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_about_p3_heading_en",
-        "label": "Panel 3 — Titolo (EN)",
+        "label": "Panel 3 - Titolo (EN)",
         "name": "about_p3_heading_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_about_p3_body_en",
-        "label": "Panel 3 — Testo (EN)",
+        "label": "Panel 3 - Testo (EN)",
         "name": "about_p3_body_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -268,7 +268,7 @@
       },
       {
         "key": "field_badiula_hp_prod_eyebrow_it",
-        "label": "Produzioni — Eyebrow (IT)",
+        "label": "Produzioni - Eyebrow (IT)",
         "name": "produzioni_eyebrow_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -276,7 +276,7 @@
       },
       {
         "key": "field_badiula_hp_prod_titolo_it",
-        "label": "Produzioni — Titolo (IT)",
+        "label": "Produzioni - Titolo (IT)",
         "name": "produzioni_titolo_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -284,7 +284,7 @@
       },
       {
         "key": "field_badiula_hp_prod_sottotitolo_it",
-        "label": "Produzioni — Sottotitolo (IT)",
+        "label": "Produzioni - Sottotitolo (IT)",
         "name": "produzioni_sottotitolo_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -292,21 +292,21 @@
       },
       {
         "key": "field_badiula_hp_prod_eyebrow_en",
-        "label": "Produzioni — Eyebrow (EN)",
+        "label": "Produzioni - Eyebrow (EN)",
         "name": "produzioni_eyebrow_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_prod_titolo_en",
-        "label": "Produzioni — Titolo (EN)",
+        "label": "Produzioni - Titolo (EN)",
         "name": "produzioni_titolo_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_prod_sottotitolo_en",
-        "label": "Produzioni — Sottotitolo (EN)",
+        "label": "Produzioni - Sottotitolo (EN)",
         "name": "produzioni_sottotitolo_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -321,7 +321,7 @@
       },
       {
         "key": "field_badiula_hp_luce_titolo_it",
-        "label": "Luce di Terra — Titolo (IT)",
+        "label": "Luce di Terra - Titolo (IT)",
         "name": "luce_titolo_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -329,14 +329,14 @@
       },
       {
         "key": "field_badiula_hp_luce_sottotitolo_it",
-        "label": "Luce di Terra — Sottotitolo (IT)",
+        "label": "Luce di Terra - Sottotitolo (IT)",
         "name": "luce_sottotitolo_it",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_luce_body_it",
-        "label": "Luce di Terra — Testo (IT)",
+        "label": "Luce di Terra - Testo (IT)",
         "name": "luce_body_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -344,7 +344,7 @@
       },
       {
         "key": "field_badiula_hp_luce_immagine",
-        "label": "Luce di Terra — Immagine",
+        "label": "Luce di Terra - Immagine",
         "name": "luce_immagine",
         "type": "image",
         "show_in_graphql": 0,
@@ -353,21 +353,21 @@
       },
       {
         "key": "field_badiula_hp_luce_titolo_en",
-        "label": "Luce di Terra — Titolo (EN)",
+        "label": "Luce di Terra - Titolo (EN)",
         "name": "luce_titolo_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_luce_sottotitolo_en",
-        "label": "Luce di Terra — Sottotitolo (EN)",
+        "label": "Luce di Terra - Sottotitolo (EN)",
         "name": "luce_sottotitolo_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_hp_luce_body_en",
-        "label": "Luce di Terra — Testo (EN)",
+        "label": "Luce di Terra - Testo (EN)",
         "name": "luce_body_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -382,7 +382,7 @@
       },
       {
         "key": "field_badiula_hp_shop_titolo_it",
-        "label": "Shop banner — Titolo (IT)",
+        "label": "Shop banner - Titolo (IT)",
         "name": "shop_banner_titolo_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -391,7 +391,7 @@
       },
       {
         "key": "field_badiula_hp_shop_sottotitolo_it",
-        "label": "Shop banner — Sottotitolo (IT)",
+        "label": "Shop banner - Sottotitolo (IT)",
         "name": "shop_banner_sottotitolo_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -399,7 +399,7 @@
       },
       {
         "key": "field_badiula_hp_shop_immagine",
-        "label": "Shop banner — Immagine di sfondo",
+        "label": "Shop banner - Immagine di sfondo",
         "name": "shop_banner_immagine",
         "type": "image",
         "show_in_graphql": 0,
@@ -408,7 +408,7 @@
       },
       {
         "key": "field_badiula_hp_shop_titolo_en",
-        "label": "Shop banner — Titolo (EN)",
+        "label": "Shop banner - Titolo (EN)",
         "name": "shop_banner_titolo_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -416,7 +416,7 @@
       },
       {
         "key": "field_badiula_hp_shop_sottotitolo_en",
-        "label": "Shop banner — Sottotitolo (EN)",
+        "label": "Shop banner - Sottotitolo (EN)",
         "name": "shop_banner_sottotitolo_en",
         "type": "textarea",
         "show_in_graphql": 0,

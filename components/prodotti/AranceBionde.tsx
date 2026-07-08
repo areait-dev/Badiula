@@ -36,7 +36,7 @@ export default function AranceBionde() {
         align="right"
         subtitle="Newhall e Lane Late, due Navel per coprire tutta la stagione"
         body={[
-          'Le nostre arance bionde sono prodotte con metodo biologico certificato nella Piana di Catania e nell\'area siracusana. Appartengono alla famiglia Navel — caratterizzate dall\'ombelico alla base e dall\'assenza di semi — nelle varietà Newhall (precoce) e Lane Late (tardiva), che insieme coprono una stagione di sette mesi.',
+          'Le nostre arance bionde sono prodotte con metodo biologico certificato nella Piana di Catania e nell\'area siracusana. Appartengono alla famiglia Navel - caratterizzate dall\'ombelico alla base e dall\'assenza di semi - nelle varietà Newhall (precoce) e Lane Late (tardiva), che insieme coprono una stagione di sette mesi.',
           'Il profilo organolettico è dolce e succoso, con buccia facile da pelare e polpa compatta. Sono ideali per il consumo fresco e per la spremitura a freddo.',
         ]}
       />
@@ -46,7 +46,7 @@ export default function AranceBionde() {
         slogan="La Navel della prima stagione"
         image={{
           src: 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab12?w=600&q=80&fit=crop',
-          alt: 'Arance Newhall — Navel precoce',
+          alt: 'Arance Newhall - Navel precoce',
         }}
       >
         <p>La Newhall è una varietà Navel precoce che matura tra novembre e gennaio. Frutto di pezzatura media, con buccia liscia di colore giallo-arancio, polpa arancione intensa e sapore dolce, poco acido.</p>
@@ -58,7 +58,7 @@ export default function AranceBionde() {
         slogan="La Navel che prolunga la stagione fino a giugno"
         image={{
           src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop',
-          alt: 'Arance Lane Late — Navel tardiva',
+          alt: 'Arance Lane Late - Navel tardiva',
         }}
         reverse
       >
@@ -69,7 +69,7 @@ export default function AranceBionde() {
       <CalendarioRaccolta activeMonths={[1, 2, 3, 4, 5, 6, 11]} />
 
       <ProdottoEditoriale title="La famiglia Navel: un'arancia senza semi">
-        <p>Il nome «Navel» (ombelico in inglese) deriva dalla protuberanza che si forma alla base del frutto — un secondo frutto rudimentale che non si sviluppa. Proprio questa caratteristica strutturale rende le Navel completamente prive di semi, caratteristica selezionata e mantenuta nel tempo attraverso la riproduzione per innesto.</p>
+        <p>Il nome «Navel» (ombelico in inglese) deriva dalla protuberanza che si forma alla base del frutto - un secondo frutto rudimentale che non si sviluppa. Proprio questa caratteristica strutturale rende le Navel completamente prive di semi, caratteristica selezionata e mantenuta nel tempo attraverso la riproduzione per innesto.</p>
         <p>Le Navel di Sicilia beneficiano del clima mediterraneo e delle temperature elevate, che permettono una maturazione lenta e uniforme del frutto, con un accumulo di zuccheri superiore rispetto alle varietà prodotte in zone più fredde.</p>
       </ProdottoEditoriale>
 

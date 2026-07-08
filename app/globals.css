@@ -56,6 +56,12 @@
   --font-primary: 'mr-eaves-modern', sans-serif;
   --font-body:    var(--font-primary);
 
+  /* ── Scala tipografica body (CLAUDE.md §3) ── */
+  --text-body-1-size: 26px;
+  --text-body-1-line: 38px;
+  --text-body-2-size: 20px;
+  --text-body-2-line: 32px;
+
   /* ── Spaziatura ── */
   --space-xs:   8px;
   --space-sm:   16px;
@@ -108,17 +114,17 @@ h1, h2, h3, h4 {
 /* ── Tipografia corpo testo ── */
 p {
   font-family: var(--font-primary);
-  font-size: 26px;
-  line-height: 38px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 400;
   letter-spacing: 0px;
 }
 
-/* Body 2 — testo secondario/ridotto */
+/* Body 2 - testo secondario/ridotto */
 .body-2 {
   font-family: var(--font-primary);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   letter-spacing: 0px;
 }

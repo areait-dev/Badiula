@@ -13,7 +13,7 @@ const FAQS: FaqItem[] = [
   },
   {
     q: 'Come si usa il bergamotto in cucina?',
-    a: 'La scorza è la parte più utilizzata: grattugiata conferisce un aroma floreale e agrumato unico a dolci, risotti, salse e marinature. Il succo — molto acido — può essere usato come il limone, ma con un profilo aromatico molto più complesso.',
+    a: 'La scorza è la parte più utilizzata: grattugiata conferisce un aroma floreale e agrumato unico a dolci, risotti, salse e marinature. Il succo - molto acido - può essere usato come il limone, ma con un profilo aromatico molto più complesso.',
   },
   {
     q: 'Quando matura il bergamotto?',
@@ -80,7 +80,7 @@ export default function Bergamotto() {
       <CalendarioRaccolta activeMonths={[1, 2, 11, 12]} />
 
       <ProdottoEditoriale title="Un agrume di nicchia: perché coltivarlo in Sicilia">
-        <p>Tradizionalmente il bergamotto è sinonimo di Calabria — in particolare della Piana di Reggio Calabria, dove sono concentrate oltre il 90% delle produzioni mondiali. La Sicilia orientale, con il suo microclima simile e le temperature miti in inverno, si presta tuttavia alla coltivazione di questo agrume con risultati di qualità elevata.</p>
+        <p>Tradizionalmente il bergamotto è sinonimo di Calabria - in particolare della Piana di Reggio Calabria, dove sono concentrate oltre il 90% delle produzioni mondiali. La Sicilia orientale, con il suo microclima simile e le temperature miti in inverno, si presta tuttavia alla coltivazione di questo agrume con risultati di qualità elevata.</p>
         <p>La nostra produzione è di piccola scala e sperimentale: ogni anno selezioniamo i frutti migliori per offrire un bergamotto fresco biologico, disponibile direttamente a chi lo usa in cucina, in pasticceria o nella preparazione artigianale di cosmetici e profumi.</p>
       </ProdottoEditoriale>
 

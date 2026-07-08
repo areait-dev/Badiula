@@ -1,7 +1,7 @@
 [
   {
     "key": "group_badiula_shop",
-    "title": "Pagina Shop — Contenuti",
+    "title": "Pagina Shop - Contenuti",
     "fields": [
       {
         "key": "field_badiula_shop_tab_it",
@@ -12,7 +12,7 @@
       },
       {
         "key": "field_badiula_shop_hero_titolo_it",
-        "label": "Hero — Titolo (IT)",
+        "label": "Hero - Titolo (IT)",
         "name": "hero_titolo_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -21,7 +21,7 @@
       },
       {
         "key": "field_badiula_shop_hero_sottotitolo_it",
-        "label": "Hero — Sottotitolo (IT)",
+        "label": "Hero - Sottotitolo (IT)",
         "name": "hero_sottotitolo_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -30,7 +30,7 @@
       },
       {
         "key": "field_badiula_shop_hero_immagine",
-        "label": "Hero — Immagine di sfondo",
+        "label": "Hero - Immagine di sfondo",
         "name": "hero_immagine",
         "type": "image",
         "show_in_graphql": 0,
@@ -46,7 +46,7 @@
       },
       {
         "key": "field_badiula_shop_hero_titolo_en",
-        "label": "Hero — Titolo (EN)",
+        "label": "Hero - Titolo (EN)",
         "name": "hero_titolo_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -54,7 +54,7 @@
       },
       {
         "key": "field_badiula_shop_hero_sottotitolo_en",
-        "label": "Hero — Sottotitolo (EN)",
+        "label": "Hero - Sottotitolo (EN)",
         "name": "hero_sottotitolo_en",
         "type": "textarea",
         "show_in_graphql": 0,

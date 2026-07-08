@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('coltivazioni');
   if (!seo) {
     return {
-      title: 'Coltivazioni — Badiula',
+      title: 'Coltivazioni - Badiula',
       description: 'Cinque produzioni biologiche: arance rosse IGP, arance bionde, limone, bergamotto e pompelmo coltivati tra Carlentini e Lentini.',
     };
   }

@@ -68,10 +68,15 @@ export default function ProductionsTrack({ moreLabel }: { moreLabel: string }) {
       const sidePad = parseFloat(getComputedStyle(wrapper).paddingRight) || 0;
       const distance = () => track.scrollWidth - wrapper.clientWidth + sidePad * 2;
 
-      const tween = gsap.to(track, {
-        x: () => -distance(),
-        ease: 'none',
-      });
+      // Pausa di lettura a inizio/fine: il primo e l'ultimo 12% dello scroll
+      // verticale non muovono il track, solo la fascia centrale interpola.
+      const PAUSE_START = 0.12;
+      const PAUSE_END   = 0.88;
+      const remapProgress = (p: number) => {
+        if (p <= PAUSE_START) return 0;
+        if (p >= PAUSE_END) return 1;
+        return (p - PAUSE_START) / (PAUSE_END - PAUSE_START);
+      };
 
       ScrollTrigger.create({
         trigger: wrapper,
@@ -79,9 +84,9 @@ export default function ProductionsTrack({ moreLabel }: { moreLabel: string }) {
         end: () => `+=${distance()}`,
         pin: true,
         scrub: 1,
-        animation: tween,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
+          gsap.set(track, { x: -distance() * remapProgress(self.progress) });
           if (progressRef.current) {
             progressRef.current.style.width = `${self.progress * 100}%`;
           }

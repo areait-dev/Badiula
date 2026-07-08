@@ -1,4 +1,4 @@
-// Query WPGraphQL — nomi campi in camelCase (WPGraphQL converte snake_case → camelCase)
+// Query WPGraphQL - nomi campi in camelCase (WPGraphQL converte snake_case → camelCase)
 
 // ─── Frammenti riutilizzabili ─────────────────────────────────────────────────
 

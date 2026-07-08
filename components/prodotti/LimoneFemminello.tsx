@@ -73,7 +73,7 @@ export default function LimoneFemminello() {
       <CalendarioRaccolta activeMonths={[1, 2, 3, 4, 5, 6, 10, 11, 12]} />
 
       <ProdottoEditoriale title="Limone Femminello Siracusano IGP: cosa garantisce la certificazione">
-        <p>Il marchio IGP (Indicazione Geografica Protetta) tutela i limoni prodotti nella zona di Siracusa con la varietà Femminello. Il disciplinare impone requisiti precisi su varietà, zona di coltivazione, calibro e qualità del succo — con un tenore minimo di acido citrico del 5,5%.</p>
+        <p>Il marchio IGP (Indicazione Geografica Protetta) tutela i limoni prodotti nella zona di Siracusa con la varietà Femminello. Il disciplinare impone requisiti precisi su varietà, zona di coltivazione, calibro e qualità del succo - con un tenore minimo di acido citrico del 5,5%.</p>
         <p>La certificazione IGP garantisce che ogni limone sia coltivato, raccolto e condizionato nella zona delimitata, tracciabile dal campo alla confezione. La nostra produzione biologica aggiunge un livello ulteriore di garanzia: nessun pesticida, nessun concime di sintesi.</p>
       </ProdottoEditoriale>
 

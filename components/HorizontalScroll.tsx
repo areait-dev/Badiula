@@ -56,10 +56,15 @@ export default function HorizontalScroll({
       // sottrae il 50% vuoto dell'ultimo panel così lo scroll finisce sul video
       const distance = () => Math.max(0, track.offsetWidth - window.innerWidth);
 
-      const tween = gsap.to(track, {
-        x: () => -distance(),
-        ease: 'none',
-      });
+      // Pausa di lettura a inizio/fine: il primo e l'ultimo 12% dello scroll
+      // verticale non muovono il track, solo la fascia centrale interpola.
+      const PAUSE_START = 0.12;
+      const PAUSE_END   = 0.88;
+      const remapProgress = (p: number) => {
+        if (p <= PAUSE_START) return 0;
+        if (p >= PAUSE_END) return 1;
+        return (p - PAUSE_START) / (PAUSE_END - PAUSE_START);
+      };
 
       ScrollTrigger.create({
         trigger: wrapper,
@@ -67,9 +72,9 @@ export default function HorizontalScroll({
         end: () => `+=${distance()}`,
         pin: true,
         scrub: 1,
-        animation: tween,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
+          gsap.set(track, { x: -distance() * remapProgress(self.progress) });
           if (progressRef.current) {
             progressRef.current.style.width = `${self.progress * 100}%`;
           }
@@ -94,7 +99,7 @@ export default function HorizontalScroll({
     <div ref={wrapperRef} className={styles.wrapper}>
       <div ref={trackRef} className={styles.track}>
 
-        {/* Panel 1 — Chi siamo */}
+        {/* Panel 1 - Chi siamo */}
         <section className={`${styles.panel} ${styles.p1}`}>
           <div className={styles.half}>
             <p className={styles.eyebrow}>{p1Eyebrow}</p>
@@ -123,7 +128,7 @@ export default function HorizontalScroll({
           </div>
         </section>
 
-        {/* Panel 2 — Territorio + Filiera */}
+        {/* Panel 2 - Territorio + Filiera */}
         <section className={`${styles.panel} ${styles.territoryPanel}`}>
           <Territorio
             p2Eyebrow={p2Eyebrow}
@@ -136,7 +141,7 @@ export default function HorizontalScroll({
           />
         </section>
 
-        {/* Panel 3 — Immagine aerea capannone */}
+        {/* Panel 3 - Immagine aerea capannone */}
         <section className={`${styles.panel} ${styles.greenPanel}`}>
           <div className={styles.imgHalf}>
             <Image

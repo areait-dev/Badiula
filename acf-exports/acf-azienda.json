@@ -1,7 +1,7 @@
 [
   {
     "key": "group_badiula_azienda",
-    "title": "Pagina Azienda — Contenuti",
+    "title": "Pagina Azienda - Contenuti",
     "fields": [
       {
         "key": "field_badiula_az_tab_intro",
@@ -88,7 +88,7 @@
       },
       {
         "key": "field_badiula_az_cultura_titolo_it",
-        "label": "Cultura — Titolo (IT)",
+        "label": "Cultura - Titolo (IT)",
         "name": "cultura_titolo_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -97,7 +97,7 @@
       },
       {
         "key": "field_badiula_az_cultura_body_it",
-        "label": "Cultura — Testo (IT)",
+        "label": "Cultura - Testo (IT)",
         "name": "cultura_body_it",
         "type": "wysiwyg",
         "show_in_graphql": 0,
@@ -106,7 +106,7 @@
       },
       {
         "key": "field_badiula_az_cultura_immagine",
-        "label": "Cultura — Immagine",
+        "label": "Cultura - Immagine",
         "name": "cultura_immagine",
         "type": "image",
         "show_in_graphql": 0,
@@ -131,7 +131,7 @@
       },
       {
         "key": "field_badiula_az_vision_label_it",
-        "label": "Vision — Label (IT)",
+        "label": "Vision - Label (IT)",
         "name": "vision_label_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -139,7 +139,7 @@
       },
       {
         "key": "field_badiula_az_vision_body_it",
-        "label": "Vision — Testo (IT)",
+        "label": "Vision - Testo (IT)",
         "name": "vision_body_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -147,7 +147,7 @@
       },
       {
         "key": "field_badiula_az_mission_label_it",
-        "label": "Mission — Label (IT)",
+        "label": "Mission - Label (IT)",
         "name": "mission_label_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -155,7 +155,7 @@
       },
       {
         "key": "field_badiula_az_mission_body_it",
-        "label": "Mission — Testo (IT)",
+        "label": "Mission - Testo (IT)",
         "name": "mission_body_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -170,7 +170,7 @@
       },
       {
         "key": "field_badiula_az_territorio_titolo_it",
-        "label": "Territorio — Titolo (IT)",
+        "label": "Territorio - Titolo (IT)",
         "name": "territorio_titolo_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -178,7 +178,7 @@
       },
       {
         "key": "field_badiula_az_territorio_body_it",
-        "label": "Territorio — Testo (IT)",
+        "label": "Territorio - Testo (IT)",
         "name": "territorio_body_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -186,7 +186,7 @@
       },
       {
         "key": "field_badiula_az_territorio_immagine",
-        "label": "Territorio — Immagine",
+        "label": "Territorio - Immagine",
         "name": "territorio_immagine",
         "type": "image",
         "show_in_graphql": 0,
@@ -243,7 +243,7 @@
       },
       {
         "key": "field_badiula_az_cultura_titolo_en",
-        "label": "Cultura — Titolo (EN)",
+        "label": "Cultura - Titolo (EN)",
         "name": "cultura_titolo_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -251,7 +251,7 @@
       },
       {
         "key": "field_badiula_az_cultura_body_en",
-        "label": "Cultura — Testo (EN)",
+        "label": "Cultura - Testo (EN)",
         "name": "cultura_body_en",
         "type": "wysiwyg",
         "show_in_graphql": 0,
@@ -268,14 +268,14 @@
       },
       {
         "key": "field_badiula_az_vision_label_en",
-        "label": "Vision — Label (EN)",
+        "label": "Vision - Label (EN)",
         "name": "vision_label_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_az_vision_body_en",
-        "label": "Vision — Testo (EN)",
+        "label": "Vision - Testo (EN)",
         "name": "vision_body_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -283,14 +283,14 @@
       },
       {
         "key": "field_badiula_az_mission_label_en",
-        "label": "Mission — Label (EN)",
+        "label": "Mission - Label (EN)",
         "name": "mission_label_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_az_mission_body_en",
-        "label": "Mission — Testo (EN)",
+        "label": "Mission - Testo (EN)",
         "name": "mission_body_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -298,14 +298,14 @@
       },
       {
         "key": "field_badiula_az_territorio_titolo_en",
-        "label": "Territorio — Titolo (EN)",
+        "label": "Territorio - Titolo (EN)",
         "name": "territorio_titolo_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_az_territorio_body_en",
-        "label": "Territorio — Testo (EN)",
+        "label": "Territorio - Testo (EN)",
         "name": "territorio_body_en",
         "type": "textarea",
         "show_in_graphql": 0,

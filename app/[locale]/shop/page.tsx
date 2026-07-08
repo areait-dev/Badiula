@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('shop');
   if (!seo) {
     return {
-      title: 'Shop — Badiula',
+      title: 'Shop - Badiula',
       description: 'Acquista online agrumi biologici siciliani, olio extravergine Luce di Terra e marmellate di agrumi. Spedizioni in Italia e UE.',
     };
   }

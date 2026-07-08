@@ -85,7 +85,7 @@
 .heading {
   font-size: 60px;
   line-height: 66px;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-weight: 700;
   color: var(--bordeaux);
   margin-bottom: 1.5rem;

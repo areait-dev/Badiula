@@ -25,7 +25,7 @@
 }
 
 .h1 {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 80px;
   line-height: 89px;
   font-weight: 700;
@@ -59,8 +59,8 @@
 
 .body {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 400;
   color: var(--eigengrau);
   margin: 0;
@@ -77,8 +77,8 @@
 
 .count {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--teal);
   letter-spacing: 0.1em;

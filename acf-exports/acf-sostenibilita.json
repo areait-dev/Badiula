@@ -1,0 +1,123 @@
+[
+  {
+    "key": "group_badiula_sostenibilita",
+    "title": "Sostenibilita - Contenuti",
+    "fields": [
+      {
+        "key": "field_badiula_sost_tab_hero",
+        "label": "Hero",
+        "name": "tab_hero",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_sost_hero_titolo",
+        "label": "Titolo hero",
+        "name": "hero_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "SOSTENIBILITA"
+      },
+      {
+        "key": "field_badiula_sost_hero_sottotitolo",
+        "label": "Sottotitolo hero",
+        "name": "hero_sottotitolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Energie rinnovabili, gestione idrica intelligente, emissioni zero"
+      },
+      {
+        "key": "field_badiula_sost_hero_testo",
+        "label": "Testo introduttivo (uno o piu paragrafi, uno per riga)",
+        "name": "hero_testo",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_sost_tab_sezione_1",
+        "label": "Sezione 1 - Magazzino a emissioni zero",
+        "name": "tab_sezione_1",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_sost_s1_titolo",
+        "label": "Titolo sezione",
+        "name": "sezione_1_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Magazzino a emissioni zero"
+      },
+      {
+        "key": "field_badiula_sost_s1_immagine",
+        "label": "Immagine",
+        "name": "sezione_1_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_sost_s1_testo",
+        "label": "Testo",
+        "name": "sezione_1_testo",
+        "type": "wysiwyg",
+        "show_in_graphql": 0,
+        "media_upload": 0,
+        "toolbar": "basic"
+      },
+      {
+        "key": "field_badiula_sost_tab_sezione_2",
+        "label": "Sezione 2 - Gestione risorse idriche",
+        "name": "tab_sezione_2",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_sost_s2_titolo",
+        "label": "Titolo sezione",
+        "name": "sezione_2_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Gestione delle risorse idriche"
+      },
+      {
+        "key": "field_badiula_sost_s2_immagine",
+        "label": "Immagine",
+        "name": "sezione_2_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_sost_s2_testo",
+        "label": "Testo",
+        "name": "sezione_2_testo",
+        "type": "wysiwyg",
+        "show_in_graphql": 0,
+        "media_upload": 0,
+        "toolbar": "basic"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "sostenibilita"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 1,
+    "show_in_graphql": 0,
+    "graphql_field_name": "sostenibilita"
+  }
+]

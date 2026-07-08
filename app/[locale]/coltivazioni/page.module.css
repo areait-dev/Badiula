@@ -15,7 +15,7 @@
 }
 
 .introTitle {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 110px;
   line-height: 122px;
   font-weight: 700;
@@ -48,8 +48,8 @@
 
 .paragrafoDescrizione {
   font-family: var(--font-body);
-  font-size: 20px !important;
-  line-height: 32px !important;
+  font-size: var(--text-body-1-size) !important;
+  line-height: var(--text-body-1-line) !important;
   font-weight: 400;
   color: #333333;
   text-align: left;
@@ -116,7 +116,7 @@
   transition: width 0.1s linear;
 }
 
-/* ── Card carousel — 560×900px come da §5.10 CLAUDE.md ── */
+/* ── Card carousel - 560×900px come da §5.10 CLAUDE.md ── */
 .card {
   flex: 0 0 560px;
   width: 560px;
@@ -164,8 +164,8 @@
 }
 .card p {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   margin: 0;
 }
 
@@ -183,6 +183,7 @@
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* Alternanza colori identica all'homepage */

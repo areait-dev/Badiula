@@ -119,7 +119,7 @@ const str = (v: unknown): string => (typeof v === 'string' ? v : '');
 const url = (v: unknown): string | null => (typeof v === 'string' && v ? v : null);
 const arr = <T>(v: unknown): T[] => (Array.isArray(v) ? (v as T[]) : []);
 
-// Mapper per GraphQL (camelCase — usato dai CPT)
+// Mapper per GraphQL (camelCase - usato dai CPT)
 function mapSezione(s: Record<string, unknown>): Sezione {
   return {
     titoloSezione: str(s.titoloSezione),
@@ -129,7 +129,7 @@ function mapSezione(s: Record<string, unknown>): Sezione {
   };
 }
 
-// Mapper per REST API (snake_case — usato dalle pagine native)
+// Mapper per REST API (snake_case - usato dalle pagine native)
 function mapSezioneRest(s: Record<string, unknown>): Sezione {
   return {
     titoloSezione: str(s.titolo_sezione),
@@ -164,7 +164,7 @@ function mapProductAcf(raw: Record<string, unknown>): ProductAcf {
   };
 }
 
-// ─── 1. Prodotti (CPT — GraphQL) ──────────────────────────────────────────────
+// ─── 1. Prodotti (CPT - GraphQL) ──────────────────────────────────────────────
 
 interface RawProductNode {
   id: string;
@@ -208,7 +208,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   }
 }
 
-// ─── 2. Sezioni Azienda (CPT — GraphQL) ──────────────────────────────────────
+// ─── 2. Sezioni Azienda (CPT - GraphQL) ──────────────────────────────────────
 
 interface RawSezioneNode {
   id: string;
@@ -243,7 +243,7 @@ export async function getSezioniAzienda(): Promise<SezioneAzienda[]> {
   }
 }
 
-// ─── 3. Homepage (pagina slug: home — REST) ───────────────────────────────────
+// ─── 3. Homepage (pagina slug: home - REST) ───────────────────────────────────
 
 const HOMEPAGE_FALLBACK: HomepageData = {
   heroVideo: '/videos/hero.mp4',
@@ -330,7 +330,7 @@ export async function getHomepage(): Promise<HomepageData> {
   }
 }
 
-// ─── 4. Opzioni Globali (pagina slug: opzioni-globali — REST) ─────────────────
+// ─── 4. Opzioni Globali (pagina slug: opzioni-globali - REST) ─────────────────
 
 const GLOBAL_OPTIONS_FALLBACK: GlobalOptions = {
   telefono: '', email: '', whatsapp: '', indirizzo: '', pIva: '',
@@ -364,7 +364,7 @@ export async function getGlobalOptions(): Promise<GlobalOptions> {
   }
 }
 
-// ─── 5. Pagina Azienda (pagina slug: azienda — REST) ─────────────────────────
+// ─── 5. Pagina Azienda (pagina slug: azienda - REST) ─────────────────────────
 
 const PAGINA_AZIENDA_FALLBACK: PaginaAzienda = {
   heroLabelIt: '', heroTitoloIt: '', heroBodyIt: '', videoUrl: '',
@@ -422,7 +422,7 @@ export async function getPaginaAzienda(): Promise<PaginaAzienda> {
   }
 }
 
-// ─── 6. Pagina Coltivazioni (pagina slug: coltivazioni — REST) ────────────────
+// ─── 6. Pagina Coltivazioni (pagina slug: coltivazioni - REST) ────────────────
 
 const PAGINA_COLTIVAZIONI_FALLBACK: PaginaColtivazioni = {
   titoloIt: '', titoloEn: '', sottotitoloIt: '', sottotitoloEn: '',
@@ -456,7 +456,7 @@ export async function getPaginaColtivazioni(): Promise<PaginaColtivazioni> {
   }
 }
 
-// ─── 7. Pagina Luce di Terra (pagina slug: luce-di-terra — REST) ──────────────
+// ─── 7. Pagina Luce di Terra (pagina slug: luce-di-terra - REST) ──────────────
 
 const PAGINA_LUCE_FALLBACK: PaginaLuceDiTerra = {
   titoloIt: '', sottotitoloIt: '', introP1It: '', introP2It: '', lineeTitoloIt: '',
@@ -504,7 +504,7 @@ export async function getPaginaLuceDiTerra(): Promise<PaginaLuceDiTerra> {
   }
 }
 
-// ─── 8. Pagina Olio EVO (pagina slug: olio-evo — REST) ───────────────────────
+// ─── 8. Pagina Olio EVO (pagina slug: olio-evo - REST) ───────────────────────
 
 const PAGINA_OLIO_FALLBACK: PaginaOlioEvo = {
   titoloIt: '', sottotitoloIt: '', introIt: '', immaginePrincipale: null,
@@ -540,7 +540,7 @@ export async function getPaginaOlioEvo(): Promise<PaginaOlioEvo> {
   }
 }
 
-// ─── 9. Pagina Marmellate (pagina slug: marmellata-agrumi — REST) ─────────────
+// ─── 9. Pagina Marmellate (pagina slug: marmellata-agrumi - REST) ─────────────
 
 const PAGINA_MARMELLATE_FALLBACK: PaginaMarmellate = {
   titoloIt: '', sottotitoloIt: '', introIt: '',
@@ -574,7 +574,7 @@ export async function getPaginaMarmellate(): Promise<PaginaMarmellate> {
   }
 }
 
-// ─── 10. Pagina Shop (pagina slug: shop — REST) ───────────────────────────────
+// ─── 10. Pagina Shop (pagina slug: shop - REST) ───────────────────────────────
 
 const PAGINA_SHOP_FALLBACK: PaginaShop = {
   heroTitoloIt: '', heroSottotitoloIt: '', heroImmagine: null,

@@ -17,7 +17,7 @@
   background: var(--color-white);
 }
 
-/* Pulsante indietro — specchia .backBtn del Navbar */
+/* Pulsante indietro - specchia .backBtn del Navbar */
 .backBtn {
   display: inline-flex;
   align-items: center;
@@ -61,7 +61,7 @@
   border-top: 1px solid #eaeaea;
 }
 
-/* Wrapper link — gestisce padding e transizione (senza text-transform) */
+/* Wrapper link - gestisce padding e transizione (senza text-transform) */
 .navLink {
   display: block;
   padding: 0.9rem 0;
@@ -78,7 +78,7 @@
   outline-offset: 2px;
 }
 
-/* Span interno — text-transform applicato qui come navLinkInner del Navbar */
+/* Span interno - text-transform applicato qui come navLinkInner del Navbar */
 .inner {
   display: block;
   font-family: var(--font-body);
@@ -90,7 +90,7 @@
   letter-spacing: 0;
 }
 
-/* ── Colonna destra — specchia .overlayRight del Navbar ── */
+/* ── Colonna destra - specchia .overlayRight del Navbar ── */
 .right {
   flex: 0 0 48%;
   display: flex;
@@ -98,7 +98,7 @@
   overflow: hidden;
 }
 
-/* Sezione immagine — specchia .promoTop */
+/* Sezione immagine - specchia .promoTop */
 .imgArea {
   flex: 1;
   min-height: 0;
@@ -107,7 +107,7 @@
   overflow: hidden;
 }
 
-/* Banner verde inferiore — specchia .promoBottom */
+/* Banner verde inferiore - specchia .promoBottom */
 .banner {
   flex-shrink: 0;
   display: flex;

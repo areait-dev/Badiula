@@ -25,7 +25,7 @@ export default function ProductCardBadiula({
   return (
     <article className={`${styles.card} ${styles[themeColor]}`}>
 
-      {/* Immagine — flex: 0 0 463px, uguale alla card homepage */}
+      {/* Immagine - flex: 0 0 463px, uguale alla card homepage */}
       <div className={styles.imgWrap}>
         <Image
           src={image.src}
@@ -37,17 +37,17 @@ export default function ProductCardBadiula({
         />
       </div>
 
-      {/* Titolo — height 150px, margin-top 45px */}
+      {/* Titolo - height 150px, margin-top 45px */}
       <div className={styles.titleBox}>
         <h2 className={styles.title}>{title}</h2>
       </div>
 
-      {/* Descrizione — height 90px, margin-top 25px */}
+      {/* Descrizione - height 90px, margin-top 25px */}
       <div className={styles.descBox}>
         <p className={styles.description}>{description}</p>
       </div>
 
-      {/* CTA — identico a Productions */}
+      {/* CTA - identico a Productions */}
       <Link href={href} className={styles.cta}>
         <span>Scopri di più</span>
         <span className={styles.ctaArrow} aria-hidden="true">►</span>

@@ -24,8 +24,8 @@
 
 .body p {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 400;
   color: var(--eigengrau);
   max-width: 760px;

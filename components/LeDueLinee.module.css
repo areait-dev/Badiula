@@ -30,7 +30,7 @@
   flex-shrink: 0;
 }
 
-/* ── Nastro: alto 200% — contiene 2 slide da 100vh ciascuna ── */
+/* ── Nastro: alto 200% - contiene 2 slide da 100vh ciascuna ── */
 .ribbon {
   width: 100%;
   height: 200%;
@@ -59,7 +59,7 @@
 .slideMarmRight { background: var(--color-surface-alt); }
 
 /* ══════════════════════════════════════════
-   COLONNA SINISTRA — immagine + didascalia
+   COLONNA SINISTRA - immagine + didascalia
    ══════════════════════════════════════════ */
 
 /* L'immagine occupa tutto lo spazio residuo */
@@ -93,8 +93,8 @@
 
 .leftCategoryText {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   opacity: 0.7;
   letter-spacing: 0;
@@ -111,7 +111,7 @@
 }
 
 /* ══════════════════════════════════════════
-   COLONNA DESTRA — contenuto panel
+   COLONNA DESTRA - contenuto panel
    ══════════════════════════════════════════ */
 
 /* Centra verticalmente il contenuto nella slide */
@@ -133,8 +133,8 @@
   border: 1px solid var(--bordeaux);
   border-radius: var(--radius-btn);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--bordeaux);
   letter-spacing: 0;
@@ -166,8 +166,8 @@
 
 .desc {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 400;
   color: var(--eigengrau);
   letter-spacing: 0;
@@ -195,8 +195,8 @@
 
 .detailLabel {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 700;
   color: var(--eigengrau);
   text-transform: uppercase;
@@ -206,15 +206,15 @@
 
 .detailValue {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--eigengrau);
   letter-spacing: 0;
   margin: 0;
 }
 
-/* ── CTA — button outline icon con freccia ► ── */
+/* ── CTA - button outline icon con freccia ► ── */
 .cta {
   display: inline-flex;
   align-items: center;
@@ -226,10 +226,11 @@
   background: transparent;
   color: var(--bordeaux);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   letter-spacing: 0;
+  text-transform: uppercase;
   text-decoration: none;
   flex-shrink: 0;
   transition: background 200ms ease,
@@ -317,7 +318,7 @@
 }
 
 /* ══════════════════════════════════════════
-   MOBILE — stack verticale (<1024px)
+   MOBILE - stack verticale (<1024px)
    ══════════════════════════════════════════ */
 .mobileWrap {
   display: none;

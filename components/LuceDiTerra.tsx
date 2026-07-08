@@ -25,7 +25,7 @@ export default function LuceDiTerra({
       <div className={styles.imgSide}>
         <Image
           src={image ?? '/images/luce-di-terra.jpg'}
-          alt="Luce di Terra — olio EVO e marmellate Badiula"
+          alt="Luce di Terra - olio EVO e marmellate Badiula"
           fill
           style={{ objectFit: 'cover' }}
           sizes="50vw"

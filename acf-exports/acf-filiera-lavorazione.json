@@ -1,0 +1,189 @@
+[
+  {
+    "key": "group_badiula_filiera_lavorazione",
+    "title": "Filiera e Lavorazione - Contenuti",
+    "fields": [
+      {
+        "key": "field_badiula_fil_tab_hero",
+        "label": "Hero",
+        "name": "tab_hero",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_fil_hero_titolo_1",
+        "label": "Titolo hero - riga 1",
+        "name": "hero_titolo_1",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "FILIERA E"
+      },
+      {
+        "key": "field_badiula_fil_hero_titolo_2",
+        "label": "Titolo hero - riga 2",
+        "name": "hero_titolo_2",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "LAVORAZIONE",
+        "instructions": "Renderizzata con indent 1.5em, come da componente FilieraLavorazione.tsx"
+      },
+      {
+        "key": "field_badiula_fil_hero_sottotitolo",
+        "label": "Sottotitolo hero",
+        "name": "hero_sottotitolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Una filiera corta, gestita internamente, certificata blockchain"
+      },
+      {
+        "key": "field_badiula_fil_hero_testo",
+        "label": "Testo introduttivo",
+        "name": "hero_testo",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_fil_tab_sezione_1",
+        "label": "Sezione 1 - Centro di lavorazione",
+        "name": "tab_sezione_1",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_fil_s1_titolo",
+        "label": "Titolo sezione",
+        "name": "sezione_1_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Il centro di lavorazione di Carlentini"
+      },
+      {
+        "key": "field_badiula_fil_s1_immagine",
+        "label": "Immagine",
+        "name": "sezione_1_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_fil_s1_testo",
+        "label": "Testo (include lista Selezione/Calibratura/Confezionamento/Stoccaggio)",
+        "name": "sezione_1_testo",
+        "type": "wysiwyg",
+        "show_in_graphql": 0,
+        "media_upload": 0,
+        "toolbar": "full"
+      },
+      {
+        "key": "field_badiula_fil_tab_central",
+        "label": "Titolo centrale",
+        "name": "tab_central_title",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_fil_central_title_1",
+        "label": "Titolo centrale - riga 1",
+        "name": "central_title_1",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Dall'albero al",
+        "instructions": "Font Gravesend Sans (deroga esplicita, vedi CLAUDE.md), 110px/122px, sempre su 2 righe fisse (nowrap per riga)."
+      },
+      {
+        "key": "field_badiula_fil_central_title_2",
+        "label": "Titolo centrale - riga 2",
+        "name": "central_title_2",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "confezionamento"
+      },
+      {
+        "key": "field_badiula_fil_tab_sezione_2",
+        "label": "Sezione 2 - Tracciabilita blockchain",
+        "name": "tab_sezione_2",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_fil_s2_titolo",
+        "label": "Titolo sezione",
+        "name": "sezione_2_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Tracciabilita blockchain"
+      },
+      {
+        "key": "field_badiula_fil_s2_immagine",
+        "label": "Immagine",
+        "name": "sezione_2_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_fil_s2_testo",
+        "label": "Testo",
+        "name": "sezione_2_testo",
+        "type": "wysiwyg",
+        "show_in_graphql": 0,
+        "media_upload": 0,
+        "toolbar": "basic"
+      },
+      {
+        "key": "field_badiula_fil_tab_sezione_3",
+        "label": "Sezione 3 - Continuita di fornitura",
+        "name": "tab_sezione_3",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_fil_s3_titolo",
+        "label": "Titolo sezione",
+        "name": "sezione_3_titolo",
+        "type": "text",
+        "show_in_graphql": 0,
+        "default_value": "Continuita di fornitura e capacita operativa"
+      },
+      {
+        "key": "field_badiula_fil_s3_immagine",
+        "label": "Immagine",
+        "name": "sezione_3_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "url",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_badiula_fil_s3_testo",
+        "label": "Testo",
+        "name": "sezione_3_testo",
+        "type": "wysiwyg",
+        "show_in_graphql": 0,
+        "media_upload": 0,
+        "toolbar": "basic"
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "filiera-e-lavorazione"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 1,
+    "show_in_graphql": 0,
+    "graphql_field_name": "filieraLavorazione"
+  }
+]

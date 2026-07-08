@@ -14,8 +14,8 @@
 
 .empty {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   color: var(--eigengrau);
   grid-column: 1 / -1;
   text-align: center;

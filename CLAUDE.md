@@ -68,22 +68,28 @@ Il tono è: **autentico, lento, radicato**. Mai iper-commerciale. La terra viene
 }
 ```
 
-> ⚠️ Gravesend Sans è **esclusivamente** per l'Headline 1 Hero (uppercase, bold).
+> ⚠️ Gravesend Sans è **esclusivamente** per l'Headline 1 **dentro la hero section**.
+> Se una pagina non ha titolo nella hero section (es. homepage, dove l'H1 può comparire
+> altrove nel flusso di pagina), quell'H1 usa **Mr Eaves Mod OT Bold**, non Gravesend Sans.
 > Mr Eaves Mod OT copre tutti gli altri livelli tipografici.
+>
+> **Deroga esplicita**: il `CentralTitle` "Dall'albero al confezionamento" nella pagina
+> `/filiera-e-lavorazione` usa Gravesend Sans (`displayFont` prop su `CentralTitle`) su richiesta
+> esplicita, in eccezione a questa regola.
 
 ### Scala tipografica
 ```css
 :root {
   /* Headings */
-  --text-h1-hero:   110px / 122px  Gravesend Sans Bold  /* Hero fullscreen */
-  --text-h1:        110px / 122px  Mr Eaves Mod OT Bold
+  --text-h1-hero:   110px / 122px  Gravesend Sans Bold   /* H1 dentro hero section */
+  --text-h1:        110px / 122px  Mr Eaves Mod OT Bold  /* H1 quando non c'è titolo in hero (es. homepage) */
   --text-h2:         80px / 89px   Mr Eaves Mod OT Bold
-  --text-h3:         60px / 66px   Mr Eaves Mod OT Bold /* italic nelle sottotitolazioni */
+  --text-h3:         60px / 66px   Mr Eaves Mod OT Bold  /* italic nelle sottotitolazioni */
   --text-h4:         40px / 45px   Mr Eaves Mod OT Bold
 
-  /* Body — valori web-standard */
-  --text-body-1:     20px / 32px   Mr Eaves Mod OT Regular  /* testi principali */
-  --text-body-2:     16px / 26px   Mr Eaves Mod OT Regular  /* testi secondari */
+  /* Body */
+  --text-body-1:     26px / 38px   Mr Eaves Mod OT Regular  /* tutto il sito */
+  --text-body-2:     20px / 32px   Mr Eaves Mod OT Regular  /* schede prodotto */
 }
 ```
 
@@ -92,6 +98,8 @@ Il tono è: **autentico, lento, radicato**. Mai iper-commerciale. La terra viene
 - Sottotitoli H3 → **italic**, sentence case (es. *Quattro generazioni, una terra*)
 - H4 / sezioni interne → bold, sentence case
 - Body text → Regular, mai bold nel body
+- Body-1 → uso generale su tutto il sito (paragrafi, intro, testi editoriali)
+- Body-2 → riservato alle schede prodotto (card, descrizioni brevi, accordion FAQ)
 - Letter spacing → sempre 0px (non modificare)
 - Non usare font system come fallback visibile: caricare sempre i font custom
 
@@ -649,7 +657,7 @@ Sito bilingue IT | EN. Sempre mostrare il selettore lingua in alto a destra.
 ## 13. COSE DA NON FARE MAI
 
 - ❌ Aggiungere colori fuori dalla palette ufficiale
-- ❌ Usare Gravesend Sans per elementi che non siano l'Hero H1
+- ❌ Usare Gravesend Sans per elementi che non siano l'H1 dentro la hero section
 - ❌ Aggiungere `border-radius` alle card prodotto
 - ❌ Usare animazioni complesse o parallax non richiesti
 - ❌ Mostrare più di un CTA primario filled per sezione
@@ -970,6 +978,9 @@ interface ProdottoVarietaProps {
 ```
 
 Usare `reverse` alternato per rispettare il pattern zigzag del CLAUDE.md §4.
+
+> ⚠️ Nota: `slogan` a 24px è fuori dalla scala tipografica ufficiale (§3). Da verificare/allineare
+> a body-1 (26px) o h4 (40px) in un prossimo intervento.
 
 #### `CalendarioRaccolta`
 Griglia 12 mesi (GEN→DIC) con dot bordeaux per i mesi attivi.

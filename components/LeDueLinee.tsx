@@ -87,7 +87,7 @@ export default function LeDueLinee() {
     setTimeout(() => { isAnimatingRef.current = false; }, 600);
   }, []);
 
-  /* Wheel event — desktop only */
+  /* Wheel event - desktop only */
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -113,7 +113,7 @@ export default function LeDueLinee() {
     return () => section.removeEventListener('wheel', onWheel);
   }, [goTo]);
 
-  /* Touch events — mobile (swipe verticale) */
+  /* Touch events - mobile (swipe verticale) */
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -152,7 +152,7 @@ export default function LeDueLinee() {
         <div className={`${styles.col} ${styles.colLeft}`}>
           <div ref={ribbonLeftRef} className={styles.ribbon}>
 
-            {/* Slide 0 — Olio */}
+            {/* Slide 0 - Olio */}
             <div className={`${styles.slide} ${styles.slideOlioLeft}`}>
               <div className={styles.imgWrap}>
                 <Image
@@ -170,7 +170,7 @@ export default function LeDueLinee() {
               </div>
             </div>
 
-            {/* Slide 1 — Marmellate */}
+            {/* Slide 1 - Marmellate */}
             <div className={`${styles.slide} ${styles.slideMarmLeft}`}>
               <div className={styles.imgWrap}>
                 <Image
@@ -194,12 +194,12 @@ export default function LeDueLinee() {
         <div className={`${styles.col} ${styles.colRight}`}>
           <div ref={ribbonRightRef} className={styles.ribbon}>
 
-            {/* Slide 0 — Olio */}
+            {/* Slide 0 - Olio */}
             <div className={`${styles.slide} ${styles.slideOlioRight}`}>
               <PanelContent p={PRODUCTS[0]} />
             </div>
 
-            {/* Slide 1 — Marmellate */}
+            {/* Slide 1 - Marmellate */}
             <div className={`${styles.slide} ${styles.slideMarmRight}`}>
               <PanelContent p={PRODUCTS[1]} />
             </div>

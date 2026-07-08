@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('luce-di-terra');
   if (!seo) {
     return {
-      title: 'Luce di Terra — Badiula',
+      title: 'Luce di Terra - Badiula',
       description: "La linea Badiula dedicata all'olio extravergine di oliva biologico e alle marmellate di agrumi siciliani.",
     };
   }
@@ -125,7 +125,7 @@ export default async function LuceDiTerraPage({ params }: { params: { locale: st
         <div className={styles.bannerImgWrap}>
           <Image
             src="/images/luce-di-terra-promo.png"
-            alt="Luce di Terra — olio e marmellate Badiula"
+            alt="Luce di Terra - olio e marmellate Badiula"
             fill
             sizes="100vw"
             style={{ objectFit: 'cover', objectPosition: 'center top' }}

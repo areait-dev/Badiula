@@ -47,7 +47,7 @@ export default function AranciRosse() {
         slogan="L'arancia rossa per eccellenza"
         image={{
           src: 'https://images.unsplash.com/photo-1547514701-42782101795e?w=600&q=80&fit=crop',
-          alt: 'Arance Tarocco — polpa rossa',
+          alt: 'Arance Tarocco - polpa rossa',
         }}
       >
         <p>La Tarocco è tra le arance rosse siciliane più diffuse e apprezzate: polpa rossa con pigmentazione variabile dal rosso intenso al rosa screziato, in funzione delle escursioni termiche stagionali.</p>
@@ -59,7 +59,7 @@ export default function AranciRosse() {
         slogan="La più pigmentata delle arance rosse"
         image={{
           src: 'https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=600&q=80&fit=crop',
-          alt: 'Arance Moro — polpa rosso intenso',
+          alt: 'Arance Moro - polpa rosso intenso',
         }}
         reverse
       >

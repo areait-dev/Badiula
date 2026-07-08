@@ -10,12 +10,12 @@ import SitoInCostruzioneGate from '@/components/SitoInCostruzioneGate';
 import '../globals.css';
 
 export const metadata: Metadata = {
-  title: 'Badiula — Agrumi Biologici di Sicilia',
+  title: 'Badiula - Agrumi Biologici di Sicilia',
   description:
     'Azienda agricola biologica Badiula: quattro generazioni dedicate alla coltivazione di agrumi siciliani tra Carlentini e Siracusa.',
   keywords: ['agrumi biologici', 'arance rosse', 'Sicilia', 'Badiula', 'IGP'],
   openGraph: {
-    title: 'Badiula — Agrumi Biologici di Sicilia',
+    title: 'Badiula - Agrumi Biologici di Sicilia',
     description: 'Quattro generazioni, una terra.',
     type: 'website',
   },

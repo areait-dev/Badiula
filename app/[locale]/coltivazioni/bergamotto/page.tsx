@@ -1,9 +1,7 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Footer';
+import FaqAccordion from './FaqAccordion';
 import styles from './page.module.css';
 
 const MONTHS = ['GEN','FEB','MAR','APR','MAG','GIU','LUG','AGO','SET','OTT','NOV','DIC'];
@@ -29,8 +27,6 @@ const FAQS = [
 ];
 
 export default function BergamottoPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <main className={styles.main}>
 
@@ -181,27 +177,7 @@ export default function BergamottoPage() {
       <section className={styles.faq}>
         <div className={styles.container}>
           <h2 className={styles.faqHeading}>FAQ</h2>
-          <dl className={styles.faqList}>
-            {FAQS.map((item, i) => (
-              <div key={i} className={styles.faqItem}>
-                <dt className={styles.faqQuestion}>
-                  <button
-                    className={styles.faqBtn}
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    aria-expanded={openFaq === i}
-                  >
-                    <span>{item.q}</span>
-                    <span className={styles.faqIcon} aria-hidden="true">
-                      {openFaq === i ? '−' : '+'}
-                    </span>
-                  </button>
-                </dt>
-                {openFaq === i && (
-                  <dd className={styles.faqAnswer}>{item.a}</dd>
-                )}
-              </div>
-            ))}
-          </dl>
+          <FaqAccordion items={FAQS} />
         </div>
       </section>
 

@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo('azienda');
   if (!seo) {
     return {
-      title: 'Azienda — Badiula',
+      title: 'Azienda - Badiula',
       description: "Badiula è un'azienda agricola biologica situata a Carlentini, in provincia di Siracusa.",
     };
   }
@@ -75,7 +75,7 @@ export default async function AziendaPage({ params }: { params: { locale: string
         <div className={`${styles.imgWrap} ${styles.imgTall}`}>
           <Image
             src={d.filosofiaImmagine ?? '/DJI_0022.jpg'}
-            alt="Veduta aerea Badiula — agrumeto"
+            alt="Veduta aerea Badiula - agrumeto"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             style={{ objectFit: 'cover' }}
@@ -141,30 +141,32 @@ export default async function AziendaPage({ params }: { params: { locale: string
         </article>
       </section>
 
-      {/* Immagine full-width dopo Vision & Mission */}
+      {/* Immagine full-width "Tra il mare e l'Etna" - spostata qui, sopra la mappa */}
       <div className={styles.fullImg}>
         <Image
-          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1920&q=80"
-          alt="Campi agricoli Badiula"
+          src={d.territorioImmagine ?? '/images/foto-copertina.png'}
+          alt="Tra il mare e l'Etna - Badiula"
           fill
           sizes="100vw"
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'cover', filter: 'brightness(0.75)' }}
         />
       </div>
 
-      {/* 7. Territorio: testo sx | immagine dx */}
+      {/* 7. Territorio: testo sx | Google Maps dx */}
       <section className={`${styles.grid} ${styles.gridLast}`}>
         <div className={styles.textBlock}>
           <h2 className={styles.h2}>{territorioTitolo}</h2>
           <p className={styles.body}>{territorioBody}</p>
         </div>
         <div className={`${styles.imgWrap} ${styles.imgDark}`}>
-          <Image
-            src={d.territorioImmagine ?? '/images/foto-copertina.png'}
-            alt="Tra il mare e l'Etna — Badiula"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            style={{ objectFit: 'cover', filter: 'brightness(0.75)' }}
+          <iframe
+            title="Posizione Badiula - C.da Badiula San Leonardo, Carlentini (SR)"
+            src="https://maps.google.com/maps?q=Badiula,+C.da+Badiula+San+Leonardo,+96013+Carlentini+SR&z=16&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0, display: 'block', position: 'absolute', inset: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
       </section>

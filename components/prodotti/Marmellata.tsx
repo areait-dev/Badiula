@@ -48,7 +48,7 @@ export default function Marmellata() {
         ]}
       />
 
-      {/* 2. Varietà — le marmellate (immagine sx, testo dx) */}
+      {/* 2. Varietà - le marmellate (immagine sx, testo dx) */}
       <ProdottoVarieta
         name="LE NOSTRE MARMELLATE"
         slogan="Ogni agrume, una marmellata diversa"
@@ -78,7 +78,7 @@ export default function Marmellata() {
         </dl>
       </ProdottoVarieta>
 
-      {/* 3. Varietà — produzione artigianale (immagine dx, testo sx) */}
+      {/* 3. Varietà - produzione artigianale (immagine dx, testo sx) */}
       <ProdottoVarieta
         name="PRODUZIONE ARTIGIANALE"
         slogan="Cottura lenta, rispetto della materia prima"
@@ -101,7 +101,7 @@ export default function Marmellata() {
         </p>
       </ProdottoVarieta>
 
-      {/* 4. Calendario raccolta agrumi — inverno/primavera */}
+      {/* 4. Calendario raccolta agrumi - inverno/primavera */}
       <CalendarioRaccolta activeMonths={[1, 2, 3, 4, 12]} />
 
       {/* 5. Editoriale */}
@@ -116,7 +116,7 @@ export default function Marmellata() {
           Le nostre marmellate Luce di Terra rispettano questa definizione nella lettera e
           nello spirito: sono fatte con agrumi biologici coltivati da noi, in Sicilia
           orientale, seguendo la stessa filosofia che guida tutte le produzioni Badiula.
-          La terra viene prima del prodotto — e si sente.
+          La terra viene prima del prodotto - e si sente.
         </p>
       </ProdottoEditoriale>
 

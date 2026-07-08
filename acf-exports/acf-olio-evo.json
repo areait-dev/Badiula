@@ -1,7 +1,7 @@
 [
   {
     "key": "group_badiula_olio_evo",
-    "title": "Olio EVO — Pagina prodotto",
+    "title": "Olio EVO - Pagina prodotto",
     "fields": [
       {
         "key": "field_badiula_olio_tab_it",
@@ -37,7 +37,7 @@
       },
       {
         "key": "field_badiula_olio_profilo_profumo_it",
-        "label": "Profilo — Profumo (IT)",
+        "label": "Profilo - Profumo (IT)",
         "name": "profilo_profumo_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -45,7 +45,7 @@
       },
       {
         "key": "field_badiula_olio_profilo_sapore_it",
-        "label": "Profilo — Sapore (IT)",
+        "label": "Profilo - Sapore (IT)",
         "name": "profilo_sapore_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -53,7 +53,7 @@
       },
       {
         "key": "field_badiula_olio_profilo_raccolta_it",
-        "label": "Profilo — Raccolta (IT)",
+        "label": "Profilo - Raccolta (IT)",
         "name": "profilo_raccolta_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -174,21 +174,21 @@
       },
       {
         "key": "field_badiula_olio_profilo_profumo_en",
-        "label": "Profilo — Profumo (EN)",
+        "label": "Profilo - Profumo (EN)",
         "name": "profilo_profumo_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_olio_profilo_sapore_en",
-        "label": "Profilo — Sapore (EN)",
+        "label": "Profilo - Sapore (EN)",
         "name": "profilo_sapore_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_olio_profilo_raccolta_en",
-        "label": "Profilo — Raccolta (EN)",
+        "label": "Profilo - Raccolta (EN)",
         "name": "profilo_raccolta_en",
         "type": "text",
         "show_in_graphql": 0

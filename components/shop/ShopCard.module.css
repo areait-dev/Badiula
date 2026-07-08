@@ -35,8 +35,8 @@
 
 .esauritoLabel {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 32px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 700;
   color: var(--white);
   text-transform: uppercase;
@@ -64,8 +64,8 @@
   display: inline-block;
   align-self: flex-start;
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 600;
   color: var(--white);
   background: var(--bordeaux);
@@ -93,8 +93,8 @@
 /* ── Sottotitolo body-2 italic ── */
 .subtitle {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   font-style: italic;
   color: var(--eigengrau);
@@ -107,8 +107,8 @@
 /* ── Descrizione body-2, max 3 righe ── */
 .desc {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--eigengrau);
   letter-spacing: 0;
@@ -131,13 +131,14 @@
   border: 1.5px solid var(--bordeaux);
   border-radius: var(--radius-btn);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
   font-weight: 600;
   color: var(--bordeaux);
   background: transparent;
   text-decoration: none;
   letter-spacing: 0;
+  text-transform: uppercase;
   margin-top: auto;
   transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
 }

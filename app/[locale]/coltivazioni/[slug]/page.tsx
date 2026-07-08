@@ -20,9 +20,9 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const product = getProduct(params.slug);
-  if (!product) return { title: 'Coltivazione — Badiula' };
+  if (!product) return { title: 'Coltivazione - Badiula' };
   return {
-    title: `${product.name} — Badiula`,
+    title: `${product.name} - Badiula`,
     description: product.description,
   };
 }

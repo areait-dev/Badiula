@@ -1,7 +1,7 @@
 [
   {
     "key": "group_badiula_luce_di_terra",
-    "title": "Pagina Luce di Terra — Contenuti",
+    "title": "Pagina Luce di Terra - Contenuti",
     "fields": [
       {
         "key": "field_badiula_ldt_tab_it",
@@ -28,7 +28,7 @@
       },
       {
         "key": "field_badiula_ldt_intro_p1_it",
-        "label": "Intro — Paragrafo 1 (IT)",
+        "label": "Intro - Paragrafo 1 (IT)",
         "name": "intro_p1_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -36,7 +36,7 @@
       },
       {
         "key": "field_badiula_ldt_intro_p2_it",
-        "label": "Intro — Paragrafo 2 (IT)",
+        "label": "Intro - Paragrafo 2 (IT)",
         "name": "intro_p2_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -52,7 +52,7 @@
       },
       {
         "key": "field_badiula_ldt_olio_titolo_it",
-        "label": "Card Olio EVO — Titolo (IT)",
+        "label": "Card Olio EVO - Titolo (IT)",
         "name": "olio_titolo_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -60,7 +60,7 @@
       },
       {
         "key": "field_badiula_ldt_olio_desc_it",
-        "label": "Card Olio EVO — Descrizione (IT)",
+        "label": "Card Olio EVO - Descrizione (IT)",
         "name": "olio_desc_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -68,14 +68,14 @@
       },
       {
         "key": "field_badiula_ldt_olio_prezzo",
-        "label": "Card Olio EVO — Prezzo (es. Da €12,00)",
+        "label": "Card Olio EVO - Prezzo (es. Da €12,00)",
         "name": "olio_prezzo",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_olio_immagine",
-        "label": "Card Olio EVO — Immagine",
+        "label": "Card Olio EVO - Immagine",
         "name": "olio_immagine",
         "type": "image",
         "show_in_graphql": 0,
@@ -84,7 +84,7 @@
       },
       {
         "key": "field_badiula_ldt_marmellata_titolo_it",
-        "label": "Card Marmellate — Titolo (IT)",
+        "label": "Card Marmellate - Titolo (IT)",
         "name": "marmellata_titolo_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -92,7 +92,7 @@
       },
       {
         "key": "field_badiula_ldt_marmellata_desc_it",
-        "label": "Card Marmellate — Descrizione (IT)",
+        "label": "Card Marmellate - Descrizione (IT)",
         "name": "marmellata_desc_it",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -100,14 +100,14 @@
       },
       {
         "key": "field_badiula_ldt_marmellata_prezzo",
-        "label": "Card Marmellate — Prezzo",
+        "label": "Card Marmellate - Prezzo",
         "name": "marmellata_prezzo",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_marmellata_immagine",
-        "label": "Card Marmellate — Immagine",
+        "label": "Card Marmellate - Immagine",
         "name": "marmellata_immagine",
         "type": "image",
         "show_in_graphql": 0,
@@ -116,7 +116,7 @@
       },
       {
         "key": "field_badiula_ldt_filiera_titolo_it",
-        "label": "Sezione Filiera — Titolo (IT)",
+        "label": "Sezione Filiera - Titolo (IT)",
         "name": "filiera_titolo_it",
         "type": "text",
         "show_in_graphql": 0,
@@ -124,7 +124,7 @@
       },
       {
         "key": "field_badiula_ldt_filiera_body_it",
-        "label": "Sezione Filiera — Testo (IT)",
+        "label": "Sezione Filiera - Testo (IT)",
         "name": "filiera_body_it",
         "type": "wysiwyg",
         "show_in_graphql": 0,
@@ -154,7 +154,7 @@
       },
       {
         "key": "field_badiula_ldt_intro_p1_en",
-        "label": "Intro — Paragrafo 1 (EN)",
+        "label": "Intro - Paragrafo 1 (EN)",
         "name": "intro_p1_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -162,7 +162,7 @@
       },
       {
         "key": "field_badiula_ldt_intro_p2_en",
-        "label": "Intro — Paragrafo 2 (EN)",
+        "label": "Intro - Paragrafo 2 (EN)",
         "name": "intro_p2_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -170,14 +170,14 @@
       },
       {
         "key": "field_badiula_ldt_olio_titolo_en",
-        "label": "Card Olio EVO — Titolo (EN)",
+        "label": "Card Olio EVO - Titolo (EN)",
         "name": "olio_titolo_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_olio_desc_en",
-        "label": "Card Olio EVO — Descrizione (EN)",
+        "label": "Card Olio EVO - Descrizione (EN)",
         "name": "olio_desc_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -185,14 +185,14 @@
       },
       {
         "key": "field_badiula_ldt_marmellata_titolo_en",
-        "label": "Card Marmellate — Titolo (EN)",
+        "label": "Card Marmellate - Titolo (EN)",
         "name": "marmellata_titolo_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_marmellata_desc_en",
-        "label": "Card Marmellate — Descrizione (EN)",
+        "label": "Card Marmellate - Descrizione (EN)",
         "name": "marmellata_desc_en",
         "type": "textarea",
         "show_in_graphql": 0,
@@ -200,14 +200,14 @@
       },
       {
         "key": "field_badiula_ldt_filiera_titolo_en",
-        "label": "Sezione Filiera — Titolo (EN)",
+        "label": "Sezione Filiera - Titolo (EN)",
         "name": "filiera_titolo_en",
         "type": "text",
         "show_in_graphql": 0
       },
       {
         "key": "field_badiula_ldt_filiera_body_en",
-        "label": "Sezione Filiera — Testo (EN)",
+        "label": "Sezione Filiera - Testo (EN)",
         "name": "filiera_body_en",
         "type": "wysiwyg",
         "show_in_graphql": 0,

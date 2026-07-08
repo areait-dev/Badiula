@@ -1,0 +1,47 @@
+[
+  {
+    "key": "group_badiula_faq_dati",
+    "title": "FAQ - Dati",
+    "fields": [
+      {
+        "key": "field_badiula_faq_categoria",
+        "label": "Categoria",
+        "name": "categoria",
+        "type": "select",
+        "show_in_graphql": 0,
+        "choices": {
+          "prodotti": "Prodotti",
+          "sostenibilita": "Sostenibilita",
+          "innovazione": "Innovazione",
+          "certificazioni": "Certificazioni",
+          "filiera-e-lavorazione": "Filiera e Lavorazione",
+          "ordini": "Ordini",
+          "spedizioni": "Spedizioni"
+        },
+        "default_value": "prodotti",
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "instructions": "Usata per filtrare le FAQ per pagina, es. GET /wp-json/wp/v2/faq?categoria=certificazioni. Aggiunte le categorie sostenibilita, innovazione, certificazioni, filiera-e-lavorazione per le nuove pagine istituzionali."
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "faq"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 1,
+    "show_in_graphql": 0,
+    "graphql_field_name": "faqDati"
+  }
+]

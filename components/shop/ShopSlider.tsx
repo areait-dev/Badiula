@@ -258,7 +258,7 @@ export default function ShopSlider({ prodotti }: ShopSliderProps) {
             </div>
           ))}
 
-          {/* Cutout images — siblings of panels, animate independently */}
+          {/* Cutout images - siblings of panels, animate independently */}
           {prodotti.map((p, i) =>
             p.cutoutImage ? (
               <div
@@ -320,7 +320,7 @@ export default function ShopSlider({ prodotti }: ShopSliderProps) {
                   ))}
                 </div>
 
-                {/* Variant + price + CTAs — only active panel gets live state */}
+                {/* Variant + price + CTAs - only active panel gets live state */}
                 <select
                   className={styles.variantSelect}
                   value={i === current ? variantIdx : 0}

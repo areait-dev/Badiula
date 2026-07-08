@@ -21,7 +21,7 @@
 }
 
 .h1 {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 110px;
   line-height: 1.05;
   font-weight: 700;
@@ -66,8 +66,8 @@
 
 .introBody p {
   font-family: var(--font-body);
-  font-size: 20px;
-  line-height: 1.7;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 400;
   color: #333333;
 }
@@ -112,10 +112,10 @@
 
 .varietyDesc {
   font-family: var(--font-body);
-  font-size: 20px;
+  font-size: var(--text-body-1-size);
   font-weight: 400;
   color: #333333;
-  line-height: 1.7;
+  line-height: var(--text-body-1-line);
   max-width: 520px;
 }
 
@@ -225,10 +225,10 @@
 
 .navelBody {
   font-family: var(--font-body);
-  font-size: 20px;
+  font-size: var(--text-body-1-size);
   font-weight: 400;
   color: #333333;
-  line-height: 1.7;
+  line-height: var(--text-body-1-line);
   margin-bottom: 16px;
 }
 .navelBody:last-child { margin-bottom: 0; }
@@ -363,10 +363,10 @@
 
 .faqAnswer {
   font-family: var(--font-body);
-  font-size: 20px;
+  font-size: var(--text-body-1-size);
   font-weight: 400;
   color: #1a1a1a;
-  line-height: 1.7;
+  line-height: var(--text-body-1-line);
   padding-bottom: 28px;
 }
 

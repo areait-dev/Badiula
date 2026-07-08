@@ -76,7 +76,10 @@ export default function Navbar() {
       { label: t('marmellata'),     href: '/luce-di-terra/marmellata-agrumi' },
     ],
     filiera: [
-      { label: t('filiera'), href: '/' },
+      { label: t('filiera'), href: '/filiera-e-lavorazione' },
+      { label: t('sostenibilita'), href: '/sostenibilita' },
+      { label: t('innovazione'), href: '/innovazione' },
+      { label: t('certificazioni'), href: '/certificazioni' },
     ],
   };
 

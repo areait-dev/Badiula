@@ -1,0 +1,70 @@
+/* ════════════════════════════════════════════
+   CertificazioneCard
+   Card compatta, dimensionata sul contenuto (logo + testo breve)
+   ════════════════════════════════════════════ */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: -60px;
+  padding: 0 var(--page-margin) 100px;
+}
+
+.card {
+  flex: 1 1 340px;
+  max-width: 400px;
+  border-radius: 16px;
+  border: 0.5px solid var(--khaki);
+  background: var(--vanilla);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.logoPlate {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  flex-shrink: 0;
+}
+
+.logoPlate img {
+  object-fit: contain !important;
+}
+
+.card h3 {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+  color: var(--bordeaux);
+  margin: var(--space-md) 0 0;
+  padding: 0 var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.card p {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
+  font-weight: 400;
+  color: var(--eigengrau);
+  margin: var(--space-xs) 0 var(--space-lg);
+  padding: 0 var(--space-md);
+  text-align: left;
+}
+
+@media (max-width: 1023px) {
+  .row { padding: 0 var(--page-margin-mobile) 64px; gap: var(--space-md); }
+  .card { flex: 1 1 100%; max-width: 100%; }
+}

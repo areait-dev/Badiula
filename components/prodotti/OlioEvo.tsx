@@ -33,7 +33,7 @@ export default function OlioEvo() {
   return (
     <main className={styles.main}>
 
-      {/* 1. Intro — titolo H1, sottotitolo H3 italic, corpo body-1 */}
+      {/* 1. Intro - titolo H1, sottotitolo H3 italic, corpo body-1 */}
       <ProdottoIntro
         rows={[
           { text: 'OLIO EVO' },
@@ -48,7 +48,7 @@ export default function OlioEvo() {
         ]}
       />
 
-      {/* 2. Varietà — sezione caratteristiche dell'olio (immagine sx, testo dx) */}
+      {/* 2. Varietà - sezione caratteristiche dell'olio (immagine sx, testo dx) */}
       <ProdottoVarieta
         name="CARATTERISTICHE DELL'OLIO"
         slogan="Fruttato, erbaceo, identità siciliana in ogni goccia"
@@ -81,7 +81,7 @@ export default function OlioEvo() {
         </dl>
       </ProdottoVarieta>
 
-      {/* 3. Varietà — usi consigliati (immagine dx, testo sx — reverse) */}
+      {/* 3. Varietà - usi consigliati (immagine dx, testo sx - reverse) */}
       <ProdottoVarieta
         name="USI CONSIGLIATI"
         slogan="Crudo per esaltare ogni preparazione"
@@ -103,7 +103,7 @@ export default function OlioEvo() {
         </ul>
       </ProdottoVarieta>
 
-      {/* 4. Calendario raccolta — ottobre e novembre */}
+      {/* 4. Calendario raccolta - ottobre e novembre */}
       <CalendarioRaccolta activeMonths={[10, 11]} />
 
       {/* 5. Banner CTA shop */}

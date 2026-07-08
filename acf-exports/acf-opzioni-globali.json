@@ -137,7 +137,7 @@
         "show_in_graphql": 0,
         "return_format": "url",
         "preview_size": "medium",
-        "instructions": "1200×630px — usata come fallback OG su tutte le pagine senza immagine specifica"
+        "instructions": "1200×630px - usata come fallback OG su tutte le pagine senza immagine specifica"
       }
     ],
     "location": [

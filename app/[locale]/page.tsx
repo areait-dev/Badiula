@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const seo = await getPageSeo('home');
   if (!seo) {
     return {
-      title: 'Badiula — Agrumi Biologici di Sicilia',
+      title: 'Badiula - Agrumi Biologici di Sicilia',
       description: 'Azienda agricola biologica Badiula: quattro generazioni dedicate alla coltivazione di agrumi siciliani tra Carlentini e Siracusa.',
     };
   }
