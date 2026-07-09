@@ -6,6 +6,7 @@ import Script from 'next/script';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
+import CustomCursor from '@/components/CustomCursor';
 import SitoInCostruzioneGate from '@/components/SitoInCostruzioneGate';
 import '../globals.css';
 
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <CustomCursor />
           <Navbar />
           <SitoInCostruzioneGate>
             {children}
