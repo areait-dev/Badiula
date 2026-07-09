@@ -11,6 +11,8 @@ interface ProdottoIntroProps {
   subtitle: string;
   subtitleNoWrap?: boolean;
   body: string[];
+  /** Interlinea del titolo più stretta su mobile/tablet (solo dove richiesto). */
+  tightLineHeight?: boolean;
 }
 
 const alignMap = {
@@ -25,11 +27,15 @@ export default function ProdottoIntro({
   subtitle,
   subtitleNoWrap = false,
   body,
+  tightLineHeight = false,
 }: ProdottoIntroProps) {
   return (
     <section className={styles.intro}>
       <div className={styles.hero}>
-        <h2 className={styles.h1} style={{ alignItems: alignMap[align] }}>
+        <h2
+          className={`${styles.h1} ${tightLineHeight ? styles.h1Tight : ''}`}
+          style={{ alignItems: alignMap[align] }}
+        >
           {rows.map((row, i) => (
             <span
               key={i}

@@ -57,6 +57,7 @@ export default function FilieraLavorazione({ data: d }: FilieraLavorazioneProps)
           { text: d.heroTitolo2 || 'LAVORAZIONE', indent: '1.5em' },
         ]}
         align="left"
+        tightLineHeight
         subtitle={d.heroSottotitolo || 'Una filiera corta, gestita internamente, certificata blockchain'}
         subtitleNoWrap
         body={[

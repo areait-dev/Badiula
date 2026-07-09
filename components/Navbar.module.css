@@ -464,6 +464,12 @@
   .side {
     transform: none;
   }
+  /* Il logo (con wordmark) è più alto della navbar ridotta: senza questo
+     offset la metà superiore sporge sopra top:0 e resta tagliata fuori
+     dal viewport (la navbar è position:absolute). */
+  .center {
+    transform: translateY(40px);
+  }
 
   /* Header overlay */
   .overlayHeader {

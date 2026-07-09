@@ -156,8 +156,8 @@
 .manifesto {
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 60px;
-  line-height: 66px;
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
   font-weight: 700;
   color: var(--bordeaux);
   text-align: center;
@@ -253,6 +253,10 @@
   /* Ricompone il titolo "cultura" su righe naturali invece dei 5 a-capo
      fissi del CMS (pensati per desktop), già da tablet */
   .h3 { white-space: normal; }
+
+  /* Stessa size del titolo hero delle pagine istituzionali (ProdottoIntro
+     .h1) su tablet, per coerenza visiva */
+  .heroLabel { font-size: clamp(34px, 5.5vw, 52px); }
 }
 
 @media (max-width: 767px) {
@@ -261,6 +265,10 @@
     height: 30vh;
     min-height: 200px;
   }
+
+  /* Stessa size del titolo hero delle pagine istituzionali (ProdottoIntro
+     .h1) su mobile, per coerenza visiva */
+  .heroLabel { font-size: clamp(30px, 9vw, 42px); }
 
   .vmSection {
     flex-direction: column;

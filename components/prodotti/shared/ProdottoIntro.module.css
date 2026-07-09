@@ -72,15 +72,18 @@
 }
 
 @media (max-width: 1024px) {
+  .hero { padding-top: 210px; }
   .h1 { font-size: clamp(34px, 5.5vw, 52px); }
+  .h1Tight { line-height: 1.05; }
   .h1Row { white-space: normal; }
   .h1Row[style*="padding-left"] { padding-left: min(0.8em, 32px) !important; }
 }
 
 @media (max-width: 767px) {
   .intro { padding: 0 var(--page-margin-mobile) 48px; }
-  .hero  { padding-top: 100px; margin-bottom: 40px; }
+  .hero  { padding-top: 170px; margin-bottom: 40px; }
   .h1    { font-size: clamp(30px, 9vw, 42px); }
+  .h1Tight { line-height: 1.05; }
   .h1Row { white-space: normal; }
   .h1Row[style*="padding-left"] { padding-left: min(0.6em, 20px) !important; }
   .h2    { max-width: 100%; }
