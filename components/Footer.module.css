@@ -157,7 +157,7 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .footer {
     border-radius: 0;
     margin: 0;
@@ -171,5 +171,9 @@
 
   .form {
     padding: 32px 24px;
+  }
+
+  .form textarea {
+    min-height: 140px;
   }
 }

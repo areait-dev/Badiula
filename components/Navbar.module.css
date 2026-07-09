@@ -456,7 +456,7 @@
 /* ────────────────────────────────────────────
    RESPONSIVE
 ──────────────────────────────────────────── */
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
   .navbar {
     height: 80px;
     padding: 0 1.25rem;
@@ -492,7 +492,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .navLinkInner {
     font-size: 1.5rem;
   }
@@ -545,12 +545,19 @@
   outline: none;
   background: transparent;
   font-family: var(--font-body);
-  font-size: 40px;
-  line-height: 45px;
+  font-size: 26px;
+  line-height: 38px;
   color: var(--eigengrau);
   padding: 1rem 0;
 }
 
 .searchInput::placeholder {
   color: rgba(22, 22, 29, 0.35);
+}
+
+@media (max-width: 767px) {
+  .searchInput {
+    font-size: 20px;
+    line-height: 32px;
+  }
 }

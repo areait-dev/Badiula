@@ -104,7 +104,7 @@ export default async function AziendaPage({ params }: { params: { locale: string
           />
         </div>
         <div className={styles.textBlock}>
-          <h3 className={styles.h3} style={{ whiteSpace: 'pre-line' }}>{culturaTitolo}</h3>
+          <h3 className={styles.h3}>{culturaTitolo}</h3>
           <p className={`${styles.body} ${styles.bodyHero}`} style={{ whiteSpace: 'pre-line' }}>{culturaBody}</p>
         </div>
       </section>

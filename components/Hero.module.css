@@ -81,7 +81,7 @@
   transition-duration: 150ms;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .title {
     font-size: clamp(2.4rem, 11vw, 4rem);
   }

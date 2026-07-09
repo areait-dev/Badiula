@@ -42,7 +42,7 @@
   line-height: var(--text-body-1-line);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .overlay {
     padding: 2rem 1.5rem;
     flex-direction: column;

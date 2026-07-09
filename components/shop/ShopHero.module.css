@@ -26,8 +26,8 @@
 
 .h1 {
   font-family: var(--font-display);
-  font-size: 80px;
-  line-height: 89px;
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
   font-weight: 700;
   color: var(--bordeaux);
   text-transform: uppercase;
@@ -37,8 +37,8 @@
 
 .h2 {
   font-family: var(--font-body);
-  font-size: 80px;
-  line-height: 89px;
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
   font-weight: 700;
   color: var(--bordeaux);
   text-transform: uppercase;
@@ -48,8 +48,8 @@
 
 .h3 {
   font-family: var(--font-body);
-  font-size: 60px;
-  line-height: 66px;
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
   font-weight: 700;
   font-style: italic;
   color: var(--bordeaux);
@@ -100,14 +100,5 @@
     display: none;
   }
 
-  .h1,
-  .h2 {
-    font-size: 40px;
-    line-height: 46px;
-  }
-
-  .h3 {
-    font-size: 32px;
-    line-height: 38px;
-  }
+  /* dimensioni ereditate dalla cascata --text-h2/--text-h3 di globals.css */
 }

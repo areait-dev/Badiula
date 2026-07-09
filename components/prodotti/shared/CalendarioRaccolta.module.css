@@ -74,7 +74,7 @@
   gap: 8px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .inner         { padding: 0 var(--page-margin-mobile); }
   .title         { font-size: 28px; line-height: 1.2; margin-bottom: 28px; }
   .bar {

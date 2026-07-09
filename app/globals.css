@@ -62,6 +62,12 @@
   --text-body-2-size: 20px;
   --text-body-2-line: 32px;
 
+  /* ── Scala tipografica heading desktop (§3 / §10.X, ≥1280px) ── */
+  --text-h1-size: 110px; --text-h1-line: 122px;
+  --text-h2-size:  80px; --text-h2-line:  89px;
+  --text-h3-size:  60px; --text-h3-line:  66px;
+  --text-h4-size:  40px; --text-h4-line:  45px;
+
   /* ── Spaziatura ── */
   --space-xs:   8px;
   --space-sm:   16px;
@@ -84,6 +90,51 @@
   /* ── Layout ── */
   --page-margin:        100px;
   --page-margin-mobile: 1.5rem;
+
+  /* ── Breakpoint (CLAUDE.md §10.X) ── */
+  --bp-xs:   375px;
+  --bp-md:   768px;
+  --bp-lg:  1024px;
+  --bp-xl:  1280px;
+  --bp-xxl: 1440px;
+  --bp-xxxl:1728px;
+}
+
+/* ── Tipografia responsive (§10.X) — sovrascrive solo font-size/line-height ── */
+@media (max-width: 1279px) {
+  :root {
+    --text-h1-size: 88px; --text-h1-line: 98px;
+    --text-h2-size: 64px; --text-h2-line: 72px;
+    --text-h3-size: 48px; --text-h3-line: 54px;
+    --text-h4-size: 34px; --text-h4-line: 40px;
+    /* --space-xl / --space-2xl restano ai valori desktop fino a 1023px incluso */
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --text-h1-size: 64px; --text-h1-line: 72px;
+    --text-h2-size: 48px; --text-h2-line: 54px;
+    --text-h3-size: 36px; --text-h3-line: 42px;
+    --text-h4-size: 28px; --text-h4-line: 34px;
+    --text-body-1-size: 22px; --text-body-1-line: 32px;
+    --text-body-2-size: 18px; --text-body-2-line: 28px;
+    --space-xl:  56px;
+    --space-2xl: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --text-h1-size: 44px; --text-h1-line: 50px;
+    --text-h2-size: 34px; --text-h2-line: 40px;
+    --text-h3-size: 26px; --text-h3-line: 32px;
+    --text-h4-size: 22px; --text-h4-line: 28px;
+    --text-body-1-size: 18px; --text-body-1-line: 28px;
+    --text-body-2-size: 16px; --text-body-2-line: 24px;
+    --space-xl:  40px;
+    --space-2xl: 56px;
+  }
 }
 
 * {

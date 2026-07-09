@@ -79,7 +79,7 @@
 }
 
 /* desktop: due colonne distanziate */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .blockA,
   .blockB {
     flex-direction: row;
@@ -202,7 +202,7 @@
   flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .circle {
     width: 280px;
     height: 280px;
@@ -353,9 +353,15 @@
 .bannerShopBtn:hover { background: #fff; color: #5E7058; }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .h1Row, .h1RowMid { white-space: normal; }
+}
+
+@media (max-width: 767px) {
   .intro { padding: 64px var(--page-margin-mobile) 48px; }
   .introHero { padding-top: 6rem; margin-bottom: 40px; align-items: center; }
+  .h1 { font-size: var(--text-h1-size); line-height: var(--text-h1-line); }
+  .h1Row, .h1RowMid { white-space: normal; }
 
   .block {
     grid-template-columns: 1fr;

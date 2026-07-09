@@ -186,7 +186,7 @@
 }
 
 /* ── Mobile < 600px: colonna singola ── */
-@media (max-width: 599px) {
+@media (max-width: 767px) {
   .track {
     grid-template-columns: 1fr;
     padding: 1rem 1.5rem 3rem;

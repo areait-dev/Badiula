@@ -44,7 +44,7 @@
   letter-spacing: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .imgArea { height: 280px; }
   .bar {
     padding: 2rem var(--page-margin-mobile);

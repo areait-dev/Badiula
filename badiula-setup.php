@@ -67,6 +67,19 @@ add_action( 'init', function () {
 
 } );
 
+// Flush automatico delle rewrite rules quando cambia la struttura dei CPT
+// (evita di dover andare manualmente su Impostazioni → Permalink → Salva
+// ogni volta che si modifica un CPT/tassonomia nel mu-plugin).
+add_action( 'init', function () {
+	$current_version = '1.1.0'; // ← bump ad ogni modifica ai CPT/tassonomie sopra
+	$stored_version   = get_option( 'badiula_cpt_version' );
+
+	if ( $stored_version !== $current_version ) {
+		flush_rewrite_rules();
+		update_option( 'badiula_cpt_version', $current_version );
+	}
+}, 20 );
+
 // ─── 2. ACF Options Pages ─────────────────────────────────────────────────────
 
 add_action( 'acf/init', function () {
@@ -240,14 +253,18 @@ add_action( 'save_post', function ( int $post_id ) {
 		$slug = get_post_field( 'post_name', $post_id );
 
 		$page_path_map = [
-			'home'              => '/',
-			'azienda'           => '/azienda',
-			'coltivazioni'      => '/coltivazioni',
-			'luce-di-terra'     => '/luce-di-terra',
-			'olio-evo'          => '/luce-di-terra/olio-evo',
-			'marmellata-agrumi' => '/luce-di-terra/marmellata-agrumi',
-			'shop'              => '/shop',
-			'opzioni-globali'   => '/',
+			'home'                  => '/',
+			'azienda'               => '/azienda',
+			'coltivazioni'          => '/coltivazioni',
+			'luce-di-terra'         => '/luce-di-terra',
+			'olio-evo'              => '/luce-di-terra/olio-evo',
+			'marmellata-agrumi'     => '/luce-di-terra/marmellata-agrumi',
+			'shop'                  => '/shop',
+			'opzioni-globali'       => '/',
+			'certificazioni'        => '/certificazioni',
+			'sostenibilita'         => '/sostenibilita',
+			'innovazione'           => '/innovazione',
+			'filiera-e-lavorazione' => '/filiera-e-lavorazione',
 		];
 
 		if ( isset( $page_path_map[ $slug ] ) ) {

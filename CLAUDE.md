@@ -76,6 +76,10 @@ Il tono è: **autentico, lento, radicato**. Mai iper-commerciale. La terra viene
 > **Deroga esplicita**: il `CentralTitle` "Dall'albero al confezionamento" nella pagina
 > `/filiera-e-lavorazione` usa Gravesend Sans (`displayFont` prop su `CentralTitle`) su richiesta
 > esplicita, in eccezione a questa regola.
+>
+> **Deroga esplicita**: `.quoteLine` in `azienda/page.module.css` usa 200px fuori scala,
+> elemento hero decorativo unico (la citazione sovrapposta alla foto dell'olio), in eccezione
+> a questa regola.
 
 ### Scala tipografica
 ```css
@@ -133,6 +137,8 @@ Il tono è: **autentico, lento, radicato**. Mai iper-commerciale. La terra viene
 - Tablet: 8 colonne, gutter 16px
 - Mobile: 4 colonne, gutter 16px, padding laterale 20px
 
+> Vedi §10.X per la tabella grid completa per ogni breakpoint (incluso il range laptop 14"-18").
+
 ### Sezioni alternanti
 Il layout usa alternanza sinistra/destra per testo+immagine (pattern "zigzag"):
 ```
@@ -140,6 +146,7 @@ Il layout usa alternanza sinistra/destra per testo+immagine (pattern "zigzag"):
 [TESTO sx]    [IMMAGINE dx]
 ```
 Rispettare sempre questa alternanza nelle pagine di dettaglio prodotto.
+Sotto 1024px il pattern si converte in stack verticale (immagine sempre sopra) — vedi §10.X.
 
 ---
 
@@ -243,6 +250,8 @@ DISABLE:  bg grigio, testo grigio chiaro
 - Sticky, bg bianco, nessuna shadow
 ```
 
+Comportamento per breakpoint → vedi §10.X.
+
 ### 5.5 Form Fields
 
 ```css
@@ -294,6 +303,7 @@ Colori card per prodotto:
 
 Tabella mesi (GEN→DIC) con dot `●` bordeaux per i mesi attivi.
 Usato in tutte le pagine di prodotto. Bordi sottili, sfondo vanilla.
+Comportamento responsive → vedi §10.X (griglia 12 mesi su una riga da 768px in su, 6 colonne × 2 righe sotto 768px).
 
 ### 5.8 Banner CTA (footer sezioni)
 
@@ -318,28 +328,34 @@ Le card nel carousel "Le nostre produzioni" usano `--radius-banner: 16px`, **non
 
 > ⚠️ `--radius-card: 0px` si applica **solo** alle card nella griglia shop/listing. Le card carousel hanno angoli arrotondati.
 
+> ⚠️ Misure reali di implementazione (non 560×900/463 come in versioni precedenti di questa
+> sezione — valori aggiornati per riflettere `Productions.module.css` / `ProductCardBadiula.module.css`,
+> componenti già in produzione).
+
 ```css
 .card-prodotto {
   width: 560px;
-  height: 900px;
+  height: 620px;
   border-radius: var(--radius-banner); /* 16px — angoli arrotondati */
   overflow: hidden; /* l'immagine rispetta il radius */
 }
 
 .card-prodotto__image {
   width: 560px;
-  height: 463px;
+  height: 280px;
   object-fit: cover;
   border-radius: 0; /* eredita clip dal contenitore */
 }
 
 .card-prodotto__body {
-  padding-top: 45px;
+  padding-top: 28px;
   padding-left: var(--space-md);
   padding-right: var(--space-md);
   border-radius: 0 0 var(--radius-banner) var(--radius-banner); /* 16px solo angoli inferiori */
 }
 ```
+
+Dimensioni per breakpoint → vedi §10.X.
 
 ---
 
@@ -348,20 +364,36 @@ Le card nel carousel "Le nostre produzioni" usano `--radius-banner: 16px`, **non
 ```css
 .card-prodotto {
   width: 560px;
-  height: 900px;
+  height: 620px;
   border-radius: var(--radius-banner); /* 16px */
   overflow: hidden;
 }
 .card-prodotto__image {
   width: 560px;
-  height: 463px;
+  height: 280px;
   object-fit: cover;
 }
-.card-prodotto__title  { font-size: 50px; height: 150px; }
-.card-prodotto__desc   { font-size: 24px; height: 90px; margin-top: 25px; }
-.card-prodotto__cta    { height: 36px; margin-top: 25px; margin-bottom: 25px; }
-/* padding-top area contenuto: 45px */
-/* Mobile: width 85vw, altezze proporzionali con clamp() */
+.card-prodotto__title  { font-size: 40px; line-height: 45px; height: 135px; }
+.card-prodotto__desc   { font-size: var(--text-body-2-size); margin-top: 8px; }
+.card-prodotto__cta    { height: 36px; margin-top: auto; margin-bottom: 32px; }
+/* padding-top area contenuto (titleBox): 28px */
+```
+
+Sotto 1024px il layout passa da carousel a griglia fluida (card `width: 100%`, altezza
+automatica) invece di ridurre le dimensioni fisse per breakpoint — comportamento
+implementato in `Productions.module.css`.
+
+**Variante "Luce di Terra"** (`ProductCardBadiula.module.css`, usata in `/luce-di-terra`,
+stesso pattern CSS ma proporzioni diverse):
+
+```css
+.card-prodotto--luce-di-terra {
+  width: 400px;
+  height: 680px;
+  border-radius: var(--radius-banner);
+}
+.card-prodotto--luce-di-terra__image { width: 400px; height: 330px; }
+.card-prodotto--luce-di-terra__title { font-size: 40px; line-height: 45px; }
 ```
 
 ---
@@ -408,6 +440,8 @@ Max-width: 480px desktop / 100% mobile
 /* Trigger: icona search già in Navbar.tsx */
 /* Chiusura: × top-right o tasto Escape */
 ```
+
+Font-size dell'input su mobile → 20px (vedi §10.X).
 
 ---
 
@@ -593,11 +627,185 @@ Gli input del form sono **pill**, NON underline:
 - Skeleton loader per card prodotti (no spinner generico)
 - Colore skeleton: `#EEE6B8` (vanilla) con shimmer animation
 
-### Responsive
-- Breakpoints: 375px (xs) / 768px (md) / 1024px (lg) / 1440px (xl)
-- Mobile-first sempre
-- Touch target minimo: 44×44px
-- Menu: hamburger sotto 1024px
+### 10.X Responsive — Breakpoints estesi (mobile, tablet, laptop 14"-18")
+
+> ⚠️ I laptop 14"-18" NON corrispondono 1:1 alla diagonale fisica: per via dello
+> scaling OS (125%-150% su Windows, Retina su Mac), il viewport CSS effettivo è
+> quasi sempre compreso tra 1280px e 1536px, raramente sopra 1728px anche su
+> schermi 18". Per questo il breakpoint "laptop" va calibrato su viewport, non su pollici.
+
+| Breakpoint | Range viewport | Dispositivo tipico |
+|------------|-----------------|---------------------|
+| `xs` (mobile) | 375px – 767px | Smartphone |
+| `md` (tablet) | 768px – 1023px | Tablet portrait/landscape |
+| `lg` (laptop piccolo) | 1024px – 1279px | Laptop 13"-14" (scaling alto) |
+| `xl` (laptop standard) | 1280px – 1439px | Laptop 14"-16" |
+| `xxl` (laptop grande / desktop) | 1440px – 1727px | Laptop 16"-18", monitor desktop |
+| `xxxl` (desktop large) | ≥ 1728px | Monitor esterni, 4K scalati |
+
+```css
+:root {
+  --bp-xs:   375px;
+  --bp-md:   768px;
+  --bp-lg:  1024px;
+  --bp-xl:  1280px;
+  --bp-xxl: 1440px;
+  --bp-xxxl:1728px;
+}
+```
+
+Mobile-first sempre: si scrive lo stile base per `xs`, poi si sovrascrive verso l'alto con `min-width`.
+
+---
+
+#### Grid per breakpoint
+
+| Breakpoint | Colonne | Gutter | Padding laterale |
+|------------|---------|--------|-------------------|
+| xs (375px) | 4 | 16px | 20px |
+| md (768px) | 8 | 16px | 32px |
+| lg (1024px) | 12 | 24px | 48px |
+| xl (1280px) | 12 | 24px | 64px |
+| xxl (1440px) | 12 | 24px | 80px (max-width 1440px, poi centrato) |
+| xxxl (1728px+) | 12 | 24px | contenuto centrato, max-width resta 1440px |
+
+> ⚠️ Il contenuto non deve mai superare `max-width: 1440px`: sopra `xxl` si aggiunge solo margine laterale, non nuove colonne.
+
+---
+
+#### Tipografia responsive
+
+La scala §3 resta quella desktop (≥1280px). Sotto `xl` si applicano riduzioni proporzionali — mai valori arbitrari, sempre calcolati sugli stessi 7 livelli. **Valori proposti, da validare su Figma prima di considerarli definitivi.**
+
+```css
+/* Desktop (xl, xxl, xxxl) — valori da §3, invariati */
+--text-h1:  110px / 122px;
+--text-h2:   80px / 89px;
+--text-h3:   60px / 66px;
+--text-h4:   40px / 45px;
+--text-body-1: 26px / 38px;
+--text-body-2: 20px / 32px;
+
+/* Laptop piccolo (lg: 1024–1279px) — riduzione ~15% */
+@media (max-width: 1279px) {
+  --text-h1:  88px / 98px;
+  --text-h2:  64px / 72px;
+  --text-h3:  48px / 54px;
+  --text-h4:  34px / 40px;
+  /* body-1 e body-2 invariati: leggibilità testo lungo */
+}
+
+/* Tablet (md: 768–1023px) */
+@media (max-width: 1023px) {
+  --text-h1:  64px / 72px;
+  --text-h2:  48px / 54px;
+  --text-h3:  36px / 42px;
+  --text-h4:  28px / 34px;
+  --text-body-1: 22px / 32px;
+  --text-body-2: 18px / 28px;
+}
+
+/* Mobile (xs: 375–767px) */
+@media (max-width: 767px) {
+  --text-h1:  44px / 50px;
+  --text-h2:  34px / 40px;
+  --text-h3:  26px / 32px;
+  --text-h4:  22px / 28px;
+  --text-body-1: 18px / 28px;
+  --text-body-2: 16px / 24px;
+}
+```
+
+> ⚠️ Font-family e letter-spacing (0px) restano invariati a ogni breakpoint. Cambia solo `font-size`/`line-height`.
+
+---
+
+#### Componenti — comportamento per breakpoint
+
+**Header/Navbar**
+- `xxl`/`xl`/`lg` (≥1024px): header orizzontale completo, hamburger nascosto
+- `md` (768–1023px): hamburger compare, logo centrato ridotto
+- `xs` (<768px): header compatto, hamburger + logo + 🔍, IT|EN si sposta nell'overlay menu
+
+**Card Prodotto — Carousel Homepage (§5.10)**
+
+> ⚠️ Il componente (`Productions.module.css`) non usa dimensioni fisse per breakpoint:
+> sotto `lg` (1024px) il carousel a scroll orizzontale si converte in **griglia fluida**
+> (card `width: 100%`, altezza automatica). Scelta deliberata per coerenza con
+> l'implementazione esistente — non introdurre dimensioni px fisse (460×740/360×580) qui.
+
+```css
+/* Desktop (≥1024px) — scroll orizzontale, card a dimensione fissa */
+.card-prodotto { width: 560px; height: 620px; }
+
+/* <1024px — griglia fluida, 2 colonne */
+@media (max-width: 1023px) {
+  .card-prodotto { width: 100%; height: auto; }
+  .track { display: grid; grid-template-columns: 1fr 1fr; }
+}
+
+/* <768px — griglia fluida, 1 colonna */
+@media (max-width: 767px) {
+  .track { grid-template-columns: 1fr; }
+}
+```
+
+**Grid Card Shop/Listing**
+- xxl/xl/lg (≥1024px): 3 colonne
+- md (768–1023px): 2 colonne
+- xs (<768px): 1 colonna, CTA "Aggiungi al Carrello" diventa sticky in basso
+
+> ⚠️ STATO ATTUALE (in attesa di e-commerce): la CTA "Aggiungi al Carrello" sticky
+> mobile descritta in questa sezione è la spec TARGET per quando l'e-commerce sarà
+> implementato. Allo stato attuale `ShopCard` espone solo "Scopri di più" verso la
+> pagina prodotto (nessun carrello/checkout ancora costruito). Quando l'e-commerce
+> verrà implementato, il componente `ShopGrid` dovrà essere aggiornato per riflettere
+> questa spec.
+
+**Calendario di Raccolta**
+- ≥768px: griglia 12 mesi su una riga
+- <768px: griglia 6 colonne su 2 righe
+
+**Vision/Mission (§5.12)**
+- ≥768px: layout 50/50 con divisore verticale
+- <768px: stack verticale, divisore diventa orizzontale
+
+**Footer (§5.15 / §9)**
+- ≥768px: grid 2 colonne (logo/contatti | form)
+- <768px: 1 colonna, form sotto i contatti, textarea min-height ridotta a 140px
+
+**Search Overlay (§5.14)**
+- Invariato a tutti i breakpoint tranne il font dell'input:
+  - desktop/laptop: 26px
+  - mobile: 20px
+
+**Sezioni alternanti "zigzag" (§4)**
+- ≥1024px: layout affiancato immagine/testo 50/50
+- <1024px: stack verticale, immagine sempre sopra al testo (indipendentemente da `reverse`)
+
+---
+
+#### Spacing responsive
+
+| Token | Desktop (≥1280px) | Tablet (768–1023px) | Mobile (<768px) |
+|-------|--------------------|----------------------|-------------------|
+| `--space-2xl` | 120px | 80px | 56px |
+| `--space-xl` | 80px | 56px | 40px |
+| `--space-lg` | 48px | 40px | 32px |
+| `--space-md` | 24px | 24px | 20px |
+| `--space-sm` | 16px | 16px | 16px |
+| `--space-xs` | 8px | 8px | 8px |
+
+> Solo i token grandi (xl, 2xl) si riducono: sono spacing di sezione, non di componente.
+
+---
+
+#### Regole generali
+
+- Touch target minimo: 44×44px su tutti i breakpoint sotto `lg` (1024px)
+- Menu hamburger: sotto 1024px
+- Testare sempre a: 375px, 768px, 1024px, 1280px, 1440px, 1728px
+- Nessun breakpoint custom fuori da questa tabella senza approvazione esplicita
 
 ---
 
@@ -667,8 +875,9 @@ Sito bilingue IT | EN. Sempre mostrare il selettore lingua in alto a destra.
 - ❌ Usare popup/modal per errori form
 - ❌ Font bold nel body text
 - ❌ Usare `<br/>` forzati in contenitori fluidi (50vw) — il testo scorre libero
-- ❌ `font-size` fuori dalla scala (es. 17px, 22px, 23px) — solo i 7 livelli definiti in §3
+- ❌ `font-size` fuori dalla scala (es. 17px, 22px, 23px) — solo i 7 livelli definiti in §3, salvo le riduzioni responsive definite in §10.X
 - ❌ `filter: brightness(0) invert(1)` su loghi colorati ufficiali (solo su sfondo scuro)
+- ❌ Introdurre breakpoint custom fuori dalla tabella di §10.X senza approvazione esplicita
 
 ---
 
@@ -978,6 +1187,7 @@ interface ProdottoVarietaProps {
 ```
 
 Usare `reverse` alternato per rispettare il pattern zigzag del CLAUDE.md §4.
+Sotto 1024px la variante `reverse` non ha effetto: layout sempre a stack verticale (vedi §10.X).
 
 > ⚠️ Nota: `slogan` a 24px è fuori dalla scala tipografica ufficiale (§3). Da verificare/allineare
 > a body-1 (26px) o h4 (40px) in un prossimo intervento.
@@ -991,7 +1201,7 @@ interface CalendarioRaccoltaProps {
 }
 ```
 
-Sfondo vanilla, bordi khaki, dot attivo bordeaux. Mobile: griglia a 6 colonne.
+Sfondo vanilla, bordi khaki, dot attivo bordeaux. Mobile: griglia a 6 colonne (vedi §10.X).
 
 #### `ProdottoEditoriale`
 Sezione testo approfondimento (IGP, storia, curiosità). Titolo H3 bordeaux, body-2, max-width 760px.
@@ -1083,11 +1293,14 @@ Non contengono logica, stili o dati. Tutta la responsabilità è nell'assembler.
 Prima di creare un nuovo componente:
 
 - [ ] Usa solo token colore da `:root`?
-- [ ] Tipografia da scala ufficiale?
+- [ ] Tipografia da scala ufficiale (incluse le riduzioni responsive di §10.X)?
 - [ ] Border-radius corretto per il tipo (pill btn, 0 card, pill field)?
 - [ ] Tutti e 4 gli stati interattivi definiti?
 - [ ] Focus visibile per keyboard nav?
-- [ ] Responsive testato a 375px, 768px, 1440px?
+- [ ] Responsive testato a 375px, 768px, 1024px, 1280px, 1440px, 1728px?
 - [ ] Copy segue TOV Badiula?
 - [ ] Nessun colore hardcoded?
 - [ ] Icone solo dal set brand?
+
+
+

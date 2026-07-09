@@ -21,17 +21,22 @@
   margin-bottom: 32px;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .h1Row {
   display: block;
   white-space: nowrap;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .h2 {
   font-family: var(--font-body);
-  font-size: 60px;
-  line-height: 66px;
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
   font-weight: 700;
   font-style: italic;
   color: var(--bordeaux);
@@ -67,17 +72,18 @@
 }
 
 @media (max-width: 1024px) {
-  .h1 { font-size: clamp(48px, 8vw, 80px); }
+  .h1 { font-size: clamp(34px, 5.5vw, 52px); }
   .h1Row { white-space: normal; }
-  .h2NoWrap { font-size: clamp(28px, 4vw, 60px); }
+  .h1Row[style*="padding-left"] { padding-left: min(0.8em, 32px) !important; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .intro { padding: 0 var(--page-margin-mobile) 48px; }
   .hero  { padding-top: 100px; margin-bottom: 40px; }
-  .h1    { font-size: clamp(40px, 12vw, 72px); }
+  .h1    { font-size: clamp(30px, 9vw, 42px); }
   .h1Row { white-space: normal; }
-  .h2    { font-size: 22px; max-width: 100%; }
+  .h1Row[style*="padding-left"] { padding-left: min(0.6em, 20px) !important; }
+  .h2    { max-width: 100%; }
   .h2 span { white-space: normal; }
-  .h2NoWrap { white-space: normal; max-width: 100%; font-size: 22px; }
+  .h2NoWrap { white-space: normal; max-width: 100%; }
 }

@@ -144,16 +144,12 @@
   width: 0%;
 }
 
-/* Mobile/tablet < 1024px: rimuove il background verde/grigio del pannello Territorio */
-@media (max-width: 768px) {
+/* Mobile: stack verticale + rimuove il background verde/grigio del pannello Territorio */
+@media (max-width: 767px) {
   .territoryPanel {
     background: transparent;
     padding: 0;
   }
-}
-
-/* Mobile: stack verticale */
-@media (max-width: 768px) {
   .wrapper {
     height: auto;
     overflow: visible;

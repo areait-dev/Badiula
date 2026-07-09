@@ -139,6 +139,15 @@
   color: var(--bordeaux);
 }
 
+/* Paragrafo interamente in grassetto = mini-titolo (es. "Impianto fotovoltaico
+   e sistema di accumulo"), non enfasi inline dentro una lista: solo qui va
+   ingrandito rispetto al corpo testo, a ogni breakpoint */
+.body p > strong:only-child {
+  display: inline-block;
+  font-size: 30px;
+  line-height: 1.46;
+}
+
 .visual {
   display: flex;
   width: 100%;
@@ -232,24 +241,11 @@
   margin-bottom: -120px;
 }
 
-@media (max-width: 768px) {
-  .imgWrapTall { margin-bottom: 0; }
-}
-
 @media (max-width: 1024px) {
-  .content          { padding-right: 48px; }
-  .reverse .content { padding-left: 48px; }
-  .section          { margin-top: calc(-1 * min(var(--pull-up, 0px), 80px)); }
-  .title            { font-size: clamp(36px, 5.5vw, 60px); line-height: 1.15; }
-  .imgWrap          { height: clamp(360px, 65vw, 640px); }
-  .imgWrap.imgWrapTall { height: clamp(360px, 65vw, 640px); margin-bottom: -48px; }
-}
-
-@media (max-width: 768px) {
   .section {
     grid-template-columns: 1fr;
     padding: 64px var(--page-margin-mobile);
-    margin-top: calc(-1 * min(var(--pull-up, 0px), 32px));
+    margin-top: calc(-1 * min(var(--pull-up, 0px), 80px));
   }
   .visual  { order: 1 !important; margin-bottom: 36px; }
   .content {
@@ -260,10 +256,21 @@
   }
   .imgWrap {
     width: 100%;
-    height: clamp(240px, 55vw, 400px);
+    height: clamp(360px, 65vw, 640px);
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-  .title       { font-size: clamp(28px, 8vw, 40px); }
+  .imgWrap.imgWrapTall { height: clamp(360px, 65vw, 640px); margin-bottom: -48px; }
+  .title       { font-size: clamp(36px, 5.5vw, 60px); line-height: 1.15; }
   .titleNoWrap { white-space: normal; }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px var(--page-margin-mobile);
+    margin-top: calc(-1 * min(var(--pull-up, 0px), 32px));
+  }
+  .imgWrap { height: clamp(240px, 55vw, 400px); }
+  .imgWrap.imgWrapTall { margin-bottom: 0; }
+  .title   { font-size: clamp(28px, 8vw, 40px); }
 }

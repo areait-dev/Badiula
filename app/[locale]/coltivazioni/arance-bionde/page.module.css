@@ -371,10 +371,15 @@
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .h1Row1, .h1Row2 { white-space: normal; }
+}
+
+@media (max-width: 767px) {
   .intro { padding: 64px var(--page-margin-mobile) 48px; }
   .introHero { padding-top: 6rem; margin-bottom: 40px; }
-  .h1 { font-size: clamp(48px, 14vw, 80px); }
+  .h1 { font-size: var(--text-h1-size); line-height: var(--text-h1-line); }
+  .h1Row1, .h1Row2 { white-space: normal; }
   .h2 { font-size: 20px; }
 
   .variety {

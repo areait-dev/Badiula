@@ -42,8 +42,8 @@
 
 .card h3 {
   font-family: var(--font-body);
-  font-size: 40px;
-  line-height: 45px;
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-line);
   font-weight: 700;
   color: var(--bordeaux);
   margin: var(--space-md) 0 0;

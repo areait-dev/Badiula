@@ -69,7 +69,7 @@
   max-width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .section  { padding: 64px 0; }
   .inner    { padding: 0 var(--page-margin-mobile); }
   .heading  { margin-bottom: 32px; }

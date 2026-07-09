@@ -71,35 +71,36 @@
 /* ── Titoli ── */
 .heroTitle {
   font-family: var(--font-body);
-  font-size: 80px;
-  line-height: 89px;
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
   font-weight: 700;
   color: var(--bordeaux);
 }
 
 .h2 {
   font-family: var(--font-body);
-  font-size: 80px;
-  line-height: 89px;
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
   font-weight: 700;
   color: var(--bordeaux);
 }
 
 .h3 {
   font-family: var(--font-body);
-  font-size: 60px;
-  line-height: 66px;
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
   font-weight: 700;
   font-style: italic;
   letter-spacing: 0;
   color: var(--bordeaux);
+  white-space: pre-line;
 }
 
 /* ── Corpo testo ── */
 .body {
   font-family: var(--font-body);
-  font-size: 26px;
-  line-height: 38px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 400;
   letter-spacing: 0px;
   color: var(--eigengrau);
@@ -216,8 +217,8 @@
 
 .vmLabel {
   font-family: var(--font-body);
-  font-size: 40px;
-  line-height: 45px;
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-line);
   font-weight: 700;
   letter-spacing: 0px;
   color: var(--bordeaux);
@@ -230,13 +231,10 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 900px) {
-  .hero {
-    padding: 0 1.5rem 2rem;
-    height: 30vh;
-    min-height: 200px;
-  }
 
+/* Zigzag (.grid): stack <1024px, come da CLAUDE.md §4/§10.X — pattern
+   immagine+testo alternato, indipendente dallo stack di Vision/Mission */
+@media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -251,6 +249,18 @@
   .imgTall  { min-height: 380px; }
 
   .textBlock { padding: 3rem 1.5rem; }
+
+  /* Ricompone il titolo "cultura" su righe naturali invece dei 5 a-capo
+     fissi del CMS (pensati per desktop), già da tablet */
+  .h3 { white-space: normal; }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 0 1.5rem 2rem;
+    height: 30vh;
+    min-height: 200px;
+  }
 
   .vmSection {
     flex-direction: column;
@@ -273,15 +283,8 @@
     flex-shrink: 0;
   }
 
-  .quoteSection   { margin-top: -60px; padding-bottom: 5rem; }
-  .quoteText      { padding-left: 1.5rem; }
+  .quoteSection   { margin-top: -40px; padding-bottom: 4rem; }
+  .quoteText      { padding-left: 1.2rem; }
   .quoteLine      { font-size: clamp(2.8rem, 13vw, 5rem); line-height: 0.92; }
   .manifestoSection { padding: 4rem 1.5rem; }
-}
-
-@media (max-width: 768px) {
-  .quoteSection  { margin-top: -40px; padding-bottom: 4rem; }
-  .quoteText     { padding-left: 1.2rem; }
-  .quoteLine     { font-size: clamp(2.8rem, 13vw, 5rem); line-height: 0.92; }
-
 }
