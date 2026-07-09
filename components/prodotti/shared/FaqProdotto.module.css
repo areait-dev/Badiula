@@ -8,8 +8,8 @@
 
 .heading {
   font-family: var(--font-body);
-  font-size: 80px;
-  line-height: 89px;
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
   font-weight: 700;
   color: var(--bordeaux);
   text-transform: uppercase;
