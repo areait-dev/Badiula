@@ -55,12 +55,6 @@ export default function Hero({
         )}
       </div>
 
-      {titolo && (
-        <div className={styles.content}>
-          <h1 className={styles.title}>{titolo}</h1>
-        </div>
-      )}
-
       <div className={styles.scrollHint}>
         <span className={styles.mouse}>
           <span className={styles.wheel} />

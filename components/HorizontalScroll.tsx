@@ -103,7 +103,7 @@ export default function HorizontalScroll({
         <section className={`${styles.panel} ${styles.p1}`}>
           <div className={styles.half}>
             <p className={styles.eyebrow}>{p1Eyebrow}</p>
-            <h2 className={styles.heading}>{p1Heading}</h2>
+            <h1 className={styles.heading}>{p1Heading}</h1>
             <p className={styles.body}>{p1Body}</p>
             <a href="/" className={`btn btn-outline ${styles.cta}`}>{p1Cta}</a>
           </div>
