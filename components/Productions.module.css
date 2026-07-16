@@ -162,10 +162,10 @@
   }
   .trackWrap { padding-bottom: 12px; }
   .track { padding: 0.75rem var(--page-margin) 0.75rem; }
-  .card { height: 520px; }
+  .card { height: 545px; }
   .img { flex: 0 0 260px; }
   .titleBox { margin-top: 6px; }
-  .cta { margin-bottom: 26px; }
+  .cta { margin-top: 18px; margin-bottom: 26px; }
 }
 
 /* ── Laptop molto bassi (es. 13" con barre browser/dock visibili) ── */
@@ -173,10 +173,10 @@
   .header {
     padding: var(--space-sm) var(--page-margin) var(--space-xs);
   }
-  .card { height: 460px; }
+  .card { height: 480px; }
   .img { flex: 0 0 230px; }
   .titleBox { flex: 0 0 120px; margin-top: 4px; }
-  .cta { margin-bottom: 18px; }
+  .cta { margin-top: 14px; margin-bottom: 18px; }
 }
 
 /* ── Mobile/tablet: stack verticale (< 1024px) ── */
