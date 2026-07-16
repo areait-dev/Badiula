@@ -162,7 +162,7 @@
   }
   .trackWrap { padding-bottom: 12px; }
   .track { padding: 0.75rem var(--page-margin) 0.75rem; }
-  .card { height: 560px; }
+  .card { height: 520px; }
   .img { flex: 0 0 260px; }
   .titleBox { margin-top: 6px; }
   .cta { margin-bottom: 26px; }
@@ -173,7 +173,7 @@
   .header {
     padding: var(--space-sm) var(--page-margin) var(--space-xs);
   }
-  .card { height: 500px; }
+  .card { height: 460px; }
   .img { flex: 0 0 230px; }
   .titleBox { flex: 0 0 120px; margin-top: 4px; }
   .cta { margin-bottom: 18px; }
