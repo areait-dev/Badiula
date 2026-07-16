@@ -153,6 +153,32 @@
 .card:nth-child(even) .cta:active { background-color: var(--eigengrau); border-color: var(--eigengrau); color: var(--white); }
 
 
+/* ── Laptop 13"-16" (MacBook Pro/Air ecc.): viewport basso, la card 620px
+   pinnata a 100vh taglia il fondo (CTA "Scopri di più" invisibile).
+   Riduciamo solo spaziature/dimensioni immagine, MAI i font (restano in scala). ── */
+@media (min-width: 1024px) and (max-height: 900px) {
+  .header {
+    padding: var(--space-md) var(--page-margin) var(--space-sm);
+  }
+  .trackWrap { padding-bottom: 12px; }
+  .track { padding: 0.75rem var(--page-margin) 0.75rem; }
+  .card { height: 480px; }
+  .img { flex: 0 0 220px; }
+  .titleBox { margin-top: 20px; }
+  .cta { margin-bottom: 20px; }
+}
+
+/* ── Laptop molto bassi (es. 13" con barre browser/dock visibili) ── */
+@media (min-width: 1024px) and (max-height: 760px) {
+  .header {
+    padding: var(--space-sm) var(--page-margin) var(--space-xs);
+  }
+  .card { height: 440px; }
+  .img { flex: 0 0 190px; }
+  .titleBox { flex: 0 0 110px; margin-top: 14px; }
+  .cta { margin-bottom: 14px; }
+}
+
 /* ── Mobile/tablet: stack verticale (< 1024px) ── */
 @media (max-width: 1023px) {
   .wrapper { margin-top: var(--space-xl); height: auto; }
