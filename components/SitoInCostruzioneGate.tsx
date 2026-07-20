@@ -3,31 +3,23 @@
 import { usePathname } from 'next/navigation';
 import SitoInCostruzione from './SitoInCostruzione';
 
-const PAGINE_VISIBILI = [
-  '/', '/it', '/en',
-  '/it/azienda', '/en/azienda',
-  '/it/filiera-e-lavorazione', '/en/filiera-e-lavorazione',
-  '/it/sostenibilita', '/en/sostenibilita',
-  '/it/innovazione', '/en/innovazione',
-  '/it/certificazioni', '/en/certificazioni',
-];
-
-const PREFISSI_VISIBILI = ['/it/coltivazioni', '/en/coltivazioni'];
+// Unica sezione ancora bloccata in produzione: lo shop (e-commerce non ancora pronto).
+// Tutto il resto del sito è pubblico.
+const PREFISSI_BLOCCATI = ['/it/shop', '/en/shop'];
 
 export default function SitoInCostruzioneGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  // Gate disattivato in locale (coltivazioni incluso).
-  // Lo shop invece è attivo solo in locale (dev): resta bloccato in produzione.
+  // Gate disattivato in locale: in dev tutte le pagine, shop incluso, sono raggiungibili.
   if (process.env.NODE_ENV !== 'production') {
     return <>{children}</>;
   }
 
-  const visibile =
-    PAGINE_VISIBILI.some((p) => pathname === p || pathname === p + '/') ||
-    PREFISSI_VISIBILI.some((p) => pathname === p || pathname.startsWith(p + '/'));
+  const bloccata = PREFISSI_BLOCCATI.some(
+    (p) => pathname === p || pathname.startsWith(p + '/')
+  );
 
-  if (!visibile) {
+  if (bloccata) {
     return <SitoInCostruzione />;
   }
 
