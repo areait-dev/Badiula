@@ -12,6 +12,8 @@ const PAGINE_VISIBILI = [
   '/it/certificazioni', '/en/certificazioni',
 ];
 
+const PREFISSI_VISIBILI = ['/it/coltivazioni', '/en/coltivazioni'];
+
 export default function SitoInCostruzioneGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
@@ -21,9 +23,9 @@ export default function SitoInCostruzioneGate({ children }: { children: React.Re
     return <>{children}</>;
   }
 
-  const visibile = PAGINE_VISIBILI.some(
-    (p) => pathname === p || pathname === p + '/'
-  );
+  const visibile =
+    PAGINE_VISIBILI.some((p) => pathname === p || pathname === p + '/') ||
+    PREFISSI_VISIBILI.some((p) => pathname === p || pathname.startsWith(p + '/'));
 
   if (!visibile) {
     return <SitoInCostruzione />;
