@@ -2,14 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 100px var(--page-margin);
+  padding: var(--space-2xl) var(--page-margin);
   border-top: 1px solid rgba(108, 18, 36, 0.15);
   overflow: hidden;
 }
 
 .noBorder {
   border-top: none;
-  padding-top: 40px;
+  padding-top: var(--space-lg);
 }
 
 /* Layout standard: immagine a destra - sconfina fino al bordo destro */
@@ -182,7 +182,7 @@
 @media (max-width: 1023px) {
   .section {
     grid-template-columns: 1fr;
-    padding: 64px var(--page-margin-mobile);
+    padding: var(--space-2xl) var(--page-margin-mobile);
   }
   .visual  { order: 1 !important; margin-bottom: 36px; }
   .content {

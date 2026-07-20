@@ -78,6 +78,11 @@
   padding: 4rem var(--page-margin-mobile, 1.5rem);
 }
 
+.blockAVisual,
+.blockBVisual {
+  width: 100%;
+}
+
 /* desktop: due colonne distanziate */
 @media (min-width: 1024px) {
   .blockA,
@@ -186,20 +191,35 @@
 
 .imgWrapCircle {
   position: relative;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
+  width: 220px;
+  aspect-ratio: 1824 / 1592;
+  height: auto;
+  border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .imgWrapRect {
   position: relative;
-  width: 180px;
-  height: 180px;
-  border-radius: 12px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+}
+
+/* Video "Tre raccolti": angoli squadrati su richiesta esplicita */
+.imgWrapSquare {
+  border-radius: 0;
+}
+
+.videoFill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 1024px) {
@@ -215,13 +235,13 @@
   }
 
   .imgWrapCircle {
-    width: 280px;
-    height: 280px;
+    width: 420px;
+    height: auto;
   }
 
   .imgWrapRect {
-    width: 280px;
-    height: 280px;
+    width: clamp(420px, 40vw, 640px);
+    height: auto;
   }
 }
 
@@ -232,12 +252,14 @@
 }
 
 .calendarTitle {
-  font-family: var(--font-display);
-  font-size: 54px;
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 45px;
   font-weight: 700;
   color: var(--bordeaux);
+  text-transform: uppercase;
   margin-bottom: 40px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
 }
 
 .calendarBar {
@@ -317,19 +339,21 @@
 
 .bannerHeading {
   font-family: var(--font-body);
-  font-size: 36px;
+  font-size: 40px;
+  line-height: 45px;
   font-weight: 700;
   color: #EEE6B8;
-  line-height: 1.3;
   margin-bottom: 0.4rem;
   white-space: pre-line;
+  letter-spacing: 0;
 }
 
 .bannerSub {
   font-family: var(--font-body);
-  font-size: 15px;
-  color: rgba(255,255,255,.65);
-  line-height: 1.5;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
+  font-weight: 400;
+  color: rgba(255,255,255,.75);
   white-space: pre-line;
 }
 
@@ -337,13 +361,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 3rem;
-  border-radius: 100px;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
   border: 1.5px solid rgba(255,255,255,.75);
   font-family: var(--font-body);
-  font-size: 28px;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #fff;
   white-space: nowrap;
@@ -355,6 +379,12 @@
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .h1Row, .h1RowMid { white-space: normal; }
+}
+
+/* Tablet (768–1023px): margini laterali ridotti rispetto al desktop */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .intro     { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .container { padding-left: 2.5rem; padding-right: 2.5rem; }
 }
 
 @media (max-width: 767px) {

@@ -1,0 +1,468 @@
+[
+  {
+    "key": "group_badiula_pompelmo",
+    "title": "Pagina Prodotto - Pompelmo",
+    "fields": [
+      {
+        "key": "field_badiula_pompelmo_238",
+        "label": "🇮🇹 Italiano / 🇬🇧 English — Contenuti pagina",
+        "name": "tab_pompelmo",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_pompelmo_239",
+        "label": "Titolo H1 (IT, una riga per riga visiva)",
+        "name": "hero_titolo_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3,
+        "placeholder": "POMPELMO\nBIOLOGICO"
+      },
+      {
+        "key": "field_badiula_pompelmo_240",
+        "label": "Titolo H1 (EN, una riga per riga visiva)",
+        "name": "hero_titolo_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_241",
+        "label": "Sottotitolo H3 (IT)",
+        "name": "hero_sottotitolo_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_242",
+        "label": "Sottotitolo H3 (EN)",
+        "name": "hero_sottotitolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_243",
+        "label": "Intro — Paragrafo 1 (IT)",
+        "name": "intro_p1_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_pompelmo_244",
+        "label": "Intro — Paragrafo 1 (EN)",
+        "name": "intro_p1_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_pompelmo_245",
+        "label": "Intro — Paragrafo 2 (IT)",
+        "name": "intro_p2_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_pompelmo_246",
+        "label": "Intro — Paragrafo 2 (EN)",
+        "name": "intro_p2_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_pompelmo_248",
+        "label": "Caratteristiche — Titolo (IT)",
+        "name": "caratteristiche_titolo_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_249",
+        "label": "Caratteristiche — Titolo (EN)",
+        "name": "caratteristiche_titolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_250",
+        "label": "Caratteristiche — Frase introduttiva (IT)",
+        "name": "caratteristiche_lead_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_251",
+        "label": "Caratteristiche — Frase introduttiva (EN)",
+        "name": "caratteristiche_lead_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_252",
+        "label": "Caratteristiche — Elenco puntato (IT, una voce per riga)",
+        "name": "caratteristiche_lista_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_pompelmo_253",
+        "label": "Caratteristiche — Elenco puntato (EN, una voce per riga)",
+        "name": "caratteristiche_lista_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_pompelmo_247",
+        "label": "Caratteristiche — Immagine",
+        "name": "caratteristiche_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_badiula_pompelmo_254",
+        "label": "Titolo calendario (IT)",
+        "name": "calendario_titolo_it",
+        "type": "text",
+        "show_in_graphql": 0,
+        "placeholder": "CALENDARIO DI RACCOLTA"
+      },
+      {
+        "key": "field_badiula_pompelmo_255",
+        "label": "Titolo calendario (EN)",
+        "name": "calendario_titolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_256",
+        "label": "Gennaio — mese di raccolta attivo",
+        "name": "mese_01_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_257",
+        "label": "Febbraio — mese di raccolta attivo",
+        "name": "mese_02_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_258",
+        "label": "Marzo — mese di raccolta attivo",
+        "name": "mese_03_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_259",
+        "label": "Aprile — mese di raccolta attivo",
+        "name": "mese_04_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_260",
+        "label": "Maggio — mese di raccolta attivo",
+        "name": "mese_05_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_261",
+        "label": "Giugno — mese di raccolta attivo",
+        "name": "mese_06_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_262",
+        "label": "Luglio — mese di raccolta attivo",
+        "name": "mese_07_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_263",
+        "label": "Agosto — mese di raccolta attivo",
+        "name": "mese_08_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_264",
+        "label": "Settembre — mese di raccolta attivo",
+        "name": "mese_09_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_265",
+        "label": "Ottobre — mese di raccolta attivo",
+        "name": "mese_10_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_266",
+        "label": "Novembre — mese di raccolta attivo",
+        "name": "mese_11_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_267",
+        "label": "Dicembre — mese di raccolta attivo",
+        "name": "mese_12_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_pompelmo_269",
+        "label": "Usi consigliati — Titolo (IT)",
+        "name": "usi_consigliati_titolo_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_270",
+        "label": "Usi consigliati — Titolo (EN)",
+        "name": "usi_consigliati_titolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_271",
+        "label": "Usi consigliati — Frase introduttiva (IT)",
+        "name": "usi_consigliati_lead_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_272",
+        "label": "Usi consigliati — Frase introduttiva (EN)",
+        "name": "usi_consigliati_lead_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_273",
+        "label": "Usi consigliati — Elenco puntato (IT, una voce per riga)",
+        "name": "usi_consigliati_lista_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_pompelmo_274",
+        "label": "Usi consigliati — Elenco puntato (EN, una voce per riga)",
+        "name": "usi_consigliati_lista_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_pompelmo_268",
+        "label": "Usi consigliati — Immagine",
+        "name": "usi_consigliati_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_badiula_pompelmo_275",
+        "label": "Banner shop — Titolo (IT)",
+        "name": "banner_heading_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 2,
+        "placeholder": "Agrumi siciliani\ndirettamente dal produttore"
+      },
+      {
+        "key": "field_badiula_pompelmo_276",
+        "label": "Banner shop — Titolo (EN)",
+        "name": "banner_heading_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 2
+      },
+      {
+        "key": "field_badiula_pompelmo_277",
+        "label": "Banner shop — Sottotesto (IT)",
+        "name": "banner_sub_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_278",
+        "label": "Banner shop — Sottotesto (EN)",
+        "name": "banner_sub_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_279",
+        "label": "FAQ 1 — Domanda (IT)",
+        "name": "faq_1_domanda_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_280",
+        "label": "FAQ 1 — Domanda (EN)",
+        "name": "faq_1_domanda_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_281",
+        "label": "FAQ 1 — Risposta (IT)",
+        "name": "faq_1_risposta_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_282",
+        "label": "FAQ 1 — Risposta (EN)",
+        "name": "faq_1_risposta_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_283",
+        "label": "FAQ 2 — Domanda (IT)",
+        "name": "faq_2_domanda_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_284",
+        "label": "FAQ 2 — Domanda (EN)",
+        "name": "faq_2_domanda_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_285",
+        "label": "FAQ 2 — Risposta (IT)",
+        "name": "faq_2_risposta_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_286",
+        "label": "FAQ 2 — Risposta (EN)",
+        "name": "faq_2_risposta_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_287",
+        "label": "FAQ 3 — Domanda (IT)",
+        "name": "faq_3_domanda_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_288",
+        "label": "FAQ 3 — Domanda (EN)",
+        "name": "faq_3_domanda_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_289",
+        "label": "FAQ 3 — Risposta (IT)",
+        "name": "faq_3_risposta_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_290",
+        "label": "FAQ 3 — Risposta (EN)",
+        "name": "faq_3_risposta_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_291",
+        "label": "FAQ 4 — Domanda (IT)",
+        "name": "faq_4_domanda_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_292",
+        "label": "FAQ 4 — Domanda (EN)",
+        "name": "faq_4_domanda_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_pompelmo_293",
+        "label": "FAQ 4 — Risposta (IT)",
+        "name": "faq_4_risposta_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_pompelmo_294",
+        "label": "FAQ 4 — Risposta (EN)",
+        "name": "faq_4_risposta_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "pompelmo"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 1,
+    "show_in_graphql": 0,
+    "graphql_field_name": "acf"
+  }
+]

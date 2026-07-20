@@ -46,7 +46,7 @@ export default function AranciRosse() {
         name="TAROCCO"
         slogan="L'arancia rossa per eccellenza"
         image={{
-          src: 'https://images.unsplash.com/photo-1547514701-42782101795e?w=600&q=80&fit=crop',
+          src: '/images/immagini%20prodotto/Tarocco.png',
           alt: 'Arance Tarocco - polpa rossa',
         }}
       >
@@ -58,7 +58,7 @@ export default function AranciRosse() {
         name="MORO"
         slogan="La più pigmentata delle arance rosse"
         image={{
-          src: 'https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=600&q=80&fit=crop',
+          src: '/images/immagini%20prodotto/Moro.png',
           alt: 'Arance Moro - polpa rosso intenso',
         }}
         reverse

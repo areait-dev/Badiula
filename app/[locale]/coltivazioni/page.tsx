@@ -63,10 +63,7 @@ export default async function ColtivazioniPage({ params }: { params: { locale: s
 
       {/* ── SEZIONE 2: GRIGLIA PRODUZIONI ── */}
       <section className={styles.gridSection}>
-        <div className={styles.gridHeader}>
-          <h2 className={styles.gridTitle}>{gridTitolo}</h2>
-        </div>
-        <ProductionsTrack moreLabel={t('more')} />
+        <ProductionsTrack title={gridTitolo} moreLabel={t('more')} />
       </section>
 
       {/* ── SEZIONE 3a: CALENDARIO DI RACCOLTA ── */}

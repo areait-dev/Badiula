@@ -33,7 +33,7 @@ function splitTitle(name: string): string[] {
   return parts;
 }
 
-export default function ProductionsTrack({ moreLabel }: { moreLabel: string }) {
+export default function ProductionsTrack({ title, moreLabel }: { title: string; moreLabel: string }) {
   const wrapperRef  = useRef<HTMLDivElement>(null);
   const trackRef    = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
@@ -65,8 +65,8 @@ export default function ProductionsTrack({ moreLabel }: { moreLabel: string }) {
     if (!wrapper || !track) return;
 
     const ctx = gsap.context(() => {
-      const sidePad = parseFloat(getComputedStyle(wrapper).paddingRight) || 0;
-      const distance = () => track.scrollWidth - wrapper.clientWidth + sidePad * 2;
+      const sidePad = parseFloat(getComputedStyle(track).paddingRight) || 0;
+      const distance = () => Math.max(0, track.scrollWidth - window.innerWidth + sidePad);
 
       // Pausa di lettura a inizio/fine: il primo e l'ultimo 12% dello scroll
       // verticale non muovono il track, solo la fascia centrale interpola.
@@ -80,7 +80,7 @@ export default function ProductionsTrack({ moreLabel }: { moreLabel: string }) {
 
       ScrollTrigger.create({
         trigger: wrapper,
-        start: 'bottom bottom',
+        start: 'top top',
         end: () => `+=${distance()}`,
         pin: true,
         scrub: 1,
@@ -104,36 +104,41 @@ export default function ProductionsTrack({ moreLabel }: { moreLabel: string }) {
 
   return (
     <div ref={wrapperRef} className={styles.griglia}>
-      <div ref={trackRef} className={styles.track}>
-        {PRODUCTS.map((p) => (
-          <article key={p.slug} className={styles.card}>
-            <div className={styles.img}>
-              <Image
-                src={p.image}
-                alt={p.name}
-                fill
-                sizes="(max-width: 768px) 90vw, 33vw"
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
+      <div className={styles.gridHeader}>
+        <h2 className={styles.gridTitle}>{title}</h2>
+      </div>
+      <div className={styles.trackWrap}>
+        <div ref={trackRef} className={styles.track}>
+          {PRODUCTS.map((p) => (
+            <article key={p.slug} className={styles.card}>
+              <div className={styles.img}>
+                <Image
+                  src={p.image}
+                  alt={p.name}
+                  fill
+                  sizes="(max-width: 768px) 90vw, 33vw"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
 
-            <div className={styles.titleBox}>
-              <h3>
-                {splitTitle(p.name).map((part, i) => (
-                  <span key={i}>{part}<br /></span>
-                ))}
-              </h3>
-            </div>
+              <div className={styles.titleBox}>
+                <h3>
+                  {splitTitle(p.name).map((part, i) => (
+                    <span key={i}>{part}<br /></span>
+                  ))}
+                </h3>
+              </div>
 
-            <div className={styles.descBox}>
-              <p>{p.description}</p>
-            </div>
+              <div className={styles.descBox}>
+                <p>{p.description}</p>
+              </div>
 
-            <Link href={`/coltivazioni/${p.slug}`} className={styles.cta}>
-              {moreLabel}
-            </Link>
-          </article>
-        ))}
+              <Link href={`/coltivazioni/${p.slug}`} className={styles.cta}>
+                {moreLabel}
+              </Link>
+            </article>
+          ))}
+        </div>
       </div>
       <div ref={progressRef} className={styles.progress} />
     </div>

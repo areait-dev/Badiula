@@ -45,7 +45,7 @@ export default function AranceBionde() {
         name="NEWHALL"
         slogan="La Navel della prima stagione"
         image={{
-          src: 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab12?w=600&q=80&fit=crop',
+          src: '/images/immagini%20prodotto/Newhall.png',
           alt: 'Arance Newhall - Navel precoce',
         }}
       >
@@ -57,7 +57,7 @@ export default function AranceBionde() {
         name="LANE LATE"
         slogan="La Navel che prolunga la stagione fino a giugno"
         image={{
-          src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop',
+          src: '/images/immagini%20prodotto/LaneLate.png',
           alt: 'Arance Lane Late - Navel tardiva',
         }}
         reverse

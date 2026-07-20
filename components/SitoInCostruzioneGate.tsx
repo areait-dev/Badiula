@@ -15,10 +15,9 @@ const PAGINE_VISIBILI = [
 export default function SitoInCostruzioneGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  const isBloccataInDev = /^\/(it|en)\/(coltivazioni|shop)(\/|$)/.test(pathname);
-
-  // Gate disattivato in locale, tranne per /coltivazioni e /shop: restano bloccate anche in dev.
-  if (process.env.NODE_ENV !== 'production' && !isBloccataInDev) {
+  // Gate disattivato in locale (coltivazioni incluso).
+  // Lo shop invece è attivo solo in locale (dev): resta bloccato in produzione.
+  if (process.env.NODE_ENV !== 'production') {
     return <>{children}</>;
   }
 

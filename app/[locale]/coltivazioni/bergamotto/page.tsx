@@ -74,7 +74,7 @@ export default function BergamottoPage() {
         <div className={styles.blockAVisual}>
           <div className={styles.imgWrapCircle}>
             <Image
-              src="https://images.unsplash.com/photo-1432457990754-c8b5f21448de?w=600&q=80&fit=crop"
+              src="/images/immagini%20prodotto/Screenshot%202026-07-20%20144238.png"
               alt="Bergamotto biologico siciliano"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
@@ -111,8 +111,8 @@ export default function BergamottoPage() {
         <div className={styles.blockBVisual}>
           <div className={styles.imgWrapRect}>
             <Image
-              src="https://images.unsplash.com/photo-1717439062391-1c2932e1c051?w=600&q=80&fit=crop"
-              alt="Usi del bergamotto in cucina"
+              src="/images/immagini%20prodotto/image-removebg-preview%20(5).png"
+              alt="Bergamotti freschi raccolti"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               style={{ objectFit: 'cover' }}

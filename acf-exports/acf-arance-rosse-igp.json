@@ -1,0 +1,516 @@
+[
+  {
+    "key": "group_badiula_arance_rosse_igp",
+    "title": "Pagina Prodotto - Arance Rosse IGP",
+    "fields": [
+      {
+        "key": "field_badiula_arossa_1",
+        "label": "🇮🇹 Italiano / 🇬🇧 English — Contenuti pagina",
+        "name": "tab_arossa",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_arossa_2",
+        "label": "Titolo H1 (IT, una riga per riga visiva)",
+        "name": "hero_titolo_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3,
+        "placeholder": "ARANCE\nROSSE DI\nSICILIA IGP"
+      },
+      {
+        "key": "field_badiula_arossa_3",
+        "label": "Titolo H1 (EN, una riga per riga visiva)",
+        "name": "hero_titolo_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_4",
+        "label": "Sottotitolo H3 (IT)",
+        "name": "hero_sottotitolo_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_5",
+        "label": "Sottotitolo H3 (EN)",
+        "name": "hero_sottotitolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_6",
+        "label": "Intro — Paragrafo 1 (IT)",
+        "name": "intro_p1_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_arossa_7",
+        "label": "Intro — Paragrafo 1 (EN)",
+        "name": "intro_p1_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_arossa_8",
+        "label": "Intro — Paragrafo 2 (IT)",
+        "name": "intro_p2_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_arossa_9",
+        "label": "Intro — Paragrafo 2 (EN)",
+        "name": "intro_p2_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_arossa_10",
+        "label": "Varietà 1 — Nome (IT)",
+        "name": "varieta1_nome_it",
+        "type": "text",
+        "show_in_graphql": 0,
+        "placeholder": "es. TAROCCO"
+      },
+      {
+        "key": "field_badiula_arossa_11",
+        "label": "Varietà 1 — Nome (EN)",
+        "name": "varieta1_nome_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_12",
+        "label": "Varietà 1 — Slogan (IT)",
+        "name": "varieta1_slogan_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_13",
+        "label": "Varietà 1 — Slogan (EN)",
+        "name": "varieta1_slogan_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_14",
+        "label": "Varietà 1 — Testo (IT)",
+        "name": "varieta1_testo_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_arossa_15",
+        "label": "Varietà 1 — Testo (EN)",
+        "name": "varieta1_testo_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_arossa_16",
+        "label": "Varietà 1 — Immagine",
+        "name": "varieta1_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_badiula_arossa_17",
+        "label": "Varietà 2 — Nome (IT)",
+        "name": "varieta2_nome_it",
+        "type": "text",
+        "show_in_graphql": 0,
+        "placeholder": "es. TAROCCO"
+      },
+      {
+        "key": "field_badiula_arossa_18",
+        "label": "Varietà 2 — Nome (EN)",
+        "name": "varieta2_nome_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_19",
+        "label": "Varietà 2 — Slogan (IT)",
+        "name": "varieta2_slogan_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_20",
+        "label": "Varietà 2 — Slogan (EN)",
+        "name": "varieta2_slogan_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_21",
+        "label": "Varietà 2 — Testo (IT)",
+        "name": "varieta2_testo_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_arossa_22",
+        "label": "Varietà 2 — Testo (EN)",
+        "name": "varieta2_testo_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 5
+      },
+      {
+        "key": "field_badiula_arossa_23",
+        "label": "Varietà 2 — Immagine",
+        "name": "varieta2_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_badiula_arossa_24",
+        "label": "Titolo calendario (IT)",
+        "name": "calendario_titolo_it",
+        "type": "text",
+        "show_in_graphql": 0,
+        "placeholder": "CALENDARIO DI RACCOLTA"
+      },
+      {
+        "key": "field_badiula_arossa_25",
+        "label": "Titolo calendario (EN)",
+        "name": "calendario_titolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_26",
+        "label": "Gennaio — mese di raccolta attivo",
+        "name": "mese_01_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_27",
+        "label": "Febbraio — mese di raccolta attivo",
+        "name": "mese_02_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_28",
+        "label": "Marzo — mese di raccolta attivo",
+        "name": "mese_03_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_29",
+        "label": "Aprile — mese di raccolta attivo",
+        "name": "mese_04_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_30",
+        "label": "Maggio — mese di raccolta attivo",
+        "name": "mese_05_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_31",
+        "label": "Giugno — mese di raccolta attivo",
+        "name": "mese_06_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_32",
+        "label": "Luglio — mese di raccolta attivo",
+        "name": "mese_07_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_33",
+        "label": "Agosto — mese di raccolta attivo",
+        "name": "mese_08_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_34",
+        "label": "Settembre — mese di raccolta attivo",
+        "name": "mese_09_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_35",
+        "label": "Ottobre — mese di raccolta attivo",
+        "name": "mese_10_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_36",
+        "label": "Novembre — mese di raccolta attivo",
+        "name": "mese_11_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_37",
+        "label": "Dicembre — mese di raccolta attivo",
+        "name": "mese_12_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_arossa_38",
+        "label": "Sezione «Cosa significa IGP» — Titolo (IT)",
+        "name": "igp_titolo_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_39",
+        "label": "Sezione «Cosa significa IGP» — Titolo (EN)",
+        "name": "igp_titolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_40",
+        "label": "Sezione «Cosa significa IGP» — Paragrafo 1 (IT)",
+        "name": "igp_p1_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_arossa_41",
+        "label": "Sezione «Cosa significa IGP» — Paragrafo 1 (EN)",
+        "name": "igp_p1_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_arossa_42",
+        "label": "Sezione «Cosa significa IGP» — Paragrafo 2 (IT)",
+        "name": "igp_p2_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_arossa_43",
+        "label": "Sezione «Cosa significa IGP» — Paragrafo 2 (EN)",
+        "name": "igp_p2_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_arossa_44",
+        "label": "Banner shop — Titolo (IT)",
+        "name": "banner_heading_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 2,
+        "placeholder": "Agrumi siciliani\ndirettamente dal produttore"
+      },
+      {
+        "key": "field_badiula_arossa_45",
+        "label": "Banner shop — Titolo (EN)",
+        "name": "banner_heading_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 2
+      },
+      {
+        "key": "field_badiula_arossa_46",
+        "label": "Banner shop — Sottotesto (IT)",
+        "name": "banner_sub_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_47",
+        "label": "Banner shop — Sottotesto (EN)",
+        "name": "banner_sub_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_48",
+        "label": "FAQ 1 — Domanda (IT)",
+        "name": "faq_1_domanda_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_49",
+        "label": "FAQ 1 — Domanda (EN)",
+        "name": "faq_1_domanda_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_50",
+        "label": "FAQ 1 — Risposta (IT)",
+        "name": "faq_1_risposta_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_51",
+        "label": "FAQ 1 — Risposta (EN)",
+        "name": "faq_1_risposta_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_52",
+        "label": "FAQ 2 — Domanda (IT)",
+        "name": "faq_2_domanda_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_53",
+        "label": "FAQ 2 — Domanda (EN)",
+        "name": "faq_2_domanda_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_54",
+        "label": "FAQ 2 — Risposta (IT)",
+        "name": "faq_2_risposta_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_55",
+        "label": "FAQ 2 — Risposta (EN)",
+        "name": "faq_2_risposta_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_56",
+        "label": "FAQ 3 — Domanda (IT)",
+        "name": "faq_3_domanda_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_57",
+        "label": "FAQ 3 — Domanda (EN)",
+        "name": "faq_3_domanda_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_58",
+        "label": "FAQ 3 — Risposta (IT)",
+        "name": "faq_3_risposta_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_59",
+        "label": "FAQ 3 — Risposta (EN)",
+        "name": "faq_3_risposta_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_60",
+        "label": "FAQ 4 — Domanda (IT)",
+        "name": "faq_4_domanda_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_61",
+        "label": "FAQ 4 — Domanda (EN)",
+        "name": "faq_4_domanda_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_arossa_62",
+        "label": "FAQ 4 — Risposta (IT)",
+        "name": "faq_4_risposta_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_arossa_63",
+        "label": "FAQ 4 — Risposta (EN)",
+        "name": "faq_4_risposta_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "arance-rosse-igp"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 1,
+    "show_in_graphql": 0,
+    "graphql_field_name": "acf"
+  }
+]

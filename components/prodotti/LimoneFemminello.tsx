@@ -26,7 +26,7 @@ export default function LimoneFemminello() {
         name="CARATTERISTICHE"
         slogan="Tre raccolti, un profumo inconfondibile"
         image={{
-          src: 'https://images.unsplash.com/photo-1590502593747-42a996133562?w=600&q=80&fit=crop',
+          src: '/images/immagini%20prodotto/Limone%20Femminello.png',
           alt: 'Limone Femminello Siracusano IGP',
         }}
       >

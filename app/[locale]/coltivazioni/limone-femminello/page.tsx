@@ -55,11 +55,11 @@ export default function LimoneFemminelloPage() {
         <div className={styles.blockAVisual}>
           <div className={styles.imgWrapCircle}>
             <Image
-              src="https://images.unsplash.com/photo-1432457990754-c8b5f21448de?w=600&q=80&fit=crop"
+              src="/images/immagini%20prodotto/Limone%20Femminello.png"
               alt="Limone Femminello Siracusano"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'contain' }}
             />
           </div>
         </div>
@@ -68,13 +68,15 @@ export default function LimoneFemminelloPage() {
       {/* ── TRE RACCOLTI: riquadro sx · testo dx ── */}
       <section className={styles.blockB}>
         <div className={styles.blockBVisual}>
-          <div className={styles.imgWrapRect}>
-            <Image
-              src="https://images.unsplash.com/photo-1605185189315-fc269c231e41?w=600&q=80&fit=crop"
-              alt="Raccolta limoni Femminello"
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              style={{ objectFit: 'cover' }}
+          <div className={`${styles.imgWrapRect} ${styles.imgWrapSquare}`}>
+            <video
+              className={styles.videoFill}
+              src="/videos/dsc-7644.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
             />
           </div>
         </div>
@@ -113,8 +115,19 @@ export default function LimoneFemminelloPage() {
         </div>
       </section>
 
-      {/* ── USI CONSIGLIATI: 100px sx · testo · riquadro (bordo dx) ── */}
+      {/* ── USI CONSIGLIATI: testo sx · foto dx ── */}
       <section className={styles.blockB}>
+        <div className={styles.blockBVisual}>
+          <div className={styles.imgWrapRect}>
+            <Image
+              src="/images/Screenshot%202026-07-20%20140124.png"
+              alt="Limoni Femminello tagliati a metà, raccolta Badiula"
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+        </div>
         <div className={styles.blockBContent}>
           <h3 className={styles.blockTitle}>Usi consigliati</h3>
           <p className={styles.blockLead}>I limoni Femminello sono ideali per:</p>
@@ -125,17 +138,6 @@ export default function LimoneFemminelloPage() {
             <li><strong>Cucina mediterranea</strong>: condimento di pesce, insalate, marinate</li>
             <li><strong>Conserve</strong>: marmellate di limone, limoncello, limoni sotto sale</li>
           </ul>
-        </div>
-        <div className={styles.blockBVisual}>
-          <div className={styles.imgWrapRect}>
-            <Image
-              src="https://images.unsplash.com/photo-1717439062391-1c2932e1c051?w=600&q=80&fit=crop"
-              alt="Usi del limone Femminello in cucina"
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
         </div>
       </section>
 

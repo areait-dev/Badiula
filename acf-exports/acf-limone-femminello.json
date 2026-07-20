@@ -1,0 +1,401 @@
+[
+  {
+    "key": "group_badiula_limone_femminello",
+    "title": "Pagina Prodotto - Limone Femminello Siracusano",
+    "fields": [
+      {
+        "key": "field_badiula_limone_127",
+        "label": "🇮🇹 Italiano / 🇬🇧 English — Contenuti pagina",
+        "name": "tab_limone",
+        "type": "tab",
+        "placement": "top"
+      },
+      {
+        "key": "field_badiula_limone_128",
+        "label": "Titolo H1 (IT, una riga per riga visiva)",
+        "name": "hero_titolo_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3,
+        "placeholder": "LIMONE\nFEMMINELLO\nSIRACUSANO"
+      },
+      {
+        "key": "field_badiula_limone_129",
+        "label": "Titolo H1 (EN, una riga per riga visiva)",
+        "name": "hero_titolo_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_limone_130",
+        "label": "Sottotitolo H3 (IT)",
+        "name": "hero_sottotitolo_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_131",
+        "label": "Sottotitolo H3 (EN)",
+        "name": "hero_sottotitolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_132",
+        "label": "Intro — Paragrafo 1 (IT)",
+        "name": "intro_p1_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_limone_133",
+        "label": "Intro — Paragrafo 1 (EN)",
+        "name": "intro_p1_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_limone_134",
+        "label": "Intro — Paragrafo 2 (IT)",
+        "name": "intro_p2_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_limone_135",
+        "label": "Intro — Paragrafo 2 (EN)",
+        "name": "intro_p2_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 4
+      },
+      {
+        "key": "field_badiula_limone_137",
+        "label": "Caratteristiche — Titolo (IT)",
+        "name": "caratteristiche_titolo_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_138",
+        "label": "Caratteristiche — Titolo (EN)",
+        "name": "caratteristiche_titolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_139",
+        "label": "Caratteristiche — Frase introduttiva (IT)",
+        "name": "caratteristiche_lead_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_140",
+        "label": "Caratteristiche — Frase introduttiva (EN)",
+        "name": "caratteristiche_lead_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_141",
+        "label": "Caratteristiche — Elenco puntato (IT, una voce per riga)",
+        "name": "caratteristiche_lista_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_limone_142",
+        "label": "Caratteristiche — Elenco puntato (EN, una voce per riga)",
+        "name": "caratteristiche_lista_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_limone_136",
+        "label": "Caratteristiche — Immagine",
+        "name": "caratteristiche_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_badiula_limone_144",
+        "label": "Tre raccolti, una stagionalità prolungata — Titolo (IT)",
+        "name": "tre_raccolti_titolo_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_145",
+        "label": "Tre raccolti, una stagionalità prolungata — Titolo (EN)",
+        "name": "tre_raccolti_titolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_146",
+        "label": "Tre raccolti, una stagionalità prolungata — Frase introduttiva (IT)",
+        "name": "tre_raccolti_lead_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_147",
+        "label": "Tre raccolti, una stagionalità prolungata — Frase introduttiva (EN)",
+        "name": "tre_raccolti_lead_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_148",
+        "label": "Tre raccolti, una stagionalità prolungata — Elenco puntato (IT, una voce per riga)",
+        "name": "tre_raccolti_lista_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_limone_149",
+        "label": "Tre raccolti, una stagionalità prolungata — Elenco puntato (EN, una voce per riga)",
+        "name": "tre_raccolti_lista_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_limone_143",
+        "label": "Tre raccolti, una stagionalità prolungata — Video",
+        "name": "tre_raccolti_video",
+        "type": "file",
+        "show_in_graphql": 0,
+        "return_format": "array",
+        "library": "all"
+      },
+      {
+        "key": "field_badiula_limone_150",
+        "label": "Titolo calendario (IT)",
+        "name": "calendario_titolo_it",
+        "type": "text",
+        "show_in_graphql": 0,
+        "placeholder": "CALENDARIO DI RACCOLTA"
+      },
+      {
+        "key": "field_badiula_limone_151",
+        "label": "Titolo calendario (EN)",
+        "name": "calendario_titolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_152",
+        "label": "Gennaio — mese di raccolta attivo",
+        "name": "mese_01_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_153",
+        "label": "Febbraio — mese di raccolta attivo",
+        "name": "mese_02_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_154",
+        "label": "Marzo — mese di raccolta attivo",
+        "name": "mese_03_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_155",
+        "label": "Aprile — mese di raccolta attivo",
+        "name": "mese_04_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_156",
+        "label": "Maggio — mese di raccolta attivo",
+        "name": "mese_05_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_157",
+        "label": "Giugno — mese di raccolta attivo",
+        "name": "mese_06_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_158",
+        "label": "Luglio — mese di raccolta attivo",
+        "name": "mese_07_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_159",
+        "label": "Agosto — mese di raccolta attivo",
+        "name": "mese_08_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_160",
+        "label": "Settembre — mese di raccolta attivo",
+        "name": "mese_09_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_161",
+        "label": "Ottobre — mese di raccolta attivo",
+        "name": "mese_10_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_162",
+        "label": "Novembre — mese di raccolta attivo",
+        "name": "mese_11_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_163",
+        "label": "Dicembre — mese di raccolta attivo",
+        "name": "mese_12_attivo",
+        "type": "true_false",
+        "show_in_graphql": 0,
+        "ui": 1
+      },
+      {
+        "key": "field_badiula_limone_165",
+        "label": "Usi consigliati — Titolo (IT)",
+        "name": "usi_consigliati_titolo_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_166",
+        "label": "Usi consigliati — Titolo (EN)",
+        "name": "usi_consigliati_titolo_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_167",
+        "label": "Usi consigliati — Frase introduttiva (IT)",
+        "name": "usi_consigliati_lead_it",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_168",
+        "label": "Usi consigliati — Frase introduttiva (EN)",
+        "name": "usi_consigliati_lead_en",
+        "type": "text",
+        "show_in_graphql": 0
+      },
+      {
+        "key": "field_badiula_limone_169",
+        "label": "Usi consigliati — Elenco puntato (IT, una voce per riga)",
+        "name": "usi_consigliati_lista_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_limone_170",
+        "label": "Usi consigliati — Elenco puntato (EN, una voce per riga)",
+        "name": "usi_consigliati_lista_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 6
+      },
+      {
+        "key": "field_badiula_limone_164",
+        "label": "Usi consigliati — Immagine",
+        "name": "usi_consigliati_immagine",
+        "type": "image",
+        "show_in_graphql": 0,
+        "return_format": "array",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_badiula_limone_171",
+        "label": "Banner shop — Titolo (IT)",
+        "name": "banner_heading_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 2,
+        "placeholder": "Agrumi siciliani\ndirettamente dal produttore"
+      },
+      {
+        "key": "field_badiula_limone_172",
+        "label": "Banner shop — Titolo (EN)",
+        "name": "banner_heading_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 2
+      },
+      {
+        "key": "field_badiula_limone_173",
+        "label": "Banner shop — Sottotesto (IT)",
+        "name": "banner_sub_it",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      },
+      {
+        "key": "field_badiula_limone_174",
+        "label": "Banner shop — Sottotesto (EN)",
+        "name": "banner_sub_en",
+        "type": "textarea",
+        "show_in_graphql": 0,
+        "rows": 3
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "page",
+          "operator": "==",
+          "value": "limone-femminello"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 1,
+    "show_in_graphql": 0,
+    "graphql_field_name": "acf"
+  }
+]

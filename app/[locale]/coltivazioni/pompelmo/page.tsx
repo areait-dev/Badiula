@@ -74,7 +74,7 @@ export default function PompelmoPage() {
         <div className={styles.blockAVisual}>
           <div className={styles.imgWrapCircle}>
             <Image
-              src="https://images.unsplash.com/photo-1597714026720-8f74c62310ba?w=600&q=80&fit=crop"
+              src="/images/pompelmo.jpg"
               alt="Pompelmo biologico siciliano"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
@@ -111,8 +111,8 @@ export default function PompelmoPage() {
         <div className={styles.blockBVisual}>
           <div className={styles.imgWrapRect}>
             <Image
-              src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=600&q=80&fit=crop"
-              alt="Usi del pompelmo in cucina e mixology"
+              src="/images/Screenshot%202026-07-20%20163605.png"
+              alt="Pompelmo tagliato con succo fresco"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               style={{ objectFit: 'cover' }}

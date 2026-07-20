@@ -1,5 +1,5 @@
 .section {
-  padding: 100px 0;
+  padding: var(--space-2xl) 0;
   border-top: 1px solid rgba(108, 18, 36, 0.15);
 }
 
@@ -35,7 +35,6 @@
 .body p + p { margin-top: 1rem; }
 
 @media (max-width: 767px) {
-  .section { padding: 64px 0; }
   .inner   { padding: 0 var(--page-margin-mobile); }
   .title   { font-size: 22px; }
 }

@@ -81,22 +81,22 @@
   text-align: left;
 }
 
-/* ── Wrapper centrato allineato al testo sopra ── */
-.wrapperGriglia {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 4rem;
+/* ── Griglia: wrapper pinnato da GSAP, contiene header + track (come l'homepage) ── */
+.griglia {
+  background: var(--white);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ── Griglia: contenitore che clippa il track ── */
-.griglia {
-  position: relative;
-  height: 900px;
-  overflow: visible;
-  padding: 0;
+/* ── Track wrapper: nasconde lo sforamento orizzontale ── */
+.trackWrap {
+  overflow-x: clip;
+  overflow-y: visible;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  padding-bottom: 20px;
 }
 
 /* ── Track: flex orizzontale mosso via translateX ── */
@@ -105,7 +105,7 @@
   align-items: flex-start;
   gap: 1.5rem;
   width: max-content;
-  padding: 0 180px;
+  padding: 1rem 180px;
   will-change: transform;
 }
 
@@ -116,11 +116,11 @@
   transition: width 0.1s linear;
 }
 
-/* ── Card carousel - 560×900px come da §5.10 CLAUDE.md ── */
+/* ── Card carousel - 560×620px, identica all'homepage (§5.10/§5.11 CLAUDE.md) ── */
 .card {
   flex: 0 0 560px;
   width: 560px;
-  height: 900px;
+  height: 620px;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -129,15 +129,21 @@
 
 .img {
   position: relative;
-  flex: 0 0 463px;
+  flex: 0 0 280px;
   width: 560px;
-  height: 463px;
+  height: 280px;
   overflow: hidden;
+}
+.img img {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+.card:hover .img img {
+  transform: scale(1.04) !important;
 }
 
 .titleBox {
-  height: 150px;
-  margin-top: 45px;
+  height: 135px;
+  margin-top: 28px;
   padding: 0 24px;
   display: flex;
   align-items: flex-start;
@@ -150,6 +156,7 @@
   font-weight: 700;
   margin: 0;
   text-transform: uppercase;
+  letter-spacing: 0;
 }
 .card h3 span {
   display: block;
@@ -157,8 +164,8 @@
 }
 
 .descBox {
-  height: 90px;
-  margin-top: 25px;
+  height: auto;
+  margin-top: 8px;
   padding: 0 24px;
   overflow: hidden;
 }
@@ -171,31 +178,58 @@
 
 .cta {
   height: 36px;
-  margin: 49px 0 25px 24px;
+  margin-top: auto;
+  margin-bottom: 32px;
+  margin-left: 24px;
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   padding: 0 18px;
-  border: 1.5px solid;
+  border: 1.5px solid currentColor;
   border-radius: 999px;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
 /* Alternanza colori identica all'homepage */
-.card:nth-child(odd)          { background: var(--vanilla); }
+.card:nth-child(odd)             { background: var(--vanilla); }
 .card:nth-child(odd) h3,
-.card:nth-child(odd) p        { color: var(--bordeaux); }
-.card:nth-child(odd) .cta     { color: var(--bordeaux); border-color: var(--bordeaux); }
+.card:nth-child(odd) p           { color: var(--bordeaux); }
+.card:nth-child(odd) .cta        { color: var(--bordeaux); border-color: var(--bordeaux); }
+.card:nth-child(odd) .cta:hover  { background-color: var(--khaki); border-color: var(--khaki); }
+.card:nth-child(odd) .cta:active { background-color: var(--bordeaux); border-color: var(--bordeaux); color: var(--white); }
 
-.card:nth-child(even)         { background: var(--teal); }
+.card:nth-child(even)             { background: var(--teal); }
 .card:nth-child(even) h3,
-.card:nth-child(even) p       { color: var(--vanilla); }
-.card:nth-child(even) .cta    { color: var(--vanilla); border-color: var(--vanilla); }
+.card:nth-child(even) p           { color: var(--vanilla); }
+.card:nth-child(even) .cta        { color: var(--vanilla); border-color: var(--vanilla); }
+.card:nth-child(even) .cta:hover  { background-color: var(--vanilla); border-color: var(--vanilla); color: var(--eigengrau); }
+.card:nth-child(even) .cta:active { background-color: var(--eigengrau); border-color: var(--eigengrau); color: var(--white); }
+
+/* ── Laptop 13"-16" (viewport basso): stesso fix dell'homepage ── */
+@media (min-width: 1024px) and (max-height: 900px) {
+  .gridHeader { padding: 3rem 180px 1.5rem; }
+  .trackWrap { padding-bottom: 12px; }
+  .track { padding: 0.75rem 180px; }
+  .card { height: 545px; }
+  .img { flex: 0 0 260px; height: 260px; }
+  .titleBox { margin-top: 6px; }
+  .cta { margin-bottom: 26px; }
+}
+
+@media (min-width: 1024px) and (max-height: 760px) {
+  .gridHeader { padding: 2rem 180px 1rem; }
+  .card { height: 480px; }
+  .img { flex: 0 0 230px; height: 230px; }
+  .titleBox { height: 120px; margin-top: 4px; }
+  .cta { margin-bottom: 18px; }
+}
 
 /* ────────────────────────────────────────────
    SEZIONE 3a – CALENDARIO DI RACCOLTA
@@ -268,10 +302,10 @@
 
 .bannerSub {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.75);
   white-space: pre-line;
 }
 
@@ -279,13 +313,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.85rem 3rem;
-  border-radius: 100px;
+  padding: 0.85rem 2rem;
+  border-radius: 999px;
   border: 1.5px solid rgba(255, 255, 255, 0.75);
   font-family: var(--font-body);
-  font-size: 28px;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--white);
   white-space: nowrap;
@@ -323,6 +357,8 @@
   /* Track: griglia 2 colonne su tablet, colonna su mobile */
   .griglia {
     height: auto;
+  }
+  .trackWrap {
     overflow: visible;
   }
   .track {
