@@ -110,13 +110,21 @@
   margin-top: 8px;
 }
 
-.body p {
+/* Tipografia base sul contenitore, non solo su p/li: il contenuto CMS
+   (dangerouslySetInnerHTML) a volte arriva senza tag <p> attorno al testo
+   introduttivo (testo nudo diretto dentro .body) — senza questa regola
+   quel testo eredita il default browser 16px invece di --text-body-1-size. */
+.body {
   font-family: var(--font-body);
   font-size: var(--text-body-1-size);
   line-height: var(--text-body-1-line);
   font-weight: 400;
   color: var(--eigengrau);
   letter-spacing: 0;
+}
+
+.body p {
+  margin-top: 0;
 }
 .body p + p { margin-top: 1.5em; }
 
@@ -137,6 +145,13 @@
 .body strong {
   font-weight: 700;
   color: var(--bordeaux);
+}
+
+/* Contenuto CMS (dangerouslySetInnerHTML) può iniettare tag testuali diversi
+   da p/li (div, span, em, a, ...): copre tutti gli elementi testuali dentro
+   .body così il CMS non può introdurre un font non ereditato. */
+.body :is(div, span, em, a, b, i) {
+  font-family: var(--font-body);
 }
 
 /* Paragrafo interamente in grassetto = mini-titolo (es. "Impianto fotovoltaico
@@ -241,7 +256,11 @@
   margin-bottom: -120px;
 }
 
-@media (max-width: 1024px) {
+/* Sotto 1024px, o qualunque dispositivo a input touch primario (iPad e
+   simili, in ogni orientamento/dimensione — anche iPad Pro landscape a
+   1194/1366px che una soglia di sola larghezza non intercetterebbe mai):
+   la sezione zigzag immagine+testo passa a stack verticale. */
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
   .section {
     grid-template-columns: 1fr;
     padding: 64px var(--page-margin-mobile);

@@ -50,21 +50,23 @@
   white-space: nowrap;
 }
 
+/* Tipografia base sul contenitore, non solo su p: contenuto CMS può
+   arrivare senza tag <p> attorno al testo — senza questa regola erediterebbe
+   il default browser 16px invece di --text-body-1-size (vedi stesso fix in
+   SectionZigzag.module.css). */
 .body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto;
-}
-
-.body p {
   font-family: var(--font-body);
   font-size: var(--text-body-1-size);
   line-height: var(--text-body-1-line);
   font-weight: 400;
   color: var(--eigengrau);
   letter-spacing: 0;
+  text-align: center;
 }
 
 .h2NoWrap {
