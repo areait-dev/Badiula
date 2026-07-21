@@ -9,6 +9,12 @@ import styles from './HorizontalScroll.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Su iPad Safari mostrare/nascondere la barra degli indirizzi durante lo swipe
+// scatena un resize che ScrollTrigger interpreta come cambio di layout, ricalcola
+// il pin a metà gesto e lo lascia "agganciato": lo scroll verticale non riprende
+// dopo la prima sezione orizzontale. ignoreMobileResize evita quel ricalcolo.
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 interface HorizontalScrollProps {
   p1Eyebrow?: string;
   p1Heading?: string;
@@ -43,9 +49,15 @@ export default function HorizontalScroll({
   const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Sotto 768px, oppure su qualunque dispositivo a input touch primario
+    // (iPad e simili, anche in landscape ≥1024px): niente scroll orizzontale
+    // pinnato, resta il flusso verticale a stack — stesso criterio usato per
+    // lo shop (hover/pointer, non solo la larghezza: iPadOS non è rilevabile
+    // in modo affidabile via user-agent).
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const isTouchPrimary = window.matchMedia('(hover: none), (pointer: coarse)').matches;
     const reduce   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (isMobile || reduce) return;
+    if (isMobile || isTouchPrimary || reduce) return;
 
     const wrapper = wrapperRef.current;
     const track   = trackRef.current;

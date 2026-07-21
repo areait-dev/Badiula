@@ -116,7 +116,10 @@ export default function LimoneFemminelloPage() {
       </section>
 
       {/* ── USI CONSIGLIATI: testo sx · foto dx ── */}
-      <section className={styles.blockB}>
+      {/* Subito prima del banner shop (foto della ragazza con arance): niente
+          sezione di testo in mezzo, quindi qui la foto resta prima del testo
+          nello stack mobile/touch, per non avere due foto ravvicinate. */}
+      <section className={`${styles.blockB} ${styles.beforeBanner}`}>
         <div className={styles.blockBVisual}>
           <div className={styles.imgWrapRect}>
             <Image

@@ -1302,5 +1302,15 @@ Prima di creare un nuovo componente:
 - [ ] Nessun colore hardcoded?
 - [ ] Icone solo dal set brand?
 
+---
+
+## 17. DESIGN CONTEXT (impeccable)
+
+Il progetto ha `PRODUCT.md` (register, utenti, positioning, anti-riferimenti strategici) e `DESIGN.md` (North Star "La Terra Prima del Prodotto", palette/tipografia/componenti nel formato DESIGN.md) alla root del repo. Questo CLAUDE.md resta l'autorità normativa sui token esatti (§2-§10.X) — DESIGN.md ne è la trascrizione nel formato letto dagli strumenti impeccable e non la sostituisce.
+
+
+
+
+
 
 

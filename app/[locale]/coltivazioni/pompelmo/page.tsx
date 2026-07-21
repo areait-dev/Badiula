@@ -107,7 +107,10 @@ export default function PompelmoPage() {
       </section>
 
       {/* ── USI CONSIGLIATI: riquadro sx · testo dx ── */}
-      <section className={styles.blockB}>
+      {/* Subito prima del banner shop (foto della ragazza con arance): niente
+          sezione di testo in mezzo, quindi qui la foto resta prima del testo
+          nello stack mobile/touch, per non avere due foto ravvicinate. */}
+      <section className={`${styles.blockB} ${styles.beforeBanner}`}>
         <div className={styles.blockBVisual}>
           <div className={styles.imgWrapRect}>
             <Image

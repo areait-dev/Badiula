@@ -36,13 +36,16 @@ function splitTitle(name: string): string[] {
 export default function ProductionsTrack({ title, moreLabel }: { title: string; moreLabel: string }) {
   const wrapperRef  = useRef<HTMLDivElement>(null);
   const trackRef    = useRef<HTMLDivElement>(null);
-  const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const isNarrow = window.matchMedia('(max-width: 1023px)').matches;
-    const reduce   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Anche su touch primario (iPad e simili, incluso landscape ≥1024px) va
+    // usata la griglia fluida invece dello scroll-jacking orizzontale — non
+    // solo sotto 1023px di larghezza.
+    const isNarrow       = window.matchMedia('(max-width: 1023px)').matches;
+    const isTouchPrimary = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+    const reduce         = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (isNarrow) {
+    if (isNarrow || isTouchPrimary) {
       if (reduce) return;
       const cards = wrapperRef.current?.querySelectorAll<HTMLElement>(`.${styles.card}`);
       if (!cards) return;
@@ -87,9 +90,6 @@ export default function ProductionsTrack({ title, moreLabel }: { title: string; 
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           gsap.set(track, { x: -distance() * remapProgress(self.progress) });
-          if (progressRef.current) {
-            progressRef.current.style.width = `${self.progress * 100}%`;
-          }
         },
       });
     }, wrapper);
@@ -140,7 +140,6 @@ export default function ProductionsTrack({ title, moreLabel }: { title: string; 
           ))}
         </div>
       </div>
-      <div ref={progressRef} className={styles.progress} />
     </div>
   );
 }

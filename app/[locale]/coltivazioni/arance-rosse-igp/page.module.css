@@ -385,17 +385,24 @@
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
   .h1Row1, .h1Row2, .h1Row3 { white-space: normal; }
 }
 
-/* Tablet (768–1023px): margini laterali ridotti rispetto al desktop */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Tablet (768–1023px), o qualunque dispositivo a input touch primario (iPad
+   e simili, incluso landscape ≥1024px): margini laterali ridotti rispetto
+   al desktop */
+@media (min-width: 768px) and (max-width: 1023px), (min-width: 768px) and (hover: none), (min-width: 768px) and (pointer: coarse) {
   .intro     { padding-left: 2.5rem; padding-right: 2.5rem; }
   .container { padding-left: 2.5rem; padding-right: 2.5rem; }
 }
 
-@media (max-width: 767px) {
+/* Sotto 767px, o qualunque dispositivo a input touch primario (iPad e
+   simili, in ogni orientamento/dimensione): la sezione zigzag .variety e
+   il resto del contenuto passano a stack verticale — senza il criterio
+   touch, un iPad in landscape (o anche portrait) restava a 2 colonne come
+   da desktop, dato che la soglia originale era solo di larghezza a 767px. */
+@media (max-width: 767px), (hover: none), (pointer: coarse) {
   .intro { padding: 64px var(--page-margin-mobile) 48px; }
   .introHero { margin-bottom: 40px; }
   .introBody { max-width: 100%; }
@@ -406,12 +413,15 @@
     grid-template-columns: 1fr;
     padding: 64px var(--page-margin-mobile);
   }
-  .varietyVisual { order: 1 !important; margin-bottom: 36px; }
+  /* Testo prima della foto, e a larghezza piena (la base ha max-width:520px
+     pensato per la colonna desktop). */
   .varietyContent {
-    order: 2 !important;
+    order: 1 !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
+    max-width: 100% !important;
   }
+  .varietyVisual { order: 2 !important; margin-top: 36px; }
   .circle { width: 200px; height: 200px; }
   .varietyDesc { max-width: 100%; }
 

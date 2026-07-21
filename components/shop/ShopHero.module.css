@@ -88,7 +88,10 @@
 @media (max-width: 1023px) {
   .hero {
     padding: var(--space-xl) var(--space-md);
-    padding-top: calc(80px + var(--space-xl));
+    /* Navbar overlay is 80px tall on mobile/tablet but the wordmark logo
+       inside it is 150px tall and vertically overflows to ~155px from the
+       top — clear that before the title starts. */
+    padding-top: 210px;
   }
 
   .grid {

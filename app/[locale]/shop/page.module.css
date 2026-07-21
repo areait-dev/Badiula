@@ -1,0 +1,17 @@
+/* Section divider between ShopSlider (agrumi) and LuceDiTerraShop (barattoli) */
+.sectionDivider {
+  background: var(--white);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+}
+
+.sectionTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
+  font-weight: 700;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: 0;
+}

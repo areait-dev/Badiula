@@ -324,7 +324,11 @@
   display: none;
 }
 
-@media (max-width: 1023px) {
+/* Sotto 1024px, o qualunque dispositivo a input touch primario (iPad e
+   simili, incluso landscape ≥1024px): il layout sticky a nastri richiede un
+   puntatore preciso (wheel) per cambiare slide — su touch resta impantanato
+   sulla prima. Passa sempre allo stack verticale a scroll normale. */
+@media (max-width: 1023px), (hover: none), (pointer: coarse) {
 
   /* Sezione: altezza automatica, scroll normale */
   .section {

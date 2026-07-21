@@ -7,6 +7,14 @@
   .sliderWrapper { display: none; }
 }
 
+/* Touch primario (iPad e simili), qualsiasi larghezza inclusa la landscape
+   ≥1024px: lo scroll-jacking orizzontale non si presta al touch — passa
+   sempre alla lista verticale. Lo slider orizzontale resta riservato ai
+   dispositivi con puntatore preciso (mouse/trackpad). */
+@media (min-width: 1024px) and (hover: none), (min-width: 1024px) and (pointer: coarse) {
+  .sliderWrapper { display: none; }
+}
+
 /* ── Desktop slider ── */
 .slider {
   position: sticky;
@@ -30,37 +38,88 @@
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   overflow: hidden;
   will-change: transform;
 }
 
-.leftNum {
-  position: absolute;
-  top: var(--space-lg);
-  left: var(--space-lg);
+/* Upper 2/3 — white background, hosts the centered cutout/hero image */
+.leftTop {
+  position: relative;
+  flex: 0 0 66.6667%;
+  height: 66.6667%;
+  background: var(--white);
+  overflow: hidden;
+}
+
+/* Lower 1/3 — three equal-width Badiula-palette squares, colors rotate per product */
+.leftBottom {
+  position: relative;
+  flex: 0 0 33.3333%;
+  height: 33.3333%;
+  display: flex;
+}
+
+.colorSquare {
+  width: 33.3333%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.squareNumber {
   font-family: var(--font-body);
-  font-size: 110px;
-  line-height: 122px;
+  font-size: 40px;
+  line-height: 45px;
   font-weight: 700;
-  opacity: 0.1;
-  z-index: 1;
+  color: var(--white);
   letter-spacing: 0;
-  pointer-events: none;
+  -webkit-user-select: none;
   user-select: none;
 }
 
-/* Cutout transparent PNG - absolute sibling of panels, parallax via GSAP */
+/* Cutout transparent PNG - absolute sibling of panels, parallax via GSAP.
+   Fixed 420x420 container, normalized across all products; centered within
+   the upper 2/3 band (band spans 0%-66.6667% of the panel, so its own
+   center sits at 33.3333%). */
 .cutoutWrap {
   position: absolute;
-  left: 15%;
-  top: 12.5%;
-  width: 70%;
-  height: 75vh;
+  left: 50%;
+  top: 33.3333%;
+  width: 420px;
+  height: 420px;
+  margin-left: -210px;
+  margin-top: -210px;
   z-index: 3;
   will-change: transform;
   pointer-events: none;
+  perspective: 800px;
+}
+
+/* Continuous float + dynamic drop-shadow — animated via GSAP keyframes in ShopSlider.tsx */
+.cutoutFloat {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+/* 3D mouse-parallax tilt — driven by GSAP mousemove handler in ShopSlider.tsx */
+.cutoutRotate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+/* Uniform 40px inner padding, image always contained (never cropped).
+   Absolute inset (not CSS padding) because the Image uses `fill`, whose
+   containing block for an absolutely positioned child is the padding box
+   of the nearest positioned ancestor — plain padding would be ignored. */
+.cutoutInner {
+  position: absolute;
+  inset: 40px;
 }
 
 /* Hero cover image fallback */
@@ -122,16 +181,22 @@
   letter-spacing: 0;
 }
 
-/* Title - H3 scale (60px) */
+/* Title - H3 scale, responsive (CLAUDE.md §3/§10.X: 60px desktop, 48px 1024-1279px) */
 .prodTitle {
   font-family: var(--font-body);
-  font-size: 60px;
-  line-height: 66px;
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
   font-weight: 700;
   color: var(--bordeaux);
   text-transform: uppercase;
   letter-spacing: 0;
   margin: 0 0 var(--space-sm);
+}
+
+/* Per-word span for GSAP stagger reveal on product change */
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
 }
 
 /* Subtitle - body-1 italic */
@@ -146,7 +211,12 @@
   margin: 0 0 var(--space-sm);
 }
 
-/* Description - body-2 */
+/* Description - body-2.
+   flex-shrink:0 + min-height are required here: .rightInner is a flex column,
+   and a -webkit-line-clamp box as a direct flex child gets its intrinsic
+   height collapsed by the flex algorithm's default min-height:auto/flex-shrink:1
+   *before* the line-clamp height is computed — without this it renders at
+   ~0-7px instead of two full lines, making the description invisible. */
 .prodDesc {
   font-family: var(--font-body);
   font-size: var(--text-body-2-size);
@@ -158,6 +228,8 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  flex-shrink: 0;
+  min-height: calc(var(--text-body-2-line) * 2);
 }
 
 /* Details 3 columns */
@@ -227,11 +299,11 @@
   margin-bottom: var(--space-sm);
 }
 
-/* Price - H3 scale (60px) */
+/* Price - H3 scale, responsive (CLAUDE.md §3/§10.X: 60px desktop, 48px 1024-1279px) */
 .price {
   font-family: var(--font-body);
-  font-size: 60px;
-  line-height: 66px;
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
   font-weight: 700;
   color: var(--bordeaux);
   letter-spacing: 0;
@@ -310,57 +382,16 @@
   transition-duration: 150ms;
 }
 
-/* Nav row */
-.navRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: var(--space-sm);
-}
-
-.navArrows {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-
-.navArrow {
-  background: none;
-  border: none;
-  font-size: var(--text-body-1-size);
-  line-height: var(--text-body-1-line);
-  color: var(--bordeaux);
-  cursor: pointer;
-  min-width: 44px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 200ms ease;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .navArrow:hover:not(:disabled) { opacity: 0.5; }
-}
-
-.navArrow:disabled {
-  opacity: 0.2;
-  cursor: default;
-}
-
-.navArrow:focus-visible {
-  outline: 2px solid var(--bordeaux);
-  outline-offset: 2px;
-  border-radius: var(--radius-badge);
-}
-
+/* Next hint — now a direct rightInner child (no longer wrapped in .navRow) */
 .nextHint {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: var(--space-xs);
   opacity: 0.5;
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  align-self: flex-end;
 }
 
 .nextLine {
@@ -380,47 +411,87 @@
   letter-spacing: 0;
 }
 
-/* ── Dot navigation (fixed right) ── */
-.dots {
+/* ── Progress rail (fixed right) — replaces the old dot nav.
+   A thin vertical track with a sliding filled segment marking the current
+   product out of the total; the up/down arrows are invisible until the rail
+   itself is hovered, so they don't compete visually with the track. ── */
+.progressRail {
   position: fixed;
   right: var(--space-md);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  align-items: center;
+  gap: var(--space-xs);
   z-index: 50;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+}
+
+.progressNum {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
+  font-weight: 700;
+  color: var(--bordeaux);
+  letter-spacing: 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.progressNumTotal {
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.progressTrack {
+  position: relative;
+  width: 2px;
+  height: 120px;
+  background: rgba(108, 18, 36, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: var(--bordeaux);
+  border-radius: 2px;
+  transition: top 400ms ease, height 400ms ease;
+}
+
+.progressArrow {
   background: none;
   border: none;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: var(--radius-dot);
-  background: var(--bordeaux);
-  opacity: 0.2;
-  border: none;
+  font-size: var(--text-body-2-size);
+  line-height: 1;
+  color: var(--bordeaux);
   cursor: pointer;
-  padding: 0;
-  transition: width 300ms ease, height 300ms ease, opacity 300ms ease;
-  min-width: 0;
-  min-height: 0;
+  min-width: 44px;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 200ms ease;
 }
 
-.dotActive {
-  width: 8px;
-  height: 8px;
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .progressRail:hover .progressArrow:not(:disabled) { opacity: 0.6; }
+  .progressRail .progressArrow:hover:not(:disabled) { opacity: 1; }
 }
 
-.dot:focus-visible {
+.progressArrow:disabled {
+  opacity: 0 !important;
+  cursor: default;
+}
+
+.progressArrow:focus-visible {
   outline: 2px solid var(--bordeaux);
-  outline-offset: 3px;
-  border-radius: 50%;
+  outline-offset: 2px;
+  border-radius: var(--radius-badge);
+  opacity: 1;
 }
 
 /* ── Mobile ── */
@@ -463,7 +534,7 @@
 /* ── Breakpoints ── */
 @media (max-width: 1023px) {
   .slider { display: none; }
-  .dots   { display: none; }
+  .progressRail { display: none; }
   .mobileList { display: flex; }
 }
 
@@ -471,12 +542,31 @@
   .mobileList { display: none; }
 }
 
+/* Touch primario ≥1024px (iPad e simili): stessa lista verticale del mobile,
+   coerente con l'override che nasconde .sliderWrapper sopra. */
+@media (min-width: 1024px) and (hover: none), (min-width: 1024px) and (pointer: coarse) {
+  .mobileList { display: flex; }
+}
+
+/* ── iPad landscape / laptop piccolo (1024-1279px): la colonna destra è solo
+   ~512-683px (50vw). Riduce il padding orizzontale per non stringere titolo,
+   prezzo e CTA in uno spazio già dimezzato dal layout a due colonne. ── */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .rightInner {
+    padding: var(--space-md) var(--space-lg);
+    max-width: none;
+  }
+  .details {
+    gap: 0 var(--space-sm);
+  }
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .btnSolid,
   .btnOutline,
-  .navArrow,
-  .dot,
+  .progressArrow,
+  .progressFill,
   .variantSelect {
     transition: none;
   }

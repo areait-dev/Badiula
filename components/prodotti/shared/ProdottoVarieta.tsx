@@ -9,6 +9,11 @@ interface ProdottoVarietaProps {
   reverse?: boolean;
   noBorder?: boolean;
   className?: string;
+  /** Su mobile/touch tiene la foto prima del testo (invece del default
+   * testo-poi-foto): usarlo sulla sezione che precede subito lo
+   * ShopBannerProdotto, per evitare due foto ravvicinate una sotto l'altra
+   * (la foto di questa sezione seguita dalla foto del banner). */
+  imageFirstOnStack?: boolean;
 }
 
 export default function ProdottoVarieta({
@@ -19,9 +24,10 @@ export default function ProdottoVarieta({
   reverse = false,
   noBorder = false,
   className = '',
+  imageFirstOnStack = false,
 }: ProdottoVarietaProps) {
   return (
-    <section className={`${styles.section} ${reverse ? styles.reverse : ''} ${noBorder ? styles.noBorder : ''} ${className}`}>
+    <section className={`${styles.section} ${reverse ? styles.reverse : ''} ${noBorder ? styles.noBorder : ''} ${imageFirstOnStack ? styles.imageFirstOnStack : ''} ${className}`}>
       <div className={styles.content}>
         <h3 className={styles.name}>{name}</h3>
         {slogan && <p className={styles.slogan}>{slogan}</p>}

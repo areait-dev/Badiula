@@ -78,7 +78,16 @@
   width: 100%;
 }
 
-@media (min-width: 1024px) {
+/* Nello stack (mobile/touch) il testo va prima della foto: nel DOM .blockB
+   ha la visual prima del testo (per l'alternanza zigzag da desktop), quindi
+   va riportato davanti solo qui. .blockA è già nell'ordine giusto nel DOM. */
+.blockBContent { order: -1; }
+
+/* Solo dispositivi con puntatore preciso (mouse/trackpad): su iPad e simili
+   (touch primario), anche in landscape ≥1024px, resta lo stack verticale
+   mobile-first di base — senza questa restrizione un iPad landscape passava
+   al layout 2 colonne come da desktop. */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
   .blockA,
   .blockB {
     flex-direction: row;
@@ -378,17 +387,19 @@
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
   .h1Row, .h1RowMid { white-space: normal; }
 }
 
-/* Tablet (768–1023px): margini laterali ridotti rispetto al desktop */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Tablet (768–1023px), o qualunque dispositivo a input touch primario (iPad
+   e simili, incluso landscape ≥1024px): margini laterali ridotti rispetto
+   al desktop */
+@media (min-width: 768px) and (max-width: 1023px), (min-width: 768px) and (hover: none), (min-width: 768px) and (pointer: coarse) {
   .intro     { padding-left: 2.5rem; padding-right: 2.5rem; }
   .container { padding-left: 2.5rem; padding-right: 2.5rem; }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px), (hover: none), (pointer: coarse) {
   .intro { padding: 64px var(--page-margin-mobile) 48px; }
   .introHero { padding-top: 6rem; margin-bottom: 40px; align-items: center; }
   .h1 { font-size: var(--text-h1-size); line-height: var(--text-h1-line); }

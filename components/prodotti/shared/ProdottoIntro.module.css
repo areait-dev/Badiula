@@ -72,7 +72,11 @@
   white-space: nowrap;
 }
 
-@media (max-width: 1024px) {
+/* Sotto 1024px, o qualunque dispositivo a input touch primario (iPad e
+   simili, incluso iPad Pro landscape a 1194/1366px che una soglia di sola
+   larghezza non intercetterebbe mai): hero H1 ridotto invece che a piena
+   scala desktop (110px). */
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
   .hero { padding-top: 210px; }
   .h1 { font-size: clamp(34px, 5.5vw, 52px); }
   .h1Tight { line-height: 1.05; }
@@ -83,7 +87,7 @@
 @media (max-width: 767px) {
   .intro { padding: 0 var(--page-margin-mobile) var(--space-xl); }
   .body  { max-width: 100%; }
-  .hero  { padding-top: 170px; margin-bottom: 40px; }
+  .hero  { padding-top: 200px; margin-bottom: 40px; }
   .h1    { font-size: clamp(30px, 9vw, 42px); }
   .h1Tight { line-height: 1.05; }
   .h1Row { white-space: normal; }

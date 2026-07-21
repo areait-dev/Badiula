@@ -109,8 +109,14 @@
   }
 }
 
-/* Mobile/tablet: single column (< 1024px) */
-@media (max-width: 767px) {
+/* Mobile, e qualunque dispositivo a input touch primario (iPad e simili,
+   portrait o landscape): singola colonna. Sotto i 767px di larghezza questo
+   scatta comunque; sopra, è il touch a farlo scattare — coerente con lo
+   stack verticale già applicato al pannello dal componente genitore
+   (HorizontalScroll.module.css). Senza questo, un iPad in portrait
+   (768-834px) non intercettava né la vecchia soglia larghezza né quella
+   touch, e la griglia a 3 colonne restava schiacciata. */
+@media (max-width: 767px), (hover: none), (pointer: coarse) {
   .panelInner {
     padding: 2.5rem 1rem 3rem;
     background: transparent;

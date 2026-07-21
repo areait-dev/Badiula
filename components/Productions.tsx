@@ -45,10 +45,14 @@ export default function Productions({ title = '', subtitle = '' }: ProductionsPr
   const trackRef   = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const isNarrow = window.matchMedia('(max-width: 1023px)').matches;
-    const reduce   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Anche su touch primario (iPad e simili, incluso landscape ≥1024px) va
+    // usata la griglia fluida invece dello scroll-jacking orizzontale — non
+    // solo sotto 1023px di larghezza.
+    const isNarrow       = window.matchMedia('(max-width: 1023px)').matches;
+    const isTouchPrimary = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+    const reduce         = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (isNarrow) {
+    if (isNarrow || isTouchPrimary) {
       if (reduce) return;
       const cards = wrapperRef.current?.querySelectorAll<HTMLElement>(`.${styles.card}`);
       if (!cards) return;

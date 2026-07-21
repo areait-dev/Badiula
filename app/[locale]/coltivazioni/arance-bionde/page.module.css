@@ -380,17 +380,22 @@
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
   .h1Row1, .h1Row2 { white-space: normal; }
 }
 
-/* Tablet (768–1023px): margini laterali ridotti rispetto al desktop */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Tablet (768–1023px), o qualunque dispositivo a input touch primario (iPad
+   e simili, incluso landscape ≥1024px): margini laterali ridotti rispetto
+   al desktop */
+@media (min-width: 768px) and (max-width: 1023px), (min-width: 768px) and (hover: none), (min-width: 768px) and (pointer: coarse) {
   .intro     { padding-left: 2.5rem; padding-right: 2.5rem; }
   .container { padding-left: 2.5rem; padding-right: 2.5rem; }
 }
 
-@media (max-width: 767px) {
+/* Sotto 767px, o qualunque dispositivo a input touch primario (iPad e
+   simili, in ogni orientamento/dimensione): la sezione zigzag .variety e
+   il resto del contenuto passano a stack verticale. */
+@media (max-width: 767px), (hover: none), (pointer: coarse) {
   .intro { padding: 64px var(--page-margin-mobile) 48px; }
   .introHero { padding-top: 6rem; margin-bottom: 40px; }
   .h1 { font-size: var(--text-h1-size); line-height: var(--text-h1-line); }
@@ -401,13 +406,14 @@
     grid-template-columns: 1fr;
     padding: 64px var(--page-margin-mobile);
   }
-  .varietyVisual { order: -1 !important; margin-bottom: 36px; }
+  /* Testo prima della foto. */
   .varietyContent {
-    order: 1 !important;
+    order: -1 !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
     max-width: 100%;
   }
+  .varietyVisual { order: 1 !important; margin-top: 36px; }
   .circle { width: 200px; height: 200px; }
 
   .calendar { padding: 48px 0; }

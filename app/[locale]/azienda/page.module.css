@@ -235,6 +235,11 @@
 /* Zigzag (.grid): stack <1024px, come da CLAUDE.md §4/§10.X — pattern
    immagine+testo alternato, indipendente dallo stack di Vision/Mission */
 @media (max-width: 1024px) {
+  /* Navbar overlay è alta 80px su mobile/tablet, ma il logo con wordmark al
+     suo interno è alto 150px e trabocca fino a ~155px dal top — il titolo
+     hero deve superare quel punto prima di iniziare. */
+  .main { padding-top: 170px; }
+
   .grid {
     grid-template-columns: 1fr;
     min-height: auto;

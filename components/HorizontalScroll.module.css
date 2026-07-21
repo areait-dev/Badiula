@@ -192,8 +192,12 @@
   }
 }
 
-/* Mobile: stack verticale + rimuove il background verde/grigio del pannello Territorio */
-@media (max-width: 767px) {
+/* Mobile, e qualunque dispositivo a input touch primario (iPad e simili,
+   anche in landscape ≥1024px): stack verticale, rimuove il background
+   verde/grigio del pannello Territorio. Lo scroll orizzontale pinnato resta
+   riservato ai dispositivi con puntatore preciso (mouse/trackpad) — stesso
+   criterio già usato per lo shop. */
+@media (max-width: 767px), (hover: none), (pointer: coarse) {
   .territoryPanel {
     background: transparent;
     padding: 0;
@@ -223,9 +227,15 @@
   background: transparent;
 }
   .greenPanel {
-    width: 100%;
+    width: 100% !important; /* la regola base usa !important per 50vw, va superata qui */
     min-width: 100%;
     min-height: unset;
+  }
+  /* Stessa specificità di ".greenPanel .imgHalf" nella regola base (height:100%):
+     senza questa, su un .panel con height:auto il 100% si risolve in auto e
+     l'immagine (position:absolute via next/image fill) collassa a 0 e appare tagliata. */
+  .greenPanel .imgHalf {
+    height: 50vh;
   }
   .greenImg {
     width: 100%;

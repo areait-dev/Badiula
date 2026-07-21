@@ -179,8 +179,9 @@
   .cta { margin-top: 14px; margin-bottom: 18px; }
 }
 
-/* ── Mobile/tablet: stack verticale (< 1024px) ── */
-@media (max-width: 1023px) {
+/* ── Mobile/tablet: stack verticale (< 1024px), o qualunque dispositivo a
+   input touch primario (iPad e simili, incluso landscape ≥1024px) ── */
+@media (max-width: 1023px), (hover: none), (pointer: coarse) {
   .wrapper { margin-top: var(--space-xl); height: auto; }
   .header  { padding: 2rem 1.5rem 1rem; }
   .title   { font-size: 40px; line-height: 46px; }
@@ -208,7 +209,6 @@
     height: auto;
   }
   .cta { margin: 1.5rem 0 1.5rem 24px; }
-  .progressBar { display: none; }
 }
 
 /* ── Mobile < 600px: colonna singola ── */

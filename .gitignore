@@ -14,3 +14,15 @@ public/videos/DJI_0021.MP4
 public/videos/DJI_0992.MP4
 public/videos/DSC_7756_from8s.mp4
 public/videos/DJI_0985_15s.mp4
+
+# Impeccable design skill — traccia solo config/design condivisibili,
+# esclude screenshot, cache e stato delle sessioni live
+.impeccable/*
+!.impeccable/config.json
+!.impeccable/design.json
+!.impeccable/live
+.impeccable/live/*
+!.impeccable/live/config.json
+!.impeccable/critique
+.impeccable/critique/*
+!.impeccable/critique/*.md

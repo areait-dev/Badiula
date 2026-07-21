@@ -179,20 +179,39 @@
   .reverse .content      { padding-left: 48px; }
 }
 
-@media (max-width: 1023px) {
+/* Sotto 1024px, o qualunque dispositivo a input touch primario (iPad e
+   simili, in ogni orientamento/dimensione — anche iPad Pro landscape a
+   1194/1366px che una soglia di sola larghezza non intercetterebbe mai):
+   la sezione zigzag immagine+testo passa a stack verticale. */
+@media (max-width: 1023px), (hover: none), (pointer: coarse) {
   .section {
     grid-template-columns: 1fr;
     padding: var(--space-2xl) var(--page-margin-mobile);
   }
-  .visual  { order: 1 !important; margin-bottom: 36px; }
+  /* Testo prima della foto, a larghezza piena. */
   .content {
-    order: 2 !important;
+    order: 1 !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
     max-width: 100%;
   }
+  .visual  { order: 2 !important; margin-top: 36px; }
   .imgWrap {
     width: 100%;
     height: clamp(240px, 55vw, 400px);
+  }
+
+  /* Eccezione: sezione subito prima dello ShopBannerProdotto — la foto
+     resta prima del testo, altrimenti finirebbe subito sopra la foto del
+     banner (due foto ravvicinate). Anche più grande e centrata, dato che
+     qui la foto è già l'elemento di apertura della sezione. */
+  .imageFirstOnStack .content { order: 2 !important; }
+  .imageFirstOnStack .visual  {
+    order: 1 !important;
+    margin-top: 0;
+    margin-bottom: 36px;
+  }
+  .imageFirstOnStack .imgWrap {
+    height: clamp(280px, 68vw, 480px);
   }
 }

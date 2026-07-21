@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-21T08:18:39Z",
+  "title": "Design System: Badiula",
+  "extensions": {
+    "colorMeta": {
+      "bordeaux": {
+        "role": "primary",
+        "displayName": "Night Bordeaux",
+        "canonical": "#6C1224",
+        "tonalRamp": ["#2A0710", "#3D0A17", "#520E1F", "#6C1224", "#8A1B31", "#AC3B4C", "#CB7986", "#E9C4CA"]
+      },
+      "eigengrau": {
+        "role": "neutral",
+        "displayName": "Eigengrau",
+        "canonical": "#16161D",
+        "tonalRamp": ["#08080B", "#0F0F14", "#16161D", "#232330", "#353543", "#55556A", "#8A8A9B", "#C7C7D1"]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#1A1A1A", "#333333", "#4D4D4D", "#666666", "#999999", "#CCCCCC", "#E6E6E6", "#FFFFFF"]
+      },
+      "khaki": {
+        "role": "secondary",
+        "displayName": "Khaki",
+        "canonical": "#C4B59B",
+        "tonalRamp": ["#4A4030", "#6B5E45", "#8C7B5C", "#A99878", "#C4B59B", "#D3C7B2", "#E2DACB", "#F1EEE3"]
+      },
+      "vanilla": {
+        "role": "secondary",
+        "displayName": "Vanilla Custard",
+        "canonical": "#EEE6B8",
+        "tonalRamp": ["#6B6234", "#8C824C", "#ADA267", "#CBC28C", "#EEE6B8", "#F3ECC7", "#F8F3DB", "#FCFAEF"]
+      },
+      "teal": {
+        "role": "secondary",
+        "displayName": "Muted Teal",
+        "canonical": "#889C82",
+        "tonalRamp": ["#2E3A2C", "#435241", "#576C55", "#6D856B", "#889C82", "#A2B49D", "#C1CBBD", "#E0E4DC"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero H1 inside a hero section only. Gravesend Sans, used nowhere else on the site." },
+      "headline": { "displayName": "Headline", "purpose": "Section-level H2, always uppercase." },
+      "title": { "displayName": "Title", "purpose": "H3, italic when used as a subtitle (e.g. 'Quattro generazioni, una terra')." },
+      "title-sm": { "displayName": "Title Small", "purpose": "H4 and product-card titles." },
+      "body": { "displayName": "Body", "purpose": "General paragraph text site-wide (body-1)." },
+      "label": { "displayName": "Label", "purpose": "Product-card copy, FAQ answers, compact UI text (body-2). Never bold." }
+    },
+    "shadows": [
+      { "name": "table-ambient", "value": "0 4px 20px rgba(0, 0, 0, 0.06)", "purpose": "Under the harvest-calendar table only." },
+      { "name": "glass-pnrr", "value": "backdrop-filter: blur(12px); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15)", "purpose": "PNRR funding banner in the footer only." }
+    ],
+    "motion": [
+      { "name": "ease-hover", "value": "200ms ease", "purpose": "Default hover transition (buttons, links, cards)." },
+      { "name": "ease-press", "value": "150ms ease", "purpose": "Press/active state transition." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "375px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "xxl", "value": "1440px" },
+      { "name": "xxxl", "value": "1728px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled CTA for the main commercial action in a section (Aggiungi al Carrello, Shop, Invia).",
+      "html": "<button class=\"ds-btn-primary\">Aggiungi al Carrello</button>",
+      "css": ".ds-btn-primary { background: var(--color-bordeaux, #6C1224); color: var(--color-white, #FFFFFF); border: none; border-radius: 999px; height: 48px; padding: 0 28px; font-family: 'Mr Eaves Mod OT', sans-serif; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; cursor: pointer; transition: background 200ms ease, color 200ms ease; } .ds-btn-primary:hover { background: var(--color-khaki, #C4B59B); color: var(--color-bordeaux, #6C1224); } .ds-btn-primary:active { background: var(--color-dark, #16161D); color: var(--color-white, #FFFFFF); transition-duration: 150ms; } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-bordeaux, #6C1224); outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Default CTA, e.g. 'Scopri di più ►'.",
+      "html": "<button class=\"ds-btn-outline\">Scopri di più &#9658;</button>",
+      "css": ".ds-btn-outline { background: transparent; color: var(--color-bordeaux, #6C1224); border: 1.5px solid var(--color-bordeaux, #6C1224); border-radius: 999px; height: 48px; padding: 0 28px; font-family: 'Mr Eaves Mod OT', sans-serif; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; cursor: pointer; transition: background 200ms ease, color 200ms ease, border-color 200ms ease; } .ds-btn-outline:hover { background: var(--color-khaki, #C4B59B); border-color: var(--color-khaki, #C4B59B); color: var(--color-bordeaux, #6C1224); } .ds-btn-outline:active { background: var(--color-bordeaux, #6C1224); color: var(--color-white, #FFFFFF); transition-duration: 150ms; } .ds-btn-outline:focus-visible { outline: 2px solid var(--color-bordeaux, #6C1224); outline-offset: 2px; }"
+    },
+    {
+      "name": "Product Listing Card",
+      "kind": "card",
+      "refersTo": "card-product",
+      "description": "Shop-grid product card — sharp edges, no radius, no shadow, on purpose.",
+      "html": "<div class=\"ds-card-product\"><div class=\"ds-card-product__img\"></div><div class=\"ds-card-product__body\"><h4 class=\"ds-card-product__title\">Arance Rosse IGP</h4><p class=\"ds-card-product__desc\">Tarocco e Moro, raccolti a mano tra dicembre e aprile.</p><button class=\"ds-btn-outline\">Scopri di più &#9658;</button></div></div>",
+      "css": ".ds-card-product { background: var(--color-khaki, #C4B59B); border-radius: 0; overflow: hidden; font-family: 'Mr Eaves Mod OT', sans-serif; } .ds-card-product__img { aspect-ratio: 4/3; background: var(--color-teal, #889C82); } .ds-card-product__body { padding: 24px; } .ds-card-product__title { font-size: 40px; line-height: 45px; font-weight: 700; text-transform: uppercase; color: var(--color-bordeaux, #6C1224); margin: 0 0 8px; } .ds-card-product__desc { font-size: 20px; line-height: 32px; color: var(--color-dark, #16161D); margin: 0 0 16px; }"
+    },
+    {
+      "name": "Carousel Card",
+      "kind": "card",
+      "refersTo": "card-carousel",
+      "description": "Homepage 'Le nostre produzioni' carousel card — the one place cards are allowed to round (16px).",
+      "html": "<div class=\"ds-card-carousel\"><div class=\"ds-card-carousel__img\"></div><div class=\"ds-card-carousel__body\"><h4 class=\"ds-card-carousel__title\">Luce di Terra</h4><p class=\"ds-card-carousel__desc\">Olio extravergine biologico, spremuto a freddo entro 24 ore dalla raccolta.</p></div></div>",
+      "css": ".ds-card-carousel { width: 100%; max-width: 560px; background: var(--color-vanilla, #EEE6B8); border-radius: 16px; overflow: hidden; font-family: 'Mr Eaves Mod OT', sans-serif; } .ds-card-carousel__img { height: 280px; background: var(--color-teal, #889C82); } .ds-card-carousel__body { padding: 28px 24px 32px; } .ds-card-carousel__title { font-size: 40px; line-height: 45px; font-weight: 700; text-transform: uppercase; color: var(--color-bordeaux, #6C1224); margin: 0 0 8px; } .ds-card-carousel__desc { font-size: 20px; line-height: 32px; color: var(--color-dark, #16161D); margin: 0; }"
+    },
+    {
+      "name": "Underline Text Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Default form field style (contact forms, search overlay): no box, bordeaux underline only.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Email</span><input class=\"ds-field__input\" type=\"email\" placeholder=\"La tua email\" /></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 6px; font-family: 'Mr Eaves Mod OT', sans-serif; } .ds-field__label { font-size: 14px; color: var(--color-dark, #16161D); } .ds-field__input { border: none; border-bottom: 1px solid var(--color-bordeaux, #6C1224); background: transparent; padding: 12px 0; font-size: 20px; color: var(--color-dark, #16161D); outline: none; } .ds-field__input::placeholder { color: rgba(22, 22, 29, 0.4); } .ds-field__input:focus { border-bottom-width: 2px; }"
+    },
+    {
+      "name": "Harvest Calendar",
+      "kind": "custom",
+      "refersTo": "calendario-raccolta",
+      "description": "Signature component: 12-month harvest calendar with a bordeaux dot marking active months. Badiula's clearest show-don't-tell proof-of-provenance device.",
+      "html": "<div class=\"ds-calendar\"><span class=\"ds-calendar__month\">GEN</span><span class=\"ds-calendar__month\">FEB</span><span class=\"ds-calendar__month ds-calendar__month--active\">MAR<i class=\"ds-calendar__dot\"></i></span><span class=\"ds-calendar__month ds-calendar__month--active\">APR<i class=\"ds-calendar__dot\"></i></span><span class=\"ds-calendar__month\">MAG</span><span class=\"ds-calendar__month\">GIU</span></div>",
+      "css": ".ds-calendar { display: flex; gap: 8px; background: var(--color-vanilla, #EEE6B8); border: 1px solid var(--color-khaki, #C4B59B); border-radius: 12px; padding: 16px; font-family: 'Mr Eaves Mod OT', sans-serif; } .ds-calendar__month { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--color-dark, #16161D); text-transform: uppercase; } .ds-calendar__month--active { color: var(--color-bordeaux, #6C1224); } .ds-calendar__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-bordeaux, #6C1224); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Terra Prima del Prodotto",
+    "overview": "Badiula's visual system reads like the Sicilian citrus landscape itself, translated into interface: bordeaux is the red flesh of the Tarocco orange and the iron-rich earth of Carlentini, khaki and vanilla are the summer fields and the light on ripe fruit, muted teal is the leaf canopy. Nothing in the palette is decorative — every color has a physical referent in the grove, and the system is disciplined about not reaching outside those six values. The typography is quiet and confident (Mr Eaves Mod OT carries almost the entire site; Gravesend Sans is reserved, deliberately rare, for the hero headline only), the card geometry is sharp-edged on product listings and softly rounded only where warmth is earned (carousels, banners, modals). This is a system built to slow a visitor down, not to sell fast.\n\nThe system explicitly rejects the visual grammar of generic organic-supermarket e-commerce — green \"bio\" badges, stock-photo nature imagery, countdown/urgency mechanics — and just as explicitly rejects tourist-folklore Sicily (majolica tiles, decorated carts, postcard clichés). Badiula is authentic and territorial, never a costume.",
+    "keyCharacteristics": [
+      "A strict six-color palette with a named physical referent for every value — no ad-hoc hex codes.",
+      "One rare display font (Gravesend Sans) reserved for the hero H1 only; everything else is Mr Eaves Mod OT.",
+      "Flat by default: hierarchy comes from color and spacing, not shadow.",
+      "Sharp-edged (0 radius) product-listing cards vs. softly rounded (16px) carousel/banner cards — the radius itself signals context.",
+      "Pill-shaped buttons and form fields throughout; no rectangular CTAs."
+    ],
+    "rules": [
+      { "name": "The Six-Color Rule", "body": "No color enters the system without a named referent in the grove (fruit, earth, leaf, light). If a new value can't be described that way, it doesn't belong.", "section": "colors" },
+      { "name": "The Bordeaux-on-Khaki Ban", "body": "Bordeaux text is never placed on khaki background — contrast fails, and CLAUDE.md prohibits it explicitly.", "section": "colors" },
+      { "name": "The One Display Rule", "body": "Gravesend Sans renders exactly once per page: the hero H1. Every other heading, on every page, is Mr Eaves Mod OT.", "section": "typography" },
+      { "name": "The Seven-Level Ceiling", "body": "Only display / headline / title / title-sm / body / label plus documented responsive step-downs exist. No arbitrary font-size ever ships.", "section": "typography" },
+      { "name": "The Flat-First, Earned-Depth Rule", "body": "Every new component starts flat. A shadow or blur is added only when it solves a real separation problem — never as decoration.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every color traceable to a physical referent in the grove (fruit, earth, leaf, light) — the Six-Color Rule.",
+      "Do reserve Gravesend Sans for exactly one hero H1 per page — the One Display Rule.",
+      "Do use 0-radius cards for product listings and 16px-radius cards for carousels/banners; the radius is the signal, don't blur the two.",
+      "Do show provenance concretely (harvest calendar, varieties, certifications) rather than with a decorative trust badge.",
+      "Do keep motion measured — 200ms ease hover, 150ms ease press, prefers-reduced-motion alternatives on every GSAP scroll sequence."
+    ],
+    "donts": [
+      "Don't ship generic organic-supermarket e-commerce patterns: green \"bio\" badges, stock-photo nature imagery, countdown timers, discount pop-ups, \"solo 3 rimasti\" urgency copy.",
+      "Don't reach for tourist-folklore Sicily: Sicilian carts, majolica-tile decoration, postcard-Sicily visual clichés.",
+      "Don't place bordeaux text on khaki background — contrast fails (the Bordeaux-on-Khaki Ban).",
+      "Don't add border-radius to product-listing cards, ever — CLAUDE.md §13 bans it explicitly.",
+      "Don't introduce a shadow or blur as decoration; every one must solve a real separation problem (the Flat-First, Earned-Depth Rule).",
+      "Don't use an icon outside the documented monochrome bordeaux set, or a font-size outside the seven defined levels (plus their documented responsive step-downs)."
+    ]
+  }
+}

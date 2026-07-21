@@ -109,13 +109,6 @@
   will-change: transform;
 }
 
-/* Progress bar */
-.progress {
-  display: none;
-  pointer-events: none;
-  transition: width 0.1s linear;
-}
-
 /* ── Card carousel - 560×620px, identica all'homepage (§5.10/§5.11 CLAUDE.md) ── */
 .card {
   flex: 0 0 560px;
@@ -332,10 +325,17 @@
 }
 
 /* ────────────────────────────────────────────
-   RESPONSIVE – mobile/tablet (< 1024px)
+   RESPONSIVE – mobile/tablet (< 1024px), o qualunque dispositivo a input
+   touch primario (iPad e simili, anche in landscape ≥1024px): senza il
+   secondo criterio, un iPad landscape vedeva l'intera pagina (hero, intro,
+   calendario, banner) esattamente come da desktop — solo la griglia
+   prodotti aveva un fix dedicato più sotto.
 ──────────────────────────────────────────── */
-@media (max-width: 1023px) {
-  .heroTitle        { padding-top: 7rem; }
+@media (max-width: 1023px), (hover: none), (pointer: coarse) {
+  /* Navbar overlay è alta 80px su mobile/tablet, ma il logo con wordmark al
+     suo interno è alto 150px e trabocca fino a ~155px dal top — il titolo
+     deve superare quel punto prima di iniziare. */
+  .heroTitle        { padding-top: 210px; }
   .paragrafoDescrizione { padding-left: 20px; padding-right: 20px; }
   .gridHeader       { padding: 3rem 20px 1.5rem; }
   .calendarSection  { padding: 3rem 20px 4rem; }
@@ -381,7 +381,6 @@
     aspect-ratio: 4 / 3;
     height: auto;
   }
-  .progress { display: none; }
 
   .bannerYellow { height: 340px; }
   .bannerGreen {
@@ -395,8 +394,9 @@
   }
 }
 
-/* ── Tablet padding più ampio ── */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* ── Tablet padding più ampio: da 768px in su (incluso iPad landscape
+   ≥1024px via touch, non solo la fascia 768-1023 via larghezza) ── */
+@media (min-width: 768px) and (max-width: 1023px), (min-width: 768px) and (hover: none), (min-width: 768px) and (pointer: coarse) {
   .track       { padding: 1rem 2.5rem 4rem; gap: 2rem; }
   .gridHeader  { padding: 3rem 2.5rem 1.5rem; }
 }
