@@ -62,6 +62,23 @@
   opacity: 0.85;
 }
 
+.cookiePrefs {
+  font-family: var(--font-primary);
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 24px;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+.cookiePrefs:hover { opacity: 0.75; }
+
 /* Colonna destra - Form */
 .right {
   display: flex;
@@ -157,6 +174,15 @@
 }
 
 /* Mobile */
+/* Floor esplicito a 16px, scollegato dal token --text-body-1-size: sotto
+   quella soglia iOS Safari fa zoom automatico al focus del campo. Il token
+   oggi è già ≥16px su ogni breakpoint, ma questo evita che un cambio futuro
+   della scala tipografica reintroduca lo zoom involontariamente. */
+.form input,
+.form textarea {
+  font-size: 16px;
+}
+
 @media (max-width: 767px) {
   .footer {
     border-radius: 0;

@@ -1,0 +1,109 @@
+.page {
+  padding: 160px var(--page-margin) var(--space-2xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.notice {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
+  color: var(--color-bordeaux);
+  background: var(--color-vanilla);
+  border-radius: var(--radius-card-soft);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-line);
+  font-weight: 700;
+  color: var(--color-bordeaux);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-bottom: var(--space-md);
+}
+
+.updated {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
+  color: var(--color-muted);
+  margin-bottom: var(--space-xl);
+}
+
+.section {
+  margin-top: var(--space-lg);
+}
+
+.h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-line);
+  font-weight: 700;
+  color: var(--color-bordeaux);
+  letter-spacing: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.body p {
+  font-family: var(--font-body);
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
+  font-weight: 400;
+  color: var(--color-text);
+  letter-spacing: 0;
+  margin-bottom: 1em;
+}
+
+.body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 1em 0;
+}
+.body li {
+  font-family: var(--font-body);
+  font-size: var(--text-body-1-size);
+  line-height: var(--text-body-1-line);
+  color: var(--color-text);
+  letter-spacing: 0;
+}
+.body li::before {
+  content: '— ';
+  color: var(--color-bordeaux);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
+}
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--color-khaki);
+  vertical-align: top;
+}
+.table th {
+  color: var(--color-bordeaux);
+  font-weight: 700;
+}
+
+.todo {
+  color: var(--color-bordeaux);
+  font-style: italic;
+}
+
+@media (max-width: 767px) {
+  .page { padding: 140px var(--page-margin-mobile) var(--space-xl); }
+  .title { font-size: 44px; line-height: 50px; }
+  .table { display: block; overflow-x: auto; }
+}

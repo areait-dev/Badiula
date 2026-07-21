@@ -2,12 +2,13 @@ import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
-import Script from 'next/script';
 import { routing } from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
 import CustomCursor from '@/components/CustomCursor';
 import SitoInCostruzioneGate from '@/components/SitoInCostruzioneGate';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import CookieConsent from '@/components/CookieConsent';
 import '../globals.css';
 
 export const metadata: Metadata = {
@@ -61,18 +62,8 @@ export default async function LocaleLayout({
           </SitoInCostruzioneGate>
           <ScrollToTop />
         </NextIntlClientProvider>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-VPN683YKJG"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-VPN683YKJG');
-          `}
-        </Script>
+        <GoogleAnalytics />
+        <CookieConsent />
       </body>
     </html>
   );

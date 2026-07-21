@@ -1,0 +1,80 @@
+.banner {
+  position: fixed;
+  left: var(--space-md);
+  right: var(--space-md);
+  bottom: var(--space-md);
+  z-index: 200;
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border: 1px solid var(--color-khaki);
+  border-radius: var(--radius-banner);
+  box-shadow: 0 8px 32px rgba(22, 22, 29, 0.18);
+  padding: var(--space-md);
+}
+
+.text {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
+  color: var(--color-text);
+  letter-spacing: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.link {
+  color: var(--color-bordeaux);
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2-size);
+  font-weight: 600;
+  letter-spacing: 0;
+  border-radius: var(--radius-btn);
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.reject {
+  background: transparent;
+  border: 1px solid var(--color-bordeaux);
+  color: var(--color-bordeaux);
+}
+.reject:hover { background: var(--color-khaki); border-color: var(--color-khaki); }
+.reject:active { background: var(--color-bordeaux); color: var(--color-white); }
+
+.accept {
+  background: var(--color-bordeaux);
+  border: 1px solid var(--color-bordeaux);
+  color: var(--color-white);
+}
+.accept:hover { background: var(--color-khaki); border-color: var(--color-khaki); color: var(--color-bordeaux); }
+.accept:active { background: var(--color-dark); border-color: var(--color-dark); }
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--color-bordeaux);
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .banner { left: var(--space-sm); right: var(--space-sm); bottom: var(--space-sm); padding: var(--space-sm); }
+  .actions { flex-direction: column; }
+  .btn { width: 100%; text-align: center; }
+}
