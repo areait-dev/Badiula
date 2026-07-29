@@ -25,9 +25,9 @@ export default function PrivacyPolicyPage({ params }: { params: { locale: string
       <div className={styles.section}>
         <h3 className={styles.h3}>2. Dati trattati e finalità</h3>
         <ul>
-          <li>Dati di navigazione e log tecnici, gestiti dal fornitore hosting Vercel — sicurezza del sito.</li>
-          <li>Dati forniti tramite il modulo di contatto (nome, e-mail, telefono, messaggio) — per rispondere alla richiesta.</li>
-          <li>Dati di navigazione tramite Google Analytics, attivo solo previo consenso — vedi Cookie Policy.</li>
+          <li>Dati di navigazione e log tecnici, gestiti dal fornitore hosting Vercel, per la sicurezza del sito.</li>
+          <li>Dati forniti tramite il modulo di contatto (nome, e-mail, telefono, messaggio), per rispondere alla richiesta.</li>
+          <li>Dati di navigazione tramite Google Analytics, attivo solo previo consenso: vedi Cookie Policy.</li>
         </ul>
       </div>
 
@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage({ params }: { params: { locale: string
         <p>
           Puoi esercitare in qualsiasi momento i diritti di accesso, rettifica, cancellazione, limitazione,
           opposizione, portabilità e revoca del consenso previsti dal GDPR, tramite il modulo di contatto del
-          sito. Puoi inoltre proporre reclamo al Garante per la protezione dei dati personali —{' '}
+          sito. Puoi inoltre proporre reclamo al Garante per la protezione dei dati personali:{' '}
           <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">www.garanteprivacy.it</a>.
         </p>
       </div>

@@ -24,9 +24,9 @@ export default function CookiePolicyPage({ params }: { params: { locale: string 
       <div className={styles.section}>
         <h3 className={styles.h3}>2. Categorie utilizzate su questo sito</h3>
         <ul>
-          <li>Tecnici / strettamente necessari — funzionamento base del sito, sempre attivi.</li>
-          <li>Preferenze — memorizza la scelta di consenso cookie stessa.</li>
-          <li>Analytics — Google Analytics, attivato solo dopo consenso esplicito.</li>
+          <li>Tecnici / strettamente necessari: funzionamento base del sito, sempre attivi.</li>
+          <li>Preferenze: memorizza la scelta di consenso cookie stessa.</li>
+          <li>Analytics: Google Analytics, attivato solo dopo consenso esplicito.</li>
         </ul>
         <p>Il sito non utilizza cookie di marketing/profilazione né contenuti di terze parti (mappe, video, social embed, chat).</p>
       </div>

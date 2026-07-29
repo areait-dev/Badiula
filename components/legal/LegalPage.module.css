@@ -4,17 +4,6 @@
   margin: 0 auto;
 }
 
-.notice {
-  font-family: var(--font-body);
-  font-size: var(--text-body-2-size);
-  line-height: var(--text-body-2-line);
-  color: var(--color-bordeaux);
-  background: var(--color-vanilla);
-  border-radius: var(--radius-card-soft);
-  padding: var(--space-sm) var(--space-md);
-  margin-bottom: var(--space-xl);
-}
-
 .title {
   font-family: var(--font-body);
   font-size: var(--text-h1-size);
