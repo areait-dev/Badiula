@@ -3,9 +3,9 @@
 import { usePathname } from 'next/navigation';
 import SitoInCostruzione from './SitoInCostruzione';
 
-// Unica sezione ancora bloccata in produzione: lo shop (e-commerce non ancora pronto).
-// Tutto il resto del sito è pubblico.
-const PREFISSI_BLOCCATI = ['/it/shop', '/en/shop'];
+// Sezioni ancora bloccate in produzione: shop (e-commerce non ancora pronto)
+// e coltivazioni (contenuti in aggiornamento). Tutto il resto del sito è pubblico.
+const PREFISSI_BLOCCATI = ['/it/shop', '/en/shop', '/it/coltivazioni', '/en/coltivazioni'];
 
 export default function SitoInCostruzioneGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
