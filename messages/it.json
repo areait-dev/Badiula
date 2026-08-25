@@ -79,7 +79,10 @@
     "message": "Messaggio",
     "privacy": "Accetto il trattamento dei dati personali (Privacy Policy)",
     "send": "Invia",
-    "sent": "Inviato ✓"
+    "sent": "Inviato ✓",
+    "newsletterTitle": "Iscriviti alla newsletter",
+    "newsletterPrivacy": "Accetto che i miei dati vengano trattati secondo la <link>Privacy Policy</link>",
+    "newsletterSubmit": "Iscriviti"
   },
   "coltivazioni": {
     "heroTitle": "LE NOSTRE COLTIVAZIONI",

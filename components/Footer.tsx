@@ -2,6 +2,7 @@ import { getLocale } from 'next-intl/server';
 import Logo from '@/components/Logo';
 import BannerPNRR from '@/components/BannerPNRR';
 import FooterForm from '@/components/FooterForm';
+import NewsletterForm from '@/components/NewsletterForm';
 import { getGlobalOptions } from '@/lib/wordpress';
 import CookiePreferencesLink from '@/components/CookiePreferencesLink';
 import styles from './Footer.module.css';
@@ -49,6 +50,7 @@ export default async function Footer() {
               <svg aria-hidden="true" focusable="false" width={32} height={32}><use href="/social-icons.svg#icon-whatsapp" /></svg>
             </a>
           </div>
+          <NewsletterForm />
           <CookiePreferencesLink className={styles.cookiePrefs} />
           <BannerPNRR />
         </div>

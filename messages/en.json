@@ -79,7 +79,10 @@
     "message": "Message",
     "privacy": "I accept the processing of personal data (Privacy Policy)",
     "send": "Send",
-    "sent": "Sent ✓"
+    "sent": "Sent ✓",
+    "newsletterTitle": "Subscribe to our newsletter",
+    "newsletterPrivacy": "I accept that my data will be processed according to the <link>Privacy Policy</link>",
+    "newsletterSubmit": "Subscribe"
   },
   "coltivazioni": {
     "heroTitle": "OUR GROVES",
