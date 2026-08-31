@@ -3,9 +3,14 @@
 import { usePathname } from 'next/navigation';
 import SitoInCostruzione from './SitoInCostruzione';
 
-// Sezioni ancora bloccate in produzione: shop (e-commerce non ancora pronto)
-// e coltivazioni (contenuti in aggiornamento). Tutto il resto del sito è pubblico.
-const PREFISSI_BLOCCATI = ['/it/shop', '/en/shop', '/it/coltivazioni', '/en/coltivazioni'];
+// Sezioni ancora bloccate in produzione: shop (e-commerce non ancora pronto),
+// coltivazioni e luce-di-terra (contenuti in aggiornamento, comprese le
+// sottopagine olio-evo e marmellata-agrumi). Tutto il resto del sito è pubblico.
+const PREFISSI_BLOCCATI = [
+  '/it/shop', '/en/shop',
+  '/it/coltivazioni', '/en/coltivazioni',
+  '/it/luce-di-terra', '/en/luce-di-terra',
+];
 
 export default function SitoInCostruzioneGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
