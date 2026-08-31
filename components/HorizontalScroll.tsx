@@ -141,18 +141,21 @@ export default function HorizontalScroll({
           </div>
         </section>
 
-        {/* Panel 2 - Territorio + Filiera */}
-        <section className={`${styles.panel} ${styles.territoryPanel}`}>
-          <Territorio
-            p2Eyebrow={p2Eyebrow}
-            p2Heading={p2Heading}
-            p2Body={p2Body}
-            p2Body2={p2Body2}
-            p3Eyebrow={p3Eyebrow}
-            p3Heading={p3Heading}
-            p3Body={p3Body}
-          />
-        </section>
+{/* Panel 2 - Territorio + Filiera */}
+<section className={`${styles.panel} ${styles.territoryPanel}`}>
+  <Territorio
+    p2Eyebrow={p2Eyebrow}
+    p2Heading={p2Heading}
+    p2Body={p2Body}
+    p2Body2={p2Body2}
+    p3Eyebrow={p3Eyebrow}
+    p3Heading={p3Heading}
+    p3Body={p3Body}
+    // Aggiungi qui le nuove props per il bottone
+    p2CtaUrl="/filiera-e-lavorazione" 
+    p2CtaText="Scopri la filiera"
+  />
+</section>
 
         {/* Panel 3 - Immagine aerea capannone */}
         <section className={`${styles.panel} ${styles.greenPanel}`}>
