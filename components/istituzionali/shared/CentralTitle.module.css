@@ -50,7 +50,11 @@
   white-space: nowrap;
 }
 
-@media (max-width: 1024px) {
+/* Sotto 1024px, o qualunque dispositivo a input touch primario (iPad e
+   simili, incluso iPad Pro landscape a 1194/1366px che una soglia di sola
+   larghezza non intercetterebbe mai): titolo ridotto invece che a piena
+   scala desktop (110px). */
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
   .title { font-size: clamp(48px, 9vw, 90px); line-height: 1.1; }
   .titleH3 { font-size: clamp(40px, 7vw, 80px); line-height: 1.15; white-space: normal; max-width: 700px; margin: 0 auto; }
   .titleH3Sm { white-space: normal; max-width: 600px; margin: 0 auto; }

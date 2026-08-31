@@ -22,8 +22,6 @@ export interface Faq {
 export interface Product {
   slug: string;
   name: string;
-  /** CSS background for the card */
-  bg: string;
   /** Stock photo URL for the card image */
   image: string;
   /** Short description used in cards and listing */
@@ -42,7 +40,6 @@ export const PRODUCTS: Product[] = [
   {
     slug: 'arance-rosse-igp',
     name: 'Arance Rosse di Sicilia IGP',
-    bg: 'var(--vanilla)',
     image: 'https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=800&q=80&fit=crop',
     description:
       'Varietà Tarocco e Moro, certificate IGP, coltivate nella zona di elezione delle arance rosse siciliane. Raccolta da dicembre ad aprile.',
@@ -79,7 +76,6 @@ export const PRODUCTS: Product[] = [
   {
     slug: 'arance-bionde',
     name: 'Arance Bionde',
-    bg: 'var(--teal)',
     image: 'https://images.unsplash.com/photo-1580052614034-c55d20bfee3b?w=800&q=80&fit=crop',
     description:
       'Varietà Newhall (Navel precoce) e Lane Late (Navel tardiva), per una continuità di offerta da novembre a giugno.',
@@ -111,7 +107,6 @@ export const PRODUCTS: Product[] = [
   {
     slug: 'limone-femminello',
     name: 'Limone Femminello Siracusano',
-    bg: 'var(--white)',
     image: '/images/limoni.jpg',
     description:
       'Varietà storica del territorio siracusano, ricca di oli essenziali e con produzione prolungata durante l\'anno.',
@@ -143,7 +138,6 @@ export const PRODUCTS: Product[] = [
   {
     slug: 'bergamotto',
     name: 'Bergamotto Biologico Siciliano',
-    bg: '#D9CE8E',
     image: 'https://images.unsplash.com/photo-1609639643505-3c158a56de42?w=800&q=80&fit=crop',
     description:
       'Coltivazione biologica di uno degli agrumi più aromatici del Mediterraneo, raccolto da novembre a febbraio.',
@@ -171,7 +165,6 @@ export const PRODUCTS: Product[] = [
   {
     slug: 'pompelmo',
     name: 'Pompelmo Biologico',
-    bg: '#A6B7A0',
     image: '/images/pompelmo.jpg',
     description:
       'Pompelmo biologico siciliano, raccolto da gennaio ad aprile, apprezzato per il consumo fresco e nella ristorazione di qualità.',

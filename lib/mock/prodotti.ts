@@ -71,6 +71,7 @@ export const prodotti: Prodotto[] = [
       'Aroma intenso e buccia ricca di oli essenziali. Eccellenza IGP del territorio siracusano.',
     immagine:
       'https://images.unsplash.com/photo-1590502593747-42a996133562?w=800&q=80&fit=crop',
+    cutoutImage: '/images/cutout/limone-femminello.png',
     badge: 'IGP',
     coloreSfondo: 'vanilla',
     categoria: 'coltivazioni',
@@ -91,6 +92,7 @@ export const prodotti: Prodotto[] = [
       'Profumo agrumato e fresco, raro e prezioso. Ideale per uso alimentare e cosmetico.',
     immagine:
       'https://images.unsplash.com/photo-1609639643505-3c158a56de42?w=800&q=80&fit=crop',
+    cutoutImage: '/images/cutout/bergamotto.png',
     badge: 'Stagionale',
     coloreSfondo: 'vanilla',
     categoria: 'coltivazioni',
@@ -110,6 +112,7 @@ export const prodotti: Prodotto[] = [
       'Equilibrio tra dolce e amaro, succoso e dissetante. Coltivato senza pesticidi.',
     immagine:
       'https://images.unsplash.com/photo-1432457990754-c8b5f21448de?w=800&q=80&fit=crop',
+    cutoutImage: '/images/cutout/pompelmo.png',
     badge: 'Bio',
     coloreSfondo: 'vanilla',
     categoria: 'coltivazioni',
@@ -119,26 +122,6 @@ export const prodotti: Prodotto[] = [
       { etichetta: 'Box 10 kg', prezzo: 37.9 },
     ],
     stock: 0,
-  },
-  {
-    id: 'olio-evo',
-    slug: 'olio-evo',
-    nome: 'Olio EVO Luce di Terra',
-    sottotitolo: 'Olio extravergine di oliva biologico, estratto a freddo',
-    descrizioneBreve:
-      'Fruttato, erbaceo, identità siciliana in ogni goccia. Filiera corta, dalla pianta alla bottiglia.',
-    immagine:
-      'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=800&q=80&fit=crop',
-    badge: 'Estratto a freddo',
-    coloreSfondo: 'teal',
-    categoria: 'luce-di-terra',
-    slugPagina: '/luce-di-terra/olio-evo',
-    varianti: [
-      { etichetta: 'Bottiglia 250 ml', prezzo: 12.9 },
-      { etichetta: 'Bottiglia 500 ml', prezzo: 22.9 },
-      { etichetta: 'Bottiglia 750 ml', prezzo: 31.9 },
-    ],
-    stock: 40,
   },
   {
     id: 'marmellata-arance-rosse',

@@ -267,10 +267,12 @@
   letter-spacing: 0;
 }
 
-/* Variant select - pill */
+/* Variant select - pill. font-size: max(...) garantisce un floor a 16px a
+   prescindere dal token — sotto quella soglia iOS Safari fa zoom automatico
+   al focus/tap del <select>. */
 .variantSelect {
   font-family: var(--font-body);
-  font-size: var(--text-body-2-size);
+  font-size: max(var(--text-body-2-size), 16px);
   line-height: var(--text-body-2-line);
   font-weight: 400;
   color: var(--bordeaux);

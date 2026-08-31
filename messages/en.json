@@ -101,5 +101,16 @@
     "inHarvest": "In harvest",
     "rest": "Resting",
     "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has been moved. Head back home to keep exploring Badiula.",
+    "cta": "Back to home"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "body": "An unexpected error occurred. Try again, or head back home.",
+    "retry": "Try again",
+    "cta": "Back to home"
   }
 }

@@ -101,5 +101,16 @@
     "inHarvest": "In raccolta",
     "rest": "Riposo",
     "months": ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"]
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "body": "La pagina che cerchi non esiste o è stata spostata. Torna alla home per continuare a esplorare Badiula.",
+    "cta": "Torna alla home"
+  },
+  "error": {
+    "title": "Qualcosa è andato storto",
+    "body": "Si è verificato un errore imprevisto. Riprova, oppure torna alla home.",
+    "retry": "Riprova",
+    "cta": "Torna alla home"
   }
 }
