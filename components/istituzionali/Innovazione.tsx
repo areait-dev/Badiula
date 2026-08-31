@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import Reveal from '@/components/Reveal';
 import ProdottoIntro from '@/components/prodotti/shared/ProdottoIntro';
 import ShopBannerProdotto from '@/components/prodotti/shared/ShopBannerProdotto';
 import FaqProdotto, { type FaqItem } from '@/components/prodotti/shared/FaqProdotto';
@@ -58,31 +59,37 @@ export default function Innovazione({ data: d }: InnovazioneProps) {
         ]}
       />
 
-      <SectionZigzag
-        title={d.sezione1Titolo || 'Monitoraggio in campo'}
-        reverse
-        image={{ src: d.sezione1Immagine || '/images/azienda-campi.png' }}
-        imageAlt="Monitoraggio in campo degli agrumeti Badiula"
-      >
-        <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
-      </SectionZigzag>
+      <Reveal>
+        <SectionZigzag
+          title={d.sezione1Titolo || 'Monitoraggio in campo'}
+          reverse
+          image={{ src: d.sezione1Immagine || '/images/azienda-campi.png' }}
+          imageAlt="Monitoraggio in campo degli agrumeti Badiula"
+        >
+          <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
-      <SectionZigzag
-        title={d.sezione2Titolo || 'Blockchain di filiera'}
-        image={{ src: d.sezione2Immagine || '/images/DSC_7739.jpg' }}
-        imageAlt="Tracciabilità blockchain del prodotto Badiula, dal frutto al confezionamento"
-      >
-        <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
-      </SectionZigzag>
+      <Reveal>
+        <SectionZigzag
+          title={d.sezione2Titolo || 'Blockchain di filiera'}
+          image={{ src: d.sezione2Immagine || '/images/DSC_7739.jpg' }}
+          imageAlt="Tracciabilità blockchain del prodotto Badiula, dal frutto al confezionamento"
+        >
+          <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
-      <SectionZigzag
-        title={d.sezione3Titolo || 'Ricerca e collaborazioni'}
-        reverse
-        image={{ src: d.sezione3Immagine || '/images/DSC_7619.jpg' }}
-        imageAlt="Ricerca agronomica e raccolta manuale nelle coltivazioni Badiula"
-      >
-        <div dangerouslySetInnerHTML={{ __html: d.sezione3Testo || FALLBACK_SEZIONE_3_TESTO }} />
-      </SectionZigzag>
+      <Reveal>
+        <SectionZigzag
+          title={d.sezione3Titolo || 'Ricerca e collaborazioni'}
+          reverse
+          image={{ src: d.sezione3Immagine || '/images/DSC_7619.jpg' }}
+          imageAlt="Ricerca agronomica e raccolta manuale nelle coltivazioni Badiula"
+        >
+          <div dangerouslySetInnerHTML={{ __html: d.sezione3Testo || FALLBACK_SEZIONE_3_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
       <FaqProdotto items={FAQS} />
 

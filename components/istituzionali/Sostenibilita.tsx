@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import Reveal from '@/components/Reveal';
 import ProdottoIntro from '@/components/prodotti/shared/ProdottoIntro';
 import ShopBannerProdotto from '@/components/prodotti/shared/ShopBannerProdotto';
 import FaqProdotto, { type FaqItem } from '@/components/prodotti/shared/FaqProdotto';
@@ -64,25 +65,29 @@ export default function Sostenibilita({ data: d }: SostenibilitaProps) {
         }
       />
 
-      <SectionZigzag
-        title={d.sezione1Titolo || 'Magazzino a emissioni zero'}
-        image={{ src: d.sezione1Immagine || '/images/sostenibilita.jpg' }}
-        imageAlt="Impianto fotovoltaico sul centro di lavorazione Badiula"
-        imageHeight="110vh"
-      >
-        <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
-      </SectionZigzag>
+      <Reveal>
+        <SectionZigzag
+          title={d.sezione1Titolo || 'Magazzino a emissioni zero'}
+          image={{ src: d.sezione1Immagine || '/images/sostenibilita.jpg' }}
+          imageAlt="Impianto fotovoltaico sul centro di lavorazione Badiula"
+          imageHeight="110vh"
+        >
+          <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
-      <SectionZigzag
-        title={d.sezione2Titolo || 'Gestione delle risorse idriche'}
-        reverse
-        pullUp={80}
-        image={{ src: d.sezione2Immagine || '/images/DJI_0010.jpg' }}
-        imageAlt="Irrigazione a goccia e gestione idrica negli agrumeti Badiula"
-        imageHeight="110vh"
-      >
-        <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
-      </SectionZigzag>
+      <Reveal>
+        <SectionZigzag
+          title={d.sezione2Titolo || 'Gestione delle risorse idriche'}
+          reverse
+          pullUp={80}
+          image={{ src: d.sezione2Immagine || '/images/DJI_0010.jpg' }}
+          imageAlt="Irrigazione a goccia e gestione idrica negli agrumeti Badiula"
+          imageHeight="110vh"
+        >
+          <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
       <FaqProdotto items={FAQS} />
 

@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import Reveal from '@/components/Reveal';
 import ProdottoIntro from '@/components/prodotti/shared/ProdottoIntro';
 import ShopBannerProdotto from '@/components/prodotti/shared/ShopBannerProdotto';
 import FaqProdotto, { type FaqItem } from '@/components/prodotti/shared/FaqProdotto';
@@ -62,69 +63,79 @@ export default function Certificazioni({ data: d }: CertificazioniProps) {
         ]}
       />
 
-      <CentralTitle pullUp={60} size="h3sm">{d.biologicheTitolo || 'Biologiche'}</CentralTitle>
-      <div className={cardStyles.row}>
-        <CertificazioneCard
-          title={d.biologicheCard1Titolo || 'Biologico UE'}
-          description={
-            d.biologicheCard1Testo ||
-            'Tutte le nostre coltivazioni sono certificate biologiche secondo il regolamento europeo (UE) 2018/848, che disciplina la produzione biologica in tutti gli Stati membri.'
-          }
-          image={{ src: '/certificazioni/Biologico UE.jpg', alt: 'Biologico UE - Regolamento (UE) 2018/848' }}
+      <Reveal>
+        <CentralTitle pullUp={60} size="h3sm">{d.biologicheTitolo || 'Biologiche'}</CentralTitle>
+        <div className={cardStyles.row}>
+          <CertificazioneCard
+            title={d.biologicheCard1Titolo || 'Biologico UE'}
+            description={
+              d.biologicheCard1Testo ||
+              'Tutte le nostre coltivazioni sono certificate biologiche secondo il regolamento europeo (UE) 2018/848, che disciplina la produzione biologica in tutti gli Stati membri.'
+            }
+            image={{ src: '/certificazioni/Biologico UE.jpg', alt: 'Biologico UE - Regolamento (UE) 2018/848' }}
+          />
+          <CertificazioneCard
+            title={d.biologicheCard2Titolo || 'Bio Suisse'}
+            description={
+              d.biologicheCard2Testo ||
+              'Standard biologico svizzero, tra i più rigorosi al mondo, che impone requisiti aggiuntivi rispetto al regolamento UE in termini di biodiversità, gestione del suolo, benessere animale e sostenibilità complessiva.'
+            }
+            image={{ src: '/certificazioni/logo_bio_suisse_organic_pos.jpg', alt: 'Bio Suisse' }}
+          />
+        </div>
+      </Reveal>
+
+      <Reveal>
+        <ImageBanner
+          src="/images/limoni.jpg"
+          video="/videos/certificazioni-limoni.mp4"
+          alt="Agrumi Badiula selezionati secondo gli standard di qualità e sicurezza alimentare"
+          pullUp={60}
         />
-        <CertificazioneCard
-          title={d.biologicheCard2Titolo || 'Bio Suisse'}
-          description={
-            d.biologicheCard2Testo ||
-            'Standard biologico svizzero, tra i più rigorosi al mondo, che impone requisiti aggiuntivi rispetto al regolamento UE in termini di biodiversità, gestione del suolo, benessere animale e sostenibilità complessiva.'
-          }
-          image={{ src: '/certificazioni/logo_bio_suisse_organic_pos.jpg', alt: 'Bio Suisse' }}
-        />
-      </div>
+      </Reveal>
 
-      <ImageBanner
-        src="/images/limoni.jpg"
-        video="/videos/certificazioni-limoni.mp4"
-        alt="Agrumi Badiula selezionati secondo gli standard di qualità e sicurezza alimentare"
-        pullUp={60}
-      />
+      <Reveal>
+        <SectionZigzag title={d.qualitaSicurezzaTitolo || 'QUALITÀ E SICUREZZA ALIMENTARE'} noImage>
+          <div dangerouslySetInnerHTML={{ __html: d.qualitaSicurezzaTesto || FALLBACK_QUALITA_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
-      <SectionZigzag title={d.qualitaSicurezzaTitolo || 'QUALITÀ E SICUREZZA ALIMENTARE'} noImage>
-        <div dangerouslySetInnerHTML={{ __html: d.qualitaSicurezzaTesto || FALLBACK_QUALITA_TESTO }} />
-      </SectionZigzag>
+      <Reveal>
+        <CentralTitle pullUp={60} size="h3sm">{d.tutelaOrigineTitolo || 'Tutela di origine'}</CentralTitle>
+        <div className={cardStyles.row}>
+          <CertificazioneCard
+            title={d.tutelaOrigineCard1Titolo || 'Arancia Rossa di Sicilia IGP'}
+            description={
+              d.tutelaOrigineCard1Testo ||
+              "Badiula è membro del Consorzio di Tutela Arancia Rossa di Sicilia IGP, riconoscimento europeo che protegge le varietà Tarocco, Moro e Sanguinello coltivate nell'area di elezione delle arance rosse siciliane (province di Catania, Siracusa ed Enna)."
+            }
+            image={{ src: '/certificazioni/logo_ConsorzioTutela_AranciaRossaDiSIciliai.png', alt: 'Consorzio di Tutela Arancia Rossa di Sicilia IGP' }}
+          />
+          <CertificazioneCard
+            title={d.tutelaOrigineCard2Titolo || 'Distretto Agrumi di Sicilia'}
+            description={
+              d.tutelaOrigineCard2Testo ||
+              'Membro attivo del Distretto Produttivo Agrumi di Sicilia, che riunisce le aziende agrumicole siciliane di qualità e promuove progetti di ricerca, innovazione e valorizzazione del comparto.'
+            }
+            image={{ src: '/certificazioni/logo-DistrettoAgrumiSicilia.png', alt: 'Distretto Produttivo Agrumi di Sicilia' }}
+          />
+        </div>
+      </Reveal>
 
-      <CentralTitle pullUp={60} size="h3sm">{d.tutelaOrigineTitolo || 'Tutela di origine'}</CentralTitle>
-      <div className={cardStyles.row}>
-        <CertificazioneCard
-          title={d.tutelaOrigineCard1Titolo || 'Arancia Rossa di Sicilia IGP'}
-          description={
-            d.tutelaOrigineCard1Testo ||
-            "Badiula è membro del Consorzio di Tutela Arancia Rossa di Sicilia IGP, riconoscimento europeo che protegge le varietà Tarocco, Moro e Sanguinello coltivate nell'area di elezione delle arance rosse siciliane (province di Catania, Siracusa ed Enna)."
-          }
-          image={{ src: '/certificazioni/logo_ConsorzioTutela_AranciaRossaDiSIciliai.png', alt: 'Consorzio di Tutela Arancia Rossa di Sicilia IGP' }}
-        />
-        <CertificazioneCard
-          title={d.tutelaOrigineCard2Titolo || 'Distretto Agrumi di Sicilia'}
-          description={
-            d.tutelaOrigineCard2Testo ||
-            'Membro attivo del Distretto Produttivo Agrumi di Sicilia, che riunisce le aziende agrumicole siciliane di qualità e promuove progetti di ricerca, innovazione e valorizzazione del comparto.'
-          }
-          image={{ src: '/certificazioni/logo-DistrettoAgrumiSicilia.png', alt: 'Distretto Produttivo Agrumi di Sicilia' }}
-        />
-      </div>
+      <Reveal>
+        <CentralTitle pullUp={100} size="h3">{d.riconoscimentiTitolo || 'Riconoscimenti aggiuntivi'}</CentralTitle>
 
-      <CentralTitle pullUp={100} size="h3">{d.riconoscimentiTitolo || 'Riconoscimenti aggiuntivi'}</CentralTitle>
-
-      <SectionZigzag
-        title={d.riconoscimentiTitolo || 'Riconoscimenti aggiuntivi'}
-        hideTitle
-        pullUp={160}
-        imageHeight="50vh"
-        image={{ src: d.riconoscimentiImmagine || '/images/DSC_7723.jpg' }}
-        imageAlt="Bovino nell'Azienda Didattica accreditata Badiula"
-      >
-        <div dangerouslySetInnerHTML={{ __html: d.riconoscimentiTesto || FALLBACK_RICONOSCIMENTI_TESTO }} />
-      </SectionZigzag>
+        <SectionZigzag
+          title={d.riconoscimentiTitolo || 'Riconoscimenti aggiuntivi'}
+          hideTitle
+          pullUp={160}
+          imageHeight="50vh"
+          image={{ src: d.riconoscimentiImmagine || '/images/DSC_7723.jpg' }}
+          imageAlt="Bovino nell'Azienda Didattica accreditata Badiula"
+        >
+          <div dangerouslySetInnerHTML={{ __html: d.riconoscimentiTesto || FALLBACK_RICONOSCIMENTI_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
       <FaqProdotto items={FAQS} />
 

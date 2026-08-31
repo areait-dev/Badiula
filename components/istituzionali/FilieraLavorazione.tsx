@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import Reveal from '@/components/Reveal';
 import ProdottoIntro from '@/components/prodotti/shared/ProdottoIntro';
 import ShopBannerProdotto from '@/components/prodotti/shared/ShopBannerProdotto';
 import FaqProdotto, { type FaqItem } from '@/components/prodotti/shared/FaqProdotto';
@@ -66,40 +67,46 @@ export default function FilieraLavorazione({ data: d }: FilieraLavorazioneProps)
         ]}
       />
 
-      <SectionZigzag
-        title={d.sezione1Titolo || 'Il centro di lavorazione di Carlentini'}
-        reverse
-        tallImage
-        image={{ src: d.sezione1Immagine || '/images/capannone-aerial.png' }}
-        imageAlt="Centro di lavorazione Badiula a Carlentini"
-      >
-        <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
-      </SectionZigzag>
+      <Reveal>
+        <SectionZigzag
+          title={d.sezione1Titolo || 'Il centro di lavorazione di Carlentini'}
+          reverse
+          tallImage
+          image={{ src: d.sezione1Immagine || '/images/capannone-aerial.png' }}
+          imageAlt="Centro di lavorazione Badiula a Carlentini"
+        >
+          <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
-      <CentralTitle pullUp={170} displayFont>
-        <span className={styles.centralTitleRow}>{d.centralTitle1 || "Dall'albero al"}</span>
-        <span className={styles.centralTitleRow}>{d.centralTitle2 || 'confezionamento'}</span>
-      </CentralTitle>
+      <Reveal>
+        <CentralTitle pullUp={170} displayFont>
+          <span className={styles.centralTitleRow}>{d.centralTitle1 || "Dall'albero al"}</span>
+          <span className={styles.centralTitleRow}>{d.centralTitle2 || 'confezionamento'}</span>
+        </CentralTitle>
 
-      <SectionZigzag
-        title={d.sezione2Titolo || 'Tracciabilità blockchain'}
-        pullUp={160}
-        image={{ src: d.sezione2Immagine || '/images/DSC_7769.jpg' }}
-        imageAlt="Raccolta manuale degli agrumi Badiula, tracciata dal campo al confezionamento"
-      >
-        <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
-      </SectionZigzag>
+        <SectionZigzag
+          title={d.sezione2Titolo || 'Tracciabilità blockchain'}
+          pullUp={160}
+          image={{ src: d.sezione2Immagine || '/images/DSC_7769.jpg' }}
+          imageAlt="Raccolta manuale degli agrumi Badiula, tracciata dal campo al confezionamento"
+        >
+          <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
-      <SectionZigzag
-        title={d.sezione3Titolo || 'Continuità di fornitura e capacità operativa'}
-        italicTitle
-        reverse
-        pullUp={160}
-        image={{ src: d.sezione3Immagine || '/images/DSC_7568.jpg', position: 'left' }}
-        imageAlt="Logistica e capacità operativa del centro di lavorazione Badiula"
-      >
-        <div dangerouslySetInnerHTML={{ __html: d.sezione3Testo || FALLBACK_SEZIONE_3_TESTO }} />
-      </SectionZigzag>
+      <Reveal>
+        <SectionZigzag
+          title={d.sezione3Titolo || 'Continuità di fornitura e capacità operativa'}
+          italicTitle
+          reverse
+          pullUp={160}
+          image={{ src: d.sezione3Immagine || '/images/DSC_7568.jpg', position: 'left' }}
+          imageAlt="Logistica e capacità operativa del centro di lavorazione Badiula"
+        >
+          <div dangerouslySetInnerHTML={{ __html: d.sezione3Testo || FALLBACK_SEZIONE_3_TESTO }} />
+        </SectionZigzag>
+      </Reveal>
 
       <FaqProdotto items={FAQS} />
 
