@@ -59,7 +59,7 @@
   display: inline-flex;
   align-items: center;
   height: 48px;
-  padding: 0 28px;
+  padding: 0 var(--space-md);
   border: 1.5px solid var(--white);
   border-radius: 999px;
   font-family: var(--font-body);
@@ -121,6 +121,9 @@
   border-radius: 14px;
   display: flex;
   justify-content: center;
+  /* Deroga intenzionale alla scala spaziatura (CLAUDE.md §3): centra
+     otticamente la "rotellina" dentro l'icona mouse 26×42px, non è un
+     valore di ritmo layout. */
   padding-top: 7px;
   box-sizing: border-box;
 }

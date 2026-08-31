@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Territorio from '@/components/Territorio';
+import { Link } from '@/i18n/routing';
 import styles from './HorizontalScroll.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -117,7 +118,7 @@ export default function HorizontalScroll({
             <p className={styles.eyebrow}>{p1Eyebrow}</p>
             <h1 className={styles.heading}>{p1Heading}</h1>
             <p className={styles.body}>{p1Body}</p>
-            <a href="/" className={`btn btn-outline ${styles.cta}`}>{p1Cta}</a>
+            <Link href="/azienda" className={`btn btn-outline ${styles.cta}`}>{p1Cta}</Link>
           </div>
           <div className={styles.imgHalf}>
             {p1Image ? (

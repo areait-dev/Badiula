@@ -76,6 +76,8 @@
   padding: 1.75rem 2.5rem;
   display: flex;
   flex-direction: column;
+  /* Deroga intenzionale (CLAUDE.md §3): micro-gap tra eyebrow e titolo,
+     vanno percepiti come un blocco unico, non ritmo di sezione. */
   gap: 4px;
 }
 
@@ -129,7 +131,7 @@
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 6px 18px;
+  padding: var(--space-xs) var(--space-sm);
   border: 1px solid var(--bordeaux);
   border-radius: var(--radius-btn);
   font-family: var(--font-body);
@@ -201,6 +203,8 @@
   color: var(--eigengrau);
   text-transform: uppercase;
   letter-spacing: 0;
+  /* Deroga intenzionale (CLAUDE.md §3): micro-gap etichetta/valore dentro
+     la stessa cella, coppia semanticamente unica. */
   margin: 0 0 4px 0;
 }
 
@@ -218,9 +222,9 @@
 .cta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-xs);
   height: 48px;
-  padding: 0 24px;
+  padding: 0 var(--space-md);
   border: 1.5px solid var(--bordeaux);
   border-radius: var(--radius-btn);
   background: transparent;
@@ -283,7 +287,7 @@
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-sm);
   z-index: 10;
 }
 

@@ -48,6 +48,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* Deroga intenzionale (CLAUDE.md §3): distanza fissa tra le due barre
+     dell'hamburger dentro il cerchio 50×50px, non ritmo di layout. */
   gap: 7px;
   width: 50px;
   height: 50px;

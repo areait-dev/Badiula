@@ -39,7 +39,7 @@
   font-weight: 600;
   letter-spacing: 0;
   border-radius: var(--radius-btn);
-  padding: 12px 24px;
+  padding: var(--space-sm) var(--space-md);
   cursor: pointer;
   transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
 }
