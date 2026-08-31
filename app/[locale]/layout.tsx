@@ -8,6 +8,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import SitoInCostruzioneGate from '@/components/SitoInCostruzioneGate';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import CookieConsent from '@/components/CookieConsent';
+import StructuredData from '@/components/StructuredData';
 import '../globals.css';
 
 export const metadata: Metadata = {
@@ -59,6 +60,7 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
         <link rel="stylesheet" href="https://use.typekit.net/hjz0oac.css" />
+        <StructuredData />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
