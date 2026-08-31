@@ -50,6 +50,14 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
+        {/* Typekit CSS response serves font-display:auto (verificato via curl),
+            non swap — non modificabile lato client. Self-hosting completo non
+            praticabile ora: public/font/ ha solo i pesi Bold/Italic di Mr Eaves
+            Mod OT, manca il Regular usato da --font-body per quasi tutto il
+            testo del sito. Preconnect anticipa la connessione TLS/DNS al CDN
+            Adobe prima che il CSS venga richiesto, riducendo il ritardo. */}
+        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
         <link rel="stylesheet" href="https://use.typekit.net/hjz0oac.css" />
       </head>
       <body>
