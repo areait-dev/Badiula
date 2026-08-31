@@ -47,6 +47,8 @@ export default function Hero({
           <video
             className={styles.video}
             src={video}
+            poster="/images/hero-poster.jpg"
+            preload="auto"
             autoPlay
             muted
             loop
