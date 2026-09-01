@@ -54,7 +54,7 @@ export default function Territorio({
           <p className={`body-2 ${styles.eyebrow}`}>{p3Eyebrow}</p>
           <h2 className={styles.heading}>{p3Heading}</h2>
           <p className={styles.body}>{p3Body}</p>
-          <Link href="/filiera-e-lavorazione" className={`btn btn-outline ${styles.cta}`}>{t('cta')}</Link>
+          <Link href="/innovazione" className={`btn btn-outline ${styles.cta}`}>{t('cta')}</Link>
         </div>
       </div>
     </div>
