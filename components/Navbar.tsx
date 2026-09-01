@@ -247,7 +247,7 @@ export default function Navbar() {
                     <p className={styles.promoTitle}>{t('promo')}</p>
                     <p className={styles.promoSub}>{t('promoSub')}</p>
                   </div>
-                  <Link href="/" className={styles.shopBtn} onClick={closeAll}>
+                  <Link href="/shop" className={styles.shopBtn} onClick={closeAll}>
                     {t('shop')}
                   </Link>
                 </div>

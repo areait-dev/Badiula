@@ -94,7 +94,7 @@ export default async function ColtivazioniPage({ params }: { params: { locale: s
             <p className={styles.bannerHeading} style={{ whiteSpace: 'pre-line' }}>{bannerHeading}</p>
             <p className={styles.bannerSub} style={{ whiteSpace: 'pre-line' }}>{bannerSub}</p>
           </div>
-          <Link href="/" className={styles.bannerShopBtn}>Shop</Link>
+          <Link href="/shop" className={styles.bannerShopBtn}>Shop</Link>
         </div>
       </section>
 

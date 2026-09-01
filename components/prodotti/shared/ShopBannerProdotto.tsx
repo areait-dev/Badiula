@@ -21,7 +21,7 @@ export default function ShopBannerProdotto() {
             {'Box stagionali di agrumi biologici, olio extravergine Luce di Terra,\nmarmellate di agrumi. Spedizioni in Italia e in Unione Europea.'}
           </p>
         </div>
-        <Link href="/coltivazioni" className="btn btn-outline-white">
+        <Link href="/shop" className="btn btn-outline-white">
           Shop
         </Link>
       </div>

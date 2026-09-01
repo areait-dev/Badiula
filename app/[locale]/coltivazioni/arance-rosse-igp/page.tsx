@@ -171,7 +171,7 @@ export default function AranceRossePage() {
             <p className={styles.bannerHeading}>Agrumi siciliani{'\n'}direttamente dal produttore</p>
             <p className={styles.bannerSub}>Box stagionali di agrumi biologici, olio extravergine Luce di Terra,{'\n'}marmellate di agrumi. Spedizioni in Italia e in Unione Europea</p>
           </div>
-          <Link href="/" className={styles.bannerShopBtn}>Shop</Link>
+          <Link href="/shop" className={styles.bannerShopBtn}>Shop</Link>
         </div>
       </section>
 

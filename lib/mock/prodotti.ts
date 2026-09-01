@@ -135,7 +135,7 @@ export const prodotti: Prodotto[] = [
     badge: 'Artigianale',
     coloreSfondo: 'vanilla',
     categoria: 'luce-di-terra',
-    slugPagina: '/luce-di-terra/marmellate',
+    slugPagina: '/luce-di-terra/marmellata-agrumi',
     varianti: [
       { etichetta: 'Vasetto 230 g', prezzo: 6.9 },
       { etichetta: 'Cofanetto 3 vasetti', prezzo: 18.9 },

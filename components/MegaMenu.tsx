@@ -56,7 +56,7 @@ export default function MegaMenu({ onClose, onBack }: MegaMenuProps) {
             <p className={styles.bannerTitle}>{t('promo')}</p>
             <p className={styles.bannerSub}>{t('promoSub')}</p>
           </div>
-          <Link href="/" className={styles.shopBtn} onClick={onClose}>
+          <Link href="/shop" className={styles.shopBtn} onClick={onClose}>
             {t('shop')}
           </Link>
         </div>

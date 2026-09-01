@@ -139,7 +139,7 @@ export default async function LuceDiTerraPage({ params }: { params: { locale: st
               con spedizione in Italia e Unione Europea. Anche in formato box regalo.
             </p>
           </div>
-          <Link href="/" className={styles.bannerBtn}>Shop</Link>
+          <Link href="/shop" className={styles.bannerBtn}>Shop</Link>
         </div>
       </section>
 

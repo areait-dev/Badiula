@@ -76,8 +76,8 @@ function MobileCard({
         </select>
         <p className={styles.price}>{formatPrice(p.varianti[variantIdx]?.prezzo ?? 0)}</p>
         <div className={styles.ctaRow}>
-          <button className={styles.btnSolid} disabled={p.stock === 0}>
-            Acquista ora &#9658;
+          <button className={styles.btnSolid} disabled>
+            In arrivo
           </button>
           <Link href={p.slugPagina} className={styles.btnOutline}>
             Scopri di più &#9658;
