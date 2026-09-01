@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import styles from './Territorio.module.css';
 
 interface TerritorioProps {
@@ -53,7 +54,7 @@ export default function Territorio({
           <p className={`body-2 ${styles.eyebrow}`}>{p3Eyebrow}</p>
           <h2 className={styles.heading}>{p3Heading}</h2>
           <p className={styles.body}>{p3Body}</p>
-          <button className={`btn btn-outline ${styles.cta}`}>{t('cta')}</button>
+          <Link href="/filiera-e-lavorazione" className={`btn btn-outline ${styles.cta}`}>{t('cta')}</Link>
         </div>
       </div>
     </div>

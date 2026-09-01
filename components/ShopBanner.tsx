@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 import styles from './ShopBanner.module.css';
 
 interface ShopBannerProps {
@@ -42,7 +43,7 @@ export default function ShopBanner({
           <h2 style={{ whiteSpace: 'pre-line' }}>{title}</h2>
           <p style={{ whiteSpace: 'pre-line' }}>{subtitle}</p>
         </div>
-        <button className="btn btn-outline-white">{t('cta')}</button>
+        <Link href="/shop" className="btn btn-outline-white">{t('cta')}</Link>
       </div>
     </section>
   );
