@@ -40,9 +40,13 @@ export default async function AziendaPage({ params }: { params: { locale: string
   const culturaBody = it ? d.culturaBodyIt : d.culturaBodyEn;
   const manifesto = it ? d.manifestoIt : d.manifestoEn;
   const visionLabel = (it ? d.visionLabelIt : d.visionLabelEn) || 'Vision';
-  const visionBody = it ? d.visionBodyIt : d.visionBodyEn;
+  const visionBody = it
+    ? "Sviluppare un modello agricolo capace di valorizzare il territorio siciliano attraverso produzioni biologiche di alta qualità, innovazione tecnologica e sostenibilità ambientale. Crediamo in un'agricoltura che sappia evolversi senza perdere il proprio legame con la terra, valorizzando biodiversità, cultura agricola e identità mediterranea."
+    : d.visionBodyEn;
   const missionLabel = (it ? d.missionLabelIt : d.missionLabelEn) || 'Mission';
-  const missionBody = it ? d.missionBodyIt : d.missionBodyEn;
+  const missionBody = it
+    ? "Produrre agrumi biologici siciliani garantendo qualità, tracciabilità e sostenibilità lungo tutta la filiera. Attraverso energie rinnovabili, agricoltura di precisione e monitoraggio climatico, lavoriamo ogni giorno per ridurre l'impatto ambientale della produzione e migliorare l'efficienza delle coltivazioni."
+    : d.missionBodyEn;
   const territorioTitolo = it ? d.territorioTitoloIt : d.territorioTitoloEn;
   const territorioBody = it ? d.territorioBodyIt : d.territorioBodyEn;
 
