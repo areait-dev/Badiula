@@ -113,6 +113,7 @@
 
 @media (max-width: 1023px) {
   :root {
+    --page-margin: clamp(16px, 5vw, 100px);
     --text-h1-size: 64px; --text-h1-line: 72px;
     --text-h2-size: 48px; --text-h2-line: 54px;
     --text-h3-size: 36px; --text-h3-line: 42px;

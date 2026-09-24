@@ -378,7 +378,7 @@
 @media (max-width: 767px), (hover: none), (pointer: coarse) {
   .intro { padding: 64px var(--page-margin-mobile) 48px; }
   .introHero { padding-top: 6rem; margin-bottom: 40px; }
-  .h1 { font-size: var(--text-h1-size); line-height: var(--text-h1-line); }
+  .h1 { font-size: clamp(28px, 8vw, var(--text-h1-size)); line-height: 1.1; overflow-wrap: anywhere; }
   .h1Row, .h1RowMid { white-space: normal; }
 
   .imgWrapCircle {

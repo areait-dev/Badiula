@@ -461,16 +461,38 @@
 @media (max-width: 1023px) {
   .navbar {
     height: 80px;
-    padding: 0 1.25rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 var(--page-margin);
+    gap: var(--space-xs);
   }
+  /* I blocchi laterali devono poter restringersi (min-width:0), altrimenti
+     hamburger + logo + IT|EN + ricerca superano il viewport e Chrome Android
+     allarga la pagina rimpicciolendo tutto. */
   .side {
     transform: none;
+    flex: 1 1 0;
+    min-width: 0;
+    gap: var(--space-xs);
   }
-  /* Il logo (con wordmark) è più alto della navbar ridotta: senza questo
-     offset la metà superiore sporge sopra top:0 e resta tagliata fuori
-     dal viewport (la navbar è position:absolute). */
   .center {
-    transform: translateY(40px);
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+  /* Logo dimensionato sulla larghezza del viewport: sovrascrive height/width
+     inline impostati da <Logo>. Su tablet resta alla dimensione originale. */
+  .center img,
+  .overlayLogo img {
+    width: clamp(96px, 34vw, 267px) !important;
+    height: auto !important;
+    max-width: 100%;
+  }
+  .overlayLogo {
+    min-width: 0;
+  }
+  .lang {
+    gap: var(--space-xs);
+    white-space: nowrap;
   }
 
   /* Header overlay */
@@ -479,6 +501,9 @@
   }
   .overlayLang {
     width: auto;
+  }
+  .overlayHeader {
+    gap: var(--space-xs);
   }
 
   /* Colonne: stack verticale */
@@ -497,6 +522,14 @@
   .overlayRight {
     width: 100%;
     display: none; /* nascosta su mobile, puoi riabilitarla se vuoi */
+  }
+}
+
+/* Il logo tablet (≈150px di altezza) sporge sotto la barra da 80px: si
+   compensa solo da 768px; sotto, il logo ridotto sta dentro la barra. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .center {
+    transform: translateY(40px);
   }
 }
 
