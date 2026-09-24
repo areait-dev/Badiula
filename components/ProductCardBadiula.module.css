@@ -24,7 +24,9 @@
     max-width: 400px;
     height: auto;
   }
-  .imgWrap {
+  /* .card .imgWrap: la regola base .imgWrap (width:400px) sta più sotto nel
+     file e, a parità di specificità, sovrascriverebbe questa. */
+  .card .imgWrap {
     flex: 0 0 auto;
     width: 100%;
     aspect-ratio: 400 / 330;

@@ -185,7 +185,7 @@
    la sezione zigzag immagine+testo passa a stack verticale. */
 @media (max-width: 1023px), (hover: none), (pointer: coarse) {
   .section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding: var(--space-2xl) var(--page-margin-mobile);
   }
   /* Testo prima della foto, a larghezza piena. */

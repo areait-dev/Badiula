@@ -220,7 +220,18 @@
   .half,
   .imgHalf {
     width: 100%;
+    min-width: 0;
     padding: 3rem 1.5rem;
+  }
+  /* Scala tipografica responsive (§10.X) al posto dei px fissi desktop */
+  .heading {
+    font-size: var(--text-h3-size);
+    line-height: var(--text-h3-line);
+    overflow-wrap: anywhere;
+  }
+  .body {
+    font-size: var(--text-body-1-size);
+    line-height: var(--text-body-1-line);
   }
 .imgHalf {
   height: 50vh;

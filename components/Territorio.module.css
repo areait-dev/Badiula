@@ -122,16 +122,25 @@
     background: transparent;
   }
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     row-gap: 2.5rem;
   }
   .col,
   .col:last-child {
     text-align: left;
     align-items: flex-start;
+    min-width: 0;
+  }
+  /* Scala tipografica responsive (§10.X) al posto dei px fissi desktop */
+  .heading {
+    font-size: var(--text-h3-size);
+    line-height: var(--text-h3-line);
+    overflow-wrap: anywhere;
   }
   .body {
     max-width: none;
+    font-size: var(--text-body-1-size);
+    line-height: var(--text-body-1-line);
   }
   /* Mappa: quasi tutta larghezza, nessun padding laterale aggiuntivo */
   .mapCol {
