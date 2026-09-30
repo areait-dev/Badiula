@@ -190,6 +190,16 @@
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
+.ctaArrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem;
+  line-height: 1;
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cta:hover .ctaArrow { transform: translateX(3px); }
+.cta:active .ctaArrow { transform: translateX(5px); transition-duration: 100ms; }
+
 /* Alternanza colori identica all'homepage */
 .card:nth-child(odd)             { background: var(--vanilla); }
 .card:nth-child(odd) h3,

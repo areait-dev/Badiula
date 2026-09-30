@@ -134,7 +134,8 @@ export default function ProductionsTrack({ title, moreLabel }: { title: string; 
               </div>
 
               <Link href={`/coltivazioni/${p.slug}`} className={styles.cta}>
-                {moreLabel}
+                <span>{moreLabel.replace(/\s*[▶►]️?\s*$/, '')}</span>
+                <span className={styles.ctaArrow} aria-hidden>►</span>
               </Link>
             </article>
           ))}
