@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import styles from './page.module.css';
 
 const MONTHS = ['GEN','FEB','MAR','APR','MAG','GIU','LUG','AGO','SET','OTT','NOV','DIC'];
-const HARVEST = [1, 2, 3, 4, 5, 6, 10, 11, 12];
+const HARVEST = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; // calendario 12 mesi, nessun periodo di riposo
 
 export default function LimoneFemminelloPage() {
   return (
@@ -32,9 +32,9 @@ export default function LimoneFemminelloPage() {
           </p>
           <p style={{ marginTop: '2em' }}>
             Coltiviamo Femminello Siracusano in regime biologico tra Carlentini e Lentini, nella
-            zona di elezione del limone siciliano. La fioritura prolungata permette più raccolte
-            durante l&apos;anno, garantendo continuità produttiva e freschezza costante da ottobre
-            a giugno.
+            zona di elezione del limone siciliano. La fioritura rifiorente permette più raccolte
+            durante l&apos;anno, garantendo continuità produttiva e freschezza costante in ogni
+            mese, dal Primofiore al Bianchetto fino ai Verdelli.
           </p>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function LimoneFemminelloPage() {
           <p className={styles.blockLead}>La fioritura rifiorente del Femminello permette tre raccolte distinte durante l&apos;anno:</p>
           <ul className={`${styles.blockList} ${styles.blockListDesc}`}>
             <li><strong>Primofiore</strong> <em>(ottobre – gennaio)</em>: il primo raccolto, frutti più piccoli e profumati</li>
-            <li><strong>Limoni invernali</strong> <em>(gennaio – marzo)</em>: la raccolta principale, frutti maturi e succosi</li>
+            <li><strong>Bianchetto</strong> <em>(gennaio – marzo)</em>: la raccolta principale, frutti maturi e succosi</li>
             <li><strong>Verdelli</strong> <em>(maggio – giugno)</em>: la raccolta tardiva, frutti dalla buccia ancora verdognola, molto apprezzati in cucina</li>
           </ul>
         </div>

@@ -40,7 +40,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: 'arance-rosse-igp',
     name: 'Arance Rosse di Sicilia IGP',
-    image: 'https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=800&q=80&fit=crop',
+    image: '/images/immagini%20prodotto/Moro_taglio.png',
     description:
       'Varietà Tarocco e Moro, certificate IGP, coltivate nella zona di elezione delle arance rosse siciliane. Raccolta da dicembre ad aprile.',
     subtitle:

@@ -5,7 +5,7 @@ import FaqAccordion from './FaqAccordion';
 import styles from './page.module.css';
 
 const MONTHS = ['GEN','FEB','MAR','APR','MAG','GIU','LUG','AGO','SET','OTT','NOV','DIC'];
-const HARVEST = [1, 2, 3, 4, 5, 6, 11]; // 1-based
+const HARVEST = [1, 2, 3, 4, 5, 6, 12]; // Dicembre - Giugno
 
 const FAQS = [
   {

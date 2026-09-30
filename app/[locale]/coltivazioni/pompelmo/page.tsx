@@ -14,7 +14,7 @@ const FAQS = [
   },
   {
     q: 'Il pompelmo Badiula è rosa o giallo?',
-    a: 'La nostra varietà ha polpa dal giallo chiaro al rosato, con variazione annuale legata alle condizioni climatiche. Non è la varietà «Pink» americana ma una selezione mediterranea dal carattere equilibrato.',
+    a: 'Il nostro pompelmo è rosa. Coltiviamo la varietà Star Ruby, caratterizzata dalla tipica polpa pigmentata, dal colore rosa intenso tendente al rosso. Il frutto si distingue per la sua succosità e per il caratteristico equilibrio tra freschezza, acidità e la naturale nota amaricante tipica del pompelmo.',
   },
   {
     q: 'Si può consumare la buccia del pompelmo?',
@@ -34,8 +34,8 @@ export default function PompelmoPage() {
       <section className={styles.intro}>
         <div className={styles.introHero}>
           <h1 className={styles.h1}>
-            <span className={styles.h1Row}>POMPELMO</span>
-            <span className={styles.h1RowMid}>BIOLOGICO</span>
+            <span className={styles.h1Row}>POMPELMO ROSA</span>
+            <span className={styles.h1RowMid}>STAR RUBY</span>
           </h1>
           <h2 className={styles.h2}>
             Freschezza e carattere mediterraneo, dalla provincia di Siracusa
@@ -43,11 +43,11 @@ export default function PompelmoPage() {
         </div>
         <div className={styles.introBody}>
           <p>
-            Il nostro pompelmo biologico nasce in un territorio particolarmente vocato a
-            questa coltivazione: le condizioni climatiche della Sicilia orientale, unite
+            Il nostro pompelmo rosa Star Ruby biologico nasce in un territorio particolarmente
+            vocato a questa coltivazione: le condizioni climatiche della Sicilia orientale, unite
             alla fertilità dei terreni tra Carlentini e Lentini, permettono lo sviluppo di
-            frutti di buon calibro, polpa succosa e profilo aromatico equilibrato tra
-            dolcezza e nota amaricante.
+            frutti di buon calibro, polpa rosa intensa e succosa, dal profilo aromatico
+            equilibrato tra dolcezza e nota amaricante.
           </p>
           <p style={{ marginTop: '2em' }}>
             Il pompelmo è un agrume sempre più richiesto sia nel canale retail specializzato
@@ -62,11 +62,11 @@ export default function PompelmoPage() {
       <section className={styles.blockA}>
         <div className={styles.blockAContent}>
           <h3 className={styles.blockTitle}>Caratteristiche</h3>
-          <p className={styles.blockLead}>Il pompelmo biologico presenta:</p>
+          <p className={styles.blockLead}>Il pompelmo rosa Star Ruby biologico presenta:</p>
           <ul className={styles.blockList}>
             <li><strong>Forma sferica regolare</strong>, calibri medio-grandi</li>
-            <li><strong>Buccia giallo dorato</strong>, sottile per la varietà</li>
-            <li><strong>Polpa succosa dal colore variabile</strong> (da giallo chiaro a rosato a seconda dell&apos;annata)</li>
+            <li><strong>Buccia giallo-rosata</strong>, sottile per la varietà</li>
+            <li><strong>Polpa rosa intenso, tendente al rosso</strong>, tipica della varietà Star Ruby</li>
             <li><strong>Sapore equilibrato</strong> tra dolce e amaricante</li>
             <li><strong>Coltivazione biologica certificata</strong>, senza trattamenti post-raccolta</li>
           </ul>
@@ -124,7 +124,7 @@ export default function PompelmoPage() {
         </div>
         <div className={styles.blockBContent}>
           <h3 className={styles.blockTitle}>Usi consigliati</h3>
-          <p className={styles.blockLead}>Il pompelmo biologico è apprezzato per:</p>
+          <p className={styles.blockLead}>Il pompelmo rosa Star Ruby biologico è apprezzato per:</p>
           <ul className={`${styles.blockList} ${styles.blockListDesc}`}>
             <li><strong>Consumo fresco</strong>: a spicchi o a metà, classico per la prima colazione</li>
             <li><strong>Spremitura</strong>: succhi di pompelmo freschi, anche misti con arancia</li>
