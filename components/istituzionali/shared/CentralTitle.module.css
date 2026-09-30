@@ -72,8 +72,8 @@
 
 /* ── SPAZI RIDOTTI tablet/mobile (solo padding verticali) ── */
 @media (max-width: 1023px) {
-  .section { padding-top: 48px; padding-bottom: 48px; }
+  .section { padding-top: 48px; padding-bottom: 48px; margin-top: calc(-1 * min(var(--pull-up, 0px), 28px)); }
 }
 @media (max-width: 767px) {
-  .section { padding-top: 32px; padding-bottom: 32px; }
+  .section { padding-top: 32px; padding-bottom: 32px; margin-top: calc(-1 * min(var(--pull-up, 0px), 0px)); }
 }
