@@ -301,3 +301,21 @@
   .quoteLine      { font-size: clamp(2.8rem, 13vw, 5rem); line-height: 0.92; }
   .manifestoSection { padding: 4rem 1.5rem; }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile ── */
+@media (max-width: 1024px) {
+  .hero { height: 30vh; min-height: 200px; }
+  .gridLast { margin-top: 0; margin-bottom: 0; min-height: auto; }
+  .textBlock { padding: 2rem 1.5rem; }
+  .imgWrap  { min-height: 260px; }
+  .imgTall  { min-height: 300px; }
+}
+@media (max-width: 767px) {
+  .vmSection { padding: 2.5rem 1.5rem; }
+  .vmBlock { padding: 1.25rem 0; }
+  .manifestoSection { padding: 2.5rem 1.5rem; }
+  .quoteSection { padding-bottom: 2.5rem; }
+  .textBlock { padding: 1.5rem; }
+  .imgWrap  { min-height: 220px; }
+  .imgTall  { min-height: 260px; }
+}

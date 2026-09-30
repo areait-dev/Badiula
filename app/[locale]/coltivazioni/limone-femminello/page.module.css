@@ -436,3 +436,18 @@
   .beforeBanner .blockBVisual  { order: -1; }
   .beforeBanner .imgWrapRect { max-width: none; }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile (solo margini/padding verticali) ── */
+@media (max-width: 1023px) {
+  .intro { padding-top: 56px; padding-bottom: 40px; }
+  .introHero { padding-top: 7rem; margin-bottom: 32px; }
+  .h1 { margin-bottom: 28px; }
+  .calendar { padding-top: 48px; padding-bottom: 48px; }
+}
+
+@media (max-width: 767px) {
+  .intro { padding-top: 40px; padding-bottom: 28px; }
+  .introHero { padding-top: 5.5rem; margin-bottom: 24px; }
+  .h1 { margin-bottom: 20px; }
+  .calendar { padding-top: 32px; padding-bottom: 32px; }
+}

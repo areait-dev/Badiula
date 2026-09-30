@@ -72,3 +72,11 @@
 @media (max-width: 768px) {
   .row { margin-top: -16px; }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile ── */
+@media (max-width: 1023px) {
+  .row { padding-bottom: 40px; }
+}
+@media (max-width: 767px) {
+  .row { padding-bottom: 32px; gap: var(--space-sm); }
+}

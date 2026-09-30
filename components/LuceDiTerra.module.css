@@ -86,3 +86,9 @@
     padding: 3rem 1.5rem;
   }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile ── */
+@media (max-width: 1023px) {
+  .section { margin-top: var(--space-lg); margin-bottom: var(--space-lg); min-height: auto; }
+  .textSide { padding: 2rem 1.5rem; }
+}

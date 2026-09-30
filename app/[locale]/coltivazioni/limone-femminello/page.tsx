@@ -71,7 +71,8 @@ export default function LimoneFemminelloPage() {
           <div className={`${styles.imgWrapRect} ${styles.imgWrapSquare}`}>
             <video
               className={styles.videoFill}
-              src="/videos/dsc-7644.mp4"
+              src="/videos/dsc-7644_web.mp4"
+              poster="/images/poster-limone-raccolti.jpg"
               autoPlay
               muted
               loop

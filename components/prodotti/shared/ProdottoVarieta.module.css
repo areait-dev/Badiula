@@ -215,3 +215,17 @@
     height: clamp(280px, 68vw, 480px);
   }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile ── */
+@media (max-width: 1023px) {
+  .section { padding-top: 48px; padding-bottom: 48px; }
+  .noBorder { padding-top: 24px; }
+  .visual { margin-top: 24px; }
+  .imageFirstOnStack .visual { margin-bottom: 24px; }
+}
+@media (max-width: 767px) {
+  .section { padding-top: 32px; padding-bottom: 32px; }
+  .noBorder { padding-top: 16px; }
+  .visual { margin-top: 20px; }
+  .imageFirstOnStack .visual { margin-bottom: 20px; }
+}

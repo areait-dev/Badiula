@@ -293,3 +293,14 @@
   .imgWrap.imgWrapTall { margin-bottom: 0; }
   .title   { font-size: clamp(28px, 8vw, 40px); }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile (solo padding verticali) ── */
+@media (max-width: 1023px) {
+  .section { padding-top: 48px; padding-bottom: 48px; }
+  .visual  { margin-bottom: 24px; }
+  .title   { margin-bottom: 16px; }
+}
+@media (max-width: 767px) {
+  .section { padding-top: 32px; padding-bottom: 32px; }
+  .visual  { margin-bottom: 20px; }
+}

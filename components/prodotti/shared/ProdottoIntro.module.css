@@ -98,3 +98,13 @@
   .h2 span { white-space: normal; }
   .h2NoWrap { white-space: normal; max-width: 100%; }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile ── */
+@media (max-width: 1023px) {
+  .intro { padding-bottom: 40px; }
+  .hero  { padding-top: 140px; margin-bottom: 32px; }
+}
+@media (max-width: 767px) {
+  .intro { padding-bottom: 32px; }
+  .hero  { padding-top: 120px; margin-bottom: 24px; }
+}

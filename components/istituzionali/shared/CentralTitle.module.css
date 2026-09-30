@@ -69,3 +69,11 @@
   .titleH3Sm  { font-size: clamp(26px, 7vw, 36px); line-height: 1.1; white-space: normal; }
   .centralTitleRow { white-space: normal; }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile (solo padding verticali) ── */
+@media (max-width: 1023px) {
+  .section { padding-top: 48px; padding-bottom: 48px; }
+}
+@media (max-width: 767px) {
+  .section { padding-top: 32px; padding-bottom: 32px; }
+}

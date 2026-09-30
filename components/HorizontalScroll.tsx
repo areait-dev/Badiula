@@ -131,6 +131,8 @@ export default function HorizontalScroll({
             ) : (
               <video
                 src="/videos/dsc_7756_web.mp4"
+                poster="/images/poster-filiera.jpg"
+                preload="auto"
                 autoPlay
                 muted
                 loop

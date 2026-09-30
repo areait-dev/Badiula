@@ -242,3 +242,10 @@
   .cta, .ctaArrow { transition: none !important; }
   .fadeReady { opacity: 1; transform: none; transition: none; }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile ── */
+@media (max-width: 1023px) {
+  .wrapper { margin-top: var(--space-lg); }
+  .header  { padding-top: 1rem; padding-bottom: 0.5rem; }
+  .track   { padding-bottom: 1.5rem; gap: 1rem; }
+}

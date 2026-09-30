@@ -74,3 +74,17 @@
   .inner    { padding: 0 var(--page-margin-mobile); }
   .heading  { margin-bottom: 32px; }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile ── */
+@media (max-width: 1023px) {
+  .section { padding: 48px 0; }
+  .heading { margin-bottom: 32px; }
+  .trigger { padding: 20px 0; }
+  .answer  { padding-bottom: 20px; }
+}
+@media (max-width: 767px) {
+  .section { padding: 32px 0 40px; }
+  .heading { margin-bottom: 20px; }
+  .trigger { padding: 16px 0; }
+  .answer  { padding-bottom: 16px; }
+}

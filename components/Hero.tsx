@@ -43,8 +43,7 @@ export default function Hero({
   return (
     <section className={styles.hero}>
       <div ref={bgRef} className={styles.bg}>
-        {mounted && (
-          <video
+        <video
             className={styles.video}
             src={video}
             poster="/images/hero-poster.jpg"
@@ -54,7 +53,6 @@ export default function Hero({
             loop
             playsInline
           />
-        )}
       </div>
 
       <div className={styles.scrollHint}>

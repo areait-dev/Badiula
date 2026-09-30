@@ -84,3 +84,13 @@
   .dot   { width: 12px; height: 12px; }
   .label { font-size: 9px; }
 }
+
+/* ── SPAZI RIDOTTI tablet/mobile ── */
+@media (max-width: 1023px) {
+  .section { padding: 48px 0; }
+  .title   { margin-bottom: 28px; }
+}
+@media (max-width: 767px) {
+  .section { padding: 32px 0; }
+  .title   { margin-bottom: 20px; }
+}

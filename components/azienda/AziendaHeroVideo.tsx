@@ -7,6 +7,8 @@ export default function AziendaHeroVideo() {
     <div className={styles.videoWrap}>
       <video
         src="/videos/dji_0003_web.mp4"
+        poster="/images/poster-azienda.jpg"
+        preload="auto"
         autoPlay
         muted
         loop
