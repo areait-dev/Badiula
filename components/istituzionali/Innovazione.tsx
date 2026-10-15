@@ -4,6 +4,7 @@ import ProdottoIntro from '@/components/prodotti/shared/ProdottoIntro';
 import ShopBannerProdotto from '@/components/prodotti/shared/ShopBannerProdotto';
 import FaqProdotto, { type FaqItem } from '@/components/prodotti/shared/FaqProdotto';
 import SectionZigzag from './shared/SectionZigzag';
+import { separaTitoli } from './shared/separaTitoli';
 import type { PaginaInnovazione } from '@/lib/types';
 
 const FAQS: FaqItem[] = [
@@ -24,12 +25,33 @@ const FAQS: FaqItem[] = [
 const FALLBACK_SEZIONE_1_TESTO =
   '<p>I nostri agrumeti sono dotati di un sistema integrato di:</p>' +
   '<ul>' +
-  '<li>Sensori IoT per il monitoraggio di umidità del suolo, temperatura e radiazione solare</li>' +
-  '<li>Stazioni meteo aziendali che rilevano in continuo dati climatici locali</li>' +
-  '<li>Piattaforme digitali di raccolta dati che incrociano informazioni ambientali e agronomiche</li>' +
-  '<li>Sistemi predittivi per anticipare stress idrico, eventi climatici e necessità di intervento agronomico</li>' +
+  '<li><strong>Sensori IoT</strong> per il monitoraggio di umidità del suolo, temperatura e radiazione solare</li>' +
+  '<li><strong>Stazioni meteo aziendali</strong> che rilevano in continuo dati climatici locali</li>' +
+  '<li><strong>Piattaforme digitali di raccolta dati</strong> che incrociano informazioni ambientali e agronomiche</li>' +
+  '<li><strong>Sistemi predittivi</strong> per anticipare stress idrico, eventi climatici e necessità di intervento agronomico</li>' +
   '</ul>' +
-  '<p>Questi strumenti ci permettono di prendere decisioni basate sui dati, riducendo l\'uso di acqua, energia e interventi inutili sul campo.</p>';
+  '<p>Questi strumenti ci permettono di prendere <strong>decisioni basate sui dati</strong>, riducendo l\'uso di acqua, energia e interventi inutili sul campo.</p>';
+
+// Evidenzia in grassetto bordeaux i termini chiave anche quando il testo arriva da WordPress
+const MONITORAGGIO_BOLD = [
+  'Sensori IoT',
+  'Stazioni meteo aziendali',
+  'Piattaforme digitali di raccolta dati',
+  'Sistemi predittivi',
+  'decisioni basate sui dati',
+  'decisioni basate su dati',
+];
+
+function boldMonitoraggio(html: string): string {
+  return MONITORAGGIO_BOLD.reduce(
+    (out, term) => out.replace(new RegExp(`(<strong[^>]*>\\s*)?${term}(\\s*</strong>)?`, 'i'), (m, open, close) =>
+      open && close ? m : `<strong>${term}</strong>`,
+    ),
+    html,
+  );
+}
+
+const PARTNER_TITLES = ['Università degli Studi di Catania', 'Distretto Produttivo Agrumi di Sicilia'];
 
 const FALLBACK_SEZIONE_2_TESTO =
   '<p>La tecnologia blockchain applicata alla filiera garantisce tracciabilità completa e trasparenza lungo tutto il percorso produttivo, dalla coltivazione al confezionamento. Per il cliente finale e il buyer significa avere prove digitali immutabili dell\'origine e del percorso del prodotto.</p>' +
@@ -66,7 +88,7 @@ export default function Innovazione({ data: d }: InnovazioneProps) {
           image={{ src: d.sezione1Immagine || '/images/azienda-campi.png' }}
           imageAlt="Monitoraggio in campo degli agrumeti Badiula"
         >
-          <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
+          <div dangerouslySetInnerHTML={{ __html: boldMonitoraggio(d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO) }} />
         </SectionZigzag>
       </Reveal>
 
@@ -87,7 +109,7 @@ export default function Innovazione({ data: d }: InnovazioneProps) {
           image={{ src: d.sezione3Immagine || '/images/DSC_7619.jpg' }}
           imageAlt="Ricerca agronomica e raccolta manuale nelle coltivazioni Badiula"
         >
-          <div dangerouslySetInnerHTML={{ __html: d.sezione3Testo || FALLBACK_SEZIONE_3_TESTO }} />
+          <div dangerouslySetInnerHTML={{ __html: separaTitoli(d.sezione3Testo || FALLBACK_SEZIONE_3_TESTO, PARTNER_TITLES) }} />
         </SectionZigzag>
       </Reveal>
 

@@ -4,6 +4,7 @@ import ProdottoIntro from '@/components/prodotti/shared/ProdottoIntro';
 import ShopBannerProdotto from '@/components/prodotti/shared/ShopBannerProdotto';
 import FaqProdotto, { type FaqItem } from '@/components/prodotti/shared/FaqProdotto';
 import SectionZigzag from './shared/SectionZigzag';
+import { separaTitoli, evidenzia } from './shared/separaTitoli';
 import styles from './shared/SectionZigzag.module.css';
 import type { PaginaSostenibilita } from '@/lib/types';
 
@@ -72,7 +73,7 @@ export default function Sostenibilita({ data: d }: SostenibilitaProps) {
           imageAlt="Impianto fotovoltaico sul centro di lavorazione Badiula"
           imageHeight="110vh"
         >
-          <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
+          <div dangerouslySetInnerHTML={{ __html: evidenzia(separaTitoli(d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO, ['Impianto fotovoltaico e sistema di accumulo']), ['Impianto fotovoltaico da 200 kW', 'Sistema di accumulo da 400 kW', 'energeticamente autosufficiente']) }} />
         </SectionZigzag>
       </Reveal>
 
@@ -85,7 +86,7 @@ export default function Sostenibilita({ data: d }: SostenibilitaProps) {
           imageAlt="Irrigazione a goccia e gestione idrica negli agrumeti Badiula"
           imageHeight="110vh"
         >
-          <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
+          <div dangerouslySetInnerHTML={{ __html: evidenzia(separaTitoli(d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO, ['Filiera a basso impatto']), ['Due laghetti aziendali', 'Irrigazione a goccia', 'Sistemi intelligenti di monitoraggio climatico', 'Distretto Produttivo Agrumi di Sicilia', 'Università degli Studi di Catania']) }} />
         </SectionZigzag>
       </Reveal>
 

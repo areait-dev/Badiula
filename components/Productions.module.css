@@ -74,8 +74,19 @@
   transform: scale(1.04) !important;
 }
 
+/* Segnaposto zona foto: bordo tratteggiato nel colore del testo della card */
+.imgPlaceholder {
+  position: absolute;
+  inset: var(--space-sm);
+  border: 2px dashed currentColor;
+  border-radius: var(--radius-banner);
+  opacity: 0.5;
+}
+.card:nth-child(odd) .imgPlaceholder  { color: var(--bordeaux); }
+.card:nth-child(even) .imgPlaceholder { color: var(--vanilla); }
+
 .titleBox {
-  flex: 0 0 135px;
+  flex: 0 0 90px; /* due righe (2 × 45px) */
   margin-top: var(--space-md);
   padding: 0 var(--space-md);
   overflow: hidden;
@@ -175,7 +186,7 @@
   }
   .card { height: 480px; }
   .img { flex: 0 0 230px; }
-  .titleBox { flex: 0 0 120px; margin-top: 4px; }
+  .titleBox { flex: 0 0 90px; margin-top: 4px; }
   .cta { margin-top: 14px; margin-bottom: 18px; }
 }
 

@@ -71,10 +71,6 @@ export default async function LuceDiTerraPage({ params }: { params: { locale: st
               title={olioTitolo}
               description={olioDesc}
               price={d.olioPrezzo || 'Da €12,00'}
-              image={{
-                src: d.olioImmagine ?? '/images/luce-di-terra.jpg',
-                alt: 'Olio extravergine di oliva biologico Luce di Terra',
-              }}
               href="/luce-di-terra/olio-evo"
             />
 
@@ -84,10 +80,6 @@ export default async function LuceDiTerraPage({ params }: { params: { locale: st
               title={marmellaTitolo}
               description={marmellaDesc}
               price={d.marmellaPrezzo || 'Da €6,50'}
-              image={{
-                src: d.marmellaImmagine ?? '/images/luce-di-terra-promo.png',
-                alt: 'Marmellate di agrumi biologici Badiula',
-              }}
               href="/luce-di-terra/marmellata-agrumi"
             />
 

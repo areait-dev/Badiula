@@ -6,32 +6,14 @@ import { Link } from '@/i18n/routing';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PRODUCTS } from '@/lib/data';
+import { splitTitle } from '@/lib/splitTitle';
 import styles from './page.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CONNECTORS = /^(di|del|della|dei|degli|delle|e|a|in|da|su|per|tra|fra)$/i;
-
-function splitTitle(name: string): string[] {
-  const words = name.split(' ');
-  const parts: string[] = [];
-  let i = 0;
-  while (i < words.length) {
-    if (CONNECTORS.test(words[i]) && i + 1 < words.length) {
-      let chunk = words[i] + ' ' + words[i + 1];
-      i += 2;
-      while (i < words.length && /^[A-Z]+$/.test(words[i])) {
-        chunk += ' ' + words[i];
-        i++;
-      }
-      parts.push(chunk);
-    } else {
-      parts.push(words[i]);
-      i++;
-    }
-  }
-  return parts;
-}
+// Finché non ci sono foto coerenti per tutte le card, la zona immagine resta un riquadro tratteggiato.
+// Portare a true quando le foto in lib/data.ts sono pronte.
+const FOTO_COERENTI = false;
 
 export default function ProductionsTrack({ title, moreLabel }: { title: string; moreLabel: string }) {
   const wrapperRef  = useRef<HTMLDivElement>(null);
@@ -112,13 +94,17 @@ export default function ProductionsTrack({ title, moreLabel }: { title: string; 
           {PRODUCTS.map((p) => (
             <article key={p.slug} className={styles.card}>
               <div className={styles.img}>
-                <Image
-                  src={p.image}
-                  alt={p.name}
-                  fill
-                  sizes="(max-width: 768px) 90vw, 33vw"
-                  style={{ objectFit: 'cover' }}
-                />
+                {FOTO_COERENTI ? (
+                  <Image
+                    src={p.image}
+                    alt={p.name}
+                    fill
+                    sizes="(max-width: 768px) 90vw, 33vw"
+                    style={{ objectFit: 'cover' }}
+                  />
+                ) : (
+                  <div className={styles.imgPlaceholder} aria-hidden="true" />
+                )}
               </div>
 
               <div className={styles.titleBox}>

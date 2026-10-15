@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
+import { splitTitle } from '@/lib/splitTitle';
 import styles from './ProductCardBadiula.module.css';
 
 export interface ProductCardBadiulaProps {
@@ -10,7 +11,7 @@ export interface ProductCardBadiulaProps {
   title: string;
   description: string;
   price?: string;
-  image: { src: string; alt: string };
+  image?: { src: string; alt: string };
   href: string;
 }
 
@@ -25,21 +26,29 @@ export default function ProductCardBadiula({
   return (
     <article className={`${styles.card} ${styles[themeColor]}`}>
 
-      {/* Immagine - flex: 0 0 463px, uguale alla card homepage */}
+      {/* Spazio foto sempre riservato: senza immagine resta un riquadro vuoto */}
       <div className={styles.imgWrap}>
-        <Image
-          src={image.src}
-          alt={image.alt}
-          fill
-          sizes="(max-width: 1220px) 50vw, 560px"
-          className={styles.img}
-          style={{ objectFit: 'cover' }}
-        />
+        {image ? (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 1220px) 50vw, 560px"
+            className={styles.img}
+            style={{ objectFit: 'cover' }}
+          />
+        ) : (
+          <div className={styles.imgPlaceholder} aria-hidden="true" />
+        )}
       </div>
 
       {/* Titolo - height 150px, margin-top 45px */}
       <div className={styles.titleBox}>
-        <h2 className={styles.title}>{title}</h2>
+        <h2 className={styles.title}>
+          {splitTitle(title).map((part, i) => (
+            <span key={i} className={styles.titleLine}>{part}</span>
+          ))}
+        </h2>
       </div>
 
       {/* Descrizione - height 90px, margin-top 25px */}

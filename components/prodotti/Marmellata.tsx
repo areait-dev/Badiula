@@ -121,7 +121,10 @@ export default function Marmellata() {
       </ProdottoEditoriale>
 
       {/* 6. Banner CTA shop */}
-      <ShopBannerProdotto />
+      <ShopBannerProdotto
+        heading={'Acquista la linea\nLuce di Terra'}
+        sub={'Olio EVO e marmellate di agrumi sono disponibili nello shop online,\ncon spedizione in Italia e Unione Europea. Anche in formato box regalo'}
+      />
 
       {/* 7. FAQ */}
       <FaqProdotto items={FAQS} />

@@ -42,7 +42,6 @@ const FALLBACK_QUALITA_TESTO =
   '<p>Certificazione internazionale per i sistemi di gestione della sicurezza alimentare, applicata a tutto il processo produttivo dal campo al confezionamento.</p>';
 
 const FALLBACK_RICONOSCIMENTI_TESTO =
-  '<p><strong class="' + styles.subheadingLg + '">Azienda Didattica accreditata</strong></p>' +
   '<p>Dal 2009 Badiula è Azienda Didattica accreditata secondo la normativa regionale siciliana, accogliendo classi, gruppi e visitatori per persone educative dedicati all\'agricoltura biologica, alla sostenibilità ambientale e alla cultura agrumicola del territorio.</p>';
 
 interface CertificazioniProps {
@@ -126,14 +125,21 @@ export default function Certificazioni({ data: d }: CertificazioniProps) {
         <CentralTitle pullUp={100} size="h3">{d.riconoscimentiTitolo || 'Riconoscimenti aggiuntivi'}</CentralTitle>
 
         <SectionZigzag
-          title={d.riconoscimentiTitolo || 'Riconoscimenti aggiuntivi'}
-          hideTitle
+          title="Azienda Didattica accreditata"
+          noWrapTitle
           pullUp={160}
           imageHeight="50vh"
           image={{ src: d.riconoscimentiImmagine || '/images/DSC_7723.jpg' }}
           imageAlt="Bovino nell'Azienda Didattica accreditata Badiula"
         >
-          <div dangerouslySetInnerHTML={{ __html: d.riconoscimentiTesto || FALLBACK_RICONOSCIMENTI_TESTO }} />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: (d.riconoscimentiTesto || FALLBACK_RICONOSCIMENTI_TESTO).replace(
+                /^\s*(<(?:p|h[1-6]|div)[^>]*>\s*)?(<(?:strong|b)[^>]*>\s*)?Azienda\s+Didattica\s+accreditata\s*(<\/(?:strong|b)>\s*)?(<br\s*\/?>\s*)?(<\/(?:p|h[1-6]|div)>\s*)?/i,
+                '',
+              ),
+            }}
+          />
         </SectionZigzag>
       </Reveal>
 

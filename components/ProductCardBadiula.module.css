@@ -58,6 +58,14 @@
   overflow: hidden;
 }
 
+.imgPlaceholder {
+  position: absolute;
+  inset: var(--space-sm);
+  border: 2px dashed var(--card-text);
+  border-radius: var(--radius-banner);
+  opacity: 0.5;
+}
+
 .img {
   transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
@@ -71,6 +79,7 @@
   flex: 0 0 auto;
   margin-top: var(--space-md);
   padding: 0 var(--space-md);
+  min-height: 90px; /* riserva due righe (2 × 45px): titoli e testi partono alla stessa quota */
   display: flex;
   align-items: flex-start;
 }
@@ -86,10 +95,16 @@
   width: 100%;
 }
 
+.titleLine {
+  display: block;
+  white-space: nowrap;
+}
+
 /* ── Descrizione ── */
 .descBox {
   flex: 0 0 auto;
   margin-top: var(--space-xs);
+  margin-bottom: var(--space-sm);
   padding: 0 var(--space-md);
 }
 
@@ -118,7 +133,7 @@
 /* ── CTA - identico a Productions ── */
 .cta {
   height: 36px;
-  margin: var(--space-sm) 0 var(--space-sm) var(--space-md);
+  margin: auto 0 var(--space-md) var(--space-md); /* auto: CTA ancorata al fondo, allineata tra le card */
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
