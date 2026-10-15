@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import FotoProdotto from '@/components/FotoProdotto';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Footer';
 import styles from './page.module.css';
@@ -54,7 +55,7 @@ export default function LimoneFemminelloPage() {
         </div>
         <div className={styles.blockAVisual}>
           <div className={styles.imgWrapCircle}>
-            <Image
+            <FotoProdotto
               src="/images/immagini%20prodotto/Limone%20Femminello.png"
               alt="Limone Femminello Siracusano"
               fill
@@ -123,7 +124,7 @@ export default function LimoneFemminelloPage() {
       <section className={`${styles.blockB} ${styles.beforeBanner}`}>
         <div className={styles.blockBVisual}>
           <div className={styles.imgWrapRect}>
-            <Image
+            <FotoProdotto
               src="/images/Screenshot%202026-07-20%20140124.png"
               alt="Limoni Femminello tagliati a metà, raccolta Badiula"
               fill

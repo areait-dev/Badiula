@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import FotoProdotto from '@/components/FotoProdotto';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Footer';
 import FaqAccordion from './FaqAccordion';
@@ -73,7 +74,7 @@ export default function BergamottoPage() {
         </div>
         <div className={styles.blockAVisual}>
           <div className={styles.imgWrapCircle}>
-            <Image
+            <FotoProdotto
               src="/images/immagini%20prodotto/Screenshot%202026-07-20%20144238.png"
               alt="Bergamotto biologico siciliano"
               fill
@@ -110,7 +111,7 @@ export default function BergamottoPage() {
       <section className={styles.blockB}>
         <div className={styles.blockBVisual}>
           <div className={styles.imgWrapRect}>
-            <Image
+            <FotoProdotto
               src="/images/immagini%20prodotto/image-removebg-preview%20(5).png"
               alt="Bergamotti freschi raccolti"
               fill

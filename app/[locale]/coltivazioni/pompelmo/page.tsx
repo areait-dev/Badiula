@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import FotoProdotto from '@/components/FotoProdotto';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Footer';
 import FaqAccordion from './FaqAccordion';
@@ -73,7 +74,7 @@ export default function PompelmoPage() {
         </div>
         <div className={styles.blockAVisual}>
           <div className={styles.imgWrapCircle}>
-            <Image
+            <FotoProdotto
               src="/images/pompelmo.jpg"
               alt="Pompelmo biologico siciliano"
               fill
@@ -113,7 +114,7 @@ export default function PompelmoPage() {
       <section className={`${styles.blockB} ${styles.beforeBanner}`}>
         <div className={styles.blockBVisual}>
           <div className={styles.imgWrapRect}>
-            <Image
+            <FotoProdotto
               src="/images/Screenshot%202026-07-20%20163605.png"
               alt="Pompelmo tagliato con succo fresco"
               fill

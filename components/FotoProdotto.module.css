@@ -1,0 +1,8 @@
+/* Segnaposto zona foto: bordo tratteggiato bordeaux, riempito dalla foto quando disponibile */
+.placeholder {
+  position: absolute;
+  inset: var(--space-sm);
+  border: 2px dashed var(--color-bordeaux, var(--bordeaux));
+  border-radius: var(--radius-banner);
+  opacity: 0.5;
+}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import FotoProdotto from '@/components/FotoProdotto';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Footer';
 import FaqAccordion from './FaqAccordion';
@@ -74,7 +75,7 @@ export default function AranceBiondePage() {
         </div>
         <div className={styles.varietyVisual}>
           <div className={styles.varietyImgWrap}>
-            <Image
+            <FotoProdotto
               src="/images/immagini%20prodotto/Newhall.png"
               alt="Arance Newhall - navel siciliane"
               fill
@@ -89,7 +90,7 @@ export default function AranceBiondePage() {
       <section className={`${styles.variety} ${styles.varietyReverse}`}>
         <div className={styles.varietyVisual}>
           <div className={styles.varietyImgWrap}>
-            <Image
+            <FotoProdotto
               src="/images/immagini%20prodotto/LaneLate.png"
               alt="Arance Lane Late - navel tardive"
               fill

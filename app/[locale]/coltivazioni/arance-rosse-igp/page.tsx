@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import FotoProdotto from '@/components/FotoProdotto';
 import { Link } from '@/i18n/routing';
 import Footer from '@/components/Footer';
 import FaqAccordion from './FaqAccordion';
@@ -75,7 +76,7 @@ export default function AranceRossePage() {
         </div>
         <div className={styles.varietyVisual}>
           <div className={styles.varietyImgWrap}>
-            <Image
+            <FotoProdotto
               src="/images/immagini%20prodotto/Tarocco.png"
               alt="Arance Tarocco - polpa rossa"
               fill
@@ -90,7 +91,7 @@ export default function AranceRossePage() {
       <section className={`${styles.variety} ${styles.varietyReverse}`}>
         <div className={styles.varietyVisual}>
           <div className={styles.varietyImgWrap}>
-            <Image
+            <FotoProdotto
               src="/images/immagini%20prodotto/Moro.png"
               alt="Arance Moro - polpa rosso intenso"
               fill
