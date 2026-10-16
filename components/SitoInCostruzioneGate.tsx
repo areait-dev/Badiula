@@ -3,12 +3,10 @@
 import { usePathname } from 'next/navigation';
 import SitoInCostruzione from './SitoInCostruzione';
 
-// Sezioni ancora bloccate in produzione: shop (e-commerce non ancora pronto).
-// Coltivazioni e Luce di Terra sono state riattivate. Tutto il resto del
-// sito è pubblico.
-const PREFISSI_BLOCCATI = [
-  '/it/shop', '/en/shop',
-];
+// Sezioni ancora bloccate in produzione. Shop, Coltivazioni e Luce di Terra
+// sono state riattivate: al momento tutto il sito è pubblico.
+// Per bloccare di nuovo una sezione aggiungere il prefisso, es. '/it/shop'.
+const PREFISSI_BLOCCATI: string[] = [];
 
 export default function SitoInCostruzioneGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
