@@ -194,6 +194,8 @@
    input touch primario (iPad e simili, incluso landscape ≥1024px) ── */
 @media (max-width: 1023px), (hover: none), (pointer: coarse) {
   .wrapper { margin-top: var(--space-xl); height: auto; }
+  .card h3 { font-size: var(--text-h4-size); line-height: var(--text-h4-line); }
+  .titleBox { flex: 0 0 calc(2 * var(--text-h4-line)); }
   .header  { padding: 2rem 1.5rem 1rem; }
   .title   { font-size: 40px; line-height: 46px; }
   .subtitle { font-size: var(--text-body-1-size); line-height: var(--text-body-1-line); }

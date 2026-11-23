@@ -359,6 +359,8 @@
      suo interno è alto 150px e trabocca fino a ~155px dal top — il titolo
      deve superare quel punto prima di iniziare. */
   .heroTitle        { padding-top: 210px; }
+  .card h3 { font-size: var(--text-h4-size); line-height: var(--text-h4-line); }
+  .titleBox { height: calc(2 * var(--text-h4-line)); }
   .paragrafoDescrizione { padding-left: 20px; padding-right: 20px; }
   .gridHeader       { padding: 3rem 20px 1.5rem; }
   .calendarSection  { padding: 3rem 20px 4rem; }
