@@ -1,7 +1,5 @@
 import type { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
-import { prodotti } from '@/lib/mock/prodotti';
-import { luceDiTerraProdotti } from '@/lib/mock/luceDiTerraProdotti';
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://agribadiula.it';
@@ -25,7 +23,6 @@ const STATIC_PATHS = [
   '/luce-di-terra/marmellata-agrumi',
   '/privacy-policy',
   '/shop',
-  ...[...prodotti, ...luceDiTerraProdotti].map((p) => `/shop/${p.slug}`),
   '/sostenibilita',
 ];
 
