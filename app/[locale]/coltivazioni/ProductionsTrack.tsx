@@ -6,14 +6,11 @@ import { Link } from '@/i18n/routing';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PRODUCTS } from '@/lib/data';
+import { PRODUCT_PHOTOS } from '@/lib/productPhotos';
 import { splitTitle } from '@/lib/splitTitle';
 import styles from './page.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
-
-// Finché non ci sono foto coerenti per tutte le card, la zona immagine resta un riquadro tratteggiato.
-// Portare a true quando le foto in lib/data.ts sono pronte.
-const FOTO_COERENTI = false;
 
 export default function ProductionsTrack({ title, moreLabel }: { title: string; moreLabel: string }) {
   const wrapperRef  = useRef<HTMLDivElement>(null);
@@ -53,10 +50,10 @@ export default function ProductionsTrack({ title, moreLabel }: { title: string; 
       const sidePad = parseFloat(getComputedStyle(track).paddingRight) || 0;
       const distance = () => Math.max(0, track.scrollWidth - window.innerWidth + sidePad);
 
-      // Pausa di lettura a inizio/fine: il primo e l'ultimo 12% dello scroll
-      // verticale non muovono il track, solo la fascia centrale interpola.
+      // Pausa di lettura solo all'inizio (primo 12% dello scroll verticale).
+      // Nessuna pausa alla fine: raggiunta l'ultima card si scende subito.
       const PAUSE_START = 0.12;
-      const PAUSE_END   = 0.88;
+      const PAUSE_END   = 1;
       const remapProgress = (p: number) => {
         if (p <= PAUSE_START) return 0;
         if (p >= PAUSE_END) return 1;
@@ -94,9 +91,9 @@ export default function ProductionsTrack({ title, moreLabel }: { title: string; 
           {PRODUCTS.map((p) => (
             <article key={p.slug} className={styles.card}>
               <div className={styles.img}>
-                {FOTO_COERENTI ? (
+                {PRODUCT_PHOTOS[p.slug] ? (
                   <Image
-                    src={p.image}
+                    src={PRODUCT_PHOTOS[p.slug]}
                     alt={p.name}
                     fill
                     sizes="(max-width: 768px) 90vw, 33vw"

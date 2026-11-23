@@ -7,19 +7,12 @@ import { Link } from '@/i18n/routing';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PRODUCTS } from '@/lib/data';
+import { PRODUCT_PHOTOS } from '@/lib/productPhotos';
 import { splitTitle } from '@/lib/splitTitle';
 import styles from './Productions.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Foto reali (non scontornate) per le card della homepage, ritagliate in orizzontale.
-// Le card senza foto (es. Pompelmo) mostrano il riquadro tratteggiato.
-const HOME_PHOTOS: Record<string, string> = {
-  'arance-rosse-igp': '/images/home/arance-rosse-igp.jpg',
-  'arance-bionde': '/images/home/arance-bionde.jpg',
-  'limone-femminello': '/images/home/limone-femminello.jpg',
-  bergamotto: '/images/home/bergamotto.jpg',
-};
 
 interface ProductionsProps {
   title?: string;
@@ -112,9 +105,9 @@ export default function Productions({ title = '', subtitle = '' }: ProductionsPr
           {PRODUCTS.map((p, i) => (
             <article key={p.slug} className={styles.card} data-index={i}>
               <div className={styles.img}>
-                {HOME_PHOTOS[p.slug] ? (
+                {PRODUCT_PHOTOS[p.slug] ? (
                   <Image
-                    src={HOME_PHOTOS[p.slug]}
+                    src={PRODUCT_PHOTOS[p.slug]}
                     alt={p.name}
                     fill
                     sizes="(max-width: 768px) 90vw, 560px"
