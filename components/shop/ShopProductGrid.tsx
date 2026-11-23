@@ -11,6 +11,7 @@ import { Link, useRouter } from '@/i18n/routing';
 import { saveShopScroll, setShopTransition, takeShopScroll } from '@/lib/shopTransition';
 import { readCatFromLocation, withCat } from './useCatParam';
 import type { Prodotto } from '@/lib/mock/prodotti';
+import { SHOP_FILTER_ALL, availableFilters, matchesFilter } from '@/lib/shopFilters';
 import styles from './ShopProductGrid.module.css';
 
 if (typeof window !== 'undefined') {
@@ -27,7 +28,7 @@ const BG_CLASS: Record<Prodotto['coloreSfondo'], 'bgTeal' | 'bgVanilla' | 'bgKha
   khaki: 'bgKhaki',
 };
 
-const ALL = 'all';
+const ALL = SHOP_FILTER_ALL;
 
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
@@ -129,8 +130,8 @@ export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
   const locale = useLocale();
   const router = useRouter();
 
-  // Categorie ricavate dai dati reali, nell'ordine in cui compaiono
-  const categorie = Array.from(new Set(prodotti.map((p) => p.categoria)));
+  // Chip ricavati dai dati: compaiono solo i filtri che hanno almeno un prodotto
+  const filtri = availableFilters(prodotti);
 
   const [cat, setCat] = useState<string>(ALL);
 
@@ -140,10 +141,10 @@ export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
   const flipStateRef = useRef<Flip.FlipState | null>(null);
   const leavingRef = useRef(false);
 
-  // Filtro iniziale da ?cat= (anche al ritorno con il back del browser)
+  // Filtro iniziale da ?categoria= (anche al ritorno con il back del browser)
   useIsoLayoutEffect(() => {
     const fromUrl = readCatFromLocation();
-    if (fromUrl && categorie.includes(fromUrl as Prodotto['categoria'])) {
+    if (fromUrl && filtri.includes(fromUrl as (typeof filtri)[number])) {
       setCat(fromUrl);
       // le card nascoste non avevano dimensioni quando sono stati creati i trigger
       window.requestAnimationFrame(() => ScrollTrigger.refresh());
@@ -164,7 +165,7 @@ export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
     [locale]
   );
 
-  const visibleCount = prodotti.filter((p) => cat === ALL || p.categoria === cat).length;
+  const visibleCount = prodotti.filter((p) => matchesFilter(p, cat)).length;
   const labelFor = (c: string) => (c === ALL ? t('filterAll') : t(`filter_${c}` as never));
 
   // ── Entrata allo scroll (solo se il movimento è consentito) ──
@@ -273,8 +274,8 @@ export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
     }
     setCat(next);
     const url = new URL(window.location.href);
-    if (next === ALL) url.searchParams.delete('cat');
-    else url.searchParams.set('cat', next);
+    if (next === ALL) url.searchParams.delete('categoria');
+    else url.searchParams.set('categoria', next);
     window.history.replaceState(window.history.state, '', url);
   };
 
@@ -324,7 +325,7 @@ export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
       <div className={styles.inner}>
         <div data-toolbar className={styles.toolbar}>
           <div className={styles.filters} role="group" aria-label={t('filtersLabel')}>
-            {[ALL, ...categorie].map((c) => (
+            {filtri.map((c) => (
               <button
                 key={c}
                 type="button"
@@ -341,13 +342,19 @@ export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
           </p>
         </div>
 
+        {visibleCount === 0 && (
+          <p className={`body-1 ${styles.empty}`} role="status">
+            {t('empty')}
+          </p>
+        )}
+
         <ul ref={gridRef} className={styles.grid}>
           {prodotti.map((p, i) => (
             <ProductCard
               key={p.id}
               p={p}
               priority={i < 4}
-              hidden={cat !== ALL && p.categoria !== cat}
+              hidden={!matchesFilter(p, cat)}
               href={withCat(`/shop/${p.slug}`, cat === ALL ? null : cat)}
               badge={p.categoria === 'luce-di-terra' ? t('luceDiTerra') : p.badge}
               formatPrice={formatPrice}

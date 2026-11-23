@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
-// Legge ?cat= dopo il mount (niente useSearchParams: eviterebbe la generazione statica
+// Legge ?categoria= dopo il mount (niente useSearchParams: eviterebbe la generazione statica
 // delle pagine senza un Suspense boundary). Restituisce null finché non è noto.
 export function readCatFromLocation(): string | null {
   if (typeof window === 'undefined') return null;
-  return new URLSearchParams(window.location.search).get('cat');
+  return new URLSearchParams(window.location.search).get('categoria');
 }
 
 export function useCatParam(): string | null {
@@ -18,5 +18,5 @@ export function useCatParam(): string | null {
 }
 
 export function withCat(path: string, cat: string | null): string {
-  return cat ? `${path}?cat=${encodeURIComponent(cat)}` : path;
+  return cat ? `${path}?categoria=${encodeURIComponent(cat)}` : path;
 }

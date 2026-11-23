@@ -304,3 +304,9 @@
     padding: var(--space-xl) var(--space-md);
   }
 }
+
+.empty {
+  margin: var(--space-xl) 0;
+  color: var(--bordeaux);
+  text-align: center;
+}
