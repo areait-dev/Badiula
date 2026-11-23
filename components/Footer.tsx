@@ -57,6 +57,12 @@ export default async function Footer() {
 
         <FooterForm formTitle={formTitle} />
       </div>
+      <p className={`body-2 ${styles.powered}`}>
+        Powered by{' '}
+        <a href="https://promocommunication.it" target="_blank" rel="noopener noreferrer">
+          Promo Communication
+        </a>
+      </p>
     </footer>
   );
 }
