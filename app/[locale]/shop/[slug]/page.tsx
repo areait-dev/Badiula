@@ -122,6 +122,15 @@ export default async function ShopProductPage({
                   {p.descrizioneBreve}
                 </p>
 
+                <dl data-hero-item className={styles.details}>
+                  {(['origin', 'method', 'harvest'] as const).map((k) => (
+                    <div key={k} className={styles.detailCol}>
+                      <dt className={`body-2 ${styles.detailLabel}`}>{t(k)}</dt>
+                      <dd className={`body-2 ${styles.detailValue}`}>{t(`${k}Value`)}</dd>
+                    </div>
+                  ))}
+                </dl>
+
                 {p.varianti.length > 0 && (
                   <div data-hero-item className={styles.formats}>
                     <h2 className={`body-2 ${styles.formatsTitle}`}>{t('formats')}</h2>
@@ -137,9 +146,9 @@ export default async function ShopProductPage({
                 )}
 
                 <div data-hero-item className={styles.ctas}>
-                  {/* Carrello non ancora implementato: placeholder disabilitato (CLAUDE.md §10.X) */}
+                  {/* Carrello non ancora implementato: bottone disabilitato (CLAUDE.md §10.X) */}
                   <button type="button" className="btn btn-solid" disabled>
-                    {p.stock === 0 ? t('soldOut') : t('soon')}
+                    {p.stock > 0 ? t('addToCart') : t('soon')}
                   </button>
                   <Link href={p.slugPagina} className="btn btn-outline">
                     {t('moreAbout')}&nbsp;&#9658;

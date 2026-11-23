@@ -1,0 +1,74 @@
+/* Stesso padding orizzontale di ShopHero e griglia */
+.section {
+  padding: 0 var(--space-xl) var(--space-xl);
+  background: var(--white);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xl);
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.bgKhaki { background: var(--khaki); }
+.bgTeal { background: var(--teal); }
+.bgVanilla { background: var(--vanilla); }
+
+.imgContain {
+  object-fit: contain;
+  padding: 6%;
+}
+
+.imgCover {
+  object-fit: cover;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: var(--bordeaux);
+  text-transform: uppercase;
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
+  overflow-wrap: anywhere;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--color-dark);
+  font-style: italic;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding: 0 var(--space-md) var(--space-xl);
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
