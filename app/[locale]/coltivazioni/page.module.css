@@ -84,7 +84,9 @@
 /* ── Griglia: wrapper pinnato da GSAP, contiene header + track (come l'homepage) ── */
 .griglia {
   background: var(--white);
-  height: 100vh;
+  /* min-height e non height: in finestre basse (laptop con scala 125-150%) titolo + card
+     superano 100vh e, con altezza fissa, le card finivano sopra il calendario */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
