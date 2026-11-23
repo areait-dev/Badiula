@@ -69,8 +69,8 @@ export default function Sostenibilita({ data: d }: SostenibilitaProps) {
       <Reveal>
         <SectionZigzag
           title={d.sezione1Titolo || 'Magazzino a emissioni zero'}
-          image={{ src: d.sezione1Immagine || '/images/sostenibilita.jpg' }}
-          imageAlt="Impianto fotovoltaico sul centro di lavorazione Badiula"
+          image={{ src: d.sezione1Immagine || '/images/magazzino-frontale.jpg' }}
+          imageAlt="Centro di lavorazione Badiula visto di fronte, con impianto fotovoltaico sul tetto"
           imageHeight="110vh"
         >
           <div dangerouslySetInnerHTML={{ __html: evidenzia(separaTitoli(d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO, ['Impianto fotovoltaico e sistema di accumulo']), ['Impianto fotovoltaico da 200 kW', 'Sistema di accumulo da 400 kW', 'energeticamente autosufficiente']) }} />

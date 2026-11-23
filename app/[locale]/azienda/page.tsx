@@ -100,8 +100,8 @@ export default async function AziendaPage({ params }: { params: { locale: string
       <section className={styles.grid}>
         <div className={styles.imgWrap}>
           <Image
-            src={d.culturaImmagine ?? '/DSC_7761.jpg'}
-            alt="Agrumeto Badiula"
+            src={d.culturaImmagine ?? '/images/panorama.jpg'}
+            alt="Panorama degli agrumeti Badiula al tramonto"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             style={{ objectFit: 'cover' }}
@@ -123,11 +123,11 @@ export default async function AziendaPage({ params }: { params: { locale: string
       {/* Immagine full-width dopo manifesto */}
       <div className={styles.fullImg}>
         <Image
-          src="/images/azienda-drone.jpg"
+          src="/images/drone1.jpg"
           alt="Veduta aerea dei terreni Badiula, Carlentini"
           fill
           sizes="100vw"
-          style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
           priority
         />
       </div>

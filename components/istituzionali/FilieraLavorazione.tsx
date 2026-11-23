@@ -72,7 +72,7 @@ export default function FilieraLavorazione({ data: d }: FilieraLavorazioneProps)
           title={d.sezione1Titolo || 'Il centro di lavorazione di Carlentini'}
           reverse
           tallImage
-          image={{ src: d.sezione1Immagine || '/images/capannone-aerial.png' }}
+          image={{ src: d.sezione1Immagine || '/images/magazzino-tre-quarti.jpg' }}
           imageAlt="Centro di lavorazione Badiula a Carlentini"
         >
           <div dangerouslySetInnerHTML={{ __html: d.sezione1Testo || FALLBACK_SEZIONE_1_TESTO }} />
@@ -101,8 +101,8 @@ export default function FilieraLavorazione({ data: d }: FilieraLavorazioneProps)
           italicTitle
           reverse
           pullUp={160}
-          image={{ src: d.sezione3Immagine || '/images/DSC_7568.jpg', position: 'left' }}
-          imageAlt="Logistica e capacità operativa del centro di lavorazione Badiula"
+          image={{ src: d.sezione3Immagine || '/images/magazzino-frontale.jpg', position: 'center' }}
+          imageAlt="Centro di lavorazione Badiula visto di fronte"
         >
           <div dangerouslySetInnerHTML={{ __html: d.sezione3Testo || FALLBACK_SEZIONE_3_TESTO }} />
         </SectionZigzag>
