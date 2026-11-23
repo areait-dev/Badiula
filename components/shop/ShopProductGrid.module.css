@@ -1,0 +1,206 @@
+/* Stesso padding orizzontale dell'hero (ShopHero) */
+.section {
+  padding: var(--space-xl);
+  background: var(--white);
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ── Toolbar: filtri + contatore ── */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm) var(--space-md);
+  padding-top: var(--space-md);
+  margin-bottom: var(--space-lg);
+  border-top: 1px solid var(--bordeaux);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 var(--space-md);
+  border: 1.5px solid var(--bordeaux);
+  border-radius: var(--radius-btn);
+  background: transparent;
+  color: var(--bordeaux);
+  font-family: var(--font-primary);
+  font-size: var(--text-body-2-size);
+  line-height: var(--text-body-2-line);
+  letter-spacing: 0;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.pill:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 2px;
+}
+
+.pill:active {
+  transition-duration: 150ms;
+}
+
+.pillActive {
+  background: var(--bordeaux);
+  color: var(--white);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pill:not(.pillActive):hover {
+    background: var(--khaki);
+    border-color: var(--khaki);
+  }
+}
+
+/* Contrasto: bordeaux su bianco, non più teal */
+.count {
+  margin: 0;
+  color: var(--bordeaux);
+  letter-spacing: 0;
+}
+
+/* ── Griglia: 2 / 3 / 4 colonne ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg) var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg) var(--space-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.card {
+  min-width: 0;
+}
+
+.isHidden {
+  display: none;
+}
+
+/* Stato iniziale: solo opacity/transform, nessuno spostamento del layout (no CLS).
+   Con prefers-reduced-motion le card restano visibili. */
+@media (prefers-reduced-motion: no-preference) {
+  .card[data-pending] {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+}
+
+.cardLink {
+  display: block;
+  color: var(--color-dark);
+  border-radius: var(--radius-card);
+}
+
+.cardLink:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 2px;
+}
+
+/* ── Card (design invariato) ── */
+.media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.bgKhaki { background: var(--khaki); }
+.bgTeal { background: var(--teal); }
+.bgVanilla { background: var(--vanilla); }
+
+.parallax {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.imgContain {
+  object-fit: contain;
+  padding: 12%;
+}
+
+.imgCover {
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 1;
+  padding: 0 var(--space-sm);
+  border-radius: var(--radius-badge);
+  background: var(--white);
+  color: var(--bordeaux);
+  line-height: 28px;
+}
+
+.media img {
+  transition: transform 200ms ease;
+}
+
+@media (hover: hover) {
+  .cardLink:hover .media img {
+    transform: scale(1.05);
+  }
+
+  .cardLink:hover .name {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+.cardLink:focus-visible .name {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--space-sm);
+}
+
+.name {
+  color: var(--bordeaux);
+  text-transform: uppercase;
+}
+
+.from {
+  color: var(--color-dark);
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding: var(--space-xl) var(--space-md);
+  }
+}

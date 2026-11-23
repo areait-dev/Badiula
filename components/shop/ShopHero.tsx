@@ -1,7 +1,7 @@
 import styles from './ShopHero.module.css';
 
 interface ShopHeroProps {
-  total: number;
+  total?: number;
   heroTitolo?: string;
   heroSottotitolo?: string;
 }
@@ -35,12 +35,14 @@ export default function ShopHero({ total, heroTitolo, heroSottotitolo }: ShopHer
         </div>
       </div>
 
-      {/* Footer row */}
-      <div className={styles.footer}>
-        <p className={`body-2 ${styles.count}`}>
-          {String(total).padStart(2, '0')} prodotti disponibili
-        </p>
-      </div>
+      {/* Il contatore vive in ShopProductGrid (dipende dal filtro attivo); qui solo se passato */}
+      {total !== undefined && (
+        <div className={styles.footer}>
+          <p className={`body-2 ${styles.count}`}>
+            {String(total).padStart(2, '0')} prodotti disponibili
+          </p>
+        </div>
+      )}
     </section>
   );
 }
