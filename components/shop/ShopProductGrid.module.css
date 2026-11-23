@@ -72,24 +72,23 @@
   letter-spacing: 0;
 }
 
-/* ── Griglia: 2 / 3 / 4 colonne ── */
+/* ── Griglia: 2 colonne (mobile/tablet), 3 da 1024px, 4 da 1280px ── */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-lg) var(--space-sm);
+  gap: var(--space-lg) var(--space-md);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-lg) var(--space-md);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -112,23 +111,24 @@
   }
 }
 
-.cardLink {
+.article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mediaLink {
   display: block;
-  color: var(--color-dark);
   border-radius: var(--radius-card);
 }
 
-.cardLink:focus-visible {
-  outline: 2px solid var(--bordeaux);
-  outline-offset: 2px;
-}
-
-/* ── Card (design invariato) ── */
+/* ── Immagine quadrata ── */
 .media {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: var(--radius-card);
 }
@@ -137,19 +137,28 @@
 .bgTeal { background: var(--teal); }
 .bgVanilla { background: var(--vanilla); }
 
-.parallax {
-  position: absolute;
-  inset: 0;
-  will-change: transform;
-}
-
 .imgContain {
   object-fit: contain;
-  padding: 12%;
+  padding: 10%;
 }
 
 .imgCover {
   object-fit: cover;
+}
+
+.media img {
+  transition: transform 200ms ease;
+}
+
+@media (hover: hover) {
+  .article:hover .media img {
+    transform: scale(1.03);
+  }
+
+  .nameLink:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 }
 
 .badge {
@@ -162,41 +171,132 @@
   background: var(--white);
   color: var(--bordeaux);
   line-height: 28px;
+  pointer-events: none;
 }
 
-.media img {
-  transition: transform 200ms ease;
-}
-
-@media (hover: hover) {
-  .cardLink:hover .media img {
-    transform: scale(1.05);
-  }
-
-  .cardLink:hover .name {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-.cardLink:focus-visible .name {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
+/* ── Testo ── */
 .caption {
   display: flex;
+  flex: 1;
   flex-direction: column;
+  gap: var(--space-xs);
   padding-top: var(--space-sm);
 }
 
 .name {
-  color: var(--bordeaux);
+  margin: 0;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
-.from {
+.nameLink {
+  color: var(--bordeaux);
+  border-radius: 2px;
+}
+
+/* Tutta la card è cliccabile: il link sul nome si estende a tutto l'articolo */
+.nameLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.nameLink:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 2px;
+}
+
+.subtitle {
+  margin: 0;
   color: var(--color-dark);
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.format {
+  margin: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  color: var(--color-dark);
+}
+
+.selectWrap {
+  position: relative;
+  z-index: 1; /* sopra il link esteso della card */
+}
+
+.selectWrap::after {
+  content: '\25BC';
+  position: absolute;
+  right: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: var(--bordeaux);
+  pointer-events: none;
+}
+
+.select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 var(--space-xl) 0 var(--space-md);
+  border: 1.5px solid var(--bordeaux);
+  border-radius: var(--radius-field);
+  background: var(--white);
+  color: var(--bordeaux);
+  font-family: var(--font-primary);
+  letter-spacing: 0;
+  cursor: pointer;
+  appearance: none;
+  text-overflow: ellipsis;
+}
+
+.select:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 2px;
+}
+
+.select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.price {
+  margin: var(--space-xs) 0 var(--space-sm);
+  color: var(--bordeaux);
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-line);
+  font-weight: 700;
+}
+
+.priceMuted {
+  opacity: 0.6;
+}
+
+.cta {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: auto;
+  min-height: 44px;
+}
+
+.cta:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 @media (max-width: 1023px) {

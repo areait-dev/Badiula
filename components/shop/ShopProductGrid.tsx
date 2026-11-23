@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { gsap } from 'gsap';
@@ -30,6 +30,99 @@ const BG_CLASS: Record<Prodotto['coloreSfondo'], 'bgTeal' | 'bgVanilla' | 'bgKha
 const ALL = 'all';
 
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
+interface ProductCardProps {
+  p: Prodotto;
+  priority: boolean;
+  hidden: boolean;
+  href: string;
+  badge?: string;
+  formatPrice: (v: number) => string;
+  onNavigate: (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => void;
+}
+
+function ProductCard({ p, priority, hidden, href, badge, formatPrice, onNavigate }: ProductCardProps) {
+  const t = useTranslations('shopGrid');
+  const [variantIdx, setVariantIdx] = useState(0);
+  const selectId = useId();
+  const available = p.stock > 0;
+  const variant = p.varianti[variantIdx] ?? p.varianti[0];
+  const hasChoice = p.varianti.length > 1;
+
+  return (
+    <li
+      className={`${styles.card} ${hidden ? styles.isHidden : ''}`}
+      data-card
+      data-pending=""
+    >
+      <article className={styles.article}>
+        {/* Link immagine: duplica il link sul nome, quindi fuori da tastiera e screen reader */}
+        <Link
+          href={href}
+          className={styles.mediaLink}
+          onClick={(e) => onNavigate(e, p.slug)}
+          tabIndex={-1}
+          aria-hidden="true"
+        >
+          <span data-media className={`${styles.media} ${styles[BG_CLASS[p.coloreSfondo]]}`}>
+            <Image
+              src={p.cutoutImage ?? p.immagine}
+              alt=""
+              fill
+              priority={priority}
+              sizes="(max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw"
+              className={p.cutoutImage ? styles.imgContain : styles.imgCover}
+            />
+          </span>
+        </Link>
+        {(!available || badge) && (
+          <span className={`body-2 ${styles.badge}`}>{available ? badge : t('soon')}</span>
+        )}
+
+        <div data-caption className={styles.caption}>
+          <h3 className={`body-2 ${styles.name}`}>
+            <Link href={href} className={styles.nameLink} onClick={(e) => onNavigate(e, p.slug)}>
+              {p.nome}
+            </Link>
+          </h3>
+          <p className={`body-2 ${styles.subtitle}`}>{p.sottotitolo}</p>
+
+          {hasChoice ? (
+            <div className={styles.selectWrap}>
+              <label htmlFor={selectId} className={styles.srOnly}>
+                {t('format')} · {p.nome}
+              </label>
+              <select
+                id={selectId}
+                className={`body-2 ${styles.select}`}
+                value={variantIdx}
+                onChange={(e) => setVariantIdx(Number(e.target.value))}
+                disabled={!available}
+              >
+                {p.varianti.map((v, vi) => (
+                  <option key={v.etichetta} value={vi}>
+                    {v.etichetta}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : (
+            <p className={`body-2 ${styles.format}`}>{variant.etichetta}</p>
+          )}
+
+          <p className={`${styles.price} ${available ? '' : styles.priceMuted}`}>
+            {formatPrice(variant.prezzo)}
+          </p>
+
+          {/* Carrello non ancora implementato: il bottone resta disabilitato (CLAUDE.md §10.X) */}
+          <button type="button" className={`btn btn-solid ${styles.cta}`} disabled>
+            {available ? t('addToCart') : t('soon')}
+          </button>
+        </div>
+      </article>
+    </li>
+  );
+}
 
 export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
   const t = useTranslations('shopGrid');
@@ -74,7 +167,7 @@ export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
   const visibleCount = prodotti.filter((p) => cat === ALL || p.categoria === cat).length;
   const labelFor = (c: string) => (c === ALL ? t('filterAll') : t(`filter_${c}` as never));
 
-  // ── Entrata allo scroll + parallax (solo se il movimento è consentito) ──
+  // ── Entrata allo scroll (solo se il movimento è consentito) ──
   const { contextSafe } = useGSAP(
     () => {
       const root = rootRef.current;
@@ -124,27 +217,6 @@ export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
               clearProps: 'opacity',
             });
           },
-        });
-
-        // Parallax discreto sull'immagine dentro la card
-        cards.forEach((card) => {
-          const layer = card.querySelector('[data-parallax]');
-          if (!layer) return;
-          gsap.fromTo(
-            layer,
-            { yPercent: -5, scale: 1.12 },
-            {
-              yPercent: 5,
-              scale: 1.12,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true,
-              },
-            }
-          );
         });
 
         return () => {
@@ -270,49 +342,18 @@ export default function ShopProductGrid({ prodotti }: ShopProductGridProps) {
         </div>
 
         <ul ref={gridRef} className={styles.grid}>
-          {prodotti.map((p) => {
-            const badge = p.categoria === 'luce-di-terra' ? t('luceDiTerra') : p.badge;
-            const hidden = cat !== ALL && p.categoria !== cat;
-            return (
-              <li
-                key={p.id}
-                className={`${styles.card} ${hidden ? styles.isHidden : ''}`}
-                data-card
-                data-pending=""
-              >
-                <Link
-                  href={withCat(`/shop/${p.slug}`, cat === ALL ? null : cat)}
-                  className={styles.cardLink}
-                  onClick={(e) => onCardClick(e, p.slug)}
-                  aria-label={t('view', { name: p.nome })}
-                >
-                  <span
-                    data-media
-                    className={`${styles.media} ${styles[BG_CLASS[p.coloreSfondo]]}`}
-                  >
-                    <span data-parallax className={styles.parallax}>
-                      <Image
-                        src={p.cutoutImage ?? p.immagine}
-                        alt=""
-                        fill
-                        sizes="(max-width: 767px) 50vw, (max-width: 1023px) 33vw, 25vw"
-                        className={p.cutoutImage ? styles.imgContain : styles.imgCover}
-                      />
-                    </span>
-                    {badge && <span className={`body-2 ${styles.badge}`}>{badge}</span>}
-                  </span>
-                  <span data-caption className={`body-2 ${styles.caption}`}>
-                    <span className={styles.name}>{p.nome}</span>
-                    <span className={styles.from}>
-                      {t('from', {
-                        price: formatPrice(Math.min(...p.varianti.map((v) => v.prezzo))),
-                      })}
-                    </span>
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
+          {prodotti.map((p, i) => (
+            <ProductCard
+              key={p.id}
+              p={p}
+              priority={i < 4}
+              hidden={cat !== ALL && p.categoria !== cat}
+              href={withCat(`/shop/${p.slug}`, cat === ALL ? null : cat)}
+              badge={p.categoria === 'luce-di-terra' ? t('luceDiTerra') : p.badge}
+              formatPrice={formatPrice}
+              onNavigate={onCardClick}
+            />
+          ))}
         </ul>
       </div>
     </section>
