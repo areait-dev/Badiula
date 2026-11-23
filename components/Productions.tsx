@@ -12,9 +12,14 @@ import styles from './Productions.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Finché non ci sono foto coerenti per tutte le card, la zona immagine resta un riquadro tratteggiato.
-// Portare a true quando le foto in lib/data.ts sono pronte.
-const FOTO_COERENTI = false;
+// Foto reali (non scontornate) per le card della homepage, ritagliate in orizzontale.
+// Le card senza foto (es. Pompelmo) mostrano il riquadro tratteggiato.
+const HOME_PHOTOS: Record<string, string> = {
+  'arance-rosse-igp': '/images/home/arance-rosse-igp.jpg',
+  'arance-bionde': '/images/home/arance-bionde.jpg',
+  'limone-femminello': '/images/home/limone-femminello.jpg',
+  bergamotto: '/images/home/bergamotto.jpg',
+};
 
 interface ProductionsProps {
   title?: string;
@@ -107,9 +112,9 @@ export default function Productions({ title = '', subtitle = '' }: ProductionsPr
           {PRODUCTS.map((p, i) => (
             <article key={p.slug} className={styles.card} data-index={i}>
               <div className={styles.img}>
-                {FOTO_COERENTI ? (
+                {HOME_PHOTOS[p.slug] ? (
                   <Image
-                    src={p.image}
+                    src={HOME_PHOTOS[p.slug]}
                     alt={p.name}
                     fill
                     sizes="(max-width: 768px) 90vw, 560px"

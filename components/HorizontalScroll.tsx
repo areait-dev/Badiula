@@ -161,8 +161,8 @@ export default function HorizontalScroll({
         <section className={`${styles.panel} ${styles.greenPanel}`}>
           <div className={styles.imgHalf}>
             <Image
-              src="/images/sostenibilita.jpg"
-              alt="Sostenibilità Badiula"
+              src="/images/magazzino-tre-quarti.jpg"
+              alt="Centro di lavorazione Badiula, vista aerea"
               fill
               className={styles.greenImg}
               style={{ objectFit: 'cover' }}

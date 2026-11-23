@@ -95,7 +95,7 @@ export default function Innovazione({ data: d }: InnovazioneProps) {
       <Reveal>
         <SectionZigzag
           title={d.sezione2Titolo || 'Blockchain di filiera'}
-          image={{ src: d.sezione2Immagine || '/images/DSC_7739.jpg' }}
+          image={{ src: d.sezione2Immagine || '/images/filiera.jpg' }}
           imageAlt="Tracciabilità blockchain del prodotto Badiula, dal frutto al confezionamento"
         >
           <div dangerouslySetInnerHTML={{ __html: d.sezione2Testo || FALLBACK_SEZIONE_2_TESTO }} />
