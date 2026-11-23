@@ -130,8 +130,8 @@ export const prodotti: Prodotto[] = [
     sottotitolo: 'Confettura biologica preparata con le nostre arance rosse IGP',
     descrizioneBreve:
       'Preparata con frutta biologica coltivata nei nostri campi, senza conservanti.',
-    immagine:
-      'https://images.unsplash.com/photo-1597528380307-aa63f8f2b9c5?w=800&q=80&fit=crop',
+    immagine: '/images/luce-di-terra/olio-evo-cutout.png',
+    cutoutImage: '/images/luce-di-terra/olio-evo-cutout.png',
     badge: 'Artigianale',
     coloreSfondo: 'vanilla',
     categoria: 'luce-di-terra',
