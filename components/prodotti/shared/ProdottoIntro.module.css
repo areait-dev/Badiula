@@ -100,6 +100,9 @@
 }
 
 /* ── SPAZI RIDOTTI tablet/mobile ── */
+@media (max-width: 1279px) {
+  .h2 span { white-space: normal; }
+}
 @media (max-width: 1023px) {
   .intro { padding-bottom: 40px; }
   .hero  { padding-top: 140px; margin-bottom: 32px; }

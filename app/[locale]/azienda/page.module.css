@@ -302,6 +302,11 @@
   .manifestoSection { padding: 4rem 1.5rem; }
 }
 
+/* Tablet: la citazione da 200px (deroga desktop) uscirebbe dallo schermo */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .quoteLine { font-size: clamp(5rem, 18vw, 200px); }
+}
+
 /* ── SPAZI RIDOTTI tablet/mobile ── */
 @media (max-width: 1024px) {
   .hero { height: 30vh; min-height: 200px; }

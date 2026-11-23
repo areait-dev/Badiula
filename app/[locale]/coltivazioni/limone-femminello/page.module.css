@@ -242,12 +242,12 @@
   }
 
   .imgWrapCircle {
-    width: 420px;
+    width: min(420px, 40vw);
     height: auto;
   }
 
   .imgWrapRect {
-    width: clamp(420px, 40vw, 640px);
+    width: clamp(min(420px, 40vw), 40vw, 640px);
     height: auto;
   }
 }

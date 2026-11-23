@@ -80,9 +80,14 @@
 .cookiePrefs:hover { opacity: 0.75; }
 
 .powered {
-  margin-top: var(--space-lg);
+  margin: 0;
+  padding: 0 var(--space-md) var(--space-lg);
   text-align: center;
   color: var(--white);
+}
+/* Mobile: spazio sotto la riga per non farla coprire dal pulsante "torna su" */
+@media (max-width: 767px) {
+  .powered { padding-bottom: calc(var(--space-2xl) + var(--space-lg) + var(--space-xs)); }
 }
 .powered a {
   color: inherit;
