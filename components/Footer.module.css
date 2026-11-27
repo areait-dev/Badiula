@@ -266,6 +266,30 @@
   color: var(--white);
 }
 
+.submit:disabled {
+  opacity: 0.4;
+  cursor: default;
+  background: transparent;
+  border-color: var(--white);
+  color: var(--white);
+}
+
+/* Esito dell'invio, sotto il pulsante */
+.feedback {
+  margin: 0;
+  text-align: center;
+  color: var(--white);
+}
+.feedback:empty { margin-top: -1rem; } /* annulla il gap del form a riposo */
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* Mobile */
 /* Floor esplicito a 16px, scollegato dal token --text-body-1-size: sotto
    quella soglia iOS Safari fa zoom automatico al focus del campo. Il token

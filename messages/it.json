@@ -111,6 +111,9 @@
     "privacy": "Accetto il trattamento dei dati personali (Privacy Policy)",
     "send": "Invia",
     "sent": "Inviato ✓",
+    "success": "Messaggio inviato. Ti risponderemo presto.",
+    "errorInvalid": "Controlla i campi compilati e riprova.",
+    "error": "Invio non riuscito. Riprova tra qualche minuto.",
     "newsletterTitle": "Iscriviti alla newsletter",
     "newsletterPrivacy": "Accetto che i miei dati vengano trattati secondo la <link>Privacy Policy</link>",
     "newsletterSubmit": "Iscriviti"
