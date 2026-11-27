@@ -189,7 +189,7 @@
   .filiera { padding: 48px 0; }
   .container { padding: 0 var(--page-margin-mobile); }
 
-  .bannerImgWrap { height: 260px; }
+  .bannerImgWrap { height: auto; aspect-ratio: 2 / 1; --banner-pos: 70% top; }
   .bannerStrip {
     flex-direction: column;
     align-items: flex-start;

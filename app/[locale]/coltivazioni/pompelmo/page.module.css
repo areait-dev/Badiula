@@ -404,7 +404,7 @@
 
   .container { padding: 0 var(--page-margin-mobile); }
 
-  .bannerYellow { height: 300px; }
+  .bannerYellow { height: auto; aspect-ratio: 2 / 1; --banner-pos: 70% top; }
   .bannerGreen { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .bannerShopBtn { width: 100%; justify-content: center; }
 

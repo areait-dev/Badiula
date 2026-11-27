@@ -407,7 +407,7 @@
     height: auto;
   }
 
-  .bannerYellow { height: 340px; }
+  .bannerYellow { height: auto; aspect-ratio: 2 / 1; --banner-pos: 70% top; }
   .bannerGreen {
     flex-direction: column;
     align-items: flex-start;

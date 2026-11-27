@@ -45,7 +45,7 @@
 }
 
 @media (max-width: 767px) {
-  .imgArea { height: 280px; }
+  .imgArea { height: auto; aspect-ratio: 2 / 1; --banner-pos: 70% top; }
   .bar {
     padding: 2rem var(--page-margin-mobile);
     flex-direction: column;

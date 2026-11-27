@@ -43,6 +43,8 @@
 }
 
 @media (max-width: 767px) {
+  .yellowArea { position: relative; aspect-ratio: 2 / 1; }
+  .promoImg { height: 100%; object-fit: cover; object-position: 70% top; }
   .overlay {
     padding: 2rem 1.5rem;
     flex-direction: column;

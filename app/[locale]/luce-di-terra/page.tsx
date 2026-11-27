@@ -120,7 +120,7 @@ export default async function LuceDiTerraPage({ params }: { params: { locale: st
             alt="Luce di Terra - olio e marmellate Badiula"
             fill
             sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'center top' }}
+            style={{ objectFit: 'cover', objectPosition: 'var(--banner-pos, center top)' }}
           />
         </div>
         <div className={styles.bannerStrip}>

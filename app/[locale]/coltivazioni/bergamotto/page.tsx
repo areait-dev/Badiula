@@ -150,7 +150,7 @@ export default function BergamottoPage() {
               alt="Agrumi siciliani Badiula"
               fill
               sizes="100vw"
-              style={{ objectFit: 'cover', objectPosition: 'center top' }}
+              style={{ objectFit: 'cover', objectPosition: 'var(--banner-pos, center top)' }}
             />
           </div>
         </div>
