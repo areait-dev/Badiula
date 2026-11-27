@@ -3,23 +3,23 @@ import { Resend } from 'resend';
 import { clientIp, EMAIL_RE, field, isRateLimited } from '@/lib/formGuard';
 import { createToken } from '@/lib/newsletterToken';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://agribadiula.it';
+// Con "www": senza, il dominio risponde con un redirect che i programmi di
+// posta non seguono nella disiscrizione con un clic.
+const SITE_URL = 'https://www.agribadiula.it';
 const HOUR = 60 * 60 * 1000;
 
 const COPY = {
   it: {
-    subject: 'Conferma la tua iscrizione alla newsletter Badiula',
-    intro: 'Per confermare l’iscrizione alla newsletter Badiula apri questo link:',
-    outro: 'Il link vale 48 ore. Se non hai richiesto tu l’iscrizione, ignora questa email.',
+    subject: 'Grazie per l’iscrizione alla newsletter Badiula',
+    text: 'Grazie per esserti iscritto alla newsletter Badiula.\n\nSe non hai richiesto tu l’iscrizione, o non vuoi più ricevere la newsletter, puoi disiscriverti da qui:',
   },
   en: {
-    subject: 'Confirm your Badiula newsletter subscription',
-    intro: 'To confirm your subscription to the Badiula newsletter, open this link:',
-    outro: 'The link is valid for 48 hours. If you did not ask to subscribe, ignore this email.',
+    subject: 'Thank you for subscribing to the Badiula newsletter',
+    text: 'Thank you for subscribing to the Badiula newsletter.\n\nIf you did not ask to subscribe, or no longer want to receive the newsletter, you can unsubscribe here:',
   },
 };
 
-/** Primo passo del double opt-in: invia l'email con il link di conferma. */
+/** Salva l'iscritto nei contatti Resend e gli invia l'email di ringraziamento. */
 export async function POST(req: NextRequest) {
   if (isRateLimited(`newsletter:${clientIp(req.headers)}`, 5, HOUR)) {
     return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
@@ -40,10 +40,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'invalid' }, { status: 400 });
   }
 
-  const { RESEND_API_KEY, CONTACT_FROM_EMAIL, NEWSLETTER_SECRET } = process.env;
+  const { RESEND_API_KEY, RESEND_SEGMENT_ID, CONTACT_FROM_EMAIL, CONTACT_TO_EMAIL, NEWSLETTER_SECRET } =
+    process.env;
+  // La gestione dei contatti richiede una chiave "Full access".
   if (!RESEND_API_KEY || !CONTACT_FROM_EMAIL || !NEWSLETTER_SECRET) {
     console.error('[newsletter] Mancano RESEND_API_KEY, CONTACT_FROM_EMAIL o NEWSLETTER_SECRET');
-    return NextResponse.json({ error: 'send_failed' }, { status: 500 });
+    return NextResponse.json({ error: 'save_failed' }, { status: 500 });
   }
 
   // Evita che il form venga usato per riempire di email la casella di qualcuno.
@@ -51,23 +53,48 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
   }
 
-  const locale = body.locale === 'en' ? 'en' : 'it';
-  // In produzione l'indirizzo viene dalla configurazione, non dalla richiesta.
-  const origin = process.env.NODE_ENV === 'production' ? SITE_URL : req.nextUrl.origin;
-  const link = `${origin}/${locale}/newsletter/conferma?token=${createToken(email, NEWSLETTER_SECRET)}`;
-  const copy = COPY[locale];
-
-  const { error } = await new Resend(RESEND_API_KEY).emails.send({
-    from: CONTACT_FROM_EMAIL,
-    to: email,
-    subject: copy.subject,
-    text: `${copy.intro}\n\n${link}\n\n${copy.outro}`,
+  const resend = new Resend(RESEND_API_KEY);
+  const created = await resend.contacts.create({
+    email,
+    unsubscribed: false,
+    ...(RESEND_SEGMENT_ID && { segments: [{ id: RESEND_SEGMENT_ID }] }),
   });
 
-  if (error) {
-    console.error('[newsletter] Resend:', error);
-    return NextResponse.json({ error: 'send_failed' }, { status: 502 });
+  if (created.error) {
+    // Il contatto può esistere già (es. si era disiscritto): lo si riattiva.
+    const updated = await resend.contacts.update({ email, unsubscribed: false });
+    const added =
+      !updated.error && RESEND_SEGMENT_ID
+        ? await resend.contacts.segments.add({ email, segmentId: RESEND_SEGMENT_ID })
+        : null;
+
+    if (updated.error || added?.error) {
+      console.error('[newsletter] Resend:', created.error, updated.error ?? added?.error);
+      return NextResponse.json({ error: 'save_failed' }, { status: 502 });
+    }
   }
+
+  const locale = body.locale === 'en' ? 'en' : 'it';
+  const copy = COPY[locale];
+  // In produzione l'indirizzo è fisso, non dipende dalla richiesta.
+  const origin = process.env.NODE_ENV === 'production' ? SITE_URL : req.nextUrl.origin;
+  const token = createToken(email, NEWSLETTER_SECRET);
+  const { error } = await resend.emails.send({
+    from: CONTACT_FROM_EMAIL,
+    to: email,
+    // Le risposte arrivano a una casella letta.
+    replyTo: CONTACT_TO_EMAIL?.split(',').map((address) => address.trim()),
+    subject: copy.subject,
+    text: `${copy.text}\n${origin}/${locale}/newsletter/disiscrizione?token=${token}`,
+    // Pulsante "Annulla iscrizione" di Gmail, Outlook, ecc.
+    headers: {
+      'List-Unsubscribe': `<${origin}/api/newsletter/unsubscribe?token=${token}>`,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+    },
+  });
+
+  // L'iscrizione è già salvata: un errore sull'email di cortesia non la annulla.
+  if (error) console.error('[newsletter] Email di ringraziamento:', error);
 
   return NextResponse.json({ ok: true });
 }

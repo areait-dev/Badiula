@@ -5,20 +5,18 @@ import { useTranslations } from 'next-intl';
 
 type Status = 'idle' | 'sending' | 'done' | 'invalid' | 'error';
 
-export default function ConfirmNewsletter() {
-  const t = useTranslations('newsletterConfirm');
+export default function Unsubscribe() {
+  const t = useTranslations('newsletterUnsubscribe');
   const [status, setStatus] = useState<Status>('idle');
 
-  async function confirm() {
+  async function unsubscribe() {
     // Il token si legge al clic: la pagina resta statica.
-    const token = new URLSearchParams(window.location.search).get('token');
+    const token = new URLSearchParams(window.location.search).get('token') ?? '';
     setStatus('sending');
 
     try {
-      const res = await fetch('/api/newsletter/confirm', {
+      const res = await fetch(`/api/newsletter/unsubscribe?token=${encodeURIComponent(token)}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token }),
       });
       setStatus(res.ok ? 'done' : res.status === 400 ? 'invalid' : 'error');
     } catch {
@@ -34,7 +32,7 @@ export default function ConfirmNewsletter() {
           <button
             type="button"
             className="btn btn-solid"
-            onClick={confirm}
+            onClick={unsubscribe}
             disabled={status === 'sending'}
           >
             {t('button')}

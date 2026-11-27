@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage({ params }: { params: { locale: string
         <ul>
           <li>Dati di navigazione e log tecnici, gestiti dal fornitore hosting Vercel, per la sicurezza del sito.</li>
           <li>Dati forniti tramite il modulo di contatto (nome, e-mail, telefono, messaggio), per rispondere alla richiesta.</li>
-          <li>Indirizzo e-mail fornito per l&apos;iscrizione alla newsletter, trattato sulla base del consenso e registrato solo dopo la conferma tramite il link ricevuto via e-mail. Puoi revocare il consenso in qualsiasi momento.</li>
+          <li>Indirizzo e-mail fornito per l&apos;iscrizione alla newsletter, trattato sulla base del consenso. Puoi revocare il consenso in qualsiasi momento con il link di disiscrizione presente nelle e-mail.</li>
           <li>Dati di navigazione tramite Google Analytics, attivo solo previo consenso: vedi Cookie Policy.</li>
         </ul>
       </div>

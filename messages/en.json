@@ -117,16 +117,16 @@
     "newsletterTitle": "Subscribe to our newsletter",
     "newsletterPrivacy": "I accept that my data will be processed according to the <link>Privacy Policy</link>",
     "newsletterSubmit": "Subscribe",
-    "newsletterSuccess": "Check your email to confirm your subscription.",
+    "newsletterSuccess": "Thank you for subscribing.",
     "errorLimit": "Too many attempts. Please try again later."
   },
-  "newsletterConfirm": {
+  "newsletterUnsubscribe": {
     "title": "Newsletter",
-    "text": "Confirm your subscription to the Badiula newsletter.",
-    "button": "Confirm subscription",
-    "done": "Subscription confirmed.",
-    "invalid": "This link is invalid or has expired. Please subscribe again using the form at the bottom of the page.",
-    "error": "Confirmation failed. Please try again in a few minutes."
+    "text": "Do you want to unsubscribe from the Badiula newsletter?",
+    "button": "Unsubscribe",
+    "done": "You have been unsubscribed. You will no longer receive the newsletter.",
+    "invalid": "This link is invalid. Please contact us using the form at the bottom of the page.",
+    "error": "Something went wrong. Please try again in a few minutes."
   },
   "coltivazioni": {
     "heroTitle": "OUR GROVES",

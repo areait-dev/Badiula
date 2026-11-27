@@ -117,16 +117,16 @@
     "newsletterTitle": "Iscriviti alla newsletter",
     "newsletterPrivacy": "Accetto che i miei dati vengano trattati secondo la <link>Privacy Policy</link>",
     "newsletterSubmit": "Iscriviti",
-    "newsletterSuccess": "Controlla la tua email per confermare l’iscrizione.",
+    "newsletterSuccess": "Grazie per l’iscrizione.",
     "errorLimit": "Troppi tentativi. Riprova più tardi."
   },
-  "newsletterConfirm": {
+  "newsletterUnsubscribe": {
     "title": "Newsletter",
-    "text": "Conferma la tua iscrizione alla newsletter Badiula.",
-    "button": "Conferma iscrizione",
-    "done": "Iscrizione confermata.",
-    "invalid": "Il link non è valido o è scaduto. Iscriviti di nuovo dal modulo in fondo alla pagina.",
-    "error": "Conferma non riuscita. Riprova tra qualche minuto."
+    "text": "Vuoi annullare l’iscrizione alla newsletter Badiula?",
+    "button": "Annulla iscrizione",
+    "done": "Iscrizione annullata. Non riceverai più la newsletter.",
+    "invalid": "Il link non è valido. Scrivici dal modulo in fondo alla pagina.",
+    "error": "Operazione non riuscita. Riprova tra qualche minuto."
   },
   "coltivazioni": {
     "heroTitle": "LE NOSTRE COLTIVAZIONI",
