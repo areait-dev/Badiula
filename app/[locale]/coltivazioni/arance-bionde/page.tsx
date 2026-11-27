@@ -76,11 +76,11 @@ export default function AranceBiondePage() {
         <div className={styles.varietyVisual}>
           <div className={styles.varietyImgWrap}>
             <FotoProdotto
-              src="/images/immagini%20prodotto/Newhall.png"
+              src="/images/catalogo/arance-newhall.jpg"
               alt="Arance Newhall - navel siciliane"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'cover', objectPosition: '50% 15%' }}
             />
           </div>
         </div>
@@ -91,11 +91,11 @@ export default function AranceBiondePage() {
         <div className={styles.varietyVisual}>
           <div className={styles.varietyImgWrap}>
             <FotoProdotto
-              src="/images/immagini%20prodotto/LaneLate.png"
+              src="/images/catalogo/arance-lane-late.jpg"
               alt="Arance Lane Late - navel tardive"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'cover', objectPosition: '50% 36%' }}
             />
           </div>
         </div>

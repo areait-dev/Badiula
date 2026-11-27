@@ -75,11 +75,11 @@ export default function BergamottoPage() {
         <div className={styles.blockAVisual}>
           <div className={styles.imgWrapCircle}>
             <FotoProdotto
-              src="/images/immagini%20prodotto/Screenshot%202026-07-20%20144238.png"
+              src="/images/catalogo/bergamotto.jpg"
               alt="Bergamotto biologico siciliano"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'cover', objectPosition: '50% 52%' }}
             />
           </div>
         </div>
@@ -107,19 +107,8 @@ export default function BergamottoPage() {
         </div>
       </section>
 
-      {/* ── USI CONSIGLIATI: riquadro sx · testo dx ── */}
-      <section className={styles.blockB}>
-        <div className={styles.blockBVisual}>
-          <div className={styles.imgWrapRect}>
-            <FotoProdotto
-              src="/images/immagini%20prodotto/image-removebg-preview%20(5).png"
-              alt="Bergamotti freschi raccolti"
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-        </div>
+      {/* ── USI CONSIGLIATI: solo testo, centrato (senza foto) ── */}
+      <section className={`${styles.blockB} ${styles.blockBSolo}`}>
         <div className={styles.blockBContent}>
           <h3 className={styles.blockTitle}>Usi consigliati</h3>
           <p className={styles.blockLead}>Il bergamotto fresco è apprezzato per:</p>

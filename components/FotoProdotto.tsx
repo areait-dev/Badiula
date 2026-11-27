@@ -1,13 +1,14 @@
 import Image, { type ImageProps } from 'next/image';
 import styles from './FotoProdotto.module.css';
 
-// Finché le foto delle coltivazioni arrivano da stock, la zona immagine resta un riquadro tratteggiato.
-// Portare a true quando l'azienda invia foto coerenti delle proprie produzioni.
-export const FOTO_COERENTI = false;
+// Si mostrano solo le foto delle produzioni inviate dall'azienda, raccolte in
+// questa cartella. Per le altre la zona immagine resta un riquadro tratteggiato.
+const CARTELLA_CATALOGO = '/images/catalogo/';
 
-/** Come next/image (con `fill`), ma mostra il segnaposto finché FOTO_COERENTI è false. */
+/** Come next/image (con `fill`), ma mostra il segnaposto se la foto non è del catalogo. */
 export default function FotoProdotto(props: ImageProps) {
-  if (!FOTO_COERENTI) return <div className={styles.placeholder} aria-hidden="true" />;
+  const delCatalogo = typeof props.src === 'string' && props.src.startsWith(CARTELLA_CATALOGO);
+  if (!delCatalogo) return <div className={styles.placeholder} aria-hidden="true" />;
   // eslint-disable-next-line jsx-a11y/alt-text
   return <Image {...props} />;
 }

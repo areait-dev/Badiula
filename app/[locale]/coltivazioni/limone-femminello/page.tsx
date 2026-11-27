@@ -56,11 +56,11 @@ export default function LimoneFemminelloPage() {
         <div className={styles.blockAVisual}>
           <div className={styles.imgWrapCircle}>
             <FotoProdotto
-              src="/images/immagini%20prodotto/Limone%20Femminello.png"
+              src="/images/catalogo/limone.jpg"
               alt="Limone Femminello Siracusano"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'cover', objectPosition: '50% 44%' }}
             />
           </div>
         </div>
@@ -117,22 +117,8 @@ export default function LimoneFemminelloPage() {
         </div>
       </section>
 
-      {/* ── USI CONSIGLIATI: testo sx · foto dx ── */}
-      {/* Subito prima del banner shop (foto della ragazza con arance): niente
-          sezione di testo in mezzo, quindi qui la foto resta prima del testo
-          nello stack mobile/touch, per non avere due foto ravvicinate. */}
-      <section className={`${styles.blockB} ${styles.beforeBanner}`}>
-        <div className={styles.blockBVisual}>
-          <div className={styles.imgWrapRect}>
-            <FotoProdotto
-              src="/images/Screenshot%202026-07-20%20140124.png"
-              alt="Limoni Femminello tagliati a metà, raccolta Badiula"
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-        </div>
+      {/* ── USI CONSIGLIATI: solo testo, centrato (senza foto) ── */}
+      <section className={`${styles.blockB} ${styles.blockBSolo}`}>
         <div className={styles.blockBContent}>
           <h3 className={styles.blockTitle}>Usi consigliati</h3>
           <p className={styles.blockLead}>I limoni Femminello sono ideali per:</p>

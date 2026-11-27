@@ -75,7 +75,7 @@ export default function PompelmoPage() {
         <div className={styles.blockAVisual}>
           <div className={styles.imgWrapCircle}>
             <FotoProdotto
-              src="/images/pompelmo.jpg"
+              src="/images/catalogo/pompelmo.jpg"
               alt="Pompelmo biologico siciliano"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
@@ -107,22 +107,8 @@ export default function PompelmoPage() {
         </div>
       </section>
 
-      {/* ── USI CONSIGLIATI: riquadro sx · testo dx ── */}
-      {/* Subito prima del banner shop (foto della ragazza con arance): niente
-          sezione di testo in mezzo, quindi qui la foto resta prima del testo
-          nello stack mobile/touch, per non avere due foto ravvicinate. */}
-      <section className={`${styles.blockB} ${styles.beforeBanner}`}>
-        <div className={styles.blockBVisual}>
-          <div className={styles.imgWrapRect}>
-            <FotoProdotto
-              src="/images/Screenshot%202026-07-20%20163605.png"
-              alt="Pompelmo tagliato con succo fresco"
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-        </div>
+      {/* ── USI CONSIGLIATI: solo testo, centrato (senza foto) ── */}
+      <section className={`${styles.blockB} ${styles.blockBSolo}`}>
         <div className={styles.blockBContent}>
           <h3 className={styles.blockTitle}>Usi consigliati</h3>
           <p className={styles.blockLead}>Il pompelmo rosa Star Ruby biologico è apprezzato per:</p>

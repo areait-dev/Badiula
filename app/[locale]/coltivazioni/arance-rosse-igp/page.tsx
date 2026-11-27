@@ -77,11 +77,11 @@ export default function AranceRossePage() {
         <div className={styles.varietyVisual}>
           <div className={styles.varietyImgWrap}>
             <FotoProdotto
-              src="/images/immagini%20prodotto/Tarocco.png"
+              src="/images/catalogo/arance-tarocco.jpg"
               alt="Arance Tarocco - polpa rossa"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'cover', objectPosition: '50% 44%' }}
             />
           </div>
         </div>
@@ -92,11 +92,11 @@ export default function AranceRossePage() {
         <div className={styles.varietyVisual}>
           <div className={styles.varietyImgWrap}>
             <FotoProdotto
-              src="/images/immagini%20prodotto/Moro.png"
+              src="/images/catalogo/arance-moro.jpg"
               alt="Arance Moro - polpa rosso intenso"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'cover', objectPosition: '50% 35%' }}
             />
           </div>
         </div>
