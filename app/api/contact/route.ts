@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-/** Restituisce il campo ripulito, oppure '' se non è una stringa. */
-const field = (value: unknown) => (typeof value === 'string' ? value.trim() : '');
+import { clientIp, EMAIL_RE, field, isRateLimited } from '@/lib/formGuard';
 
 export async function POST(req: NextRequest) {
+  if (isRateLimited(`contact:${clientIp(req.headers)}`, 5, 10 * 60 * 1000)) {
+    return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
+  }
+
   const body = await req.json().catch(() => null);
   if (!body || typeof body !== 'object') {
     return NextResponse.json({ error: 'invalid' }, { status: 400 });

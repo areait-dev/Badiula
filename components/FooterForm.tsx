@@ -4,7 +4,7 @@ import { useState, type FormEvent } from 'react';
 import { useTranslations } from 'next-intl';
 import styles from './Footer.module.css';
 
-type Status = 'idle' | 'sending' | 'sent' | 'invalid' | 'error';
+type Status = 'idle' | 'sending' | 'sent' | 'invalid' | 'limit' | 'error';
 
 export default function FooterForm({ formTitle }: { formTitle: string }) {
   const t = useTranslations('footer');
@@ -23,7 +23,7 @@ export default function FooterForm({ formTitle }: { formTitle: string }) {
         body: JSON.stringify({ ...data, privacy: data.privacy === 'on' }),
       });
       if (!res.ok) {
-        setStatus(res.status === 400 ? 'invalid' : 'error');
+        setStatus(res.status === 400 ? 'invalid' : res.status === 429 ? 'limit' : 'error');
         return;
       }
       form.reset();
@@ -59,6 +59,7 @@ export default function FooterForm({ formTitle }: { formTitle: string }) {
         <p className={`body-2 ${styles.feedback}`} role="status">
           {status === 'sent' && t('success')}
           {status === 'invalid' && t('errorInvalid')}
+          {status === 'limit' && t('errorLimit')}
           {status === 'error' && t('error')}
         </p>
       </form>

@@ -116,7 +116,17 @@
     "error": "Invio non riuscito. Riprova tra qualche minuto.",
     "newsletterTitle": "Iscriviti alla newsletter",
     "newsletterPrivacy": "Accetto che i miei dati vengano trattati secondo la <link>Privacy Policy</link>",
-    "newsletterSubmit": "Iscriviti"
+    "newsletterSubmit": "Iscriviti",
+    "newsletterSuccess": "Controlla la tua email per confermare l’iscrizione.",
+    "errorLimit": "Troppi tentativi. Riprova più tardi."
+  },
+  "newsletterConfirm": {
+    "title": "Newsletter",
+    "text": "Conferma la tua iscrizione alla newsletter Badiula.",
+    "button": "Conferma iscrizione",
+    "done": "Iscrizione confermata.",
+    "invalid": "Il link non è valido o è scaduto. Iscriviti di nuovo dal modulo in fondo alla pagina.",
+    "error": "Conferma non riuscita. Riprova tra qualche minuto."
   },
   "coltivazioni": {
     "heroTitle": "LE NOSTRE COLTIVAZIONI",

@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage({ params }: { params: { locale: string
   setRequestLocale(params.locale);
 
   return (
-    <LegalPage title="Privacy Policy" updated="29/07/2026">
+    <LegalPage title="Privacy Policy" updated="27/11/2026">
       <div className={styles.section}>
         <h3 className={styles.h3}>1. Titolare del trattamento</h3>
         <p>
@@ -27,6 +27,7 @@ export default function PrivacyPolicyPage({ params }: { params: { locale: string
         <ul>
           <li>Dati di navigazione e log tecnici, gestiti dal fornitore hosting Vercel, per la sicurezza del sito.</li>
           <li>Dati forniti tramite il modulo di contatto (nome, e-mail, telefono, messaggio), per rispondere alla richiesta.</li>
+          <li>Indirizzo e-mail fornito per l&apos;iscrizione alla newsletter, trattato sulla base del consenso e registrato solo dopo la conferma tramite il link ricevuto via e-mail. Puoi revocare il consenso in qualsiasi momento.</li>
           <li>Dati di navigazione tramite Google Analytics, attivo solo previo consenso: vedi Cookie Policy.</li>
         </ul>
       </div>
@@ -34,7 +35,8 @@ export default function PrivacyPolicyPage({ params }: { params: { locale: string
       <div className={styles.section}>
         <h3 className={styles.h3}>3. Destinatari e trasferimenti</h3>
         <p>
-          I dati possono essere trattati da Vercel Inc. (hosting), WordPress (gestione contenuti) e Google LLC
+          I dati possono essere trattati da Vercel Inc. (hosting), WordPress (gestione contenuti), Resend (invio
+          delle e-mail del modulo di contatto e della newsletter, gestione degli iscritti) e Google LLC
           (Analytics, Search Console), anche fuori dallo Spazio Economico Europeo, sulla base delle Clausole
           Contrattuali Standard adottate dai rispettivi fornitori.
         </p>

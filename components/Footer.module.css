@@ -282,6 +282,12 @@
 }
 .feedback:empty { margin-top: -1rem; } /* annulla il gap del form a riposo */
 
+.newsletterForm .feedback {
+  flex-basis: 100%;
+  text-align: left;
+}
+.newsletterForm .feedback:empty { margin-top: calc(-1 * var(--space-sm)); }
+
 .honeypot {
   position: absolute;
   left: -9999px;
